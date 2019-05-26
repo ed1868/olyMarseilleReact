@@ -12,11 +12,13 @@ import Contact from "./components/contact";
 import Subscribe from "./components/subscribe";
 import Footer from "./components/footer";
 import { Link } from "react-router-dom";
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faStroopwafel } from '@fortawesome/free-solid-svg-icons'
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-library.add(faStroopwafel)
+import { faArrowAltCircleDown} from '@fortawesome/fontawesome-free-regular';
+
+library.add(faArrowAltCircleDown);
+
 
 class Home extends React.Component {
   render() {
@@ -186,7 +188,9 @@ class Home extends React.Component {
 											<br></br>
 											<h3 id="timer">Time Will Go Here</h3>
                     </div>
+										<FontAwesomeIcon id="goOn" icon={faArrowAltCircleDown} />
                   </div>
+								
                 </div>
               </div>
               {/* <div className="col-md-6">
@@ -248,7 +252,7 @@ class Home extends React.Component {
               </div>
               <div className="col-xl-5 display-flex">
                 <div className="download-text">
-                  <h3>Download the Chatloop app and enjoy it</h3>
+                  <h3>Download the Chatloop app and enjoy it </h3>
                 </div>
               </div>
               <div className="col-xl-4 display-flex">
