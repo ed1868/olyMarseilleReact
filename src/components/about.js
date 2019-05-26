@@ -3,7 +3,8 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBed} from '@fortawesome/fontawesome-free-solid';
 import { faTicketAlt} from '@fortawesome/fontawesome-free-solid';
-import { faCalendar, faFutbol} from '@fortawesome/fontawesome-free-regular';
+import { faCalendar, faFutbol, faStar} from '@fortawesome/fontawesome-free-regular';
+
 
 class About extends React.Component {
   render() {
@@ -15,6 +16,7 @@ class About extends React.Component {
                     <div className="row">
                        <div className="col-md-12 text-center">
                           <div className="section-title">
+                             
                              <h2 className="subHeaders">The Experience</h2>
                              <img src="assets/images/title-line.png" alt="title-line" className="img-fluid"/>
                           </div>
@@ -53,15 +55,18 @@ class About extends React.Component {
                        </div>
                        <div className="col-md-12">
                           <div className="chat-slide">
-                             <h3>Connect with People all over the world , with your small device</h3>
+                             <h3>Audi Field will have French accent with four-team tournament this summer Including your very own <span style=
+                             {{color:' #24a6d9'}} id="marseille">Olympic Marseille</span></h3>
+                             <br></br>
+                             <h3>We Will Provide you with the best deals on hotels, Tickets to watch this thrilling tournament with style and comfort</h3>
                           </div>
                        </div>
                     </div>
                  </div>
               </div>
-              <div className="container-fluid text-center">
+              {/* <div className="container-fluid text-center">
                  <img src="assets/images/banner.png" alt="banner.png" className="img-fluid full-banner"/>
-              </div>
+              </div> */}
         </section>
   	);
   }

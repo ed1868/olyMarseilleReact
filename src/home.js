@@ -12,15 +12,30 @@ import Contact from "./components/contact";
 import Subscribe from "./components/subscribe";
 import Footer from "./components/footer";
 import { Link } from "react-router-dom";
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Banner from "./components/banner";
 
-import { faArrowAltCircleDown} from '@fortawesome/fontawesome-free-regular';
+
+import { faArrowAltCircleDown } from "@fortawesome/fontawesome-free-regular";
+
+//Testing DATE PICKER FOR REACT
+
+import "react-dates/initialize";
+import "react-dates/lib/css/_datepicker.css";
+import { SingleDatePicker } from "react-dates";
 
 library.add(faArrowAltCircleDown);
 
 
 class Home extends React.Component {
+	constructor(props) {
+    super(props);
+    this.state ={
+      date: null,
+      focused: null
+    }
+  }
   render() {
     document.body.classList.remove("inner-page");
     return (
@@ -28,6 +43,7 @@ class Home extends React.Component {
         {/* Default First Section Class className="slide-bg" */}
 
         <section className="sectionOne">
+					
           <section id="left-sidebar">
             <div class="logo">
               <a href="#about" className="navbar-brand">
@@ -171,7 +187,7 @@ class Home extends React.Component {
             <div className="row">
               <div className="col-md-12">
                 <div className="d-flex-1">
-                  <div id="mainText" >
+                  <div id="mainText">
                     <div>
                       <h1 className="mainTitle">
                         Olympic Marseille
@@ -184,25 +200,24 @@ class Home extends React.Component {
                         Watch Olympic Marseille Take On Multiple teams in the
                         League One Tournament in Washington D.C
                       </h4>
-											<br></br>
-											<br></br>
-											<h3 id="timer">Time Will Go Here</h3>
+                      <br />
+                      <br />
+                      <h3 id="timer">Time Will Go Here</h3>
                     </div>
-										<FontAwesomeIcon id="goOn" icon={faArrowAltCircleDown} />
+                    <FontAwesomeIcon id="goOn" icon={faArrowAltCircleDown} />
                   </div>
-								
                 </div>
               </div>
               {/* <div className="col-md-6">
                 <div className="home-right">
                   <div className="mobile-slid"> */}
-                    {/* <img
+              {/* <img
              
                       src="assets/images/marseilleFirst.png"
                       alt="top1"
                       className="img-fluid"
                     /> */}
-                  {/* </div>
+              {/* </div>
                 </div>
               </div> */}
             </div>
@@ -214,7 +229,9 @@ class Home extends React.Component {
         <About />
 
         {/*Feature Component*/}
-        <Feature />
+        {/* <Feature /> */}
+				{/* Banner Component */}
+				{/* <Banner /> */}
 
         {/*Work Component*/}
         <Work />
