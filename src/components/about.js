@@ -4,13 +4,13 @@ class About extends React.Component {
   render() {
 		
   	return (
-  	    <section id="about" className="pb-0 about">
+  	    <section id="about" className="">
               <div className="about-chat">
                  <div className="container ">
                     <div className="row">
                        <div className="col-md-12 text-center">
                           <div className="section-title">
-                             <h2>About Chat Loop</h2>
+                             <h2 className="subHeaders">The Experience</h2>
                              <img src="assets/images/title-line.png" alt="title-line" className="img-fluid"/>
                           </div>
                        </div>
@@ -18,8 +18,9 @@ class About extends React.Component {
                           <div className="row">
                              <div className="col-lg-3 col-6 about-border">
                                 <div className="chat-box">
-                                   <img src="assets/images/stay-connected.png" alt="stay-connected"/>
-                                      <h3 className="sub-title"> Stay Connected</h3>
+
+                                      <img src="assets/images/mini-world.png" alt="mini-world"/>
+                                      <h3  className="sub-title">Mini World</h3>
                                 </div>
                              </div>
                              <div className="col-lg-3 col-6 about-border">
@@ -36,8 +37,8 @@ class About extends React.Component {
                              </div>
                              <div className="col-lg-3 col-6">
                                 <div className="chat-box">
-                                   <img src="assets/images/mini-world.png" alt="mini-world"/>
-                                      <h3  className="sub-title">Mini World</h3>
+                                <img src="assets/images/stay-connected.png" alt="stay-connected"/>
+                                      <h3 className="sub-title"> Stay Connected</h3>
                                 </div>
                              </div>
                           </div>
