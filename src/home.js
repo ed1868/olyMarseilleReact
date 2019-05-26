@@ -12,6 +12,11 @@ import Contact from "./components/contact";
 import Subscribe from "./components/subscribe";
 import Footer from "./components/footer";
 import { Link } from "react-router-dom";
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faStroopwafel } from '@fortawesome/free-solid-svg-icons'
+
+library.add(faStroopwafel)
 
 class Home extends React.Component {
   render() {
