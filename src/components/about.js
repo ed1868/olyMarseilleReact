@@ -1,6 +1,9 @@
 import React from 'react';
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBed} from '@fortawesome/fontawesome-free-solid';
+import { faTicketAlt} from '@fortawesome/fontawesome-free-solid';
+import { faCalendar, faFutbol} from '@fortawesome/fontawesome-free-regular';
 
 class About extends React.Component {
   render() {
@@ -20,27 +23,30 @@ class About extends React.Component {
                           <div className="row">
                              <div className="col-lg-3 col-6 about-border">
                                 <div className="chat-box">
-
-                                      <img src="assets/images/mini-world.png" alt="mini-world"/>
-                                      <h3  className="sub-title">Mini World</h3>
+                                <a href="#hotels" ><FontAwesomeIcon className="aboutIcons" icon={faBed} /> </a>
+                                      <h3  className="sub-title subtitles">Hotels</h3>
                                 </div>
                              </div>
                              <div className="col-lg-3 col-6 about-border">
                                 <div className="chat-box">
-                                   <img src="assets/images/get-notified.png" alt="get-notified" />
-                                      <h3  className="sub-title"> Get Notified </h3>
+                                   {/* <img src="assets/images/get-notified.png" alt="get-notified" /> */}
+                                   <a href="#tickets" ><FontAwesomeIcon className="aboutIcons" icon={faTicketAlt} /> </a>
+                                      <h3  className="sub-title subtitles">Tickets</h3>
                                 </div>
                              </div>
                              <div className="col-lg-3 col-6 about-border">
                                 <div className="chat-box">
-                                   <img src="assets/images/stay-updated.png" alt="stay-updated"/>
-                                      <h3  className="sub-title">Stay Updated</h3>
+                                   {/* <img src="assets/images/stay-updated.png" alt="stay-updated"/>
+                                  */}
+                                 <a href="#games" ><FontAwesomeIcon className="aboutIcons" icon={faCalendar}/></a>
+                                      <h3  className="sub-title subtitles">Schedule</h3>
                                 </div>
                              </div>
                              <div className="col-lg-3 col-6">
                                 <div className="chat-box">
-                                <img src="assets/images/stay-connected.png" alt="stay-connected"/>
-                                      <h3 className="sub-title"> Stay Connected</h3>
+                                {/* <img src="assets/images/stay-connected.png" alt="stay-connected"/> */}
+                                <a href="#team" > <FontAwesomeIcon className="aboutIcons" icon={faFutbol}/></a>
+                                      <h3 className="sub-title subtitles">Team</h3>
                                 </div>
                              </div>
                           </div>
