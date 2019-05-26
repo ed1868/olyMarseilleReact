@@ -1,27 +1,95 @@
-import React from 'react';
-import About from './components/about';
-import Feature from './components/feature';
-import Work from './components/work';
-import ScreenShot from './components/screenshot';
-import Team from './components/team';
-import Blog from './components/blog';
-import Price from './components/price';
-import Testimonial from './components/testimonial';
-import FAQ from './components/faq';
-import Contact from './components/contact';
-import Subscribe from './components/subscribe';
-import Footer from './components/footer';
-import { Link } from 'react-router-dom';
+import React from "react";
+import About from "./components/about";
+import Feature from "./components/feature";
+import Work from "./components/work";
+import ScreenShot from "./components/screenshot";
+import Team from "./components/team";
+import Blog from "./components/blog";
+import Price from "./components/price";
+import Testimonial from "./components/testimonial";
+import FAQ from "./components/faq";
+import Contact from "./components/contact";
+import Subscribe from "./components/subscribe";
+import Footer from "./components/footer";
+import { Link } from "react-router-dom";
 
 class Home extends React.Component {
   render() {
-  	document.body.classList.remove('inner-page');
-  	return (
-  		<div>
-  			{/* Navbar Section*/}
+    document.body.classList.remove("inner-page");
+    return (
+      <div>
+        {/* Default First Section Class className="slide-bg" */}
+
+        <section className="sectionOne">
+          <section id="left-sidebar">
+            <div class="logo">
+              <a href="#about" className="navbar-brand">
+                <img
+                  id="marseilleLogo"
+                  style={{ width: 110, height: 150 }}
+                  src="assets/images/marseilleLogo.png"
+                  alt="logo"
+                />
+              </a>
+            </div>
+
+            <div
+              id="mobile-menu-icon"
+              className="visible-xs"
+              onclick="toggle_main_menu();"
+            >
+              <span class="glyphicon glyphicon-th" />
+            </div>
+
+            <ul id="main-menu">
+              <li className="nav-item ">
+                <a className="nav-link text-center navMine" href="#home">
+                  Home
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link text-center navMine" href="#about">
+                  About
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link text-center navMine" href="#hotels">
+                  Hotels
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link text-center navMine" href="#tickets">
+                  Tickets
+                </a>
+              </li>
+
+              <li className="nav-item">
+                <a className="nav-link text-center navMine" href="#games">
+                  Games
+                </a>
+              </li>
+
+              <li className="nav-item">
+                <a className="nav-link text-center navMine" href="#team">
+                  Team
+                </a>
+              </li>
+
+              <li className="nav-item">
+                <a
+                  className="nav-link text-center navMine"
+                  id="cart"
+                  href="#cart"
+                >
+                  Cart
+                </a>
+              </li>
+            </ul>
+          </section>
+          {/* Navbar Section
   			<nav className="navbar navbar-expand-lg  theme-nav fixed-top">
 				<div className="container">
-					<a className="navbar-brand" href={`${process.env.PUBLIC_URL}/`}><img src="assets/images/logo.png" alt="logo" /></a>
+					<a className="navbar-brand" href={`${process.env.PUBLIC_URL}/`}><img  style={{width: 80, height: 80}} src="assets/images/marseilleLogo.png" alt="logo" /></a>
 					<button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainmenu"  aria-expanded="false" aria-label="Toggle navigation">
 						<span className="navbar-toggler-icon"><i className="fa fa-align-justify" aria-hidden="true"></i></span>
 					</button>
@@ -31,18 +99,25 @@ class Home extends React.Component {
 								<a className="nav-link" href="#home" >Home</a>
 							</li>
 							<li className="nav-item">
-								<a className="nav-link" href="#about" >about</a>
+								<a className="nav-link" href="#about" >About</a>
 							</li>
 							<li className="nav-item">
-								<a className="nav-link" href="#feature" >feature</a>
+								<a className="nav-link" href="#hotels" >Hotels</a>
+							</li>
+							<li className="nav-item">
+								<a className="nav-link" href="#tickets">Tickets</a>
 							</li>
 
 							<li className="nav-item">
-								<a className="nav-link" href="#screenshots" >screenshot</a>
+								<a className="nav-link" href="#games" >Games</a>
 							</li>
 
 							<li className="nav-item">
-								<a className="nav-link" href="#team">team</a>
+								<a className="nav-link" href="#team">Team</a>
+							</li>
+
+							<li className="nav-item">
+								<a className="nav-link" id="cart" href="#cart">Cart</a>
 							</li>
 							<li className="nav-item dropdown">
 								<a href="#news" className="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blog</a>
@@ -76,131 +151,151 @@ class Home extends React.Component {
 						</ul>
 					</div>
 				</div>
-			</nav>
+			</nav> */}
 
-  			{/* Home One Section Start */}
-			<section className="slide-bg" id="home">
-				<div className="animation-circle">
+          {/* Home One Section Start */}
+
+          {/* <div className="animation-circle">
 					<i></i>
 					<i></i>
 					<i></i>
-				</div>
-				<div className="container">
-					<div className="row">
-						<div className="col-md-6">
-							<div className="d-flex-1">
-								<div className="slide-text">
-									<div>
-										<h1>The best way to connect with your friend is with
-		  <br/><span className="main-title">ChatLoop!</span>
-										</h1>
-										<h4>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </h4>
-										<div className="slid-btn">
-											<a href=""><img src="assets/images/app1.png" alt="app1" className="img-fluid" data-tilt data-tilt-perspective="50" data-tilt-speed="350" data-tilt-max="1.8"/></a>
-											<a href=""><img src="assets/images/app2.png" alt="app2" className="img-fluid" data-tilt data-tilt-perspective="50" data-tilt-speed="350" data-tilt-max="1.8"/></a>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div className="col-md-6">
-							<div className="home-right">
-								<div className="mobile-slid">
-									<img src="assets/images/top-mobile.png" alt="top1" className="img-fluid"/>
-								</div>
-								<div className="profile-msg">
-									<img src="assets/images/top2.png" alt="top2" className="img-fluid" />
-								</div>
-								<div className="awesome">
-									<img src="assets/images/top3.png" alt="top3" className="img-fluid"/>
-								</div>
-								<div className="profile-1">
-									<img src="assets/images/top4.png" alt="top4" className="img-fluid"/>
-								</div>
-								<div className="emoji">
-									<img src="assets/images/top5.png" alt="top5" className="img-fluid"/>
-								</div>
-								<div className="profile-2">
-									<img src="assets/images/top1.png" alt="top1" className="img-fluid"/>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-  			{/* Home One Section End */}
+				</div> */}
+          <div className="container">
+            <div className="row">
+              <div className="col-md-12">
+                <div className="d-flex-1">
+                  <div id="mainText" >
+                    <div>
+                      <h1 className="mainTitle">
+                        Olympic Marseille
+                        <br />
+                        <span className="mainTitle">
+                          Coming To The United States!
+                        </span>
+                      </h1>
+                      <h4 className="mainTitle">
+                        Watch Olympic Marseille Take On Multiple teams in the
+                        League One Tournament in Washington D.C
+                      </h4>
+											<br></br>
+											<br></br>
+											<h3 id="timer">Time Will Go Here</h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {/* <div className="col-md-6">
+                <div className="home-right">
+                  <div className="mobile-slid"> */}
+                    {/* <img
+             
+                      src="assets/images/marseilleFirst.png"
+                      alt="top1"
+                      className="img-fluid"
+                    /> */}
+                  {/* </div>
+                </div>
+              </div> */}
+            </div>
+          </div>
+        </section>
+        {/* Home One Section End */}
 
-			{/* About Component*/}
-			<About />
+        {/* About Component*/}
+        <About />
 
-			{/*Feature Component*/}
-			<Feature />
+        {/*Feature Component*/}
+        <Feature />
 
-			{/*Work Component*/}
-			<Work />
+        {/*Work Component*/}
+        <Work />
 
-			{/*ScreenShot Component*/}
-			<ScreenShot />
+        {/*ScreenShot Component*/}
+        <ScreenShot />
 
-			{/*Team Component*/}
-			<Team />
+        {/*Team Component*/}
+        <Team />
 
-			{/*Price Component*/}
-			<Price />
-			
-			{/*Testimonial Component*/}
-			<Testimonial />
+        {/*Price Component*/}
+        <Price />
 
-			{/*Faq Component*/}
-			<FAQ />
+        {/*Testimonial Component*/}
+        <Testimonial />
 
-			{/*Blog Component*/}
-			<Blog />
-			
-			{/*download section*/}
-			<section className="download-bg">
-			   <div className="container">
-			      <div className="row">
-			         <div className="col-xl-3 display-flex">
-			            <div className="footer-logo">
-			               <img src="assets/images/footer-logo.png" alt="footer-logo" className="img-fluid"/>
-			            </div>
-			         </div>
-			         <div className="col-xl-5 display-flex">
-			            <div className="download-text">
-			               <h3>Download the Chatloop app and enjoy it</h3>
-			            </div>
-			         </div>
-			         <div className="col-xl-4 display-flex">
-			            <div className="download-img">
-			               <ul>
-			                  <li><img src="assets/images/app1.png" alt="foot-app" className="img-fluid"  data-tilt data-tilt-perspective="50" data-tilt-speed="350" data-tilt-max="1.8"/></li>
-			                  <li><img src="assets/images/app2.png" alt="foot-app1" className="img-fluid"  data-tilt data-tilt-perspective="50" data-tilt-speed="350" data-tilt-max="1.8"/></li>
-			               </ul>
-			            </div>
-			         </div>
-			      </div>
-			   </div>
-			</section>
-			{/*end download section*/}
+        {/*Faq Component*/}
+        <FAQ />
 
-			{/*Contact Component*/}
-			<Contact />
+        {/*Blog Component*/}
+        <Blog />
 
-			{/*Subscription Component*/}
-			<Subscribe />
+        {/*download section*/}
+        <section className="download-bg">
+          <div className="container">
+            <div className="row">
+              <div className="col-xl-3 display-flex">
+                <div className="footer-logo">
+                  <img
+                    src="assets/images/footer-logo.png"
+                    alt="footer-logo"
+                    className="img-fluid"
+                  />
+                </div>
+              </div>
+              <div className="col-xl-5 display-flex">
+                <div className="download-text">
+                  <h3>Download the Chatloop app and enjoy it</h3>
+                </div>
+              </div>
+              <div className="col-xl-4 display-flex">
+                <div className="download-img">
+                  <ul>
+                    <li>
+                      <img
+                        src="assets/images/app1.png"
+                        alt="foot-app"
+                        className="img-fluid"
+                        data-tilt
+                        data-tilt-perspective="50"
+                        data-tilt-speed="350"
+                        data-tilt-max="1.8"
+                      />
+                    </li>
+                    <li>
+                      <img
+                        src="assets/images/app2.png"
+                        alt="foot-app1"
+                        className="img-fluid"
+                        data-tilt
+                        data-tilt-perspective="50"
+                        data-tilt-speed="350"
+                        data-tilt-max="1.8"
+                      />
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        {/*end download section*/}
 
-			{/*Footer Component*/}
-			<Footer />
+        {/*Contact Component*/}
+        <Contact />
 
-			{/*tap-top*/}
-			<div className="tap-top">
-				<div>
-					<i className="fa fa-angle-up" aria-hidden="true"></i>
-				</div>
-			</div>
-  		</div>
-  	);
+        {/*Subscription Component*/}
+        <Subscribe />
+
+        {/*Footer Component*/}
+        <Footer />
+
+        {/*tap-top*/}
+        <div className="tap-top">
+          <div>
+            <i className="fa fa-angle-up" aria-hidden="true" />
+          </div>
+        </div>
+      </div>
+    );
   }
 }
 

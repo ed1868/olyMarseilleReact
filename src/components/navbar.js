@@ -15,19 +15,22 @@ class Navbar extends React.Component {
 						<li className="nav-item ">
 							<a className="nav-link" href={`${process.env.PUBLIC_URL}/home`} >Home</a>
 						</li>
-						<li className="nav-item">
-							<a className="nav-link" href={`${process.env.PUBLIC_URL}/home`} >about</a>
+						<li className="nav-item ">
+							<a className="nav-link" href={`${process.env.PUBLIC_URL}/home`} >About</a>
 						</li>
 						<li className="nav-item">
-							<a className="nav-link" href={`${process.env.PUBLIC_URL}/home`} >feature</a>
+							<a className="nav-link" href={`${process.env.PUBLIC_URL}/home`} >Hotels</a>
+						</li>
+						<li className="nav-item">
+							<a className="nav-link" href={`${process.env.PUBLIC_URL}/home`} >Games</a>
 						</li>
 
 						<li className="nav-item">
-							<a className="nav-link" href={`${process.env.PUBLIC_URL}/home`} >screenshot</a>
+							<a className="nav-link" href={`${process.env.PUBLIC_URL}/home`} >Tickets</a>
 						</li>
 
 						<li className="nav-item">
-							<a className="nav-link" href={`${process.env.PUBLIC_URL}/home`} >team</a>
+							<a className="nav-link" href={`${process.env.PUBLIC_URL}/home`} >Team</a>
 						</li>
 						<li className="nav-item dropdown">
 							<a href="#news" className="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blog</a>
