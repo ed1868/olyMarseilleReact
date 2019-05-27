@@ -40,7 +40,7 @@ class Home extends React.Component {
       <div>
         {/* Default First Section Class className="slide-bg" */}
 
-        <section className="sectionOne">
+        <section id="sectionOne" className="sectionOne">
           <section id="left-sidebar">
             <div class="logo">
               <a href="#about" className="navbar-brand">
@@ -63,7 +63,7 @@ class Home extends React.Component {
 
             <ul id="main-menu">
               <li className="nav-item ">
-                <a className="nav-link text-center navMine" href="#home">
+                <a className="nav-link text-center navMine" href="#sectionOne">
                   Home
                 </a>
               </li>
@@ -180,7 +180,7 @@ class Home extends React.Component {
 					<i></i>
 					<i></i>
 				</div> */}
-          <div className="container">
+          <div id="jumbotron" className="container">
             <div className="row">
               <div className="col-md-12">
                 <div className="d-flex-1">

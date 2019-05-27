@@ -16,7 +16,7 @@ class Work extends React.Component {
 	 }
   render() {
     return (
-      <section className="work" id="work">
+      <section className="work" id="hotels">
 
         <div className="container">
 
