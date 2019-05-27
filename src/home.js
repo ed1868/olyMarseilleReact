@@ -16,7 +16,6 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Banner from "./components/banner";
 
-
 import { faArrowAltCircleDown } from "@fortawesome/fontawesome-free-regular";
 
 //Testing DATE PICKER FOR REACT
@@ -27,14 +26,13 @@ import { SingleDatePicker } from "react-dates";
 
 library.add(faArrowAltCircleDown);
 
-
 class Home extends React.Component {
-	constructor(props) {
+  constructor(props) {
     super(props);
-    this.state ={
+    this.state = {
       date: null,
       focused: null
-    }
+    };
   }
   render() {
     document.body.classList.remove("inner-page");
@@ -43,7 +41,6 @@ class Home extends React.Component {
         {/* Default First Section Class className="slide-bg" */}
 
         <section className="sectionOne">
-					
           <section id="left-sidebar">
             <div class="logo">
               <a href="#about" className="navbar-brand">
@@ -189,7 +186,7 @@ class Home extends React.Component {
                 <div className="d-flex-1">
                   <div id="mainText">
                     <div>
-                      <h1 className="mainTitle">
+                      <h1 id="headerText" className="mainTitle">
                         Olympic Marseille
                         <br />
                         <span className="mainTitle">
@@ -230,20 +227,21 @@ class Home extends React.Component {
 
         {/*Feature Component*/}
         {/* <Feature /> */}
-				{/* Banner Component */}
-				{/* <Banner /> */}
+        {/* Banner Component */}
+        {/* <Banner /> */}
 
         {/*Work Component*/}
         <Work />
 
+        {/*Price Component*/}
+        <Price />
+
+				
         {/*ScreenShot Component*/}
         <ScreenShot />
 
         {/*Team Component*/}
         <Team />
-
-        {/*Price Component*/}
-        <Price />
 
         {/*Testimonial Component*/}
         <Testimonial />

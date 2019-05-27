@@ -33,11 +33,11 @@ class Price extends React.Component {
 
     // Dynamic Price Data Easy to Update
     let data = [
-        {title: 'Standard', lable:'Only the basic features', price:'49', features:'<li>24/7 On-site Support</li><li>real time sync</li><li>unlimited attachment</li><li>customize theme</li><li>priority email support</li>', link:'#'},
-        {title: 'Premium', lable:'Take it to the next level', price:'59', features:'<li>1 GB of space</li><li>real time sync</li><li>unlimited attachment</li><li>customize theme</li><li>priority email support</li>', link:'#'},
-        {title: 'Professional', lable:'Our biggest plan', price:'69', features:'<li>real time sync</li><li>unlimited attachment</li><li>customize theme</li><li>priority email support</li><li>priority email support</li>', link:'#'},
-        {title: 'Standard', lable:'Our biggest plan', price:'79', features:'<li>real time sync</li><li>unlimited attachment</li><li>customize theme</li><li>priority email support</li><li>priority email support</li>', link:'#'},
-        {title: 'Standard', lable:'Our biggest plan', price:'79', features:'<li>real time sync</li><li>unlimited attachment</li><li>customize theme</li><li>priority email support</li><li>priority email support</li>', link:'#'},
+        {title: 'D.C United Vs Marseille', lable:'07/24/2019', price:'150', features:'<li>Section 100, Row 02</li><li>real time sync</li><li>unlimited attachment</li><li>customize theme</li><li>priority email support</li>', link:'#'},
+        {title: 'D.C United Vs Marseille', lable:'07/27/2019', price:'230', features:'<li>Section 100, Row 02</li><li>real time sync</li><li>unlimited attachment</li><li>customize theme</li><li>priority email support</li>', link:'#'},
+        {title: 'D.C United Vs Marseille', lable:'07/29/2019', price:'189', features:'<li>Section 100, Row 02</li><li>unlimited attachment</li><li>customize theme</li><li>priority email support</li><li>priority email support</li>', link:'#'},
+        {title: 'D.C United Vs Marseille', lable:'07/29/2019', price:'190', features:'<li>Section 100, Row 02</li><li>unlimited attachment</li><li>customize theme</li><li>priority email support</li><li>priority email support</li>', link:'#'},
+        {title: 'D.C United Vs Marseilled', lable:'07/29/2019', price:'359', features:'<li>Section 100, Row 02</li><li>unlimited attachment</li><li>customize theme</li><li>priority email support</li><li>priority email support</li>', link:'#'},
     ];
 
     // Dynamic Price Data Loop
@@ -45,22 +45,22 @@ class Price extends React.Component {
         return (
             <div className="item" key={i}>
                 <div className="package-box">
-                  <h3>{val.title}</h3>
+                  <h3 className="subtitles">{val.title}</h3>
                     <div className="price-box">
-                        <span>$</span>
-                        <h2>{val.price}</h2>
+                        <span id="moneyTag">$</span>
+                        <h2 className="prices">{val.price}</h2>
                         <h5 className="plan-clr">
-                            <span className="d-block">Year</span>
+                            <span className="d-block"></span>
                         </h5>
                     </div>
                     <div className="price-plan text-center">
                         <ul>
                             <li>{val.lable}</li>
-                            <li>real time sync</li>
-                            <li>unlimited attachment</li>
-                            <li>customize theme</li>
+                            <li>7:00pm</li>
+                            <li>Section 100, Row 02</li>
+                            <li>Per Ticket</li>
                         </ul>
-                        <div className="price-plan-btn">Select Plan</div>
+                        <div id="priceButton"className="btn btn-primary bookButton">Add</div>
                     </div>
                 </div>
             </div>
@@ -68,12 +68,12 @@ class Price extends React.Component {
     });
 		
   	return (
-        <section className="theme-bg" id="package">
+        <section className="theme-bg" id="tickets">
             <div className="container">
                 <div className="row">
                     <div className="col-md-12 text-center">
                         <div className="section-title">
-                            <h2 className="text-white">Our Pricing Plans</h2>
+                            <h2 className="text-white">Tickets</h2>
                             <img src="assets/images/white-line.png" alt="title-line" className="img-fluid" />
                         </div>
                     </div>
