@@ -11,35 +11,13 @@ class Navbar extends React.Component {
   }
 
   cartUpdatorHotelOne = e => {
-    e.preventDefault();
+		e.preventDefault();
+		console.log('que tal ---', e.target.id)
     console.log("HOTEL ONE HAS BEEN CLICKED TO BE DELETED");
     console.log(this.props.cart);
+	
 
-    let hotelDeleted = this.props.cart.map(item => {
-      if (item.hotelName == "Hotel Washington Hilton") {
-				let index = this.props.cart.indexOf(item);
-				console.log('THE INDEX OF THIS ITEM IS ' , index);
-				
-        // console.log(index);
-        // this.props.cart.splice(index,1);
-        // console.log('AFTER SPLICE--',this.props.cart);
-
-        return index;
-      }
-      if (item.hotelName == "The Ritz-Carlton") {
-        let index = this.props.cart.indexOf(item);
-				console.log('THE INDEX OF THIS ITEM IS ' , index);
-
-				return index;
-			} 
-			if (item.hotelName == "Hyatt House"){
-				let index = this.props.cart.indexOf(item);
-				console.log('THE INDEX OF THIS ITEM IS ' , index);
-
-				return index;
-			}
-    });
-    this.props.cart.splice(hotelDeleted, 1);
+    this.props.cart.splice(e.target.id, 1);
 
     this.props.cartUpdatorHotelOne(this.props.cart);
   };
@@ -54,13 +32,14 @@ class Navbar extends React.Component {
       total += Number(currentPrice);
       return total;
     });
-
+		let idMaker = 0;
     const cartItems = this.props.cart.map(item => {
       console.log(item);
       let hotelName = item.hotelName;
       let hotelPrice = item.price;
 			let roomNumber = item.amountOfRooms;
-			let arrPosition = item.arrPosition;
+			let hotelId = item.hotelId;
+			let id = idMaker++;
 
       // total += Number(totalTracker);
 
@@ -69,7 +48,8 @@ class Navbar extends React.Component {
           hotelName={hotelName}
           hotelPrice={hotelPrice}
 					roomNumber={roomNumber}
-					arrPosition={arrPosition}
+					hotelId ={hotelId}
+					id={id}
           cartUpdatorHotelOne={this.cartUpdatorHotelOne}
         />
       );

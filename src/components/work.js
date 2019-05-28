@@ -14,18 +14,21 @@ class Work extends React.Component {
       hotelOne: [{
        price: "239",
        hotelName: "Hotel Washington Hilton" ,
-       amountOfRooms:"2"
+       amountOfRooms:"2",
+       hotelId: Number(0)
       }
       ],
       hotelTwo: [{
         price:"540", 
         hotelName:"The Ritz-Carlton" ,
-        amountOfRooms:"3"
+        amountOfRooms:"3",
+        hotelId: Number(1)
       }],
       hotelThree:[{
         price:"600",
-        hotelName:"Hyatt",
-        amountOfRooms:"1"
+        hotelName:"Hyatt House",
+        amountOfRooms:"1",
+        hotelId: Number(2)
       }]
     };
 

@@ -7,6 +7,7 @@ import Team from "./components/team";
 import Blog from "./components/blog";
 import Price from "./components/price";
 import Testimonial from "./components/testimonial";
+import Activities from "./components/activities";
 import FAQ from "./components/faq";
 import Contact from "./components/contact";
 import Subscribe from "./components/subscribe";
@@ -290,6 +291,10 @@ class Home extends React.Component {
 
         {/*Price Component*/}
         <Price />
+
+
+        {/*ActivitiesComponent*/}
+        <Activities />
 
         {/*ScreenShot Component*/}
         <ScreenShot />
