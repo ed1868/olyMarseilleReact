@@ -15,7 +15,7 @@ import { Link } from "react-router-dom";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Banner from "./components/banner";
-
+import Navbar from "./components/navbar";
 import { faArrowAltCircleDown } from "@fortawesome/fontawesome-free-regular";
 
 //Testing DATE PICKER FOR REACT
@@ -27,20 +27,75 @@ import { SingleDatePicker } from "react-dates";
 library.add(faArrowAltCircleDown);
 
 class Home extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      date: null,
-      focused: null
-    };
-  }
+  state = {
+    cart: []
+  };
+
+  onSearchSubmit = e => {
+    console.log(`I HAVE ENTERED THE CART WITH ${e}`);
+    const hotelOne = 239;
+
+    let joined = this.state.cart.concat(hotelOne);
+    this.setState({ cart: joined });
+
+    console.log("Final before nav", this.state.cart);
+  };
+
+  onClick = e => {
+    console.log("FIRST HOTEL OPTION ENTERED HOME");
+    let hotelOne = e;
+    let hotelData = hotelOne[0];
+
+    console.log(hotelData);
+    let joined = this.state.cart.concat(hotelData);
+    this.setState({ cart: joined });
+
+    console.log("Final before nav", this.state.cart);
+  };
+
+  onClickTwo = e => {
+    console.log(e);
+    console.log("SECOND HOTEL OPTION HAS ENTERED HOME");
+    let hotelTwo = e;
+    let hotelData = hotelTwo[0];
+
+    let joined = this.state.cart.concat(hotelData);
+    this.setState({ cart: joined });
+
+    console.log("Final SECOND before nav", this.state.cart);
+  };
+
+  onClickThree = e => {
+    console.log(e);
+    console.log("THIRD HOTEL OPTION HAS ENTERED HOME");
+    let hotelThree = e;
+    let hotelData = hotelThree[0];
+
+    let joined = this.state.cart.concat(hotelData);
+    this.setState({ cart: joined });
+
+    console.log("Final THIRD before nav", this.state.cart);
+  };
+
+  cartUpdatorHotelOne = e => {
+    console.log(e);
+    console.log("DELETE CLICK HOTEL ONE HAS ENTERED HOME");
+    this.setState({ cart: e });
+  };
+
   render() {
     document.body.classList.remove("inner-page");
     return (
       <div>
-        {/* Default First Section Class className="slide-bg" */}
-
         <section id="sectionOne" className="sectionOne">
+          <Navbar
+            cart={this.state.cart}
+            cartUpdatorHotelOne={this.cartUpdatorHotelOne}
+          
+          />
+          {/* Default First Section Class className="slide-bg" */}
+
+          {/* <section id="sectionOne" className="sectionOne">
           <section id="left-sidebar">
             <div class="logo">
               <a href="#about" className="navbar-brand">
@@ -105,7 +160,7 @@ class Home extends React.Component {
                 </a>
               </li>
             </ul>
-          </section>
+          </section> */}
           {/* Navbar Section
   			<nav className="navbar navbar-expand-lg  theme-nav fixed-top">
 				<div className="container">
@@ -231,12 +286,11 @@ class Home extends React.Component {
         {/* <Banner /> */}
 
         {/*Work Component*/}
-        <Work />
+        <Work onClick={this.onClick} onClickTwo={this.onClickTwo} />
 
         {/*Price Component*/}
         <Price />
 
-				
         {/*ScreenShot Component*/}
         <ScreenShot />
 

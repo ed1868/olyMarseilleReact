@@ -1,71 +1,147 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
+import CartItem from "../components/cartItem";
 
 class Navbar extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      items: this.props.cart
+    };
+  }
+
+  cartUpdatorHotelOne = e => {
+    e.preventDefault();
+    console.log("HOTEL ONE HAS BEEN CLICKED TO BE DELETED");
+    console.log(this.props.cart);
+
+    let hotelDeleted = this.props.cart.map(item => {
+      if (item.hotelName == "Hotel Washington Hilton") {
+				let index = this.props.cart.indexOf(item);
+				console.log('THE INDEX OF THIS ITEM IS ' , index);
+				
+        // console.log(index);
+        // this.props.cart.splice(index,1);
+        // console.log('AFTER SPLICE--',this.props.cart);
+
+        return index;
+      }
+      if (item.hotelName == "The Ritz-Carlton") {
+        let index = this.props.cart.indexOf(item);
+				console.log('THE INDEX OF THIS ITEM IS ' , index);
+
+				return index;
+			} 
+			if (item.hotelName == "Hyatt House"){
+				let index = this.props.cart.indexOf(item);
+				console.log('THE INDEX OF THIS ITEM IS ' , index);
+
+				return index;
+			}
+    });
+    this.props.cart.splice(hotelDeleted, 1);
+
+    this.props.cartUpdatorHotelOne(this.props.cart);
+  };
+
   render() {
-  	return (
-		<nav className="navbar navbar-expand-lg  theme-nav fixed-top">
-			<div className="container">
-				<a className="navbar-brand" href={`${process.env.PUBLIC_URL}/`}><img src="assets/images/logo.png" alt="logo" /></a>
-				<button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainmenu"  aria-expanded="false" aria-label="Toggle navigation">
-					<span className="navbar-toggler-icon"><i className="fa fa-align-justify" aria-hidden="true"></i></span>
-				</button>
-				<div className="collapse navbar-collapse" id="mainmenu">
-					<ul className="navbar-nav ml-auto" id="mymenu">
-						<li className="nav-item ">
-							<a className="nav-link" href={`${process.env.PUBLIC_URL}/home`} >Home</a>
-						</li>
-						<li className="nav-item ">
-							<a className="nav-link" href={`${process.env.PUBLIC_URL}/home`} >About</a>
-						</li>
-						<li className="nav-item">
-							<a className="nav-link" href={`${process.env.PUBLIC_URL}/home`} >Hotels</a>
-						</li>
-						<li className="nav-item">
-							<a className="nav-link" href={`${process.env.PUBLIC_URL}/home`} >Games</a>
-						</li>
+    console.log("las props", this.props.cart);
 
-						<li className="nav-item">
-							<a className="nav-link" href={`${process.env.PUBLIC_URL}/home`} >Tickets</a>
-						</li>
+    let total = 0;
+    const totalTracker = this.props.cart.map(item => {
+      let currentPrice = item.price;
 
-						<li className="nav-item">
-							<a className="nav-link" href={`${process.env.PUBLIC_URL}/home`} >Team</a>
-						</li>
-						<li className="nav-item dropdown">
-							<a href="#news" className="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blog</a>
-							<ul className="dropdown-menu">
-								<li className="nav-item"><Link className="nav-link" to={`${process.env.PUBLIC_URL}/blog-list`} >blog list</Link></li>
-								<li className="nav-item"><Link className="nav-link" to={`${process.env.PUBLIC_URL}/blog-details`} >blog details</Link></li>
-								<li className="nav-item"><Link className="nav-link" to={`${process.env.PUBLIC_URL}/blog-leftside`} >leftsidebar</Link></li>
-								<li className="nav-item"><Link className="nav-link" to={`${process.env.PUBLIC_URL}/blog-rightside`} >rightsidebar</Link></li>
-								<li className="nav-item"><Link className="nav-link" to={`${process.env.PUBLIC_URL}/blog-left-sidebar`} >details leftsidebar</Link></li>
-								<li className="nav-item"><Link className="nav-link" to={`${process.env.PUBLIC_URL}/blog-right-sidebar`} >details rightsidebar</Link></li>
-							</ul>
-						</li>
-						<li className="nav-item">
-							<a className="nav-link" href={`${process.env.PUBLIC_URL}/home`} >contact us</a>
-						</li>
-						<li className="nav-item dropdown">
-							<a className="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Other Page</a>
-							<ul className="dropdown-menu">
-								<li className="nav-item"><Link className="nav-link" to={`${process.env.PUBLIC_URL}/sign-in`}>Sign In</Link></li>
-								<li className="nav-item"><Link className="nav-link" to={`${process.env.PUBLIC_URL}/sign-up`}>Sign Up</Link></li>
-								<li className="nav-item"><Link className="nav-link" to={`${process.env.PUBLIC_URL}/forget-password`}>Forget Password</Link></li>
-								<li className="nav-item"><Link className="nav-link" to={`${process.env.PUBLIC_URL}/thank-you`}>Thank You</Link></li>
-								<li className="nav-item"><Link className="nav-link" to={`${process.env.PUBLIC_URL}/review`}>Review</Link></li>
-								<li className="nav-item"><Link className="nav-link" to={`${process.env.PUBLIC_URL}/faq`}>FAQ</Link></li>
-								<li className="nav-item"><Link className="nav-link" to={`${process.env.PUBLIC_URL}/coming-soon`}>Coming Soon</Link></li>
-								<li className="nav-item"><Link className="nav-link" to={`${process.env.PUBLIC_URL}/download`}>Download</Link></li>
-								<li className="nav-item"><Link className="nav-link" to={`${process.env.PUBLIC_URL}/request`}>Request Demo</Link></li>
-								<li className="nav-item"><Link className="nav-link" to={`${process.env.PUBLIC_URL}/404`}>404</Link></li>
-							</ul>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</nav>
-  	);
+      total += Number(currentPrice);
+      return total;
+    });
+
+    const cartItems = this.props.cart.map(item => {
+      console.log(item);
+      let hotelName = item.hotelName;
+      let hotelPrice = item.price;
+			let roomNumber = item.amountOfRooms;
+			let arrPosition = item.arrPosition;
+
+      // total += Number(totalTracker);
+
+      return (
+        <CartItem
+          hotelName={hotelName}
+          hotelPrice={hotelPrice}
+					roomNumber={roomNumber}
+					arrPosition={arrPosition}
+          cartUpdatorHotelOne={this.cartUpdatorHotelOne}
+        />
+      );
+    });
+
+    return (
+      <section id="left-sidebar">
+        <div class="logo">
+          <a href="#about" className="navbar-brand">
+            <img
+              id="marseilleLogo"
+              style={{ width: 110, height: 150 }}
+              src="assets/images/marseilleLogo.png"
+              alt="logo"
+            />
+          </a>
+        </div>
+
+        <div
+          id="mobile-menu-icon"
+          className="visible-xs"
+          onclick="toggle_main_menu();"
+        >
+          <span class="glyphicon glyphicon-th" />
+        </div>
+
+        <ul id="main-menu">
+          <li className="nav-item ">
+            <a className="nav-link text-center navMine" href="#sectionOne">
+              Home
+            </a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link text-center navMine" href="#about">
+              About
+            </a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link text-center navMine" href="#hotels">
+              Hotels
+            </a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link text-center navMine" href="#tickets">
+              Tickets
+            </a>
+          </li>
+
+          <li className="nav-item">
+            <a className="nav-link text-center navMine" href="#games">
+              Games
+            </a>
+          </li>
+
+          <li className="nav-item">
+            <a className="nav-link text-center navMine" href="#team">
+              Team
+            </a>
+          </li>
+
+          <li className="nav-item">
+            <a className="nav-link text-center navMine" id="cart" href="#cart">
+              Cart
+            </a>
+          </li>
+        </ul>
+        <div id="cart">
+          <ul id="cartList">{cartItems}</ul>
+        </div>
+        <p id="cartTotal">Total = {total} </p>
+      </section>
+    );
   }
 }
 
