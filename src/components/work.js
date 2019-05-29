@@ -170,7 +170,7 @@ class Work extends React.Component {
                     placeholder="search away.."
                   /> */}
 
-                  <button type="submit"  onClick={this.onClickTwo} className="btn btn-primary bookButton">Click ME</button>
+                  <button type="submit"  onClick={this.onClickTwo} className="btn btn-primary bookButton"> Add</button>
                 {/* </form> */}
               </div>
             </div>

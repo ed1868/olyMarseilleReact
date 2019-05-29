@@ -139,7 +139,7 @@ class Price extends React.Component {
                 id={val.id}
                 className="btn btn-primary bookButton"
               >
-                shit
+                 Add
               </button>
             </div>
           </div>
@@ -148,7 +148,7 @@ class Price extends React.Component {
     });
 
     return (
-      <section className="theme-bg" id="tickets">
+      <section className="backgroundColor" id="tickets">
         <div className="container">
           <div className="row">
             <div className="col-md-12 text-center">

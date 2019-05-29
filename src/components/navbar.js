@@ -33,6 +33,7 @@ class Navbar extends React.Component {
       return total;
     });
 		let idMaker = 0;
+
     const cartItems = this.props.cart.map(item => {
       console.log(item);
       let hotelName = item.hotelName;
@@ -43,6 +44,10 @@ class Navbar extends React.Component {
 			let ticketName = item.ticketName;
 			let ticketPrice = item.price;
 			let ticketTime = item.time;
+			let activityName = item.activityName;
+			let activityPrice = item.price;
+			let activityDate = item.date;
+			let activityTime = item.time;
 
       // total += Number(totalTracker);
 
@@ -56,6 +61,10 @@ class Navbar extends React.Component {
 					ticketName = {ticketName}
 					ticketPrice = {ticketPrice}
 					ticketTime = {ticketTime}
+					activityName ={activityName}
+					activityPrice = {activityPrice}
+					activityDate = {activityDate}
+					activityTime = {activityTime}
           cartUpdatorHotelOne={this.cartUpdatorHotelOne}
         />
       );
@@ -103,10 +112,9 @@ class Navbar extends React.Component {
               Tickets
             </a>
           </li>
-
           <li className="nav-item">
-            <a className="nav-link text-center navMine" href="#games">
-              Games
+            <a className="nav-link text-center navMine" href="#activities">
+              Activities
             </a>
           </li>
 
@@ -115,14 +123,16 @@ class Navbar extends React.Component {
               Team
             </a>
           </li>
-
+{/* 
           <li className="nav-item">
             <a className="nav-link text-center navMine" id="cart" href="#cart">
               Cart
             </a>
-          </li>
+          </li> */}
         </ul>
         <div id="cart">
+					<a id='cartHeader' className="nav-link text-center navMineCart">
+						Cart</a>
           <ul id="cartList">{cartItems}</ul>
         </div>
         <p id="cartTotal">Total = {total} </p>

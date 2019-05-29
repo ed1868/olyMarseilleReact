@@ -41,10 +41,25 @@ class Home extends React.Component {
     console.log(ticketData);
 
     let joined = this.state.cart.concat(ticketData);
+    console.log('joining' , joined);
+    this.setState({cart:joined});
+
+  }
+//ACTIVITY CART PROP SYSTEM 
+
+  onActivityClick = e => {
+    console.log('ACTIVITY HAS CONNECTED WITH HOME');
+    let activity = e;
+    let activityData = e[0];
+    
+    console.log(activityData);
+
+    let joined = this.state.cart.concat(activityData);
 
     this.setState({cart:joined});
 
   }
+
 
 //HOTEL CART PROP SYSTEM 
   onClick = e => {
@@ -285,7 +300,9 @@ class Home extends React.Component {
 
         {/* About Component*/}
         <About />
-
+        
+        {/*Team Component*/}
+        <Team />
         {/*Feature Component*/}
         {/* <Feature /> */}
         {/* Banner Component */}
@@ -299,13 +316,12 @@ class Home extends React.Component {
 
 
         {/*ActivitiesComponent*/}
-        <Activities />
+        <Activities  onActivityClick={this.onActivityClick} />
 
         {/*ScreenShot Component*/}
         <ScreenShot />
 
-        {/*Team Component*/}
-        <Team />
+
 
         {/*Testimonial Component*/}
         <Testimonial />
