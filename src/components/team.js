@@ -4,18 +4,18 @@ import $ from 'jquery';
 
 class Team extends React.Component {
 
-    showTeamDetails(i)
-    {
-        $('.team-box').hide(1000);
-        $('.team-hover-'+i).show(1000);
-        $('.team-hover-'+i).fadeIn("slow");
-    }
-    closeTeamDetails()
-    {
-        $(".team-hover").hide(1000);
-        $('.team-box').show(1000);
-        $('.team-box').fadeIn("slow");
-    }
+    // showTeamDetails(i)
+    // {
+    //     $('.team-box').hide(1000);
+    //     $('.team-hover-'+i).show(1000);
+    //     $('.team-hover-'+i).fadeIn("slow");
+    // }
+    // closeTeamDetails()
+    // {
+    //     $(".team-hover").hide(1000);
+    //     $('.team-box').show(1000);
+    //     $('.team-box').fadeIn("slow");
+    // }
 
   render() {
     // OwlCarousel Option for Team Members
@@ -55,15 +55,15 @@ class Team extends React.Component {
             <div className="item" key={i}>
                 <div className={`team-box`}>
                     <div className="team-under-box">
-                        <div className="team-under-box-button text-white" onClick={() => this.showTeamDetails(i)}>
+                        {/* <div className="team-under-box-button text-white" onClick={() => this.showTeamDetails(i)}>
                             <i className="fa fa-plus" aria-hidden="true"></i>
-                        </div>
+                        </div> */}
                         <img src={`assets/images/${val.photo}`} alt="1" className="img-fluid"/>
                         <div className="team-overlay">
                             <div className="social-icon">
                                 <ul >
                                   <li><a href={val.facebook} dangerouslySetInnerHTML={{ __html: '<i class="fa fa-facebook" aria-hidden="true"></i>' }}></a></li>
-                                  <li><a href={val.google} dangerouslySetInnerHTML={{ __html: '<i class="fa fa-google-plus" aria-hidden="true"></i>' }}></a></li>
+                                  <li><a href={val.google}   dangerouslySetInnerHTML={{ __html: '<i class="fa fa-google-plus" aria-hidden="true"></i>' }}></a></li>
                                   <li><a href={val.twitter}  dangerouslySetInnerHTML={{ __html: '<i class="fa fa-twitter" aria-hidden="true"></i>' }}></a></li>
                                   <li><a href={val.instagram}  dangerouslySetInnerHTML={{ __html: '<i class="fa fa-instagram" aria-hidden="true"></i>' }}></a></li>
                                   <li><a href={val.rss}  dangerouslySetInnerHTML={{ __html: '<i class="fa fa-rss" aria-hidden="true"></i>' }}></a></li>
@@ -105,7 +105,7 @@ class Team extends React.Component {
 
                         {data.map((value, index) =>    
                             <div className="col-md-12" key={index}>
-                                <div className={`team-hover team-hover-${index}`}>
+                                {/* <div className={`team-hover team-hover-${index}`}>
                                     <div className="row">
                                         <div className="col-md-4">
                                             <div  className="team-profile">
@@ -126,7 +126,7 @@ class Team extends React.Component {
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> */}
                             </div>
                         )}
                     </div>
