@@ -40,6 +40,9 @@ class Navbar extends React.Component {
 			let roomNumber = item.amountOfRooms;
 			let hotelId = item.hotelId;
 			let id = idMaker++;
+			let ticketName = item.ticketName;
+			let ticketPrice = item.price;
+			let ticketTime = item.time;
 
       // total += Number(totalTracker);
 
@@ -50,6 +53,9 @@ class Navbar extends React.Component {
 					roomNumber={roomNumber}
 					hotelId ={hotelId}
 					id={id}
+					ticketName = {ticketName}
+					ticketPrice = {ticketPrice}
+					ticketTime = {ticketTime}
           cartUpdatorHotelOne={this.cartUpdatorHotelOne}
         />
       );

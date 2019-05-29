@@ -32,16 +32,21 @@ class Home extends React.Component {
     cart: []
   };
 
-  onSearchSubmit = e => {
-    console.log(`I HAVE ENTERED THE CART WITH ${e}`);
-    const hotelOne = 239;
+  //TICKET CART PROP SYSTEN
+  onTicketClick = e => {
+    console.log('TICKET HAS CONNECTED WITH HOME');
+    let ticket= e;
+    let ticketData = e[0];
 
-    let joined = this.state.cart.concat(hotelOne);
-    this.setState({ cart: joined });
+    console.log(ticketData);
 
-    console.log("Final before nav", this.state.cart);
-  };
+    let joined = this.state.cart.concat(ticketData);
 
+    this.setState({cart:joined});
+
+  }
+
+//HOTEL CART PROP SYSTEM 
   onClick = e => {
     console.log("FIRST HOTEL OPTION ENTERED HOME");
     let hotelOne = e;
@@ -290,7 +295,7 @@ class Home extends React.Component {
         <Work onClick={this.onClick} onClickTwo={this.onClickTwo} />
 
         {/*Price Component*/}
-        <Price />
+        <Price onTicketClick={this.onTicketClick}/>
 
 
         {/*ActivitiesComponent*/}

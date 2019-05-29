@@ -33,9 +33,9 @@ class Activities extends React.Component {
 
     // Dynamic Price Data Easy to Update
     let data = [
-        {title: 'D.C United Vs Marseille', lable:'07/24/2019', price:'150', features:'<li>Section 100, Row 02</li><li>real time sync</li><li>unlimited attachment</li><li>customize theme</li><li>priority email support</li>', link:'#'},
-        {title: 'D.C United Vs Marseille', lable:'07/27/2019', price:'230', features:'<li>Section 100, Row 02</li><li>real time sync</li><li>unlimited attachment</li><li>customize theme</li><li>priority email support</li>', link:'#'},
-        {title: 'D.C United Vs Marseille', lable:'07/29/2019', price:'189', features:'<li>Section 100, Row 02</li><li>unlimited attachment</li><li>customize theme</li><li>priority email support</li><li>priority email support</li>', link:'#'},
+        {title: 'D.C United Vs Marseille', id:0, lable:'07/24/2019', price:'150', features:'<li>Section 100, Row 02</li><li>real time sync</li><li>unlimited attachment</li><li>customize theme</li><li>priority email support</li>', link:'#'},
+        {title: 'D.C United Vs Marseille', id:1, lable:'07/27/2019', price:'230', features:'<li>Section 100, Row 02</li><li>real time sync</li><li>unlimited attachment</li><li>customize theme</li><li>priority email support</li>', link:'#'},
+        {title: 'D.C United Vs Marseille',id:2, lable:'07/29/2019', price:'189', features:'<li>Section 100, Row 02</li><li>unlimited attachment</li><li>customize theme</li><li>priority email support</li><li>priority email support</li>', link:'#'},
         // {title: 'D.C United Vs Marseille', lable:'07/29/2019', price:'190', features:'<li>Section 100, Row 02</li><li>unlimited attachment</li><li>customize theme</li><li>priority email support</li><li>priority email support</li>', link:'#'},
         // {title: 'D.C United Vs Marseilled', lable:'07/29/2019', price:'359', features:'<li>Section 100, Row 02</li><li>unlimited attachment</li><li>customize theme</li><li>priority email support</li><li>priority email support</li>', link:'#'},
     ];
