@@ -18,7 +18,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Banner from "./components/banner";
 import Navbar from "./components/navbar";
 import { faArrowAltCircleDown } from "@fortawesome/fontawesome-free-regular";
-
+import FormService from "./components/formService";
 
 //Testing DATE PICKER FOR REACT
 
@@ -29,9 +29,29 @@ import { SingleDatePicker } from "react-dates";
 library.add(faArrowAltCircleDown);
 
 class Home extends React.Component {
-  state = {
-    cart: []
-  };
+  constructor(props){
+    super(props);
+    this.props = props;
+    this.state = {
+      cart: []
+      // clientFirstName : " ",
+      // clientLastName  : " ",
+      // checkIn : " ",
+      // checkOut: " ",
+      // fanClubNumber: " ",
+      // address: " ",
+      // city: " ",
+      // state: " ",
+      // zipcode: " ",
+      // nameOnCard: " ",
+      // creditCardNumber: " ",
+      // expirationDate: " ",
+      // securityCode: " "
+    };
+
+    this.FormService = new FormService();
+  }
+
 
   //TICKET CART PROP SYSTEN
   onTicketClick = e => {
@@ -102,9 +122,26 @@ class Home extends React.Component {
     this.setState({ cart: e });
   };
 
+  handleChange = e => {
+    console.log("changing");
+    const { name, value } = e.target;
+    // console.log(this.state.client[0]);
+
+    this.setState({ ...this.state, [name]: value });
+  };
+
+  handleFormSubmit = e => {
+    e.preventDefault();
+    console.log("form trying to be submitted");
+  };
+
+
   render() {
     document.body.classList.remove("inner-page");
-    console.log('THIS WILL BE THE CURRENT STATE OF THE HOME COMPONENT', this.state);
+    console.log(
+      "THIS WILL BE THE CURRENT STATE OF THE HOME COMPONENT",
+      this.state
+    );
     return (
       <div>
         <section id="sectionOne" className="sectionOne">
@@ -295,7 +332,6 @@ class Home extends React.Component {
           </div>
         </section>
         {/* Home One Section End */}
-
         {/* About Component*/}
         <About />
 
@@ -305,32 +341,145 @@ class Home extends React.Component {
         {/* <Feature /> */}
         {/* Banner Component */}
         {/* <Banner /> */}
-
         {/*Work Component*/}
         <Work onClick={this.onClick} onClickTwo={this.onClickTwo} />
-
         {/*Price Component*/}
         <Price onTicketClick={this.onTicketClick} />
-
         {/*ActivitiesComponent*/}
         <Activities onActivityClick={this.onActivityClick} />
-
         {/*ScreenShot Component*/}
-        <ScreenShot />
-
-        {/*Testimonial Component*/}
-        <Testimonial />
-
-        {/*Faq Component*/}
-        <FAQ />
-
-        {/*Blog Component*/}
-        <Blog />
-
-        {/*download section*/}
-        <section className="download-bg">
+            {/* CHECK OUT FORM  */}
+            <section id="checkoutForm">
+          <h1 className="text-black text-center">Checkout Form</h1>
           <div className="container">
+            <form onSubmit={this.handleFormSubmit}>
+              <label htmlFor="firstName">First Name : </label>
+              <input
+                autoComplete="off"
+                className="form-control"
+                id="firstName"
+                name="clientFirstName"
+                onChange={e => this.handleChange(e)}
+                type="text"
+              />
 
+              <label htmlFor="lastName">Last Name : </label>
+              <input
+                autoComplete="off"
+                className="form-control"
+                id="lastName"
+                name="clientLastName"
+                onChange={e => this.handleChange(e)}
+                type="text"
+              />
+              <label htmlFor="checkIn">Check In : </label>
+              <input
+                autoComplete="off"
+                className="form-control"
+                id="checkIn"
+                name="checkIn"
+                onChange={e => this.handleChange(e)}
+                type="date"
+              />
+              <label htmlFor="checkOut">Check Out : </label>
+              <input
+                autoComplete="off"
+                className="form-control"
+                id="checkOut"
+                name="checkOut"
+                onChange={e => this.handleChange(e)}
+                type="date"
+              />
+              <label htmlFor="checkOut">Fan Club ID : </label>
+              <input
+                autoComplete="off"
+                className="form-control"
+                id="fanClubNumber"
+                name="fanClubNumber"
+                onChange={e => this.handleChange(e)}
+                type="text"
+              />
+              <label htmlFor="checkOut">Address: </label>
+              <input
+                autoComplete="off"
+                className="form-control"
+                placeholder="Address"
+                id="address"
+                name="address"
+                onChange={e => this.handleChange(e)}
+                type="text"
+              />
+              <input
+                autoComplete="off"
+                className="form-control"
+                placeholder="city"
+                id="city"
+                name="city"
+                onChange={e => this.handleChange(e)}
+                type="text"
+              />
+              <input
+                autoComplete="off"
+                className="form-control"
+                placeholder="State"
+                id="state"
+                name="state"
+                onChange={e => this.handleChange(e)}
+                type="text"
+              />
+              <input
+                autoComplete="off"
+                className="form-control"
+                placeholder="Zip Code"
+                id="zipcode"
+                name="zipcode"
+                onChange={e => this.handleChange(e)}
+                type="text"
+              />
+              <label htmlFor="paymentDetails">Credit Card Number : </label>
+              <input
+                autoComplete="off"
+                className="form-control"
+                placeholder="cc number"
+                id="creditCardNumber"
+                name="creditCardNumber"
+                onChange={e => this.handleChange(e)}
+                type="text"
+              />
+              <label htmlFor="paymentDetails">Expiration Date : </label>
+              <input
+                autoComplete="off"
+                className="form-control"
+                placeholder="Exp Date"
+                id="expirationDate"
+                name="expirationDate"
+                onChange={e => this.handleChange(e)}
+                type="text"
+              />
+              <label htmlFor="paymentDetails">Security Number : </label>
+              <input
+                autoComplete="off"
+                className="form-control"
+                placeholder="000"
+                id="securityCode"
+                name="securityCode"
+                onChange={e => this.handleChange(e)}
+                type="text"
+              />
+              <input id="checkoutButton" type="submit" value="Submit" />
+            </form>
+          </div>
+        </section>
+        {/* <ScreenShot /> */}
+        {/*Testimonial Component*/}
+        {/* <Testimonial /> */}
+        {/*Faq Component*/}
+        {/* <FAQ /> */}
+        {/*Blog Component*/}
+        {/* <Blog /> */}
+        {/*download section*/}
+        {/* <section className="download-bg">
+          <div className="container"> */}
             {/* <div className="row">
               <div className="col-xl-3 display-flex">
                 <div className="footer-logo">
@@ -375,25 +524,21 @@ class Home extends React.Component {
                 </div>
               </div>
             </div> */}
-          </div>
-        </section>
+          {/* </div> */}
+       {/* </section> */}
         {/*end download section*/}
-
         {/*Contact Component*/}
-        <Contact />
-
+        {/* <Contact /> */}
         {/*Subscription Component*/}
-        <Subscribe />
-
+        {/* <Subscribe /> */}
         {/*Footer Component*/}
-        <Footer />
-
+        {/* <Footer /> */}
         {/*tap-top*/}
-        <div className="tap-top">
+        {/* <div className="tap-top">
           <div>
             <i className="fa fa-angle-up" aria-hidden="true" />
           </div>
-        </div>
+        </div> */}
       </div>
     );
   }

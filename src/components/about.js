@@ -58,7 +58,7 @@ class About extends React.Component {
                              {{color:' #24a6d9'}} id="marseille">Olympic Marseille</span></h3>
                              <br></br>
                              <h3>We Will Provide you with the best deals on hotels, Tickets to watch this thrilling tournament with style and comfort</h3>
-                                <img id="teamPic" src="assets/images/marseilleTeam.png" alt="stay-connected"/>
+                                {/* <img id="teamPic" src="assets/images/marseilleTeam.png" alt="stay-connected"/> */}
 
                           </div>
                        </div>
