@@ -19,6 +19,7 @@ import Banner from "./components/banner";
 import Navbar from "./components/navbar";
 import { faArrowAltCircleDown } from "@fortawesome/fontawesome-free-regular";
 
+
 //Testing DATE PICKER FOR REACT
 
 import "react-dates/initialize";
@@ -34,34 +35,31 @@ class Home extends React.Component {
 
   //TICKET CART PROP SYSTEN
   onTicketClick = e => {
-    console.log('TICKET HAS CONNECTED WITH HOME');
-    let ticket= e;
+    console.log("TICKET HAS CONNECTED WITH HOME");
+    let ticket = e;
     let ticketData = e[0];
 
     console.log(ticketData);
 
     let joined = this.state.cart.concat(ticketData);
-    console.log('joining' , joined);
-    this.setState({cart:joined});
-
-  }
-//ACTIVITY CART PROP SYSTEM 
+    console.log("joining", joined);
+    this.setState({ cart: joined });
+  };
+  //ACTIVITY CART PROP SYSTEM
 
   onActivityClick = e => {
-    console.log('ACTIVITY HAS CONNECTED WITH HOME');
+    console.log("ACTIVITY HAS CONNECTED WITH HOME");
     let activity = e;
     let activityData = e[0];
-    
+
     console.log(activityData);
 
     let joined = this.state.cart.concat(activityData);
 
-    this.setState({cart:joined});
+    this.setState({ cart: joined });
+  };
 
-  }
-
-
-//HOTEL CART PROP SYSTEM 
+  //HOTEL CART PROP SYSTEM
   onClick = e => {
     console.log("FIRST HOTEL OPTION ENTERED HOME");
     let hotelOne = e;
@@ -106,13 +104,13 @@ class Home extends React.Component {
 
   render() {
     document.body.classList.remove("inner-page");
+    console.log('THIS WILL BE THE CURRENT STATE OF THE HOME COMPONENT', this.state);
     return (
       <div>
         <section id="sectionOne" className="sectionOne">
           <Navbar
             cart={this.state.cart}
             cartUpdatorHotelOne={this.cartUpdatorHotelOne}
-          
           />
           {/* Default First Section Class className="slide-bg" */}
 
@@ -300,7 +298,7 @@ class Home extends React.Component {
 
         {/* About Component*/}
         <About />
-        
+
         {/*Team Component*/}
         <Team />
         {/*Feature Component*/}
@@ -312,16 +310,13 @@ class Home extends React.Component {
         <Work onClick={this.onClick} onClickTwo={this.onClickTwo} />
 
         {/*Price Component*/}
-        <Price onTicketClick={this.onTicketClick}/>
-
+        <Price onTicketClick={this.onTicketClick} />
 
         {/*ActivitiesComponent*/}
-        <Activities  onActivityClick={this.onActivityClick} />
+        <Activities onActivityClick={this.onActivityClick} />
 
         {/*ScreenShot Component*/}
         <ScreenShot />
-
-
 
         {/*Testimonial Component*/}
         <Testimonial />
@@ -335,7 +330,8 @@ class Home extends React.Component {
         {/*download section*/}
         <section className="download-bg">
           <div className="container">
-            <div className="row">
+
+            {/* <div className="row">
               <div className="col-xl-3 display-flex">
                 <div className="footer-logo">
                   <img
@@ -378,7 +374,7 @@ class Home extends React.Component {
                   </ul>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </section>
         {/*end download section*/}

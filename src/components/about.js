@@ -46,7 +46,6 @@ class About extends React.Component {
                              </div>
                              <div className="col-lg-3 col-6">
                                 <div className="chat-box">
-                                {/* <img src="assets/images/stay-connected.png" alt="stay-connected"/> */}
                                 <a href="#team" > <FontAwesomeIcon className="aboutIcons" icon={faFutbol}/></a>
                                       <h3 className="sub-title subtitles">Team</h3>
                                 </div>
@@ -59,6 +58,8 @@ class About extends React.Component {
                              {{color:' #24a6d9'}} id="marseille">Olympic Marseille</span></h3>
                              <br></br>
                              <h3>We Will Provide you with the best deals on hotels, Tickets to watch this thrilling tournament with style and comfort</h3>
+                                <img id="teamPic" src="assets/images/marseilleTeam.png" alt="stay-connected"/>
+
                           </div>
                        </div>
                     </div>

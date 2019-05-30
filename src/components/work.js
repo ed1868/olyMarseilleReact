@@ -11,64 +11,127 @@ class Work extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      hotelOne: [{
-       price: "239",
-       hotelName: "Hotel Washington Hilton" ,
-       amountOfRooms:"2",
-       hotelId: Number(0)
-      }
+      hotelOne: [
+        {
+          price: "340",
+          hotelName: "Hotel Washington Hilton",
+          amountOfRooms: "2",
+          option: Number(0),
+          hotelId: Number(0)
+        }
       ],
-      hotelTwo: [{
-        price:"540", 
-        hotelName:"The Ritz-Carlton" ,
-        amountOfRooms:"3",
-        hotelId: Number(1)
-      }],
-      hotelThree:[{
-        price:"600",
-        hotelName:"Hyatt House",
-        amountOfRooms:"1",
-        hotelId: Number(2)
-      }]
+      hotelOneOptTwo: [
+        {
+          price: "600",
+          hotelName: "Hotel Washington Hilton",
+          amountOfRooms: "2",
+          option: Number(1),
+          hotelId: Number(0)
+        }
+      ],
+      hotelTwo: [
+        {
+          price: "540",
+          hotelName: "The Ritz-Carlton",
+          amountOfRooms: "3",
+          option: Number(0),
+          hotelId: Number(1)
+        }
+      ],
+      hotelTwoOptTwo: [
+        {
+          price: "700",
+          hotelName: "The Ritz-Carlton",
+          amountOfRooms: "3",
+          option: Number(1),
+          hotelId: Number(1)
+        }
+      ],
+      hotelThree: [
+        {
+          price: "600",
+          hotelName: "Hyatt House",
+          amountOfRooms: "1",
+          option: Number(1),
+          hotelId: Number(2)
+        }
+      ],hotelThreeOptTwo: [
+        {
+          price: "800",
+          hotelName: "Hyatt House",
+          amountOfRooms: "1",
+          option:Number(1),
+          hotelId: Number(2)
+        }
+      ],
+      roomOption: Number(0),
     };
-
   }
 
+  
   onClick = e => {
     e.preventDefault();
-    console.log('ive been clicked');
-    this.props.onClick(this.state.hotelOne);
-
-  }
+    console.log("ive been clicked");
+    if(this.state.roomOption = 0){
+      this.props.onClick(this.state.hotelOne);
+    }
+    if(this.state.roomOption = 1){
+      this.props.onClick(this.state.hotelOneOptTwo);
+    }
+  };
   onClickTwo = e => {
-  
     e.preventDefault();
-    console.log('ive been clicked Two');
+    console.log("ive been clicked Two");
     this.props.onClickTwo(this.state.hotelTwo);
-
-  }
+  };
   onClickThree = e => {
     e.preventDefault();
 
-    console.log('number 3');
+    console.log("number 3");
 
     this.props.onClickTwo(this.state.hotelThree);
+  };
+
+  roomOption = e => {
+    e.preventDefault();
+    console.log('entro en room option ');
+    let roomOptionId = Number(e.target.value);
+    this.setState({roomOption: roomOptionId});
+
   }
 
 
   onFormSubmit = e => {
-
     e.preventDefault();
 
-
     this.props.onSubmit(this.state.term);
-
-    
   };
 
-
-
   render() {
+    //PRICE RENDERING 
+    let hotelOnePrice = "";
+    if(this.state.roomOption == 0){
+       hotelOnePrice = "340";
+    }
+    if(this.state.roomOption == 1){
+       hotelOnePrice = "600";
+    }
+    let hotelTwoPrice = "";
+    if(this.state.roomOption == 0 ){
+      hotelTwoPrice = "600";
+    }
+    if(this.state.roomOption == 1){
+      hotelTwoPrice = "800";
+    }
+    let hotelThreePrice = "";
+    if(this.state.roomOption == 0 ){
+      hotelThreePrice = "600";
+    }
+    if(this.state.roomOption == 1){
+      hotelThreePrice = "800";
+    }
+
+  
     
     return (
       <section className="work" id="hotels">
@@ -117,11 +180,18 @@ class Work extends React.Component {
                 <FontAwesomeIcon className="starIcon" icon={faStar} />
 
                 <p>Near Dupont Circle and four blocks from the metro station</p>
+                <label for="roomOption">
+                  Room : 
+                </label>
+                <select onChange= {this.roomOption}>
+                    <option value="0">Twin Bed</option>
+                    <option value="1">King Bed</option>
+                  </select>
                 <p>
-                  <span className="hotelPrice">$239 per Night</span>
+                  <span className="hotelPrice">${hotelOnePrice} per Night</span>
                 </p>
-           
-                  {/* <input
+
+                {/* <input
                     className="input is-info"
                     type="text"
                     value={this.state.term}
@@ -131,8 +201,14 @@ class Work extends React.Component {
                     placeholder="search away.."
                   /> */}
 
-                  <button type="submit"  onClick={this.onClick} className="btn btn-primary bookButton">Add</button>
-           
+                <button
+                  type="submit"
+                  onClick={this.onClick}
+                  className="btn btn-primary bookButton"
+                >
+                  Add
+                </button>
+
                 {/* <button type="button" className="btn btn-primary bookButton">
                   Add
                 </button> */}
@@ -156,11 +232,18 @@ class Work extends React.Component {
                   The Ritz-Carlton is a premium luxury five star hotel, situated
                   in the West End neighborhood
                 </p>
+                <label for="roomOption">
+                  Room : 
+                </label>
+                <select onChange= {this.roomOption}>
+                    <option value="0">Twin Bed</option>
+                    <option value="1">King Bed</option>
+                  </select>
                 <p>
-                  <span className="hotelPrice">$540 per Night</span>
+                  <span className="hotelPrice">${hotelTwoPrice} per Night</span>
                 </p>
                 {/* <form onSubmit={this.onFormSubmit} > */}
-                  {/* <input
+                {/* <input
                     className="input is-info"
                     type="text"
                     value={this.state.term}
@@ -170,7 +253,14 @@ class Work extends React.Component {
                     placeholder="search away.."
                   /> */}
 
-                  <button type="submit"  onClick={this.onClickTwo} className="btn btn-primary bookButton"> Add</button>
+                <button
+                  type="submit"
+                  onClick={this.onClickTwo}
+                  className="btn btn-primary bookButton"
+                >
+                  {" "}
+                  Add
+                </button>
                 {/* </form> */}
               </div>
             </div>
@@ -189,12 +279,22 @@ class Work extends React.Component {
                 <FontAwesomeIcon className="starIcon" icon={faStar} />
 
                 <p>The Wharf is the ideal location to explore all chicago</p>
-
+                <label for="roomOption">
+                  Room : 
+                </label>
+                <select onChange= {this.roomOption}>
+                    <option value="0">Twin Bed</option>
+                    <option value="1">King Bed</option>
+                  </select>
                 <p>
-                  <span className="hotelPrice">$600 per Night</span>
+                  <span className="hotelPrice">${hotelThreePrice} per Night</span>
                 </p>
 
-                <button type="button" onClick={this.onClickThree} className="btn btn-primary bookButton">
+                <button
+                  type="button"
+                  onClick={this.onClickThree}
+                  className="btn btn-primary bookButton"
+                >
                   Add
                 </button>
               </div>
