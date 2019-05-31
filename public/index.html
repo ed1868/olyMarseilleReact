@@ -30,96 +30,110 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.1/css/swiper.css"
     />
     <style>
-          .mainTitle {
-            text-align: center;
-            font-weight: 700;
-            margin-top: 50px;
-          }
-          .prices{
-            color:#24a6d9;
-          }
-          #moneyTag{
-            color:#24a6d9;
-          }
-          #priceButton{
-            background-color:#24a6d9;
-            color:white;
-          }
-          .cartItems{
-            /* padding:1px; */
-            text-align: center;
-            
-          }
-          #main-menu{
-            z-index: 500 
-          }
-          .backgroundColor{
-           background-color: #24a6d9;
-          }
-          #tickets{
-            /* background: -webkit-gradient(linear, left top, right top, from(white), to(black));
+      html {
+        scroll-behavior: smooth;
+      }
+      .mainTitle {
+        text-align: center;
+        font-weight: 700;
+        margin-top: 50px;
+        font-family: marseilleFont;
+      }
+      .prices {
+        color: #009ddc;
+        font-family: marseilleFont;
+      }
+      #moneyTag {
+        color: #009ddc;
+        font-family: marseilleFont;
+      }
+      #priceButton {
+        background-color: #009ddc;
+        font-family: marseilleFont;
+        color: white;
+      }
+      .cartItems {
+        /* padding:1px; */
+        text-align: center;
+        font-family: marseilleFont;
+      }
+      #main-menu {
+        z-index: 500;
+        font-family: marseilleFont;
+      }
+      .backgroundColor {
+        background-color: #009ddc;
+      }
+      #tickets {
+        /* background: -webkit-gradient(linear, left top, right top, from(white), to(black));
             background: linear-gradient(to right, white 0%, black 100%); } */
 
-            /* background-image: url(https://images.unsplash.com/photo-1516731566880-919c39006c9d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80);
+        /* background-image: url(https://images.unsplash.com/photo-1516731566880-919c39006c9d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80);
             background-size: cover; */
-          }
-          #actvities{
-            /* background: -webkit-gradient(linear, left top, right top, from(white), to(black));
+      }
+      #actvities {
+        /* background: -webkit-gradient(linear, left top, right top, from(white), to(black));
             background: linear-gradient(to right, white 0%, black 100%); } 
 /* 
             background-image: url(https://images.unsplash.com/photo-1516731566880-919c39006c9d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80);
             background-size: cover; */
-          }
-          .removeItem{
-            border-radius:5px;
-            color:red;
-            background: transparent;
-            font-size: 15px; 
-          }
-          #cartTotal{
-            text-align: center;
-          }
-          #cart{
-             /* border:1px solid red;  */
-            height: 300px; 
-            overflow: scroll;
-
-          }
-          .cartHotelName{
-            font-size:15px;
-            color:#24a6d9;
-            
-          }
-          .cartHotelPrice{
-            color: green;
-            font-size: 12px;
-            padding-top: 2px;
-          }
-          .cartRoomNumber{
-            color:#24a6d9;
-            font-size: 10px;
-          }
-          #mobile {
-            margin-top: -70px;
-          }
-          .logo {
-            margin-top: -100px;
-            padding: 20px;
-          }
-          #marseilleLogo {
-            margin-left: 25px;
-          }
-          #checkoutButton{
-            margin-left: 300px;
-          }
-          .navMine {
-            padding-top: 10px;
-            font-size: 20px;
-            color: #d79f41;
-            font-weight: 700;
-          }
-          .sectionOne {
-            /* background: -webkit-gradient(
+      }
+      .removeItem {
+        border-radius: 5px;
+        color: red;
+        background: transparent;
+        font-size: 15px;
+      }
+      #cartTotal {
+        text-align: center;
+        font-family: marseilleFont;
+      }
+      #cart {
+        /* border:1px solid red;  */
+        height: 300px;
+        overflow: scroll;
+        font-family: marseilleFont;
+      }
+      .cartHotelName {
+        font-size: 15px;
+        font-family: marseilleFont;
+        color: #009ddc;
+      }
+      .cartHotelPrice {
+        color: green;
+        font-size: 12px;
+        font-family: marseilleFont;
+        padding-top: 2px;
+      }
+      .cartRoomNumber {
+        color: #009ddc;
+        font-family: marseilleFont;
+        font-size: 10px;
+      }
+      #mobile {
+        margin-top: -70px;
+        font-family: marseilleFont;
+      }
+      .logo {
+        margin-top: -100px;
+        padding: 20px;
+        font-family: marseilleFont;
+      }
+      #marseilleLogo {
+        margin-left: 25px;
+      }
+      #checkoutButton {
+        margin-left: 300px;
+      }
+      .navMine {
+        padding-top: 10px;
+        font-size: 20px;
+        color: #c6a55b;
+        font-weight: 700;
+        font-family: marseilleFont;
+      }
+      .sectionOne {
+        /* background: -webkit-gradient(
               linear,
               left top,
               right top,
@@ -131,51 +145,52 @@
             padding-bottom: 0;
             padding-top: 80px; */
 
-            height: 800px;
+        height: 800px;
 
-            background-image: url("http://soccerstadiumdigest.com/wp-content/uploads/2018/07/Audi-Field-26.jpg");
-            background-size: cover;
-          }
+        background-image: url("http://soccerstadiumdigest.com/wp-content/uploads/2018/07/Audi-Field-26.jpg");
+        background-size: cover;
+      }
 
-          #goOn {
-            font-size: 40px;
-            margin-top: 200px;
-            /* animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+      #goOn {
+        font-size: 40px;
+        font-family: marseilleFont;
+        margin-top: 320px;
+        /* animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
              */
-            animation: shake 4s infinite;
-            transform: translate3d(0, 0, 0);
-            backface-visibility: hidden;
-            perspective: 1000px;
-            animation-iteration-count: infinite;
-          }
-          @keyframes shake {
-            10%,
-            90% {
-              transform: translate3d(-1px, 0, 0);
-            }
+        animation: shake 4s infinite;
+        transform: translate3d(0, 0, 0);
+        backface-visibility: hidden;
+        perspective: 1000px;
+        animation-iteration-count: infinite;
+      }
+      @keyframes shake {
+        10%,
+        90% {
+          transform: translate3d(-1px, 0, 0);
+        }
 
-            20%,
-            80% {
-              transform: translate3d(2px, 0, 0);
-            }
+        20%,
+        80% {
+          transform: translate3d(2px, 0, 0);
+        }
 
-            30%,
-            50%,
-            70% {
-              transform: translate3d(-4px, 0, 0);
-            }
+        30%,
+        50%,
+        70% {
+          transform: translate3d(-4px, 0, 0);
+        }
 
-            40%,
-            60% {
-              transform: translate3d(4px, 0, 0);
-            }
-            60%,
-            100% {
-              transform: translate3d(0, 0, 0);
-            }
-          }
-          .sectionTwo {
-            /* background: -webkit-gradient(
+        40%,
+        60% {
+          transform: translate3d(4px, 0, 0);
+        }
+        60%,
+        100% {
+          transform: translate3d(0, 0, 0);
+        }
+      }
+      .sectionTwo {
+        /* background: -webkit-gradient(
               linear,
               left top,
               right top,
@@ -186,199 +201,252 @@
             height: 1000px;
             padding-bottom: 0;
             padding-top: 80px; */
-          }
-          #dateSection{
-            padding-bottom: 80px;
-          }
-          #checkIn  {
-            width: 300px;
-            margin-left: 200px;
+      }
+      #dateSection {
+        padding-bottom: 80px;
+      }
+      #checkIn {
+        width: 330px;
+        margin-left: 200px;
+        font-family: marseilleFont;
+      }
+      #checkInLabel {
+        margin-left: 200px;
+        font-family: marseilleFont;
+      }
 
-          }
-          #checkInLabel{
-            margin-left: 200px;
-          }
+      #checkOut {
+        width: 330px;
+        font-family: marseilleFont;
+      }
+      #numberOfRooms {
+        margin-top: -90px;
+        font-family: marseilleFont;
+        width: 250px;
+        margin-left: 420px;
+      }
+      #checkOutLabel {
+      }
+      #mainText {
+        color: white;
+        font-family: marseilleFont;
+        text-align: center;
+      }
+      #headerText {
+        font-size: 60px;
+        font-family: marseilleFont;
+      }
+      .box {
+        -webkit-box-shadow: 0px 1px 5px 3px #f9f9f9;
+        box-shadow: 0px 1px 5px 3px #f9f9f9;
+        background: #ffffff;
+        border: 1px solid rgba(89, 96, 130, 0.1);
+        padding: 30px 25px 25px;
+      }
+      #cartHeader {
+        padding-top: 30px;
+        font-size: 20px;
+        color: #c6a55b;
+        font-weight: 700;
+      }
+      #cartTotal {
+        font-size: 20px;
+        /* color: #c6a55b; */
+        color: #009ddc;
 
-          #checkOut  {
-            width: 300px;
-          }
+        font-weight: 700;
+      }
+      .banner {
+        width: 100%;
+      }
+      #bannePic {
+        width: 100%;
+        height: 500px;
+      }
+      .starIcon {
+        padding-left: 5px;
+        font-size: 20px;
+        color: #c6a55b;
+      }
+      .hotelAddress {
+        font-size: 12px;
+      }
+      #cartList {
+        text-align: center;
+        padding-top: 5px;
+        overflow: scroll;
+        font-family: marseilleFont;
+        -webkit-overflow-scrolling: touch;
+      }
+      .bookButton {
+        width: 150px;
+      }
+      .box img {
+        height: 250px;
+        -webkit-box-shadow: 0px 1px 5px 3px #f9f9f9;
+        width: 250px;
+        border-radius: 10px;
+      }
+      .subtitles {
+        color: #c6a55b;
+        font-family: marseilleFont;
+      }
+      #hotelClickBait {
+        padding-top: 20px;
+        font-size: 18px;
+        font-family: marseilleFont;
+      }
+      #hotelCellOne {
+        height: 400px;
+        font-family: marseilleFont;
+      }
+      #marseille {
+        color: #009ddc;
+        font-family: marseilleFont;
+      }
+      #timer {
+        color: white;
+        font-weight: 700;
+        text-align: center;
+      }
 
-          #checkOutLabel{
-            margin-left: 220px;
-          }
-          #mainText {
-            color: white;
-            text-align: center;
-          }
-          #headerText{
-            font-size: 60px;
-          }
-          .box {
-            -webkit-box-shadow: 0px 1px 5px 3px #f9f9f9;
-            box-shadow: 0px 1px 5px 3px #f9f9f9;
-            background: #ffffff;
-            border: 1px solid rgba(89, 96, 130, 0.1);
-            padding: 30px 25px 25px;
-          }
+      #teamInfo {
+        width: 100%;
+        height: 600px;
+        /* background-image: url('./assets/images/marseilleTeam.png'); */
+        /* background-size: cover; */
+        /* background-color:red; */
+      }
 
-          .banner{
-            width: 100%;
-          }
-          #bannePic{
-            width: 100%;
-            height: 500px;
-          }
-          .starIcon{
-            padding-left: 5px;
-            font-size: 20px;
-            color: #d79f41;
-          }
-          #cartList{
-          
-            text-align: center;
-            padding-top: 5px;
-            overflow: scroll;
-            -webkit-overflow-scrolling: touch;
-          }
-          .bookButton{
-            width: 150px;
-          }
-          .box img{
-            height: 250px;
-            -webkit-box-shadow: 0px 1px 5px 3px #f9f9f9;
-            width: 250px;
-            border-radius: 10px;
-          }
-          .subtitles {
-            color: #d79f41;
-          }
-          #hotelClickBait {
-            padding-top: 20px;
-            font-size: 18px;
-          }
-          #hotelCellOne {
-            height: 400px;
-          }
-          #timer {
-            color: white;
-            font-weight: 700;
-            text-align: center;
-          }
+      #teamPic {
+        border-radius: 5px;
+        margin-top: 20px;
+        height: 600px;
+        width: 90%;
+      }
+      #left-sidebar {
+        z-index: 500; /*Add this*/
+        font-family: marseilleFont;
+        vertical-align: middle;
+        line-height: 20px;
 
-          #teamInfo{
-            width: 100%;
-            height: 600px;
-            /* background-image: url('./assets/images/marseilleTeam.png'); */
-            /* background-size: cover; */
-            /* background-color:red; */
-          }
+        height: 100%;
+        font-family: Lato, sans-serif;
+        position: fixed;
 
-          #teamPic{
-            border-radius: 5px;
-            margin-top:20px;
-            height: 600px;
-            width: 90%;
+        top: 0;
+        left: 3%;
+        width: 200px;
+        max-width: 500px;
+        min-width: 150px;
+        background: -moz-linear-gradient(
+          top,
+          rgba(0, 0, 0, 0.29) 0%,
+          rgba(0, 0, 0, 0) 78%,
+          rgba(0, 0, 0, 0) 100%
+        );
+        background: -webkit-gradient(
+          linear,
+          left top,
+          left bottom,
+          color-stop(0%, rgba(0, 0, 0, 0.29)),
+          color-stop(78%, rgba(0, 0, 0, 0)),
+          color-stop(100%, rgba(0, 0, 0, 0))
+        );
+        background: -webkit-linear-gradient(
+          top,
+          rgba(0, 0, 0, 0.29) 0%,
+          rgba(0, 0, 0, 0) 78%,
+          rgba(0, 0, 0, 0) 100%
+        );
+        background: -o-linear-gradient(
+          top,
+          rgba(0, 0, 0, 0.29) 0%,
+          rgba(0, 0, 0, 0) 78%,
+          rgba(0, 0, 0, 0) 100%
+        );
+        background: -ms-linear-gradient(
+          top,
+          rgba(0, 0, 0, 0.29) 0%,
+          rgba(0, 0, 0, 0) 78%,
+          rgba(0, 0, 0, 0) 100%
+        );
+        background: linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0.29) 0%,
+          rgba(0, 0, 0, 0) 78%,
+          rgba(0, 0, 0, 0) 100%
+        );
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4a000000', endColorstr='#00000000',GradientType=0 );
+      }
+      #transfer {
+        margin-left: 10px;
+      }
+      .navLinks {
+        color: #c6a55b;
+        font-family: marseilleFont;
+      }
 
-          }
-          #left-sidebar {
-            z-index: 500; /*Add this*/
+      .subHeaders {
+        font-size: 50px;
+        color: black;
+        font-family: marseilleFont;
+      }
 
-            vertical-align: middle;
-            line-height: 20px;
+      .aboutIcons {
+        font-size: 40px;
+        color: #24a6d9;
+      }
+      .aboutIcons:hover {
+        animation: shake 4s infinite;
+        transform: translate3d(0, 0, 0);
+        backface-visibility: hidden;
+        perspective: 1000px;
+      }
 
-            height: 100%;
-            font-family: Lato, sans-serif;
-            position: fixed;
+      @keyframes shake {
+        10%,
+        90% {
+          transform: translate3d(-1px, 0, 0);
+        }
 
-            top: 0;
-            left: 3%;
-            width: 200px;
-            max-width: 500px;
-            min-width: 150px;
-            background: -moz-linear-gradient(
-              top,
-              rgba(0, 0, 0, 0.29) 0%,
-              rgba(0, 0, 0, 0) 78%,
-              rgba(0, 0, 0, 0) 100%
-            );
-            background: -webkit-gradient(
-              linear,
-              left top,
-              left bottom,
-              color-stop(0%, rgba(0, 0, 0, 0.29)),
-              color-stop(78%, rgba(0, 0, 0, 0)),
-              color-stop(100%, rgba(0, 0, 0, 0))
-            );
-            background: -webkit-linear-gradient(
-              top,
-              rgba(0, 0, 0, 0.29) 0%,
-              rgba(0, 0, 0, 0) 78%,
-              rgba(0, 0, 0, 0) 100%
-            );
-            background: -o-linear-gradient(
-              top,
-              rgba(0, 0, 0, 0.29) 0%,
-              rgba(0, 0, 0, 0) 78%,
-              rgba(0, 0, 0, 0) 100%
-            );
-            background: -ms-linear-gradient(
-              top,
-              rgba(0, 0, 0, 0.29) 0%,
-              rgba(0, 0, 0, 0) 78%,
-              rgba(0, 0, 0, 0) 100%
-            );
-            background: linear-gradient(
-              to bottom,
-              rgba(0, 0, 0, 0.29) 0%,
-              rgba(0, 0, 0, 0) 78%,
-              rgba(0, 0, 0, 0) 100%
-            );
-            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4a000000', endColorstr='#00000000',GradientType=0 );
-          }
+        20%,
+        80% {
+          transform: translate3d(2px, 0, 0);
+        }
 
-          .navLinks {
-            font-family: Lato, sans-serif;
-            color: #d79f41;
-          }
+        30%,
+        50%,
+        70% {
+          transform: translate3d(-4px, 0, 0);
+        }
 
-          .subHeaders {
-            font-size: 50px;
-            color: black;
-          }
+        40%,
+        60% {
+          transform: translate3d(4px, 0, 0);
+        }
+      }
+      #roomDropDown {
+        width: 200px;
+        font-family: marseilleFont;
+      }
+      #roomDropDown option {
+        padding: 20px;
+        font-family: marseilleFont;
+      }
+      #ticketCat {
+        font-family: marseilleFont;
+        width: 150px;
+        margin: auto;
+      }
+      @font-face {
+        font-family: marseilleFont;
+        src: url("./assets/fonts/Avenir.ttc");
+      }
 
-          .aboutIcons {
-            font-size: 40px;
-            color: #24a6d9;
-          }
-          .aboutIcons:hover {
-            animation: shake 4s infinite;
-            transform: translate3d(0, 0, 0);
-            backface-visibility: hidden;
-            perspective: 1000px;
-          }
-
-          @keyframes shake {
-            10%,
-            90% {
-              transform: translate3d(-1px, 0, 0);
-            }
-
-            20%,
-            80% {
-              transform: translate3d(2px, 0, 0);
-            }
-
-            30%,
-            50%,
-            70% {
-              transform: translate3d(-4px, 0, 0);
-            }
-
-            40%,
-            60% {
-              transform: translate3d(4px, 0, 0);
-            }
-          }
+      a:hover {
+        color: #009ddc !important;
+      }
     </style>
   </head>
   <body

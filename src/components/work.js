@@ -156,21 +156,34 @@ class Work extends React.Component {
                 className="form-control"
                 id="checkIn"
                 name="checkIn"
-                onChange={e => this.handleChange(e)}
+                // onChange={e => this.handleChange(e)}
                 type="date"
               />
             </div>
             <div  className="col-md-6 ">
-              <label id="checkOutLabel" htmlFor="checkOut">  : Check Out </label>
+              <label id="checkOutLabel" htmlFor="checkOut"> Check Out: </label>
               <input
                 autoComplete="off"
                 className="form-control"
                 id="checkOut"
                 name="checkOut"
-                onChange={e => this.handleChange(e)}
+                // onChange={e => this.handleChange(e)}
                 type="date"
               />
             </div>
+            
+          </div>
+          <div className="roomNumber">
+          <label id="numberOfRooms" className="numberOfRooms" htmlFor="numberOfRooms"># of Rooms : </label>
+              <input
+                autoComplete="off"
+                className="form-control numberOfRooms"
+                id="numberOfRooms"
+                placeholder="Number of Rooms "
+                name="numberOfRooms"
+                // onChange={e => this.handleChange(e)}
+                type="number"
+              />
           </div>
 
           {/* HOTEL LIST RENDERING */}
@@ -191,12 +204,16 @@ class Work extends React.Component {
                 <FontAwesomeIcon className="starIcon" icon={faStar} />
                 <FontAwesomeIcon className="starIcon" icon={faStar} />
 
-                <p>Near Dupont Circle and four blocks from the metro station</p>
+                  
+                <p>Services: Pool-side Bar , Gym , Breakfast Included</p>
+                <p className="hotelAddress">1919 Connecticut Ave NW</p>
+                <hr></hr>
                 <label for="roomOption">Room :</label>
-                <select onChange={this.roomOption}>
+                <select className="form-control" onChange={this.roomOption}>
                   <option value="0">Twin Bed</option>
                   <option value="1">King Bed</option>
                 </select>
+                <br></br>
                 <p>
                   <span className="hotelPrice">${hotelOnePrice} per Night</span>
                 </p>
@@ -239,14 +256,17 @@ class Work extends React.Component {
                 <FontAwesomeIcon className="starIcon" icon={faStar} />
 
                 <p>
-                  The Ritz-Carlton is a premium luxury five star hotel, situated
-                  in the West End neighborhood
+                  Services: Pool-side Bar , Gym , Breakfast Included
                 </p>
+                {/* //LINK THIS ADDRESS TO HOTEL GOOGLE MAP ADDRESS */}
+                <p className="hotelAddress">1919 Connecticut Ave NW</p>
+                <hr></hr>
                 <label for="roomOption">Room :</label>
-                <select onChange={this.roomOption}>
+                <select  className="form-control" onChange={this.roomOption}>
                   <option value="0">Twin Bed</option>
                   <option value="1">King Bed</option>
                 </select>
+                <br></br>
                 <p>
                   <span className="hotelPrice">${hotelTwoPrice} per Night</span>
                 </p>
@@ -286,12 +306,16 @@ class Work extends React.Component {
                 <FontAwesomeIcon className="starIcon" icon={faStar} />
                 <FontAwesomeIcon className="starIcon" icon={faStar} />
 
-                <p>The Wharf is the ideal location to explore all chicago</p>
+                <p>Services: Pool-side Bar , Gym , Breakfast Included</p>
+                <p className="hotelAddress">1919 Connecticut Ave NW</p>
+                <hr></hr>
                 <label for="roomOption">Room :</label>
-                <select onChange={this.roomOption}>
+                <select className="form-control" onChange={this.roomOption}>
                   <option value="0">Twin Bed</option>
                   <option value="1">King Bed</option>
                 </select>
+                <br></br>
+             
                 <p>
                   <span className="hotelPrice">
                     ${hotelThreePrice} per Night

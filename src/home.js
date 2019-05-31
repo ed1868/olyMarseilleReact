@@ -18,8 +18,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Banner from "./components/banner";
 import Navbar from "./components/navbar";
 import { faArrowAltCircleDown } from "@fortawesome/fontawesome-free-regular";
-import FormService from "./components/formService";
+import PaymentCard from 'react-payment-card-component'
 
+import FormService from './components/formService';
 //Testing DATE PICKER FOR REACT
 
 import "react-dates/initialize";
@@ -346,19 +347,17 @@ class Home extends React.Component {
                   <div id="mainText">
                     <div>
                       <h1 id="headerText" className="mainTitle">
-                        Olympic Marseille
+                        OM U.S Tour Experience
                         <br />
                         <span className="mainTitle">
-                          Coming To The United States!
                         </span>
                       </h1>
                       <h4 className="mainTitle">
-                        Watch Olympic Marseille Take On Multiple teams in the
-                        League One Tournament in Washington D.C
+                  
                       </h4>
                       <br />
                       <br />
-                      <h3 id="timer">Time Will Go Here</h3>
+                      <h3 id="timer">Timer Will Go Here</h3>
                     </div>
                     <FontAwesomeIcon id="goOn" icon={faArrowAltCircleDown} />
                   </div>
@@ -383,8 +382,9 @@ class Home extends React.Component {
         {/* About Component*/}
         <About />
 
+
         {/*Team Component*/}
-        <Team />
+        {/* <Team /> */}
         {/*Feature Component*/}
         {/* <Feature /> */}
         {/* Banner Component */}
@@ -400,7 +400,7 @@ class Home extends React.Component {
         <section id="checkoutForm">
           <h1 className="text-black text-center">Checkout Form</h1>
           <div className="container">
-            <form onSubmit={this.handleFormSubmit}>
+            <form className="" onSubmit={this.handleFormSubmit}>
               <label htmlFor="firstName">First Name : </label>
               <input
                 autoComplete="off"
@@ -432,8 +432,7 @@ class Home extends React.Component {
               <input
                 autoComplete="off"
                 className="form-control"
-                id="checkIn"
-                className="checkIn"
+                id=""
                 name="checkIn"
                 onChange={e => this.handleChange(e)}
                 type="date"
@@ -442,7 +441,7 @@ class Home extends React.Component {
               <input
                 autoComplete="off"
                 className="form-control"
-                id="checkOut"
+                id=""
                 name="checkOut"
                 onChange={e => this.handleChange(e)}
                 type="date"
@@ -533,8 +532,20 @@ class Home extends React.Component {
                 onChange={e => this.handleChange(e)}
                 type="text"
               />
+         {/* <PaymentCard
+      bank="itau"
+      model="personnalite"
+      type="black"
+      brand="mastercard"
+      number="4111111111111111"
+      cvv="202"
+      holderName="Owen Lars"
+      expiration="12/20"
+      flipped={false}
+    /> */}
               <input id="checkoutButton" type="submit" value="Submit" />
             </form>
+            
           </div>
         </section>
         {/* <ScreenShot /> */}

@@ -127,10 +127,22 @@ class Price extends React.Component {
                 <span className="d-block" />
               </h5>
             </div>
+            <br></br>
+            <select id="ticketCat" className="form-control" onChange={this.roomOption}>
+                  <option value="0">Gold Ticket</option>
+                  <option value="1">Silver Ticket</option>
+                  <option value="2">Bronze Ticket</option>
+                </select>
+           
             <div className="price-plan text-center">
               <ul>
                 <li>{val.lable}</li>
                 <li>7:00pm</li>
+                <li>
+                  Add Transfer To and From for $100
+                  <input className="" type="radio" name="transfer" id="transfer" value="true" />
+                </li>
+           
                 <li>Section 100, Row 02</li>
                 <li>Per Ticket</li>
               </ul>

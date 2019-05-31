@@ -93,36 +93,31 @@ class Navbar extends React.Component {
 
         <ul id="main-menu">
           <li className="nav-item ">
-            <a className="nav-link text-center navMine" href="#sectionOne">
+            <a id="homeNav" className="nav-link text-center navMine" href="#sectionOne">
               Home
             </a>
           </li>
           <li className="nav-item">
-            <a className="nav-link text-center navMine" href="#about">
+            <a  id="aboutNav"className="nav-link text-center navMine" href="#about">
               About
             </a>
           </li>
           <li className="nav-item">
-            <a className="nav-link text-center navMine" href="#hotels">
+            <a  id="hotelNav"className="nav-link text-center navMine" href="#hotels">
               Hotels
             </a>
           </li>
           <li className="nav-item">
-            <a className="nav-link text-center navMine" href="#tickets">
+            <a  id="idNav"className="nav-link text-center navMine" href="#tickets">
               Tickets
             </a>
           </li>
           <li className="nav-item">
-            <a className="nav-link text-center navMine" href="#activities">
+            <a id="idActivities" className="nav-link text-center navMine" href="#activities">
               Activities
             </a>
           </li>
-
-          <li className="nav-item">
-            <a className="nav-link text-center navMine" href="#team">
-              Team
-            </a>
-          </li>
+          
 {/* 
           <li className="nav-item">
             <a className="nav-link text-center navMine" id="cart" href="#cart">
