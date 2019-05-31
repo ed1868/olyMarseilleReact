@@ -29,7 +29,7 @@ import { SingleDatePicker } from "react-dates";
 library.add(faArrowAltCircleDown);
 
 class Home extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.props = props;
     this.state = {
@@ -51,7 +51,6 @@ class Home extends React.Component {
 
     this.FormService = new FormService();
   }
-
 
   //TICKET CART PROP SYSTEN
   onTicketClick = e => {
@@ -133,8 +132,57 @@ class Home extends React.Component {
   handleFormSubmit = e => {
     e.preventDefault();
     console.log("form trying to be submitted");
-  };
 
+    const {
+      cart,
+      clientFirstName,
+      clientLastName,
+      checkIn,
+      checkOut,
+      fanClubNumber,
+      address,
+      city,
+      state,
+      zipcode,
+      nameOnCard,
+      creditCardNumber,
+      expirationDate,
+      securityCode
+    } = this.state;
+
+    this.FormService.addShoppingCart({
+      cart,
+      clientFirstName,
+      clientLastName,
+      checkIn,
+      checkOut,
+      fanClubNumber,
+      address,
+      city,
+      state,
+      zipcode,
+      nameOnCard,
+      creditCardNumber,
+      expirationDate,
+      securityCode
+    });
+    this.setState({
+      cart: [],
+      clientFirstName: " ",
+      clientLastName: " ",
+      checkIn: " ",
+      checkOut: " ",
+      fanClubNumber: " ",
+      address: " ",
+      city: " ",
+      state: " ",
+      zipcode: " ",
+      nameOnCard: " ",
+      creditCardNumber: " ",
+      expirationDate: " ",
+      securityCode: " "
+    });
+  };
 
   render() {
     document.body.classList.remove("inner-page");
@@ -348,8 +396,8 @@ class Home extends React.Component {
         {/*ActivitiesComponent*/}
         <Activities onActivityClick={this.onActivityClick} />
         {/*ScreenShot Component*/}
-            {/* CHECK OUT FORM  */}
-            <section id="checkoutForm">
+        {/* CHECK OUT FORM  */}
+        <section id="checkoutForm">
           <h1 className="text-black text-center">Checkout Form</h1>
           <div className="container">
             <form onSubmit={this.handleFormSubmit}>
@@ -362,13 +410,21 @@ class Home extends React.Component {
                 onChange={e => this.handleChange(e)}
                 type="text"
               />
-
               <label htmlFor="lastName">Last Name : </label>
               <input
                 autoComplete="off"
                 className="form-control"
                 id="lastName"
                 name="clientLastName"
+                onChange={e => this.handleChange(e)}
+                type="text"
+              />
+              <label htmlFor="numberOfNights">Number of Nights : </label>
+              <input
+                autoComplete="off"
+                className="form-control"
+                id="numberOfNights"
+                name="numberOfNights"
                 onChange={e => this.handleChange(e)}
                 type="text"
               />
@@ -436,6 +492,16 @@ class Home extends React.Component {
                 onChange={e => this.handleChange(e)}
                 type="text"
               />
+              <label htmlFor="paymentDetails">Name On Card : </label>
+              <input
+                autoComplete="off"
+                className="form-control"
+                placeholder="Name on card"
+                id="nameOnCard"
+                name="nameOnCard"
+                onChange={e => this.handleChange(e)}
+                type="text"
+              />
               <label htmlFor="paymentDetails">Credit Card Number : </label>
               <input
                 autoComplete="off"
@@ -480,7 +546,7 @@ class Home extends React.Component {
         {/*download section*/}
         {/* <section className="download-bg">
           <div className="container"> */}
-            {/* <div className="row">
+        {/* <div className="row">
               <div className="col-xl-3 display-flex">
                 <div className="footer-logo">
                   <img
@@ -524,8 +590,8 @@ class Home extends React.Component {
                 </div>
               </div>
             </div> */}
-          {/* </div> */}
-       {/* </section> */}
+        {/* </div> */}
+        {/* </section> */}
         {/*end download section*/}
         {/*Contact Component*/}
         {/* <Contact /> */}
