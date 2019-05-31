@@ -55,27 +55,27 @@ class Work extends React.Component {
           option: Number(1),
           hotelId: Number(2)
         }
-      ],hotelThreeOptTwo: [
+      ],
+      hotelThreeOptTwo: [
         {
           price: "800",
           hotelName: "Hyatt House",
           amountOfRooms: "1",
-          option:Number(1),
+          option: Number(1),
           hotelId: Number(2)
         }
       ],
-      roomOption: Number(0),
+      roomOption: Number(0)
     };
   }
 
-  
   onClick = e => {
     e.preventDefault();
     console.log("ive been clicked");
-    if(this.state.roomOption = 0){
+    if ((this.state.roomOption = 0)) {
       this.props.onClick(this.state.hotelOne);
     }
-    if(this.state.roomOption = 1){
+    if ((this.state.roomOption = 1)) {
       this.props.onClick(this.state.hotelOneOptTwo);
     }
   };
@@ -94,12 +94,10 @@ class Work extends React.Component {
 
   roomOption = e => {
     e.preventDefault();
-    console.log('entro en room option ');
+    console.log("entro en room option ");
     let roomOptionId = Number(e.target.value);
-    this.setState({roomOption: roomOptionId});
-
-  }
-
+    this.setState({ roomOption: roomOptionId });
+  };
 
   onFormSubmit = e => {
     e.preventDefault();
@@ -108,31 +106,29 @@ class Work extends React.Component {
   };
 
   render() {
-    //PRICE RENDERING 
+    //PRICE RENDERING
     let hotelOnePrice = "";
-    if(this.state.roomOption == 0){
-       hotelOnePrice = "340";
+    if (this.state.roomOption == 0) {
+      hotelOnePrice = "340";
     }
-    if(this.state.roomOption == 1){
-       hotelOnePrice = "600";
+    if (this.state.roomOption == 1) {
+      hotelOnePrice = "600";
     }
     let hotelTwoPrice = "";
-    if(this.state.roomOption == 0 ){
+    if (this.state.roomOption == 0) {
       hotelTwoPrice = "600";
     }
-    if(this.state.roomOption == 1){
+    if (this.state.roomOption == 1) {
       hotelTwoPrice = "800";
     }
     let hotelThreePrice = "";
-    if(this.state.roomOption == 0 ){
+    if (this.state.roomOption == 0) {
       hotelThreePrice = "600";
     }
-    if(this.state.roomOption == 1){
+    if (this.state.roomOption == 1) {
       hotelThreePrice = "800";
     }
 
-  
-    
     return (
       <section className="work" id="hotels">
         <div className="container">
@@ -152,12 +148,28 @@ class Work extends React.Component {
               </div>
             </div>
           </div>
-          <div className="row">
-            <div id="fromDate" className="col-md-6 ">
-              <p>Label For "From Date Input" </p>
-            </div>
+          <div  id="dateSection" className="row">
             <div id="toDate" className="col-md-6 ">
-              <p>Label For "To Date Input" </p>
+              <label id="checkInLabel" htmlFor="checkIn">Check In : </label>
+              <input
+                autoComplete="off"
+                className="form-control"
+                id="checkIn"
+                name="checkIn"
+                onChange={e => this.handleChange(e)}
+                type="date"
+              />
+            </div>
+            <div  className="col-md-6 ">
+              <label id="checkOutLabel" htmlFor="checkOut">  : Check Out </label>
+              <input
+                autoComplete="off"
+                className="form-control"
+                id="checkOut"
+                name="checkOut"
+                onChange={e => this.handleChange(e)}
+                type="date"
+              />
             </div>
           </div>
 
@@ -180,13 +192,11 @@ class Work extends React.Component {
                 <FontAwesomeIcon className="starIcon" icon={faStar} />
 
                 <p>Near Dupont Circle and four blocks from the metro station</p>
-                <label for="roomOption">
-                  Room : 
-                </label>
-                <select onChange= {this.roomOption}>
-                    <option value="0">Twin Bed</option>
-                    <option value="1">King Bed</option>
-                  </select>
+                <label for="roomOption">Room :</label>
+                <select onChange={this.roomOption}>
+                  <option value="0">Twin Bed</option>
+                  <option value="1">King Bed</option>
+                </select>
                 <p>
                   <span className="hotelPrice">${hotelOnePrice} per Night</span>
                 </p>
@@ -232,13 +242,11 @@ class Work extends React.Component {
                   The Ritz-Carlton is a premium luxury five star hotel, situated
                   in the West End neighborhood
                 </p>
-                <label for="roomOption">
-                  Room : 
-                </label>
-                <select onChange= {this.roomOption}>
-                    <option value="0">Twin Bed</option>
-                    <option value="1">King Bed</option>
-                  </select>
+                <label for="roomOption">Room :</label>
+                <select onChange={this.roomOption}>
+                  <option value="0">Twin Bed</option>
+                  <option value="1">King Bed</option>
+                </select>
                 <p>
                   <span className="hotelPrice">${hotelTwoPrice} per Night</span>
                 </p>
@@ -279,15 +287,15 @@ class Work extends React.Component {
                 <FontAwesomeIcon className="starIcon" icon={faStar} />
 
                 <p>The Wharf is the ideal location to explore all chicago</p>
-                <label for="roomOption">
-                  Room : 
-                </label>
-                <select onChange= {this.roomOption}>
-                    <option value="0">Twin Bed</option>
-                    <option value="1">King Bed</option>
-                  </select>
+                <label for="roomOption">Room :</label>
+                <select onChange={this.roomOption}>
+                  <option value="0">Twin Bed</option>
+                  <option value="1">King Bed</option>
+                </select>
                 <p>
-                  <span className="hotelPrice">${hotelThreePrice} per Night</span>
+                  <span className="hotelPrice">
+                    ${hotelThreePrice} per Night
+                  </span>
                 </p>
 
                 <button

@@ -428,11 +428,12 @@ class Home extends React.Component {
                 onChange={e => this.handleChange(e)}
                 type="text"
               />
-              <label htmlFor="checkIn">Check In : </label>
+              <label classname="checkIn" htmlFor="checkIn">Check In : </label>
               <input
                 autoComplete="off"
                 className="form-control"
                 id="checkIn"
+                className="checkIn"
                 name="checkIn"
                 onChange={e => this.handleChange(e)}
                 type="date"
