@@ -130,7 +130,7 @@ class Navbar extends React.Component {
 						Cart</a>
           <ul id="cartList">{cartItems}</ul>
         </div>
-        <p id="cartTotal">Total = {total} </p>
+        <p id="cartTotal">Total ${total} </p>
       </section>
     );
   }

@@ -51,6 +51,8 @@ class Price extends React.Component {
       console.log("TICKET TWO IS TRYING TO BE ADDED TO HOME COMPONENT");
       this.props.onTicketClick(this.state.ticketThree);
     }
+    var element = document.getElementById("checkoutForm");
+    element.scrollIntoView();
   };
   render() {
     // OwlCarousel Option for Prices
@@ -117,7 +119,7 @@ class Price extends React.Component {
     // Dynamic Price Data Loop
     let DataList = data.map((val, i) => {
       return (
-        <div className="item" key={i}>
+        <div className="item" id="tickets" key={i}>
           <div className="package-box">
             <h3 className="subtitles">{val.title}</h3>
             <div className="price-box">
@@ -165,7 +167,7 @@ class Price extends React.Component {
           <div className="row">
             <div className="col-md-12 text-center">
               <div className="section-title">
-                <h2 className="text-white">Tickets</h2>
+                <h2 id="ticketHeader" className="text-white">Tickets</h2>
                 <img
                   src="assets/images/white-line.png"
                   alt="title-line"

@@ -18,9 +18,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Banner from "./components/banner";
 import Navbar from "./components/navbar";
 import { faArrowAltCircleDown } from "@fortawesome/fontawesome-free-regular";
-import PaymentCard from 'react-payment-card-component'
+import PaymentCard from "react-payment-card-component";
+import Timer from "react-compound-timer";
 
-import FormService from './components/formService';
+import FormService from "./components/formService";
 //Testing DATE PICKER FOR REACT
 
 import "react-dates/initialize";
@@ -349,15 +350,27 @@ class Home extends React.Component {
                       <h1 id="headerText" className="mainTitle">
                         OM U.S Tour Experience
                         <br />
-                        <span className="mainTitle">
-                        </span>
+                        <span className="mainTitle" />
                       </h1>
-                      <h4 className="mainTitle">
-                  
-                      </h4>
+                      <h4 className="mainTitle" />
                       <br />
                       <br />
-                      <h3 id="timer">Timer Will Go Here</h3>
+                      {/* <h3 id="timer">Timer Will Go Here</h3> */}
+                      <div id="timer">
+                        <Timer initialTime={4000000000} direction="backward">
+                          {() => (
+                            <React.Fragment>
+                              <Timer.Days /> <span id="timerDays">days</span>
+                              <Timer.Hours id="timerHour" />
+                              <span id="timerHours">Hours</span>
+                              <Timer.Minutes id="timerMin" />
+                              <span id="timerMin">Min</span>
+                              <Timer.Seconds id="timerSec" />
+                              <span id="timerSec">Sec</span>
+                            </React.Fragment>
+                          )}
+                        </Timer>
+                      </div>
                     </div>
                     <FontAwesomeIcon id="goOn" icon={faArrowAltCircleDown} />
                   </div>
@@ -382,7 +395,6 @@ class Home extends React.Component {
         {/* About Component*/}
         <About />
 
-
         {/*Team Component*/}
         {/* <Team /> */}
         {/*Feature Component*/}
@@ -392,7 +404,7 @@ class Home extends React.Component {
         {/*Work Component*/}
         <Work onClick={this.onClick} onClickTwo={this.onClickTwo} />
         {/*Price Component*/}
-        <Price onTicketClick={this.onTicketClick} />
+        <Price ref="price" onTicketClick={this.onTicketClick} />
         {/*ActivitiesComponent*/}
         <Activities onActivityClick={this.onActivityClick} />
         {/*ScreenShot Component*/}
@@ -401,24 +413,31 @@ class Home extends React.Component {
           <h1 className="text-black text-center">Checkout Form</h1>
           <div className="container">
             <form className="" onSubmit={this.handleFormSubmit}>
-              <label htmlFor="firstName">First Name : </label>
-              <input
-                autoComplete="off"
-                className="form-control"
-                id="firstName"
-                name="clientFirstName"
-                onChange={e => this.handleChange(e)}
-                type="text"
-              />
-              <label htmlFor="lastName">Last Name : </label>
-              <input
-                autoComplete="off"
-                className="form-control"
-                id="lastName"
-                name="clientLastName"
-                onChange={e => this.handleChange(e)}
-                type="text"
-              />
+              <div className="row">
+                <div className="col-md-6">
+                  <label htmlFor="firstName">First Name : </label>
+                  <input
+                    autoComplete="off"
+                    className="form-control"
+                    id="firstName"
+                    name="clientFirstName"
+                    onChange={e => this.handleChange(e)}
+                    type="text"
+                  />
+                </div>
+                <div className="col-md-6">
+                  <label htmlFor="lastName">Last Name : </label>
+                  <input
+                    autoComplete="off"
+                    className="form-control"
+                    id="lastName"
+                    name="clientLastName"
+                    onChange={e => this.handleChange(e)}
+                    type="text"
+                  />
+                </div>
+              </div>
+
               <label htmlFor="numberOfNights">Number of Nights : </label>
               <input
                 autoComplete="off"
@@ -428,7 +447,9 @@ class Home extends React.Component {
                 onChange={e => this.handleChange(e)}
                 type="text"
               />
-              <label classname="checkIn" htmlFor="checkIn">Check In : </label>
+              <label classname="checkIn" htmlFor="checkIn">
+                Check In :{" "}
+              </label>
               <input
                 autoComplete="off"
                 className="form-control"
@@ -532,7 +553,7 @@ class Home extends React.Component {
                 onChange={e => this.handleChange(e)}
                 type="text"
               />
-         {/* <PaymentCard
+              {/* <PaymentCard
       bank="itau"
       model="personnalite"
       type="black"
@@ -545,7 +566,6 @@ class Home extends React.Component {
     /> */}
               <input id="checkoutButton" type="submit" value="Submit" />
             </form>
-            
           </div>
         </section>
         {/* <ScreenShot /> */}

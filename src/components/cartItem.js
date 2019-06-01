@@ -36,7 +36,7 @@ const CartItem = ({
             <strong>{hotelName}</strong>
           </li>
           <li className="cartHotelPrice">${hotelPrice} per/night</li>
-          <li className="cartRoomNumber"># Rooms:{roomNumber}</li>
+          {/* <li className="cartRoomNumber"># Rooms:{roomNumber}</li> */}
         </div>
       </div>
     );
@@ -68,7 +68,7 @@ const CartItem = ({
             <strong>{activityName}</strong>
           </li>
           <li className="cartHotelPrice">${activityPrice}</li>
-          <li className="cartRoomNumber">Time:{activityTime}</li>
+          {/* <li className="cartRoomNumber">Time:{activityTime}</li> */}
           <li className="cartRoomNumber">{activityDate}</li>
         </div>
       </div>

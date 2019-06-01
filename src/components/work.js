@@ -13,7 +13,7 @@ class Work extends React.Component {
     this.state = {
       hotelOne: [
         {
-          price: "340",
+          price: "149.44",
           hotelName: "Hotel Washington Hilton",
           amountOfRooms: "2",
           option: Number(0),
@@ -22,7 +22,7 @@ class Work extends React.Component {
       ],
       hotelOneOptTwo: [
         {
-          price: "600",
+          price: "235.64",
           hotelName: "Hotel Washington Hilton",
           amountOfRooms: "2",
           option: Number(1),
@@ -72,22 +72,32 @@ class Work extends React.Component {
   onClick = e => {
     e.preventDefault();
     console.log("ive been clicked");
+    var element = document.getElementById("tickets");
+    element.scrollIntoView();
     if ((this.state.roomOption = 0)) {
       this.props.onClick(this.state.hotelOne);
+
     }
     if ((this.state.roomOption = 1)) {
       this.props.onClick(this.state.hotelOneOptTwo);
+
     }
   };
   onClickTwo = e => {
     e.preventDefault();
     console.log("ive been clicked Two");
+    var element = document.getElementById("tickets");
+    element.scrollIntoView();
+
     this.props.onClickTwo(this.state.hotelTwo);
   };
   onClickThree = e => {
     e.preventDefault();
 
     console.log("number 3");
+    var element = document.getElementById("tickets");
+    element.scrollIntoView();
+
 
     this.props.onClickTwo(this.state.hotelThree);
   };
@@ -109,14 +119,14 @@ class Work extends React.Component {
     //PRICE RENDERING
     let hotelOnePrice = "";
     if (this.state.roomOption == 0) {
-      hotelOnePrice = "340";
+      hotelOnePrice = "149.44";
     }
     if (this.state.roomOption == 1) {
       hotelOnePrice = "600";
     }
     let hotelTwoPrice = "";
     if (this.state.roomOption == 0) {
-      hotelTwoPrice = "600";
+      hotelTwoPrice = "235.64";
     }
     if (this.state.roomOption == 1) {
       hotelTwoPrice = "800";
@@ -129,96 +139,112 @@ class Work extends React.Component {
       hotelThreePrice = "800";
     }
 
-    return (
-      <section className="work" id="hotels">
-        <div className="container">
-          <div className="row">
-            <div className="col-md-8 offset-md-2 text-center">
-              <div className="section-title">
-                <h2 className="subHeaders">Hotels</h2>
-                <img
-                  src="assets/images/title-line.png"
-                  alt="white-line"
-                  className="img-fluid"
-                />
-                <p id="hotelClickBait">
-                  Choose from our selection of Hand-Picked luxury hotels at the
-                  best rates you will encouter
-                </p>
+      return (
+        <section className="backgroundColor" id="hotels">
+          <div className="container">
+            <div className="row">
+              <div className="col-md-8 offset-md-2 text-center">
+                <div className="section-title">
+                  <h2 className="hotelTitle">Hotels</h2>
+                  <img
+                    src="assets/images/blueTitleLine.png"
+                    alt="white-line"
+                    className="img-fluid"
+                  />
+                  <p className="text-white" id="hotelClickBait">
+                    Choose from our selection of Hand-Picked luxury hotels at
+                    the best rates you will encouter
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-          <div  id="dateSection" className="row">
-            <div id="toDate" className="col-md-6 ">
-              <label id="checkInLabel" htmlFor="checkIn">Check In : </label>
+            <div id="dateSection" className="row">
+              <div id="toDate" className="col-md-4 ">
+                <label id="" className="text-white"  htmlFor="checkIn">
+                  Check In :
+                </label>
+                <input
+                  autoComplete="off"
+                  className="form-control"
+                  id=""
+                  name="checkIn"
+                  // onChange={e => this.handleChange(e)}
+                  type="date"
+                />
+              </div>
+              <div className="col-md-4 ">
+                <label id=""  className="text-white" htmlFor="checkOut">
+              
+                  Check Out:
+                </label>
+                <input
+                  autoComplete="off"
+                  className="form-control"
+                  id=""
+                  name="checkOut"
+                  // onChange={e => this.handleChange(e)}
+                  type="date"
+                />
+              </div>
+              <div className="col-md-4 ">
+              <label
+                id=""
+                className="text-white"
+                htmlFor="numberOfRooms"
+              >
+                # of Rooms :
+              </label>
               <input
                 autoComplete="off"
-                className="form-control"
-                id="checkIn"
-                name="checkIn"
-                // onChange={e => this.handleChange(e)}
-                type="date"
-              />
-            </div>
-            <div  className="col-md-6 ">
-              <label id="checkOutLabel" htmlFor="checkOut"> Check Out: </label>
-              <input
-                autoComplete="off"
-                className="form-control"
-                id="checkOut"
-                name="checkOut"
-                // onChange={e => this.handleChange(e)}
-                type="date"
-              />
-            </div>
-            
-          </div>
-          <div className="roomNumber">
-          <label id="numberOfRooms" className="numberOfRooms" htmlFor="numberOfRooms"># of Rooms : </label>
-              <input
-                autoComplete="off"
-                className="form-control numberOfRooms"
-                id="numberOfRooms"
+                className="form-control "
+                id=""
                 placeholder="Number of Rooms "
                 name="numberOfRooms"
                 // onChange={e => this.handleChange(e)}
                 type="number"
               />
-          </div>
+              </div>
+            </div>
 
-          {/* HOTEL LIST RENDERING */}
 
-          <div className="row">
-            <div className="col-lg-4 text-center">
-              <div className="box">
-                <img
-                  className="hotelsImg"
-                  src="https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_470,q_auto,w_805/partnerimages/66/80/66808458.jpeg"
-                  alt=""
-                />
-                <h3>Hotel Washington Hilton</h3>
+            {/* HOTEL LIST RENDERING */}
 
-                <FontAwesomeIcon className="starIcon" icon={faStar} />
-                <FontAwesomeIcon className="starIcon" icon={faStar} />
-                <FontAwesomeIcon className="starIcon" icon={faStar} />
-                <FontAwesomeIcon className="starIcon" icon={faStar} />
-                <FontAwesomeIcon className="starIcon" icon={faStar} />
+            <div className="row">
+              <div className="col-lg-4 text-center">
+                <div className="box">
+                  <img
+                    className="hotelsImg"
+                    src="https://cache.marriott.com/marriottassets/marriott/WASYV/wasyv-exterior-7552-hor-wide.jpg?downsize=2880px:*"
+                    alt=""
+                  />
+                  <h3>Courtyard Marriott</h3>
+              
+               
+                  <FontAwesomeIcon className="starIcon" icon={faStar} />
+                  <FontAwesomeIcon className="starIcon" icon={faStar} />
+                  <FontAwesomeIcon className="starIcon" icon={faStar} />
+                  <FontAwesomeIcon className="starIcon" icon={faStar} />
+                  <FontAwesomeIcon className="starIcon" icon={faStar} />
+       
+                  <p>Services: Pool-side Bar , Gym , Breakfast Included</p>
+                  <p className="pickleRick"></p>
+                  <hr/>
+                  <p>1919 Connecticut Ave NW</p>
+                  <p className="hotelAddress">1 mile from stadium</p>
+                  <hr/>
+                  <label for="roomOption">Room :</label>
+                  <select className="form-control" onChange={this.roomOption}>
+                    <option value="0">Twin Bed</option>
+                    <option value="1">King Bed</option>
+                  </select>
+                  <br />
+                  <p>
+                    <span className="hotelPrice">
+                      ${hotelOnePrice} per Night
+                    </span>
+                  </p>
 
-                  
-                <p>Services: Pool-side Bar , Gym , Breakfast Included</p>
-                <p className="hotelAddress">1919 Connecticut Ave NW</p>
-                <hr></hr>
-                <label for="roomOption">Room :</label>
-                <select className="form-control" onChange={this.roomOption}>
-                  <option value="0">Twin Bed</option>
-                  <option value="1">King Bed</option>
-                </select>
-                <br></br>
-                <p>
-                  <span className="hotelPrice">${hotelOnePrice} per Night</span>
-                </p>
-
-                {/* <input
+                  {/* <input
                     className="input is-info"
                     type="text"
                     value={this.state.term}
@@ -227,51 +253,54 @@ class Work extends React.Component {
                     }}
                     placeholder="search away.."
                   /> */}
+                  
+                  <button
+                    type="submit"
+                    id="hotelOne"
+                    onClick={this.onClick}
+                    className="btn btn-primary bookButton"
+                  >
+                    Add
+                  </button>
 
-                <button
-                  type="submit"
-                  onClick={this.onClick}
-                  className="btn btn-primary bookButton"
-                >
-                  Add
-                </button>
-
-                {/* <button type="button" className="btn btn-primary bookButton">
+                  {/* <button type="button" className="btn btn-primary bookButton">
                   Add
                 </button> */}
+                </div>
               </div>
-            </div>
-            <div className="col-lg-4 text-center">
-              <div className="box">
-                <img
-                  className="hotelsImg"
-                  src="https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_470,q_auto,w_805/partnerimages/16/83/168399602.jpeg"
-                />
-                <h3>The Ritz-Carlton</h3>
+              <div className="col-lg-4 text-center">
+                <div className="box">
+                  <img
+                    className="hotelsImg"
+                    src="https://d3hfxk7rwdcpol.cloudfront.net/CSN/ee3d0813-fc18-45c4-95e1-f159157807a3/images/33b1eb6e29c046498adef9a038fb2e44_LARGE.jpg"
+                  />
+                  <h3>Hampton Inn & Suites Washington </h3>
 
-                <FontAwesomeIcon className="starIcon" icon={faStar} />
-                <FontAwesomeIcon className="starIcon" icon={faStar} />
-                <FontAwesomeIcon className="starIcon" icon={faStar} />
-                <FontAwesomeIcon className="starIcon" icon={faStar} />
-                <FontAwesomeIcon className="starIcon" icon={faStar} />
-
-                <p>
-                  Services: Pool-side Bar , Gym , Breakfast Included
-                </p>
-                {/* //LINK THIS ADDRESS TO HOTEL GOOGLE MAP ADDRESS */}
-                <p className="hotelAddress">1919 Connecticut Ave NW</p>
-                <hr></hr>
-                <label for="roomOption">Room :</label>
-                <select  className="form-control" onChange={this.roomOption}>
-                  <option value="0">Twin Bed</option>
-                  <option value="1">King Bed</option>
-                </select>
-                <br></br>
-                <p>
-                  <span className="hotelPrice">${hotelTwoPrice} per Night</span>
-                </p>
-                {/* <form onSubmit={this.onFormSubmit} > */}
-                {/* <input
+                  <FontAwesomeIcon className="starIcon" icon={faStar} />
+                  <FontAwesomeIcon className="starIcon" icon={faStar} />
+                  <FontAwesomeIcon className="starIcon" icon={faStar} />
+                  <FontAwesomeIcon className="starIcon" icon={faStar} />
+                  <FontAwesomeIcon className="starIcon" icon={faStar} />
+              
+                  <p>Services: Pool-side Bar , Gym , Breakfast Included</p>
+                  <br></br>
+                  <hr/>
+                  <p>1919 Connecticut Ave NW</p>
+                  <p className="hotelAddress">5 Miles from Stadium</p>
+                  <hr/>
+                  <label for="roomOption">Room :</label>
+                  <select className="form-control" onChange={this.roomOption}>
+                    <option value="0">Twin Bed</option>
+                    <option value="1">King Bed</option>
+                  </select>
+                  <br />
+                  <p>
+                    <span className="hotelPrice">
+                      ${hotelTwoPrice} per Night
+                    </span>
+                  </p>
+                  {/* <form onSubmit={this.onFormSubmit} > */}
+                  {/* <input
                     className="input is-info"
                     type="text"
                     value={this.state.term}
@@ -281,61 +310,66 @@ class Work extends React.Component {
                     placeholder="search away.."
                   /> */}
 
-                <button
-                  type="submit"
-                  onClick={this.onClickTwo}
-                  className="btn btn-primary bookButton"
-                >
-                  {" "}
-                  Add
-                </button>
-                {/* </form> */}
+                  <button
+                    type="submit"
+                    onClick={this.onClickTwo}
+                    className="btn btn-primary bookButton"
+                  >
+                    {" "}
+                    Add
+                  </button>
+                  {/* </form> */}
+                </div>
               </div>
-            </div>
-            <div className="col-lg-4 text-center">
-              <div className="box">
-                <img
-                  className="hotelsImg"
-                  src="https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_470,q_auto,w_805/uploadimages/28/19/28194712.jpeg"
-                  alt=""
-                />
-                <h3>Hyatt House</h3>
+              <div className="col-lg-4 text-center">
+                <div className="box">
+                  <img
+                    className="hotelsImg"
+                    src="https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_470,q_auto,w_805/uploadimages/28/19/28194712.jpeg"
+                    alt=""
+                  />
+                  <h3>Hyatt House</h3>
+                 
 
-                <FontAwesomeIcon className="starIcon" icon={faStar} />
-                <FontAwesomeIcon className="starIcon" icon={faStar} />
-                <FontAwesomeIcon className="starIcon" icon={faStar} />
-                <FontAwesomeIcon className="starIcon" icon={faStar} />
+                  <FontAwesomeIcon className="starIcon" icon={faStar} />
+                  <FontAwesomeIcon className="starIcon" icon={faStar} />
+                  <FontAwesomeIcon className="starIcon" icon={faStar} />
+                  <FontAwesomeIcon className="starIcon" icon={faStar} />
+         
+                  <p>Services: Pool-side Bar , Gym , Breakfast Included</p>
+                  <p className="pickleRick"></p>
+                  <hr/>
+                  <p>1919 Connecticut Ave NW</p>
+                  <p className="hotelAddress">5 Miles from Stadium</p>
+                  <hr/>
+                  <label for="roomOption">Room :</label>
+                  <select className="form-control" onChange={this.roomOption}>
+                    <option value="0">Twin Bed</option>
+                    <option value="1">King Bed</option>
+                  </select>
+                  <br />
+        
+                  <p>
+                    <span className="hotelPrice">
+                      ${hotelThreePrice} per Night
+                    </span>
+                  </p>
 
-                <p>Services: Pool-side Bar , Gym , Breakfast Included</p>
-                <p className="hotelAddress">1919 Connecticut Ave NW</p>
-                <hr></hr>
-                <label for="roomOption">Room :</label>
-                <select className="form-control" onChange={this.roomOption}>
-                  <option value="0">Twin Bed</option>
-                  <option value="1">King Bed</option>
-                </select>
-                <br></br>
-             
-                <p>
-                  <span className="hotelPrice">
-                    ${hotelThreePrice} per Night
-                  </span>
-                </p>
-
-                <button
-                  type="button"
-                  onClick={this.onClickThree}
-                  className="btn btn-primary bookButton"
-                >
-                  Add
-                </button>
+                  <button
+                    type="button"
+                    onClick={this.onClickThree}
+                    className="btn btn-primary bookButton"
+                  >
+                    Add
+                  </button>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
-    );
+        </section>
+      );
+    }
   }
-}
+
 
 export default Work;
