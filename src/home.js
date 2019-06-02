@@ -35,10 +35,10 @@ class Home extends React.Component {
     super(props);
     this.props = props;
     this.state = {
-      cart: []
+      cart: [],
       // clientFirstName : " ",
       // clientLastName  : " ",
-      // checkIn : " ",
+      stayData : [],
       // checkOut: " ",
       // fanClubNumber: " ",
       // address: " ",
@@ -59,12 +59,11 @@ class Home extends React.Component {
     console.log("TICKET HAS CONNECTED WITH HOME");
     let ticket = e;
     let ticketData = e[0];
-
     console.log(ticketData);
 
     let joined = this.state.cart.concat(ticketData);
     console.log("joining", joined);
-    this.setState({ cart: joined });
+    this.setState({ cart: joined , });
   };
   //ACTIVITY CART PROP SYSTEM
 
@@ -84,7 +83,11 @@ class Home extends React.Component {
   onClick = e => {
     console.log("FIRST HOTEL OPTION ENTERED HOME");
     let hotelOne = e;
+    console.log('pinga--', e)
     let hotelData = hotelOne[0];
+    // let checkIn = hotelData.checkIn;
+    // console.log('este es el check in ')
+    // console.log(checkIn);
 
     console.log(hotelData);
     let joined = this.state.cart.concat(hotelData);
@@ -93,6 +96,13 @@ class Home extends React.Component {
     console.log("Final before nav", this.state.cart);
   };
 
+  onStay = e => {
+    console.log('entro on stay')
+    console.log(e);
+
+    this.state.stayData.push(e);
+
+  }
   onClickTwo = e => {
     console.log(e);
     console.log("SECOND HOTEL OPTION HAS ENTERED HOME");
@@ -139,8 +149,7 @@ class Home extends React.Component {
       cart,
       clientFirstName,
       clientLastName,
-      checkIn,
-      checkOut,
+      stayData,
       fanClubNumber,
       address,
       city,
@@ -156,8 +165,7 @@ class Home extends React.Component {
       cart,
       clientFirstName,
       clientLastName,
-      checkIn,
-      checkOut,
+      stayData,
       fanClubNumber,
       address,
       city,
@@ -171,6 +179,7 @@ class Home extends React.Component {
     this.setState({
       cart: [],
       clientFirstName: " ",
+      stayData:[],
       clientLastName: " ",
       checkIn: " ",
       checkOut: " ",
@@ -402,7 +411,7 @@ class Home extends React.Component {
         {/* Banner Component */}
         {/* <Banner /> */}
         {/*Work Component*/}
-        <Work onClick={this.onClick} onClickTwo={this.onClickTwo} />
+        <Work onClick={this.onClick} onClickTwo={this.onClickTwo} onStay={this.onStay}/>
         {/*Price Component*/}
         <Price ref="price" onTicketClick={this.onTicketClick} />
         {/*ActivitiesComponent*/}
@@ -437,7 +446,7 @@ class Home extends React.Component {
                   />
                 </div>
               </div>
-              
+
               <label htmlFor="numberOfNights">Number of Nights : </label>
               <input
                 autoComplete="off"

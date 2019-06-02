@@ -66,17 +66,24 @@ class Work extends React.Component {
         }
       ],
       roomOption: Number(0),
-      checkIn: " ",
 
     };
   }
 
   onClick = e => {
-    e.preventDefault();
-    console.log("ive been clicked");
+     e.preventDefault();
+     console.log("ive been clicked", this.state);
+      let checkIn = this.state.checkIn;
+      let checkOut = this.state.checkOut;
+      let roomNumber= this.state.numberOfRooms;
+      this.props.onStay(checkIn);
+      this.props.onStay(checkOut);
+      this.props.onStay(roomNumber);
     var element = document.getElementById("tickets");
     element.scrollIntoView();
+
     if ((this.state.roomOption = 0)) {
+      // this.props.onClick(this.state.hotelOne);
       this.props.onClick(this.state.hotelOne);
 
     }
@@ -122,7 +129,9 @@ class Work extends React.Component {
     console.log('estoy adentro de el handle change' , name);
     console.log('estoy adentro de el handle change' , value);
 
-      this.setState({ ...this.state, [name]: value });
+      this.setState({ ...this.state, [name]: [value] });
+
+
     
   };
 
@@ -209,10 +218,10 @@ class Work extends React.Component {
               <input
                 autoComplete="off"
                 className="form-control "
-                id=""
+                id="numberOfRooms"
                 placeholder="Number of Rooms "
                 name="numberOfRooms"
-                // onChange={e => this.handleChange(e)}
+                onChange={e => this.handleChange(e)}
                 type="number"
               />
               </div>
