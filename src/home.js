@@ -437,7 +437,7 @@ class Home extends React.Component {
                   />
                 </div>
               </div>
-
+              
               <label htmlFor="numberOfNights">Number of Nights : </label>
               <input
                 autoComplete="off"

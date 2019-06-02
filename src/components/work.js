@@ -65,7 +65,9 @@ class Work extends React.Component {
           hotelId: Number(2)
         }
       ],
-      roomOption: Number(0)
+      roomOption: Number(0),
+      checkIn: " ",
+
     };
   }
 
@@ -114,6 +116,16 @@ class Work extends React.Component {
 
     this.props.onSubmit(this.state.term);
   };
+  handleChange = e => {
+    const { name, value } = e.target;
+
+    console.log('estoy adentro de el handle change' , name);
+    console.log('estoy adentro de el handle change' , value);
+
+      this.setState({ ...this.state, [name]: value });
+    
+  };
+
 
   render() {
     //PRICE RENDERING
@@ -166,9 +178,9 @@ class Work extends React.Component {
                 <input
                   autoComplete="off"
                   className="form-control"
-                  id=""
+                  id="checkIn"
                   name="checkIn"
-                  // onChange={e => this.handleChange(e)}
+                  onChange={e => this.handleChange(e)}
                   type="date"
                 />
               </div>
@@ -180,9 +192,9 @@ class Work extends React.Component {
                 <input
                   autoComplete="off"
                   className="form-control"
-                  id=""
+                  id="checkOut"
                   name="checkOut"
-                  // onChange={e => this.handleChange(e)}
+                  onChange={e => this.handleChange(e)}
                   type="date"
                 />
               </div>
@@ -226,7 +238,7 @@ class Work extends React.Component {
                   <FontAwesomeIcon className="starIcon" icon={faStar} />
                   <FontAwesomeIcon className="starIcon" icon={faStar} />
        
-                  <p>Services: Pool-side Bar , Gym , Breakfast Included</p>
+                  <p>Services: Pool-side Bar , Gym , 20% off Bistro Restaurant</p>
                   <p className="pickleRick"></p>
                   <hr/>
                   <p>1919 Connecticut Ave NW</p>
@@ -282,10 +294,10 @@ class Work extends React.Component {
                   <FontAwesomeIcon className="starIcon" icon={faStar} />
                   <FontAwesomeIcon className="starIcon" icon={faStar} />
               
-                  <p>Services: Pool-side Bar , Gym , Breakfast Included</p>
+                  <p>Services: Pool-side Bar , Gym , 24 hr Pavilion Pantry Market</p>
                   <br></br>
                   <hr/>
-                  <p>1919 Connecticut Ave NW</p>
+                  <p>1265 First St SE</p>
                   <p className="hotelAddress">5 Miles from Stadium</p>
                   <hr/>
                   <label for="roomOption">Room :</label>
@@ -336,7 +348,7 @@ class Work extends React.Component {
                   <FontAwesomeIcon className="starIcon" icon={faStar} />
                   <FontAwesomeIcon className="starIcon" icon={faStar} />
          
-                  <p>Services: Pool-side Bar , Gym , Breakfast Included</p>
+                  <p>Services: Pool-side Bar , Gym ,Business Center</p>
                   <p className="pickleRick"></p>
                   <hr/>
                   <p>1919 Connecticut Ave NW</p>

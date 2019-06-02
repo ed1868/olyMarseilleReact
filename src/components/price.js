@@ -86,7 +86,7 @@ class Price extends React.Component {
     // Dynamic Price Data Easy to Update
     let data = [
       {
-        title: "D.C United Vs Marseille",
+        title: "Girondins de Bordeaux Vs O.Marseille",
         id: 0,
         lable: "07/24/2019",
         price: "150",
@@ -95,7 +95,7 @@ class Price extends React.Component {
         link: "#"
       },
       {
-        title: "D.C United Vs Marseille",
+        title: "Montpellier HSC Vs As Saint Etienne",
         id: 1,
         lable: "07/27/2019",
         price: "230",
@@ -104,7 +104,7 @@ class Price extends React.Component {
         link: "#"
       },
       {
-        title: "D.C United Vs Marseille",
+        title: "D.C. United     Vs  Olympic Marseille",
         id: 2,
         lable: "07/29/2019",
         price: "189",
@@ -155,6 +155,7 @@ class Price extends React.Component {
               >
                  Add
               </button>
+              
             </div>
           </div>
         </div>
@@ -191,7 +192,9 @@ class Price extends React.Component {
                 responsive={options}
               >
                 {DataList}
+                
               </OwlCarousel>
+            
             </div>
           </div>
         </div>
