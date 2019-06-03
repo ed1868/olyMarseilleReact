@@ -20,6 +20,7 @@ import Navbar from "./components/navbar";
 import { faArrowAltCircleDown } from "@fortawesome/fontawesome-free-regular";
 import PaymentCard from "react-payment-card-component";
 import Timer from "react-compound-timer";
+import Popup from "./components/popUp";
 
 import FormService from "./components/formService";
 //Testing DATE PICKER FOR REACT
@@ -148,7 +149,6 @@ class Home extends React.Component {
   handleFormSubmit = e => {
     e.preventDefault();
     console.log("form trying to be submitted");
-
     const {
       cart,
       clientFirstName,
@@ -183,6 +183,7 @@ class Home extends React.Component {
     this.setState({
       cart: [],
       clientFirstName: " ",
+      formSubmit : false,
       stayData:[],
       clientLastName: " ",
       checkIn: " ",
@@ -205,6 +206,8 @@ class Home extends React.Component {
       "THIS WILL BE THE CURRENT STATE OF THE HOME COMPONENT",
       this.state
     );
+
+
     return (
       <div>
         <section id="sectionOne" className="sectionOne">

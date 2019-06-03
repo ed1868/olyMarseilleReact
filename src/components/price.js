@@ -7,7 +7,7 @@ class Price extends React.Component {
     this.state = {
       ticketOne: [
         {
-          price: "35",
+          price: 35.44,
           ticketName: "D.C United Vs Marseille'",
           time: "7:00",
           ticketId: Number(0)
@@ -15,7 +15,7 @@ class Price extends React.Component {
       ],
       ticketTwo: [
         {
-          price: "342",
+          price: 45.99,
           ticketName: "D.C United Vs Marseille'",
           time: "7:00",
           ticketId: Number(1)
@@ -23,34 +23,90 @@ class Price extends React.Component {
       ],
       ticketThree: [
         {
-          price: "150",
+          price: 50.99,
           ticketName: "D.C United Vs Marseille'",
           time: "7:00",
           ticketId: Number(2)
         }
-      ]
+      ],
+      option : Number(0),
+
+
     };
   }
 
+  roomOption = e => {
+    console.log(e.target.value);
+    this.setState({ option: e.target.value });
+  }
   onClickTicket = e => {
     e.preventDefault();
     let ticketOne = this.state.ticketOne[0];
+    
+    console.log('ticket one option one price' , this.state.ticketOne[0].price)
     let ticketTwo = this.state.ticketTwo[0];
     let ticketThree = this.state.ticketThree[0];
 
-    if (e.target.id == ticketOne.ticketId) {
+    if (e.target.id == ticketOne.ticketId && this.state.option == 0) {
       console.log("TICKET ONE IS TRYING TO BE ADDED TO HOME COMPONENT");
       this.props.onTicketClick(this.state.ticketOne);
     }
+    if (e.target.id == ticketOne.ticketId && this.state.option == 2) {
+      console.log("TICKET ONE OPTION TWO IS TRYING TO BE ADDED TO HOME COMPONENT");
+      this.state.ticketOne[0].price += 10;
+      console.log('option two',this.state.ticketOne);
+      this.props.onTicketClick(this.state.ticketOne);
+    }
+    if (e.target.id == ticketOne.ticketId && this.state.option == 3) {
+      console.log("TICKET ONE OPTION TWO IS TRYING TO BE ADDED TO HOME COMPONENT");
+      this.state.ticketOne[0].price += 20;
+      console.log('option Three',this.state.ticketOne);
+      this.props.onTicketClick(this.state.ticketOne);
+    }
 
-    if (e.target.id == ticketTwo.ticketId) {
+    if (e.target.id == ticketTwo.ticketId && this.state.option == 0) {
       console.log("TICKET TWO IS TRYING TO BE ADDED TO HOME COMPONENT");
       this.props.onTicketClick(this.state.ticketTwo);
     }
-    if (e.target.id == ticketThree.ticketId) {
-      console.log("TICKET TWO IS TRYING TO BE ADDED TO HOME COMPONENT");
+
+    if(e.target.id == ticketTwo.ticketId && this.state.option == 2){
+      console.log("TICKET TWO OPTION TWO IS TRYING TO BE ADDED TO HOME COMPONENT");
+      this.state.ticketTwo[0].price += 10;
+      Math.round(10 * this.state.ticketTwo[0].price)/10;
+      console.log('option two',this.state.ticketTwo);
+
+      this.props.onTicketClick(this.state.ticketTwo);
+    }
+    if(e.target.id == ticketTwo.ticketId && this.state.option == 3){
+      console.log("TICKET TWO OPTION TWO IS TRYING TO BE ADDED TO HOME COMPONENT");
+      this.state.ticketTwo[0].price += 15;
+      Math.round(10 * this.state.ticketTwo[0].price)/10;
+      console.log('option two',this.state.ticketTwo);
+
+      this.props.onTicketClick(this.state.ticketTwo);
+    }
+
+    if (e.target.id == ticketThree.ticketId && this.state.option == 0) {
+      console.log("TICKET THREE IS TRYING TO BE ADDED TO HOME COMPONENT");
       this.props.onTicketClick(this.state.ticketThree);
     }
+    if (e.target.id == ticketThree.ticketId && this.state.option == 2) {
+      console.log("TICKET THREE OPTION TWO IS TRYING TO BE ADDED TO HOME COMPONENT");
+      this.state.ticketThree[0].price += 10;
+      Math.round(10 * this.state.ticketThree[0].price)/10;
+      console.log('option two',this.state.ticketThree);
+
+      this.props.onTicketClick(this.state.ticketThree);
+    }
+    if (e.target.id == ticketThree.ticketId && this.state.option == 3) {
+      console.log("TICKET THREE OPTION THREE IS TRYING TO BE ADDED TO HOME COMPONENT");
+      this.state.ticketThree[0].price += 30;
+      Math.round(10 * this.state.ticketThree[0].price)/10;
+      console.log('option three',this.state.ticketThree);
+
+      this.props.onTicketClick(this.state.ticketThree);
+    }
+    
     var element = document.getElementById("checkoutForm");
     element.scrollIntoView();
   };
@@ -89,7 +145,7 @@ class Price extends React.Component {
         title: "Girondins de Bordeaux Vs O.Marseille",
         id: 0,
         lable: "07/24/2019",
-        price: "150",
+        price: "35.44",
         features:
           "<li>Section 100, Row 02</li><li>real time sync</li><li>unlimited attachment</li><li>customize theme</li><li>priority email support</li>",
         link: "#"
@@ -98,7 +154,7 @@ class Price extends React.Component {
         title: "Montpellier HSC Vs As Saint Etienne",
         id: 1,
         lable: "07/27/2019",
-        price: "230",
+        price: "45.99",
         features:
           "<li>Section 100, Row 02</li><li>real time sync</li><li>unlimited attachment</li><li>customize theme</li><li>priority email support</li>",
         link: "#"
@@ -107,7 +163,7 @@ class Price extends React.Component {
         title: "D.C. United     Vs  Olympic Marseille",
         id: 2,
         lable: "07/29/2019",
-        price: "189",
+        price: "50.99",
         features:
           "<li>Section 100, Row 02</li><li>unlimited attachment</li><li>customize theme</li><li>priority email support</li><li>priority email support</li>",
         link: "#"
@@ -131,9 +187,9 @@ class Price extends React.Component {
             </div>
             <br></br>
             <select id="ticketCat" className="form-control" onChange={this.roomOption}>
-                  <option value="0">Gold Ticket</option>
-                  <option value="1">Silver Ticket</option>
-                  <option value="2">Bronze Ticket</option>
+                  <option value="0">Gold Ticket $10 more!</option>
+                  <option value="2">Silver Ticket $20 more!</option>
+                  <option value="3">Bronze Ticket $30 more!</option>
                 </select>
            
             <div className="price-plan text-center">
