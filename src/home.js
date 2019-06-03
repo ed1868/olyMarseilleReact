@@ -36,6 +36,7 @@ class Home extends React.Component {
     this.props = props;
     this.state = {
       cart: [],
+      numRoom: 0,
       // clientFirstName : " ",
       // clientLastName  : " ",
       stayData : [],
@@ -85,9 +86,6 @@ class Home extends React.Component {
     let hotelOne = e;
     console.log('pinga--', e)
     let hotelData = hotelOne[0];
-    // let checkIn = hotelData.checkIn;
-    // console.log('este es el check in ')
-    // console.log(checkIn);
 
     console.log(hotelData);
     let joined = this.state.cart.concat(hotelData);
@@ -140,6 +138,12 @@ class Home extends React.Component {
 
     this.setState({ ...this.state, [name]: value });
   };
+
+  hotelPriceUpdator = e => {
+    console.log('you have entered the hotel price updator at the home component' , e);
+    
+    this.setState({numRoom: e});
+  }
 
   handleFormSubmit = e => {
     e.preventDefault();
@@ -207,6 +211,8 @@ class Home extends React.Component {
           <Navbar
             cart={this.state.cart}
             cartUpdatorHotelOne={this.cartUpdatorHotelOne}
+            stayData = {this.state.stayData}
+            numRoom = {this.state.numRoom}
           />
           {/* Default First Section Class className="slide-bg" */}
 
@@ -411,7 +417,7 @@ class Home extends React.Component {
         {/* Banner Component */}
         {/* <Banner /> */}
         {/*Work Component*/}
-        <Work onClick={this.onClick} onClickTwo={this.onClickTwo} onStay={this.onStay}/>
+        <Work onClick={this.onClick} onClickTwo={this.onClickTwo} onClickThree={this.onClickThree} onStay={this.onStay} hotelPriceUpdator={this.hotelPriceUpdator}/>
         {/*Price Component*/}
         <Price ref="price" onTicketClick={this.onTicketClick} />
         {/*ActivitiesComponent*/}
@@ -419,12 +425,12 @@ class Home extends React.Component {
         {/*ScreenShot Component*/}
         {/* CHECK OUT FORM  */}
         <section id="checkoutForm">
-          <h1 className="text-black text-center">Checkout Form</h1>
+          <h1 id="checkoutTitle"className="text-center hotelTitle">Checkout Form</h1>
           <div className="container">
             <form className="" onSubmit={this.handleFormSubmit}>
               <div className="row">
                 <div className="col-md-6">
-                  <label htmlFor="firstName">First Name : </label>
+                  <label className="formText" htmlFor="firstName">First Name : </label>
                   <input
                     autoComplete="off"
                     className="form-control"
@@ -435,7 +441,7 @@ class Home extends React.Component {
                   />
                 </div>
                 <div className="col-md-6">
-                  <label htmlFor="lastName">Last Name : </label>
+                  <label className="formText" htmlFor="lastName">Last Name : </label>
                   <input
                     autoComplete="off"
                     className="form-control"
@@ -447,36 +453,10 @@ class Home extends React.Component {
                 </div>
               </div>
 
-              <label htmlFor="numberOfNights">Number of Nights : </label>
-              <input
-                autoComplete="off"
-                className="form-control"
-                id="numberOfNights"
-                name="numberOfNights"
-                onChange={e => this.handleChange(e)}
-                type="text"
-              />
-              <label classname="checkIn" htmlFor="checkIn">
-                Check In :{" "}
-              </label>
-              <input
-                autoComplete="off"
-                className="form-control"
-                id=""
-                name="checkIn"
-                onChange={e => this.handleChange(e)}
-                type="date"
-              />
-              <label htmlFor="checkOut">Check Out : </label>
-              <input
-                autoComplete="off"
-                className="form-control"
-                id=""
-                name="checkOut"
-                onChange={e => this.handleChange(e)}
-                type="date"
-              />
-              <label htmlFor="checkOut">Fan Club ID : </label>
+            <div className="row">
+              <div className="col-md-12">
+
+              <label className="formText" htmlFor="checkOut">Fan Club ID : </label>
               <input
                 autoComplete="off"
                 className="form-control"
@@ -485,7 +465,11 @@ class Home extends React.Component {
                 onChange={e => this.handleChange(e)}
                 type="text"
               />
-              <label htmlFor="checkOut">Address: </label>
+              </div>
+              </div>
+              <div className="row">
+              <div className="col-md-12">
+              <label className="formText" htmlFor="checkOut">Address: </label>
               <input
                 autoComplete="off"
                 className="form-control"
@@ -495,6 +479,11 @@ class Home extends React.Component {
                 onChange={e => this.handleChange(e)}
                 type="text"
               />
+              </div>
+              </div>
+
+              <div className="row topPadding">
+              <div className="col-md-4">
               <input
                 autoComplete="off"
                 className="form-control"
@@ -504,6 +493,8 @@ class Home extends React.Component {
                 onChange={e => this.handleChange(e)}
                 type="text"
               />
+              </div>
+              <div className="col-md-4">
               <input
                 autoComplete="off"
                 className="form-control"
@@ -513,6 +504,9 @@ class Home extends React.Component {
                 onChange={e => this.handleChange(e)}
                 type="text"
               />
+              </div>
+              <div className="col-md-4">
+
               <input
                 autoComplete="off"
                 className="form-control"
@@ -522,7 +516,11 @@ class Home extends React.Component {
                 onChange={e => this.handleChange(e)}
                 type="text"
               />
-              <label htmlFor="paymentDetails">Name On Card : </label>
+              </div>
+              </div>
+              <div className="row topPadding">
+              <div className="col-md-12">
+              <label className="formText" htmlFor="paymentDetails">Name On Card : </label>
               <input
                 autoComplete="off"
                 className="form-control"
@@ -532,7 +530,11 @@ class Home extends React.Component {
                 onChange={e => this.handleChange(e)}
                 type="text"
               />
-              <label htmlFor="paymentDetails">Credit Card Number : </label>
+              </div>
+              </div>
+              <div className="row topPadding">
+              <div className="col-md-12">
+              <label className="formText"  htmlFor="paymentDetails">Credit Card Number : </label>
               <input
                 autoComplete="off"
                 className="form-control"
@@ -542,7 +544,11 @@ class Home extends React.Component {
                 onChange={e => this.handleChange(e)}
                 type="text"
               />
-              <label htmlFor="paymentDetails">Expiration Date : </label>
+              </div>
+              </div>
+              <div className="row topPadding">
+                <div className="col-md-6">
+              <label className="formText"  htmlFor="paymentDetails">Expiration Date : </label>
               <input
                 autoComplete="off"
                 className="form-control"
@@ -552,7 +558,9 @@ class Home extends React.Component {
                 onChange={e => this.handleChange(e)}
                 type="text"
               />
-              <label htmlFor="paymentDetails">Security Number : </label>
+              </div>
+              <div className="col-md-6">
+              <label className="formText" htmlFor="paymentDetails">Security Number : </label>
               <input
                 autoComplete="off"
                 className="form-control"
@@ -562,6 +570,8 @@ class Home extends React.Component {
                 onChange={e => this.handleChange(e)}
                 type="text"
               />
+              </div>
+              </div>
               {/* <PaymentCard
       bank="itau"
       model="personnalite"
@@ -573,7 +583,12 @@ class Home extends React.Component {
       expiration="12/20"
       flipped={false}
     /> */}
-              <input id="checkoutButton" type="submit" value="Submit" />
+          <div className="row">
+            <div id="button" className="col-md-12">
+            <input className="btn btn-primary" id="checkoutButton" type="submit" value="Submit" />
+            </div>
+            </div>
+              
             </form>
           </div>
         </section>

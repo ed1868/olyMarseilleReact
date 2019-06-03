@@ -6,7 +6,9 @@ class Navbar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      items: this.props.cart
+      items: this.props.cart,
+      numRoom : this.props.numRoom,
+      stayData : this.props.stayData
     };
   }
 
@@ -24,8 +26,15 @@ class Navbar extends React.Component {
 
   render() {
     console.log("las props", this.props.cart);
+    console.log('las props stayData', this.state.stayData);
 
     let total = 0;
+    
+    let totalRooms = this.state.stayData[2];
+    let checkoutDate = this.state.stayData[1];
+    
+
+    
     const totalTracker = this.props.cart.map(item => {
       let currentPrice = item.price;
 

@@ -134,9 +134,9 @@ class Activities extends React.Component {
           <div className="row">
             <div className="col-md-12 text-center">
               <div className="section-title">
-                <h2 className="text-white">Activities</h2>
+                <h2 className="hotelTitle">Activities</h2>
                 <img
-                  src="assets/images/white-line.png"
+                  src="assets/images/blueTitleLine.png"
                   alt="title-line"
                   className="img-fluid"
                 />
