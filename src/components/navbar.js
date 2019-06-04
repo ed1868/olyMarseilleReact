@@ -58,7 +58,8 @@ class Navbar extends React.Component {
 			let hotelId = item.hotelId;
 			let id = idMaker++;
 			let ticketName = item.ticketName;
-			let ticketPrice = item.price;
+      let ticketPrice = item.price;
+      let ticketTotalPrice = item.totalPrice;
 			let ticketTime = item.time;
 			let activityName = item.activityName;
 			let activityPrice = item.price;
@@ -74,6 +75,7 @@ class Navbar extends React.Component {
           hotelName={hotelName}
           hotelPrice={hotelPrice}
           hotelTotalPrice={hotelTotalPrice}
+          ticketTotalPrice={ticketTotalPrice}
 					roomNumber={roomNumber}
 					hotelId ={hotelId}
 					id={id}

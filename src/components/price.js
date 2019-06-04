@@ -16,103 +16,150 @@ class Price extends React.Component {
       ],
       ticketTwo: [
         {
-          price: 45.99,
+          price: 45.00,
           ticketName: "D.C United Vs Marseille'",
           time: "7:00",
-          totalPrice:45.99,
+          totalPrice: 45.00,
           ticketId: Number(1)
         }
       ],
       ticketThree: [
         {
-          price: 50.99,
+          price: 50.44,
           ticketName: "D.C United Vs Marseille'",
           time: "7:00",
-          totalPrice:50.99,
+          totalPrice: 50.44,
           ticketId: Number(2)
         }
       ],
-      option : Number(0),
-
-
+      option: Number(0),
+      transfer: false
     };
   }
+
+  transferCheck = e => {
+    if (this.state.transfer == false) {
+      this.setState({ transfer: true });
+    } else {
+      this.setState({ transfer: false });
+    }
+
+  };
 
   roomOption = e => {
     console.log(e.target.value);
     this.setState({ option: e.target.value });
-  }
+  };
   onClickTicket = e => {
     e.preventDefault();
     var element = document.getElementById("activities");
     element.scrollIntoView();
+    let transfer = 55.00;
     let ticketOne = this.state.ticketOne[0];
-    
-    console.log('ticket one option one price' , this.state.ticketOne[0].price)
+
     let ticketTwo = this.state.ticketTwo[0];
     let ticketThree = this.state.ticketThree[0];
 
     if (e.target.id == ticketOne.ticketId && this.state.option == 0) {
       console.log("TICKET ONE IS TRYING TO BE ADDED TO HOME COMPONENT");
+      if(this.state.transfer == true){
+        this.state.ticketOne[0].totalPrice += transfer;
+        this.props.onTicketClick(this.state.ticketOne);
+      }
       this.props.onTicketClick(this.state.ticketOne);
     }
     if (e.target.id == ticketOne.ticketId && this.state.option == 2) {
-      console.log("TICKET ONE OPTION TWO IS TRYING TO BE ADDED TO HOME COMPONENT");
-      this.state.ticketOne[0].price += 10;
-      console.log('option two',this.state.ticketOne);
+      console.log(
+        "TICKET ONE OPTION TWO IS TRYING TO BE ADDED TO HOME COMPONENT"
+      );
+      if(this.state.transfer == true){
+        this.state.ticketOne[0].totalPrice += transfer;
+      }
+      this.state.ticketOne[0].totalPrice += 10;
+      console.log("option two", this.state.ticketOne);
       this.props.onTicketClick(this.state.ticketOne);
     }
     if (e.target.id == ticketOne.ticketId && this.state.option == 3) {
-      console.log("TICKET ONE OPTION TWO IS TRYING TO BE ADDED TO HOME COMPONENT");
-      this.state.ticketOne[0].price += 20;
-      console.log('option Three',this.state.ticketOne);
+      console.log(
+        "TICKET ONE OPTION TWO IS TRYING TO BE ADDED TO HOME COMPONENT"
+      );
+
+      if(this.state.transfer == true){
+        this.state.ticketOne[0].totalPrice += transfer;
+      }
+      this.state.ticketOne[0].totalPrice += 20;
+      console.log("option Three", this.state.ticketOne);
       this.props.onTicketClick(this.state.ticketOne);
     }
 
     if (e.target.id == ticketTwo.ticketId && this.state.option == 0) {
       console.log("TICKET TWO IS TRYING TO BE ADDED TO HOME COMPONENT");
+      if(this.state.transfer == true){
+        this.state.ticketTwo[0].totalPrice += transfer;
+      }
       this.props.onTicketClick(this.state.ticketTwo);
     }
 
-    if(e.target.id == ticketTwo.ticketId && this.state.option == 2){
-      console.log("TICKET TWO OPTION TWO IS TRYING TO BE ADDED TO HOME COMPONENT");
-      this.state.ticketTwo[0].price += 10;
-      Math.round(10 * this.state.ticketTwo[0].price)/10;
-      console.log('option two',this.state.ticketTwo);
+    if (e.target.id == ticketTwo.ticketId && this.state.option == 2) {
+      console.log(
+        "TICKET TWO OPTION TWO IS TRYING TO BE ADDED TO HOME COMPONENT"
+      );
+      if(this.state.transfer == true){
+        this.state.ticketTwo[0].totalPrice += transfer;
+      }
+      this.state.ticketTwo[0].totalPrice += 10;
+      // Math.round(10 * this.state.ticketTwo[0].price) / 10;
+      console.log("option two", this.state.ticketTwo);
 
       this.props.onTicketClick(this.state.ticketTwo);
     }
-    if(e.target.id == ticketTwo.ticketId && this.state.option == 3){
-      console.log("TICKET TWO OPTION TWO IS TRYING TO BE ADDED TO HOME COMPONENT");
-      this.state.ticketTwo[0].price += 15;
-      Math.round(10 * this.state.ticketTwo[0].price)/10;
-      console.log('option two',this.state.ticketTwo);
+    if (e.target.id == ticketTwo.ticketId && this.state.option == 3) {
+      console.log(
+        "TICKET TWO OPTION TWO IS TRYING TO BE ADDED TO HOME COMPONENT"
+      );
+      if(this.state.transfer == true){
+        this.state.ticketTwo[0].totalPrice += transfer;
+      }
+      this.state.ticketTwo[0].totalPrice += 15;
+      // Math.round(10 * this.state.ticketTwo[0].price) / 10;
+      console.log("option two", this.state.ticketTwo);
 
       this.props.onTicketClick(this.state.ticketTwo);
     }
 
     if (e.target.id == ticketThree.ticketId && this.state.option == 0) {
       console.log("TICKET THREE IS TRYING TO BE ADDED TO HOME COMPONENT");
+      if(this.state.transfer == true){
+        this.state.ticketThree[0].totalPrice += transfer;
+      }
       this.props.onTicketClick(this.state.ticketThree);
     }
     if (e.target.id == ticketThree.ticketId && this.state.option == 2) {
-      console.log("TICKET THREE OPTION TWO IS TRYING TO BE ADDED TO HOME COMPONENT");
-      this.state.ticketThree[0].price += 10;
-      Math.round(10 * this.state.ticketThree[0].price)/10;
-      console.log('option two',this.state.ticketThree);
+      console.log(
+        "TICKET THREE OPTION TWO IS TRYING TO BE ADDED TO HOME COMPONENT"
+      );
+      if(this.state.transfer == true){
+        this.state.ticketThree[0].totalPrice += transfer;
+      }
+      this.state.ticketThree[0].totalPrice += 10;
+      // Math.round(10 * this.state.ticketThree[0].price) / 10;
+      console.log("option two", this.state.ticketThree);
 
       this.props.onTicketClick(this.state.ticketThree);
     }
     if (e.target.id == ticketThree.ticketId && this.state.option == 3) {
-      console.log("TICKET THREE OPTION THREE IS TRYING TO BE ADDED TO HOME COMPONENT");
-      this.state.ticketThree[0].price += 30;
-      Math.round(10 * this.state.ticketThree[0].price)/10;
-      console.log('option three',this.state.ticketThree);
+      console.log(
+        "TICKET THREE OPTION THREE IS TRYING TO BE ADDED TO HOME COMPONENT"
+      );
+      if(this.state.transfer == true){
+        this.state.ticketThree[0].totalPrice += transfer;
+      }
+      this.state.ticketThree[0].totalPrice += 30;
+      // Math.round(10 * this.state.ticketThree[0].price) / 10;
+      console.log("option three", this.state.ticketThree);
 
       this.props.onTicketClick(this.state.ticketThree);
     }
-    
-
   };
   render() {
     // OwlCarousel Option for Prices
@@ -158,7 +205,7 @@ class Price extends React.Component {
         title: "Montpellier HSC Vs As Saint Etienne",
         id: 1,
         lable: "07/27/2019",
-        price: "45.99",
+        price: "45.00",
         features:
           "<li>Section 100, Row 02</li><li>real time sync</li><li>unlimited attachment</li><li>customize theme</li><li>priority email support</li>",
         link: "#"
@@ -167,7 +214,7 @@ class Price extends React.Component {
         title: "D.C. United     Vs  Olympic Marseille",
         id: 2,
         lable: "07/29/2019",
-        price: "50.99",
+        price: "50.44",
         features:
           "<li>Section 100, Row 02</li><li>unlimited attachment</li><li>customize theme</li><li>priority email support</li><li>priority email support</li>",
         link: "#"
@@ -189,22 +236,35 @@ class Price extends React.Component {
                 <span className="d-block" />
               </h5>
             </div>
-            <br></br>
-            <select id="ticketCat" className="form-control" onChange={this.roomOption}>
-                  <option value="0">Gold Ticket $10 more!</option>
-                  <option value="2">Silver Ticket $20 more!</option>
-                  <option value="3">Bronze Ticket $30 more!</option>
-                </select>
-           
+            <br />
+            <select
+              id="ticketCat"
+              className="form-control"
+              onChange={this.roomOption}
+            >
+              <option value="0">Gold Ticket $10 more!</option>
+              <option value="2">Silver Ticket $20 more!</option>
+              <option value="3">Bronze Ticket $20 more!</option>
+            </select>
+
             <div className="price-plan text-center">
               <ul>
                 <li>{val.lable}</li>
                 <li>7:00pm</li>
                 <li>
-                  Add Transfer To and From for $100
-                  <input className="" type="radio" name="transfer" id="transfer" value="true" />
+                  <input
+                    onChange={this.transferCheck}
+                    type="checkbox"
+                    name="transfer"
+                    id="transfer"
+                    value="true"
+                  />
+                  <span id="transferText">
+                    {" "}
+                    Add Transfer To and From for $55/person{" "}
+                  </span>
                 </li>
-           
+
                 <li>Section 100, Row 02</li>
                 <li>Per Ticket</li>
               </ul>
@@ -213,9 +273,8 @@ class Price extends React.Component {
                 id={val.id}
                 className="btn btn-primary bookButton"
               >
-                 Add
+                Add
               </button>
-              
             </div>
           </div>
         </div>
@@ -228,7 +287,9 @@ class Price extends React.Component {
           <div className="row">
             <div className="col-md-12 text-center">
               <div className="section-title">
-                <h2 id="ticketHeader" className="hotelTitle">Tickets</h2>
+                <h2 id="ticketHeader" className="hotelTitle">
+                  Tickets
+                </h2>
                 <img
                   src="assets/images/blueTitleLine.png"
                   alt="title-line"
@@ -252,9 +313,7 @@ class Price extends React.Component {
                 responsive={options}
               >
                 {DataList}
-                
               </OwlCarousel>
-            
             </div>
           </div>
         </div>

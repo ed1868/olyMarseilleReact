@@ -10,6 +10,7 @@ const CartItem = ({
   cartUpdatorHotelOne,
   ticketName,
   ticketPrice,
+  ticketTotalPrice,
   ticketTime,
   activityName,
   activityPrice,
@@ -22,6 +23,7 @@ const CartItem = ({
   console.log("2", hotelPrice);
   console.log("3", roomNumber);
   console.log("4", ticketName);
+  console.log('ticketTotal', ticketTotalPrice);
   console.log("5", ticketPrice);
   console.log("6", activityName);
   console.log("7", activityPrice);
@@ -44,7 +46,7 @@ const CartItem = ({
       </div>
     );
   }
-  if (ticketName != undefined) {
+  if (ticketName != undefined && ticketTotalPrice != undefined) {
     return (
       <div>
         <div>
@@ -54,7 +56,7 @@ const CartItem = ({
           <li className="cartHotelName">
             <strong>{ticketName}</strong>
           </li>
-          <li className="cartHotelPrice">${ticketPrice}</li>
+          <li className="cartHotelPrice">${ticketTotalPrice}</li>
           <li className="cartRoomNumber">Time:{ticketTime}</li>
         </div>
       </div>
