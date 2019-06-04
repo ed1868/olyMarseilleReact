@@ -251,8 +251,8 @@ class Work extends React.Component {
                 className="form-control"
                 id="checkIn"
                 name="checkIn"
-                min="2019-07-16" 
-                max="2019-07-24"
+                min="2019-07-17" 
+                max="2019-07-25"
                 onChange={e => this.handleChange(e)}
                 type="date"
               />

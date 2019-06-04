@@ -11,7 +11,7 @@ class Price extends React.Component {
           ticketName: "D.C United Vs Marseille'",
           time: "7:00",
           ticketId: Number(0),
-          totalPrice: 35.44
+          totalPrice: 35.44,
         }
       ],
       ticketTwo: [
@@ -20,7 +20,7 @@ class Price extends React.Component {
           ticketName: "D.C United Vs Marseille'",
           time: "7:00",
           totalPrice: 45.00,
-          ticketId: Number(1)
+          ticketId: Number(1),
         }
       ],
       ticketThree: [
@@ -29,7 +29,8 @@ class Price extends React.Component {
           ticketName: "D.C United Vs Marseille'",
           time: "7:00",
           totalPrice: 50.44,
-          ticketId: Number(2)
+          ticketId: Number(2),
+          
         }
       ],
       option: Number(0),

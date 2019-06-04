@@ -160,7 +160,7 @@ class Activities extends React.Component {
         id: 0,
         lable: "07/24/2019",
         price: "54.00",
-        time: "10:00am",
+        time: "10:00am or 2:00pm",
         description:"Leave the oversized tour buses behind and take open-air electric Red Roadsters to see DC in a sustainable way! On this mall and monuments” tour, explore famous monuments, war memorials, as well as venture through Capitol Hill and the Smithsonian museum areas, as well as other hot spots. ",
         features:
           "<li>Section 100, Row 02</li><li>real time sync</li><li>unlimited attachment</li><li>customize theme</li><li>priority email support</li>",
