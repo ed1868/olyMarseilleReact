@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 
 const CartItem = ({
+  total,
   hotelName,
   hotelPrice,
+  hotelTotalPrice,
   roomNumber,
   id,
   cartUpdatorHotelOne,
@@ -15,6 +17,7 @@ const CartItem = ({
   activityTime
 }) => {
   console.log("YOU ARE NOW IN THE CART ITEM COMPONENT HERE ARE YOUR ITEMS ");
+  console.log('THIS IS THE TOTAL IN THE CART ITEM COMPONENT', total);
   console.log("1", hotelName);
   console.log("2", hotelPrice);
   console.log("3", roomNumber);
@@ -25,7 +28,7 @@ const CartItem = ({
   console.log("8", activityDate);
   console.log("9", activityTime);
 
-  if (hotelName != undefined) {
+  if (hotelName != undefined && hotelTotalPrice != undefined) {
     return (
       <div>
         <div>
@@ -35,7 +38,7 @@ const CartItem = ({
           <li className="cartHotelName">
             <strong>{hotelName}</strong>
           </li>
-          <li className="cartHotelPrice">${hotelPrice} per/night</li>
+          <li className="cartHotelPrice">${hotelTotalPrice}</li>
           {/* <li className="cartRoomNumber"># Rooms:{roomNumber}</li> */}
         </div>
       </div>

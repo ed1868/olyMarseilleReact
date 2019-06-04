@@ -183,7 +183,6 @@ class Home extends React.Component {
     this.setState({
       cart: [],
       clientFirstName: " ",
-      formSubmit : false,
       stayData:[],
       clientLastName: " ",
       checkIn: " ",

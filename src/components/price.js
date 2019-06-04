@@ -10,7 +10,8 @@ class Price extends React.Component {
           price: 35.44,
           ticketName: "D.C United Vs Marseille'",
           time: "7:00",
-          ticketId: Number(0)
+          ticketId: Number(0),
+          totalPrice: 35.44
         }
       ],
       ticketTwo: [
@@ -18,6 +19,7 @@ class Price extends React.Component {
           price: 45.99,
           ticketName: "D.C United Vs Marseille'",
           time: "7:00",
+          totalPrice:45.99,
           ticketId: Number(1)
         }
       ],
@@ -26,6 +28,7 @@ class Price extends React.Component {
           price: 50.99,
           ticketName: "D.C United Vs Marseille'",
           time: "7:00",
+          totalPrice:50.99,
           ticketId: Number(2)
         }
       ],
@@ -41,6 +44,8 @@ class Price extends React.Component {
   }
   onClickTicket = e => {
     e.preventDefault();
+    var element = document.getElementById("activities");
+    element.scrollIntoView();
     let ticketOne = this.state.ticketOne[0];
     
     console.log('ticket one option one price' , this.state.ticketOne[0].price)
@@ -107,8 +112,7 @@ class Price extends React.Component {
       this.props.onTicketClick(this.state.ticketThree);
     }
     
-    var element = document.getElementById("checkoutForm");
-    element.scrollIntoView();
+
   };
   render() {
     // OwlCarousel Option for Prices
