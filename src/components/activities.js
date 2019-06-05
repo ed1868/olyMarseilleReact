@@ -10,7 +10,8 @@ class Activities extends React.Component {
           price: "54.00",
           activityName: "DC Unveiled",
           date: "05/20/2019",
-          totalPrice:"54.00",
+          duration: "2 hours",
+          totalPrice: "54.00",
           time: "10:00am ",
           description:
             "Leave the oversized tour buses behind and take open-air electric Red Roadsters to see DC in a sustainable way! On this mall and monuments” tour, explore famous monuments, war memorials, as well as venture through Capitol Hill and the Smithsonian museum areas, as well as other hot spots. ",
@@ -21,10 +22,12 @@ class Activities extends React.Component {
         {
           price: "60.00",
           activityName: "Monuments By NIght'",
+          duration: "2 hours",
           date: "05/21/2019",
-          totalPrice:"60.00",
+          totalPrice: "60.00",
           time: "8:00pm",
-          description:"Hop on board an open-air sustainable electric Red Roadster for a journey through the most iconic DC monuments and memorials by night. Enjoy the Washington Monument, Licoln, FDR and Jefferson Memorials plus many more!",
+          description:
+            "Hop on board an open-air sustainable electric Red Roadster for a journey through the most iconic DC monuments and memorials by night. Enjoy the Washington Monument, Licoln, FDR and Jefferson Memorials plus many more!",
           ticketId: Number(1)
         }
       ],
@@ -32,9 +35,11 @@ class Activities extends React.Component {
         {
           price: "34.00",
           activityName: "Museum of American History Thru Music'",
+          duration: "2 hours",
           date: "05/22/2019",
-          totalPrice:"34.00",
-          description:"Travel through time and experience US History with a musical twist! Learn the evolution of spiritual music to blues, jazz & rock n roll, as well as the controversies of the American national anthem.Live out your DJ dreams by learning a funky beat with your local guide as well! ",
+          totalPrice: "34.00",
+          description:
+            "Travel through time and experience US History with a musical twist! Learn the evolution of spiritual music to blues, jazz & rock n roll, as well as the controversies of the American national anthem.Live out your DJ dreams by learning a funky beat with your local guide as well! ",
           time: "1:00pm ",
           ticketId: Number(2)
         }
@@ -43,9 +48,11 @@ class Activities extends React.Component {
         {
           price: "34.00",
           activityName: "Smithsonian American Art Adventure",
+          duration: "2 hours",
           date: "05/22/2019",
-          totalPrice:"34.00",
-          description:"Dive into American History through art as you tour one of the world’s largest collections of art while listening to your local guide tell amazing tales of the power players who shaped the country ",
+          totalPrice: "34.00",
+          description:
+            "Dive into American History through art as you tour one of the world’s largest collections of art while listening to your local guide tell amazing tales of the power players who shaped the country ",
           time: "5:00pm ",
           ticketId: Number(3)
         }
@@ -54,9 +61,11 @@ class Activities extends React.Component {
         {
           price: "46.00",
           activityName: "French Speaking Tour through Washington DC",
-          totalPrice:"46.00",
+          duration: "4 hours",
+          totalPrice: "46.00",
           date: "05/22/2019",
-          description:"Experience The Capitol, Supreme Court, Library of Congress, Thomas Jefferson Memorial, Lincoln Memorial and more with a french-speaking local guide. ",
+          description:
+            "Experience The Capitol, Supreme Court, Library of Congress, Thomas Jefferson Memorial, Lincoln Memorial and more with a french-speaking local guide. ",
           time: "5:00pm ",
           ticketId: Number(4)
         }
@@ -64,10 +73,12 @@ class Activities extends React.Component {
       activitySix: [
         {
           price: "34.00",
-          totalPrice:"34.00",
+          duration: "4 hours",
+          totalPrice: "34.00",
           activityName: "Rooftop Party at Audi Field",
           date: "07/20/2019",
-          description:"Dive into American History through art as you tour one of the world’s largest collections of art while listening to your local guide tell amazing tales of the power players who shaped the country ",
+          description:
+            "Dive into American History through art as you tour one of the world’s largest collections of art while listening to your local guide tell amazing tales of the power players who shaped the country ",
           time: "9:00pm ",
           ticketId: Number(5)
         }
@@ -76,7 +87,7 @@ class Activities extends React.Component {
   }
   onClickActivity = e => {
     e.preventDefault();
-    console.log('ENTROOOO',e.target.id);
+    console.log("ENTROOOO", e.target.id);
 
     let activityOne = this.state.activityOne[0];
 
@@ -85,7 +96,6 @@ class Activities extends React.Component {
     let activityFour = this.state.activityFour[0];
     let activityFive = this.state.activityFive[0];
     let activitySix = this.state.activitySix[0];
-
 
     var element = document.getElementById("checkoutForm");
     element.scrollIntoView();
@@ -141,15 +151,15 @@ class Activities extends React.Component {
         nav: true,
         dots: true
       },
-      992:{
-        items:3,
-        nav:true,
-        dots:true
+      992: {
+        items: 3,
+        nav: true,
+        dots: true
       },
       1000: {
         items: 3,
-        nav:true,
-        dots:true
+        nav: true,
+        dots: true
       }
     };
 
@@ -158,10 +168,12 @@ class Activities extends React.Component {
       {
         title: "Electric Roadster Tour : DC Unveiled",
         id: 0,
+        duration: "2 hours",
         lable: "07/24/2019",
         price: "54.00",
         time: "10:00am or 2:00pm",
-        description:"Leave the oversized tour buses behind and take open-air electric Red Roadsters to see DC in a sustainable way! On this mall and monuments” tour, explore famous monuments, war memorials, as well as venture through Capitol Hill and the Smithsonian museum areas, as well as other hot spots. ",
+        description:
+          "Leave the oversized tour buses behind and take open-air electric Red Roadsters to see DC in a sustainable way! On this mall and monuments” tour, explore famous monuments, war memorials, as well as venture through Capitol Hill and the Smithsonian museum areas, as well as other hot spots. ",
         features:
           "<li>Section 100, Row 02</li><li>real time sync</li><li>unlimited attachment</li><li>customize theme</li><li>priority email support</li>",
         link: "#"
@@ -169,10 +181,12 @@ class Activities extends React.Component {
       {
         title: "Electric Roadster Tour : Monuments By Night",
         id: 1,
+        duration: "2 hours",
         price: "60.00",
         lable: "07/27/2019",
-        time:"8:00pm",
-        description:" Hop on board an open-air sustainable electric Red Roadster for a journey through the most iconic DC monuments and memorials by night. Enjoy the Washington Monument, Licoln, FDR and Jefferson Memorials plus many more ",
+        time: "8:00pm",
+        description:
+          " Hop on board an open-air sustainable electric Red Roadster for a journey through the most iconic DC monuments and memorials by night. Enjoy the Washington Monument, Licoln, FDR and Jefferson Memorials plus many more ",
         features:
           "<li>Section 100, Row 02</li><li>real time sync</li><li>unlimited attachment</li><li>customize theme</li><li>priority email support</li>",
         link: "#"
@@ -180,21 +194,25 @@ class Activities extends React.Component {
       {
         title: "Museum of American History Thru Music",
         id: 2,
+        duration: "2 hours",
         lable: "07/29/2019",
         price: "34.00",
         time: "1:00pm",
-        description: "Travel through time and experience US History with a musical twist! Learn the evolution of spiritual music to blues, jazz & rock n roll, as well as the controversies of the American national anthem.Live out your DJ dreams by learning a funky beat with your local guide as well! ",
+        description:
+          "Travel through time and experience US History with a musical twist! Learn the evolution of spiritual music to blues, jazz & rock n roll, as well as the controversies of the American national anthem.Live out your DJ dreams by learning a funky beat with your local guide as well! ",
         features:
           "<li>Section 100, Row 02</li><li>unlimited attachment</li><li>customize theme</li><li>priority email support</li><li>priority email support</li>",
         link: "#"
       },
       {
         title: "Smithsonian American Art Adventure",
-        id:3,
+        id: 3,
         lable: "07/29/2019",
+        duration: "2 hours",
         price: "34.00",
-        time:"5:00pm",
-        description:"Dive into American History through art as you tour one of the world’s largest collections of art while listening to your local guide tell amazing tales of the power players who shaped the country ",
+        time: "5:00pm",
+        description:
+          "Dive into American History through art as you tour one of the world’s largest collections of art while listening to your local guide tell amazing tales of the power players who shaped the country ",
         features:
           "<li>Section 100, Row 02</li><li>unlimited attachment</li><li>customize theme</li><li>priority email support</li><li>priority email support</li>",
         link: "#"
@@ -202,10 +220,12 @@ class Activities extends React.Component {
       {
         title: "French Speaking Tour through Washington DC",
         lable: "07/29/2019",
-        id:4,
+        duration: "4 hours",
+        id: 4,
         price: "46.00",
-        time:"5:00pm",
-        description: "xperience The Capitol, Supreme Court, Library of Congress, Thomas Jefferson Memorial, Lincoln Memorial and more with a french-speaking local guide.",
+        time: "5:00pm",
+        description:
+          "xperience The Capitol, Supreme Court, Library of Congress, Thomas Jefferson Memorial, Lincoln Memorial and more with a french-speaking local guide.",
         features:
           "<li>Section 100, Row 02</li><li>unlimited attachment</li><li>customize theme</li><li>priority email support</li><li>priority email support</li>",
         link: "#"
@@ -213,10 +233,11 @@ class Activities extends React.Component {
       {
         title: "Rooftop Party at Audi Field or SIX FLAGS America         ",
         id: 5,
+        duration: "4 hours",
         lable: "07/20/2019",
         price: "100.00",
-        time:"8:00pm",
-        description:"After party at the rooftop of the Audi Field Stadium",
+        time: "8:00pm",
+        description: "After party at the rooftop of the Audi Field Stadium",
         features:
           "<li>Section 100, Row 02</li><li>real time sync</li><li>unlimited attachment</li><li>customize theme</li><li>priority email support</li>",
         link: "#"
@@ -240,6 +261,7 @@ class Activities extends React.Component {
               <ul>
                 <li>{val.lable}</li>
                 <li>{val.time}</li>
+                <li>Duration: {val.duration}</li>
                 <li>Per Ticket</li>
               </ul>
               <button
