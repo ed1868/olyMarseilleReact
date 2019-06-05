@@ -388,7 +388,7 @@ section {
         -webkit-transition: all 0.3s ease-in-out;
         transition: all 0.3s ease-in-out; }
   .theme-nav .navbar-nav .active > .nav-link {
-    color: #9647db; }
+   }
   .theme-nav .navbar-toggler-icon i {
     color: #ffffff;
     display: -webkit-box;
@@ -412,7 +412,7 @@ section {
   color: #ffffff; }
 
 .btn-menu {
-  background-color: #9647db;
+  background-color: blue;
   color: #ffffff !important;
   border-radius: 50px;
   padding: 10px 54px;

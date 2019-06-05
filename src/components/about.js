@@ -10,17 +10,19 @@ class About extends React.Component {
   render() {
 		
   	return (
+        
   	    <section id="about"  className="sectionTwo">
+
               <div className="about-chat">
                  <div className="container ">
                     <div className="row">
                        <div className="col-md-12 text-center">
                           <div className="section-title">
-                             
-                             <h2 className="subHeaders hotelTitle">The Experience</h2>
+                             <h2 className="hotelTitle">THE EXPERIENCE</h2>
                              <img src="assets/images/title-line.png" alt="title-line" className="img-fluid"/>
                           </div>
                        </div>
+
                        <div className="col-md-12 about-box">
                           <div className="row">
                              <div className="col-lg-3 col-6 about-border">

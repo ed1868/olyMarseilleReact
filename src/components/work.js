@@ -81,7 +81,7 @@ class Work extends React.Component {
     this.props.onStay(checkIn);
     this.props.onStay(roomNumber);
 
-    var element = document.getElementById("tickets");
+    var element = document.getElementById("activities");
     element.scrollIntoView();
 
     let staringPrice = this.state.hotelOne[0].price * this.state.numberOfRooms;
@@ -123,7 +123,7 @@ class Work extends React.Component {
   onClickTwo = e => {
     e.preventDefault();
     console.log("ive been clicked Two");
-    var element = document.getElementById("tickets");
+    var element = document.getElementById("activities");
     element.scrollIntoView();
     
     let staringPrice = this.state.hotelTwo[0].price * this.state.numberOfRooms;
@@ -147,7 +147,7 @@ class Work extends React.Component {
     e.preventDefault();
 
     console.log("number 3");
-    var element = document.getElementById("tickets");
+    var element = document.getElementById("activities");
     element.scrollIntoView();
     let staringPrice = this.state.hotelThree[0].price * this.state.numberOfRooms;
     let numberOfNights = this.state.numberOfNights;
@@ -259,20 +259,22 @@ class Work extends React.Component {
             </div>
             <div className="col-md-4 ">
               <label id="" className="text-white" htmlFor="checkOut">
-                Number Of Nights:
+                Check Out:
               </label>
-              <select className="form-control" onChange={this.numberOfNights}>
+              {/* <select className="form-control" onChange={this.numberOfNights}>
                   <option value="4">4 Nights - 07/18 to 07/22 </option>
                   <option value="8">8 Nights - 07/17 to 07/25 </option>
-                </select>
-              {/* <input
+                </select> */}
+               <input
                 autoComplete="off"
                 className="form-control"
                 id="checkOut"
+                min="2019-07-17"
+                max="2019-07-25"
                 name="checkOut"
                 onChange={e => this.handleChange(e)}
                 type="date"
-              /> */}
+              /> 
             </div>
             <div className="col-md-4 ">
               <label id="" className="text-white" htmlFor="numberOfRooms">

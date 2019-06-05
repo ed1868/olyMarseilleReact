@@ -211,7 +211,7 @@ class Activities extends React.Component {
         link: "#"
       },
       {
-        title: "Rooftop Party at Audi Field",
+        title: "Rooftop Party at Audi Field or SIX FLAGS America         ",
         id: 5,
         lable: "07/20/2019",
         price: "100.00",
