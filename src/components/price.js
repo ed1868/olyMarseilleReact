@@ -252,7 +252,7 @@ class Price extends React.Component {
               <ul>
                 <li>{val.lable}</li>
                 <li>7:00pm</li>
-                <li>
+                {/* <li>
                   <input
                     onChange={this.transferCheck}
                     type="checkbox"
@@ -264,7 +264,7 @@ class Price extends React.Component {
                     {" "}
                     Add Transfer To and From for $55/person{" "}
                   </span>
-                </li>
+                </li> */}
 
                 <li>Section 100, Row 02</li>
                 <li>Per Ticket</li>
