@@ -61,7 +61,8 @@ class About extends React.Component {
                              <br></br>
                              <h3>We Will Provide you with the best deals on hotels, Tickets to watch this thrilling tournament with style and comfort</h3>
                                 {/* <img id="teamPic" src="assets/images/marseilleTeam.png" alt="stay-connected"/> */}
-
+                              <p id="disclaimerP"> <span id="disclaimer">NOT</span> included in packages - Flights – Airport transfer – VISA formalities – Hotel taxes
+</p>
                           </div>
                        </div>
                     </div>

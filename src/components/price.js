@@ -53,7 +53,7 @@ class Price extends React.Component {
   };
   onClickTicket = e => {
     e.preventDefault();
-    var element = document.getElementById("activities");
+    var element = document.getElementById("hotels");
     element.scrollIntoView();
     let transfer = 55.00;
     let ticketOne = this.state.ticketOne[0];
