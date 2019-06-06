@@ -653,7 +653,7 @@ class Home extends React.Component {
               </div>
 
               <div className="row topPadding">
-                <div className="col-md-12">
+                <div className="col-md-8">
                   <label className="formText" htmlFor="paymentDetails">
                     Credit Card Number :{" "}
                   </label>
@@ -666,8 +666,12 @@ class Home extends React.Component {
                     onChange={e => this.handleChange(e)}
                     type="text"
                   />
-                  <img
-                    className="img-responsive pull-right"
+
+                </div>
+                <div className="col-md-4">
+                <img
+                    id="creditCards"
+                    className="img-responsive"
                     src="http://i76.imgup.net/accepted_c22e0.png"
                   />
                 </div>
