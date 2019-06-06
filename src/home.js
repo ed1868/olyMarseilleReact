@@ -21,8 +21,7 @@ import { faArrowAltCircleDown } from "@fortawesome/fontawesome-free-regular";
 import PaymentCard from "react-payment-card-component";
 import Timer from "react-compound-timer";
 import Popup from "./components/popUp";
-import {faPlusSquare} from "@fortawesome/fontawesome-free-regular";
-
+import { faPlusSquare } from "@fortawesome/fontawesome-free-regular";
 
 import FormService from "./components/formService";
 //Testing DATE PICKER FOR REACT
@@ -42,8 +41,8 @@ class Home extends React.Component {
       numRoom: 0,
       // clientFirstName : " ",
       // clientLastName  : " ",
-      stayData: [],
-      
+      stayData: []
+
       // checkOut: " ",
       // fanClubNumber: " ",
       // address: " ",
@@ -135,30 +134,27 @@ class Home extends React.Component {
   };
 
   fanValidation = e => {
-    console.log('estoy entrando al flow');
+    console.log("estoy entrando al flow");
     console.log(this.state);
 
     let cart = this.state.cart;
-    
-    //percentage function 
-    function minusPercent(n,p) {
-      return n - (n * (p/100));
+
+    //percentage function
+    function minusPercent(n, p) {
+      return n - n * (p / 100);
     }
     let calculation = 0;
 
-    //loop and set the discounted total 
+    //loop and set the discounted total
     cart.map(items => {
-      console.log('the cart items',items);
-    
+      console.log("the cart items", items);
+
       let result = minusPercent(items.totalPrice, 10);
-      return calculation += result;
-   
-
-    })
-    // set the state for the discounted total 
-    this.setState({ discountedTotal: calculation });
-
-  }
+      return (calculation += result);
+    });
+    // set the state for the discounted total
+    this.setState({ discountedTotal: Math.round(10*calculation)/10 });
+  };
   handleChange = e => {
     console.log("changing");
     const { name, value } = e.target;
@@ -314,7 +310,6 @@ class Home extends React.Component {
             </ul>
           </section> */}
           {/* Navbar Section */}
-  			
 
           {/* Home One Section Start */}
 
@@ -356,8 +351,6 @@ class Home extends React.Component {
                     </div>
                     <FontAwesomeIcon id="goOn" icon={faArrowAltCircleDown} />
                   </div>
-
-
                 </div>
               </div>
               {/* <div className="col-md-6">
@@ -395,20 +388,18 @@ class Home extends React.Component {
                 Field, the 20,000-seat home of Major League Soccer’s D.C.
                 United. In addition to that, Olympique de Marseille will face
                 D.C United in a friendly game on Wednesday, July 24th.
-
               </p>
             </div>
 
             <p id="thirdP" className="tourP">
-              Dear fans abroad,<br>
-              </br> Don't miss this chance to see OM playing and
-              experience the tour like no one else! 
+              Dear fans abroad,<br /> Don't miss this chance to see OM playing
+              and experience the tour like no one else! 
             </p>
           </div>
         </section>
         <About />
-       {/*Price Component*/}
-       <Price ref="price" onTicketClick={this.onTicketClick} />
+        {/*Price Component*/}
+        <Price ref="price" onTicketClick={this.onTicketClick} />
         {/*Team Component*/}
         {/* <Team /> */}
         {/*Feature Component*/}
@@ -423,7 +414,7 @@ class Home extends React.Component {
           onStay={this.onStay}
           hotelPriceUpdator={this.hotelPriceUpdator}
         />
- 
+
         {/*ActivitiesComponent*/}
         <Activities onActivityClick={this.onActivityClick} />
         {/*ScreenShot Component*/}
@@ -436,10 +427,13 @@ class Home extends React.Component {
             <form className="" onSubmit={this.handleFormSubmit}>
               <div className="row">
                 <div className="col-md-4">
-                  <img id="discountImg" src="https://66.media.tumblr.com/b3900f6abb6350b67164b3a71f7aaa49/tumblr_pskz23rhlc1vp5j01o1_1280.png" />
+                  <img
+                    id="discountImg"
+                    src="https://66.media.tumblr.com/b3900f6abb6350b67164b3a71f7aaa49/tumblr_pskz23rhlc1vp5j01o1_1280.png"
+                  />
                 </div>
-                <div className="col-md-8">
-                <label id="labelFan" className="formText" htmlFor="checkOut">
+                <div className="col-md-5">
+                  <label id="labelFan" className="formText" htmlFor="checkOut">
                     OM Nation Membership :{" "}
                   </label>
                   <input
@@ -449,13 +443,24 @@ class Home extends React.Component {
                     name="fanClubNumber"
                     onChange={e => this.handleChange(e)}
                     type="text"
-                  />   
-                   <FontAwesomeIcon
+                  />
+                </div>
+                <div className="col-md-3">
+                  {/* <FontAwesomeIcon
                   id="fanArrow"
                   onClick={this.fanValidation}
-                  className="pull-right"
+                  className=""
                   icon={faPlusSquare}
-                />
+                /> */}
+                  <div id="button" className="col-md-12">
+                    <input
+                      className="btn btn-primary"
+                      id="fanArrow"
+                      onClick={this.fanValidation}
+                      value="Apply my promotion code"
+                  
+                    />
+                  </div>
                 </div>
               </div>
               <div className="row">
@@ -573,9 +578,8 @@ class Home extends React.Component {
                   />
                 </div>
               </div> */}
-              <br></br>
-              <br></br>
-
+              <br />
+              <br />
 
               <div className="row">
                 <div className="col-md-12">
@@ -629,8 +633,8 @@ class Home extends React.Component {
                   />
                 </div>
               </div>
-              <br></br>
-              <br></br>
+              <br />
+              <br />
               <div className="row topPadding">
                 <div className="col-md-12">
                   <label className="formText" htmlFor="paymentDetails">
@@ -662,8 +666,10 @@ class Home extends React.Component {
                     onChange={e => this.handleChange(e)}
                     type="text"
                   />
-                <img className="img-responsive pull-right" src="http://i76.imgup.net/accepted_c22e0.png" />
-
+                  <img
+                    className="img-responsive pull-right"
+                    src="http://i76.imgup.net/accepted_c22e0.png"
+                  />
                 </div>
               </div>
               <div className="row topPadding">
