@@ -418,6 +418,8 @@ class Home extends React.Component {
         {/*ActivitiesComponent*/}
         <Activities onActivityClick={this.onActivityClick} />
         {/*ScreenShot Component*/}
+
+        
         {/* CHECK OUT FORM  */}
         <section id="checkoutForm">
           <h1 id="checkoutTitle" className="text-center hotelTitle">

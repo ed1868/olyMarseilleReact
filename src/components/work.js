@@ -175,7 +175,7 @@ class Work extends React.Component {
 
   numberOfNights = e => {
     e.preventDefault();
-    console.log('entro');
+    console.log('entro pal party ');
     let numberOfNights = Number(e.target.value);
     this.setState({numberOfNights : numberOfNights});
 
@@ -197,15 +197,30 @@ class Work extends React.Component {
 
     this.props.onSubmit(this.state.term);
   };
-  handleChange = e => {
+  handleCheckInChange = e => {
     const { name, value } = e.target;
 
+    
+    let cutStr = value.substring(8, 10);
+
+    console.log('cut STR' , cutStr)
     console.log("estoy adentro de el handle change", name);
     console.log("estoy adentro de el handle change", value);
 
     this.setState({ ...this.state, [name]: [value] });
+    this.setState({ ...this.state, checkInDay: Number(cutStr) });
   };
 
+  handleCheckoutChange = e => {
+    console.log('entro en checkout');
+
+    const {name , value} = e.target;
+
+    let cutStr = value.substring(8,10);
+    this.setState({ ...this.state, [name]: [value] });
+    this.setState({ ...this.state, checkOutDay: Number(cutStr) });
+    
+  }
   handleRoomPrince = e => {
     e.preventDefault();
     console.log("entro en handle room price");
@@ -253,7 +268,7 @@ class Work extends React.Component {
                 name="checkIn"
                 min="2019-07-17" 
                 max="2019-07-25"
-                onChange={e => this.handleChange(e)}
+                onChange={e => this.handleCheckInChange(e)}
                 type="date"
               />
             </div>
@@ -272,7 +287,7 @@ class Work extends React.Component {
                 min="2019-07-17"
                 max="2019-07-25"
                 name="checkOut"
-                onChange={e => this.handleChange(e)}
+                onChange={e => this.handleCheckoutChange(e)}
                 type="date"
               /> 
             </div>
