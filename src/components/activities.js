@@ -278,7 +278,7 @@ class Activities extends React.Component {
     });
 
     return (
-      <section className="backgroundColor" id="activities">
+      <section className="backgroundColorTwo" id="activities">
         {/* <section className="theme-bg" id="activities"> */}
         <div className="container">
           <div className="row">
