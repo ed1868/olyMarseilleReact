@@ -224,7 +224,8 @@ class Navbar extends React.Component {
                   <img
                     id="marseilleLogo"
                     style={{ width: 110, height: 150 }}
-                    src="assets/images/marseilleLogo.png"
+                    src="assets/images/OM.png"
+                    // src="assets/images/marseilleLogo.png"
                     alt="logo"
                   />
                 </a>

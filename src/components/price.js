@@ -100,7 +100,7 @@ class Price extends React.Component {
       }
       this.props.onTicketClick(this.state.ticketTwo);
     }
-
+    
     if (e.target.id == ticketTwo.ticketId && this.state.option == 2) {
       console.log(
         "TICKET TWO OPTION TWO IS TRYING TO BE ADDED TO HOME COMPONENT"

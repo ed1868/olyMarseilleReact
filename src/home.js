@@ -328,6 +328,8 @@ class Home extends React.Component {
                     </div>
                     <FontAwesomeIcon id="goOn" icon={faArrowAltCircleDown} />
                   </div>
+
+
                 </div>
               </div>
               {/* <div className="col-md-6">
@@ -365,6 +367,7 @@ class Home extends React.Component {
                 Field, the 20,000-seat home of Major League Soccer’s D.C.
                 United. In addition to that, Olympique de Marseille will face
                 D.C United in a friendly game on Wednesday, July 24th.
+
               </p>
             </div>
 
@@ -407,9 +410,9 @@ class Home extends React.Component {
                 <div className="col-md-4">
                   <img id="discountImg" src="https://66.media.tumblr.com/b3900f6abb6350b67164b3a71f7aaa49/tumblr_pskz23rhlc1vp5j01o1_1280.png" />
                 </div>
-                <dic className="col-md-8">
+                <div className="col-md-8">
                 <label id="labelFan" className="formText" htmlFor="checkOut">
-                    Fan Club ID :{" "}
+                    OM Nation Membership :{" "}
                   </label>
                   <input
                     autoComplete="off"
@@ -419,7 +422,7 @@ class Home extends React.Component {
                     onChange={e => this.handleChange(e)}
                     type="text"
                   />
-                </dic>
+                </div>
               </div>
               <div className="row">
                 <div className="col-md-6">
@@ -449,7 +452,78 @@ class Home extends React.Component {
                   />
                 </div>
               </div>
-
+              <div className="row">
+                <div className="col-md-12">
+                  <label className="formText" htmlFor="checkOut">
+                    Email:{" "}
+                  </label>
+                  <input
+                    autoComplete="off"
+                    className="form-control"
+                    placeholder=".com"
+                    id="email"
+                    name="email"
+                    onChange={e => this.handleChange(e)}
+                    type="email"
+                  />
+                </div>
+              </div>
+              <div className="row">
+                <div className="col-md-6">
+                  <label className="formText" htmlFor="firstName">
+                    Passport Number :{" "}
+                  </label>
+                  <input
+                    autoComplete="off"
+                    className="form-control"
+                    id="passportNum"
+                    name="passportNum"
+                    onChange={e => this.handleChange(e)}
+                    type="text"
+                  />
+                </div>
+                <div className="col-md-6">
+                  <label className="formText" htmlFor="lastName">
+                    Country Of Issue :{" "}
+                  </label>
+                  <input
+                    autoComplete="off"
+                    className="form-control"
+                    id="countryIssue"
+                    name="countryIssue"
+                    onChange={e => this.handleChange(e)}
+                    type="text"
+                  />
+                </div>
+              </div>
+              <div className="row">
+                <div className="col-md-6">
+                  <label className="formText" htmlFor="firstName">
+                    Date of Issue :{" "}
+                  </label>
+                  <input
+                    autoComplete="off"
+                    className="form-control"
+                    id="passportNum"
+                    name="passportNum"
+                    onChange={e => this.handleChange(e)}
+                    type="date"
+                  />
+                </div>
+                <div className="col-md-6">
+                  <label className="formText" htmlFor="lastName">
+                    Nationality:{" "}
+                  </label>
+                  <input
+                    autoComplete="off"
+                    className="form-control"
+                    id="countryIssue"
+                    name="countryIssue"
+                    onChange={e => this.handleChange(e)}
+                    type="text"
+                  />
+                </div>
+              </div>
               {/* <div className="row">
                 <div className="col-md-12">
                   <label className="formText" htmlFor="checkOut">
@@ -465,6 +539,10 @@ class Home extends React.Component {
                   />
                 </div>
               </div> */}
+              <br></br>
+              <br></br>
+
+
               <div className="row">
                 <div className="col-md-12">
                   <label className="formText" htmlFor="checkOut">
@@ -517,6 +595,8 @@ class Home extends React.Component {
                   />
                 </div>
               </div>
+              <br></br>
+              <br></br>
               <div className="row topPadding">
                 <div className="col-md-12">
                   <label className="formText" htmlFor="paymentDetails">
@@ -533,6 +613,7 @@ class Home extends React.Component {
                   />
                 </div>
               </div>
+
               <div className="row topPadding">
                 <div className="col-md-12">
                   <label className="formText" htmlFor="paymentDetails">
@@ -547,6 +628,8 @@ class Home extends React.Component {
                     onChange={e => this.handleChange(e)}
                     type="text"
                   />
+                <img className="img-responsive pull-right" src="http://i76.imgup.net/accepted_c22e0.png" />
+
                 </div>
               </div>
               <div className="row topPadding">
