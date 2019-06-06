@@ -21,6 +21,8 @@ import { faArrowAltCircleDown } from "@fortawesome/fontawesome-free-regular";
 import PaymentCard from "react-payment-card-component";
 import Timer from "react-compound-timer";
 import Popup from "./components/popUp";
+import {faPlusSquare} from "@fortawesome/fontawesome-free-regular";
+
 
 import FormService from "./components/formService";
 //Testing DATE PICKER FOR REACT
@@ -40,7 +42,8 @@ class Home extends React.Component {
       numRoom: 0,
       // clientFirstName : " ",
       // clientLastName  : " ",
-      stayData: []
+      stayData: [],
+      
       // checkOut: " ",
       // fanClubNumber: " ",
       // address: " ",
@@ -131,6 +134,31 @@ class Home extends React.Component {
     this.setState({ cart: e });
   };
 
+  fanValidation = e => {
+    console.log('estoy entrando al flow');
+    console.log(this.state);
+
+    let cart = this.state.cart;
+    
+    //percentage function 
+    function minusPercent(n,p) {
+      return n - (n * (p/100));
+    }
+    let calculation = 0;
+
+    //loop and set the discounted total 
+    cart.map(items => {
+      console.log('the cart items',items);
+    
+      let result = minusPercent(items.totalPrice, 10);
+      return calculation += result;
+   
+
+    })
+    // set the state for the discounted total 
+    this.setState({ discountedTotal: calculation });
+
+  }
   handleChange = e => {
     console.log("changing");
     const { name, value } = e.target;
@@ -421,7 +449,13 @@ class Home extends React.Component {
                     name="fanClubNumber"
                     onChange={e => this.handleChange(e)}
                     type="text"
-                  />
+                  />   
+                   <FontAwesomeIcon
+                  id="fanArrow"
+                  onClick={this.fanValidation}
+                  className="pull-right"
+                  icon={faPlusSquare}
+                />
                 </div>
               </div>
               <div className="row">
