@@ -77,15 +77,25 @@ class Work extends React.Component {
     e.preventDefault();
     console.log("ive been clicked", this.state);
     let checkIn = this.state.checkIn;
+    let checkOut = this.state.checkOut;
     let roomNumber = this.state.numberOfRooms;
     this.props.onStay(checkIn);
     this.props.onStay(roomNumber);
+    
+    let checkInDay = this.state.checkInDay;
+    let checkOutDay = this.state.checkOutDay;
+
+    let totalNights = checkOutDay - checkInDay;
+
+
+
+
 
     var element = document.getElementById("activities");
     element.scrollIntoView();
 
     let staringPrice = this.state.hotelOne[0].price * this.state.numberOfRooms;
-    let numberOfNights = this.state.numberOfNights;
+    let numberOfNights = totalNights
     let price = staringPrice * numberOfNights;
 
 
@@ -216,7 +226,12 @@ class Work extends React.Component {
 
     const {name , value} = e.target;
 
+
+
     let cutStr = value.substring(8,10);
+
+
+    console.log(cutStr);
     this.setState({ ...this.state, [name]: [value] });
     this.setState({ ...this.state, checkOutDay: Number(cutStr) });
     
