@@ -7,7 +7,7 @@
  Author URI: https://themeforest.net/user/pixelstrap
 
  -----------------------------------------------------------------------------------*/
-"use strict";
+
 $(document).ready(function(){
 
     /*------------------------
@@ -52,9 +52,11 @@ $(document).ready(function(){
     $(window).scroll(function() {
         var scroll = $(window).scrollTop();
         if (scroll >= 60) {
-            $(".navbar").addClass("darkHeader");
+            $(".navbar").addClass("navShadow");
+            $(".nav-link").addClass("navMineTwo");
         } else {
-            $(".navbar").removeClass("darkHeader");
+            $(".navbar").removeClass("navShadow");
+            $(".nav-link").removeClass("navMineTwo");
         }
     });
 

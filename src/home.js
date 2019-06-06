@@ -22,6 +22,7 @@ import PaymentCard from "react-payment-card-component";
 import Timer from "react-compound-timer";
 import Popup from "./components/popUp";
 import { faPlusSquare } from "@fortawesome/fontawesome-free-regular";
+import Cart from "./components/cart";
 
 import FormService from "./components/formService";
 //Testing DATE PICKER FOR REACT
@@ -153,7 +154,7 @@ class Home extends React.Component {
       return (calculation += result);
     });
     // set the state for the discounted total
-    this.setState({ discountedTotal: Math.round(10*calculation)/10 });
+    this.setState({ discountedTotal: Math.round(10 * calculation) / 10 });
   };
   handleChange = e => {
     console.log("changing");
@@ -234,8 +235,14 @@ class Home extends React.Component {
 
     return (
       <div>
+        <Navbar
+          cart={this.state.cart}
+          cartUpdatorHotelOne={this.cartUpdatorHotelOne}
+          stayData={this.state.stayData}
+          numRoom={this.state.numRoom}
+        />
         <section id="sectionOne" className="sectionOne">
-          <Navbar
+          <Cart
             cart={this.state.cart}
             cartUpdatorHotelOne={this.cartUpdatorHotelOne}
             stayData={this.state.stayData}
@@ -392,8 +399,9 @@ class Home extends React.Component {
             </div>
 
             <p id="thirdP" className="tourP">
-              Dear fans abroad,<br /> Don't miss this chance to see OM playing
-              and experience the tour like no one else! 
+              Dear fans abroad,
+              <br /> Don't miss this chance to see OM playing and experience the
+              tour like no one else! 
             </p>
           </div>
         </section>
@@ -419,7 +427,6 @@ class Home extends React.Component {
         <Activities onActivityClick={this.onActivityClick} />
         {/*ScreenShot Component*/}
 
-        
         {/* CHECK OUT FORM  */}
         <section id="checkoutForm">
           <h1 id="checkoutTitle" className="text-center hotelTitle">
@@ -460,7 +467,6 @@ class Home extends React.Component {
                       id="fanArrow"
                       onClick={this.fanValidation}
                       value="Apply my promotion code"
-                  
                     />
                   </div>
                 </div>
@@ -668,10 +674,9 @@ class Home extends React.Component {
                     onChange={e => this.handleChange(e)}
                     type="text"
                   />
-
                 </div>
                 <div className="col-md-4">
-                <img
+                  <img
                     id="creditCards"
                     className="img-responsive"
                     src="http://i76.imgup.net/accepted_c22e0.png"

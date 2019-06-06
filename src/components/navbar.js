@@ -84,6 +84,49 @@ class Navbar extends React.Component {
     });
 
     return (
+    <nav className="navbar transparent fixed-top navbar-expand-lg">
+    <a className="navbar-brand" href="#">
+    <img style={{ width: 110, height: 150 }}id="marseilleLogo" src="assets/images/OM.png" alt="" />
+      </a>
+    <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span className="navbar-toggler-icon"></span>
+    </button>
+  
+    <div className="collapse navbar-collapse " id="navbarSupportedContent">
+      <ul id="navItems" className="navbar-nav mr-auto">
+        <li className="nav-item active">
+        <a id="homeNav" className="nav-link text-center navMine" href="#sectionOne">HOME<span className="sr-only">(current)</span></a>
+        </li>
+        <li className="nav-item">
+        <a  id="aboutNav"className="nav-link text-center navMine" href="#theTour">TOUR</a>
+        </li>
+        <li className="nav-item">
+        <a  id="idNav"className="nav-link text-center navMine" href="#tickets">TICKETS</a>
+        </li>
+        <li className="nav-item">
+        <a  id="hotelNav"className="nav-link text-center navMine" href="#hotels">HOTELS</a>
+        </li>
+        <li className="nav-item">
+        <a id="idActivities" className="nav-link text-center navMine" href="#activities">ACTIVITIES</a>
+        </li>
+        {/* <li className="nav-item dropdown">
+          <a className="nav-link dropdown-toggle navMine" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Dropdown
+          </a>
+          <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a className="dropdown-item navMine" href="#">Action</a>
+            <a className="dropdown-item navMine" href="#">Another action</a>
+            <div className="dropdown-divider"></div>
+            <a className="dropdown-item navMine" href="#">Something else here</a>
+          </div>
+        </li>
+        <li className="nav-item">
+          <a className="nav-link" href="#hotels" >Disabled</a>
+        </li> */}
+      </ul>
+  
+    </div>
+  </nav>
 
       // <nav className="navbar navbar-expand">
       //       <div className="container-fluid">
@@ -218,70 +261,73 @@ class Navbar extends React.Component {
       // 		</div>
       // 	</div>
       // </nav>
-            <section id="left-sidebar">
-              <div class="logo">
-                <a href="#about" className="navbar-brand">
-                  <img
-                    id="marseilleLogo"
-                    style={{ width: 110, height: 150 }}
-                    src="assets/images/OM.png"
-                    // src="assets/images/marseilleLogo.png"
-                    alt="logo"
-                  />
-                </a>
-              </div>
+            // <section id="left-sidebar">
+            //   <div class="logo">
+            //     <a href="#about" className="navbar-brand">
+            //       <img
+            //         id="marseilleLogo"
+            //         style={{ width: 110, height: 150 }}
+            //         src="assets/images/OM.png"
+            //         // src="assets/images/marseilleLogo.png"
+            //         alt="logo"
+            //       />
+            //     </a>
+            //   </div>
 
-              <div
-                id="mobile-menu-icon"
-                className="visible-xs"
-                onclick="toggle_main_menu();"
-              >
-                <span class="glyphicon glyphicon-th" />
-              </div>
+            //   <div
+            //     id="mobile-menu-icon"
+            //     className="visible-xs"
+            //     onclick="toggle_main_menu();"
+            //   >
+            //     <span class="glyphicon glyphicon-th" />
+            //   </div>
 
-              <ul id="main-menu">
-                <li className="nav-item ">
-                  <a id="homeNav" className="nav-link text-center navMine" href="#sectionOne">
-                    Home
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a  id="aboutNav"className="nav-link text-center navMine" href="#about">
-                    About
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a  id="hotelNav"className="nav-link text-center navMine" href="#hotels">
-                    Hotels
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a  id="idNav"className="nav-link text-center navMine" href="#tickets">
-                    Tickets
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a id="idActivities" className="nav-link text-center navMine" href="#activities">
-                    Activities
-                  </a>
-                </li>
+            //   <ul id="main-menu">
+            //     <li className="nav-item ">
+            //       <a id="homeNav" className="nav-link text-center navMine" href="#sectionOne">
+            //         Home
+            //       </a>
+            //     </li>
+            //     <li className="nav-item">
+            //       <a  id="aboutNav"className="nav-link text-center navMine" href="#about">
+            //         About
+            //       </a>
+            //     </li>
+            //     <li className="nav-item">
+            //       <a  id="hotelNav"className="nav-link text-center navMine" href="#hotels">
+            //         Hotels
+            //       </a>
+            //     </li>
+            //     <li className="nav-item">
+            //       <a  id="idNav"className="nav-link text-center navMine" href="#tickets">
+            //         Tickets
+            //       </a>
+            //     </li>
+            //     <li className="nav-item">
+            //       <a id="idActivities" className="nav-link text-center navMine" href="#activities">
+            //         Activities
+            //       </a>
+            //     </li>
 
-      {/*
+      /*
                 <li className="nav-item">
                   <a className="nav-link text-center navMine" id="cart" href="#cart">
                     Cart
                   </a>
-                </li> */}
-              </ul>
-              <div id="cart">
-      					<a id='cartHeader' className="nav-link text-center navMineCart">
-      						Cart</a>
-                <ul id="cartList">{cartItems}</ul>
-              </div>
-              <p id="cartTotal" value={total}>Total ${total} </p>
-            </section>
+                </li> */
+            //   </ul>
+            //   <div id="cart">
+      			// 		<a id='cartHeader' className="nav-link text-center navMineCart">
+      			// 			Cart</a>
+            //     <ul id="cartList">{cartItems}</ul>
+            //   </div>
+            //   <p id="cartTotal" value={total}>Total ${total} </p>
+            // </section>
+            
+            
     );
   }
 }
 
 export default Navbar;
+

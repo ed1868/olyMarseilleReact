@@ -30,196 +30,211 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.1/css/swiper.css"
     />
     <style>
-            html {
-              scroll-behavior: smooth;
-            }
-            .mainTitle {
-              text-align: center;
-              font-weight: 700;
-              margin-top: 50px;
-              font-family: marseilleFont;
-            }
-            .prices {
-              color: #009ddc;
-              font-family: marseilleFont;
-            }
-            #checkoutTitle {
-              margin-top: -50px;
-              font-size: 80px;
-              padding-bottom: 20px;
-            }
-            #disclaimer{
-              color:red;
-            }
-            #disclaimerP{
-              padding-top: 30px;
-            }
-            #discountImg {
-              width: 100%;
-            }
-            #labelFan {
-              padding-top: 50px;
-            }
-            #moneyTag {
-              color: #009ddc;
-              font-family: marseilleFont;
-            }
-            #priceButton {
-              background-color: #009ddc;
-              font-family: marseilleFont;
-              color: white;
-            }
-            .cartItems {
-              /* padding:1px; */
-              text-align: center;
-              font-family: marseilleFont;
-            }
-            #main-menu {
-              z-index: 500;
-              font-family: marseilleFont;
-            }
-            .backgroundColor {
-              background-color: #13233d;
-            }
-            #tickets {
-              /* background: -webkit-gradient(linear, left top, right top, from(white), to(black));
+      html {
+        scroll-behavior: smooth;
+      }
+      .mainTitle {
+        text-align: center;
+        font-weight: 700;
+        margin-top: 50px;
+        font-family: marseilleFont;
+      }
+      .prices {
+        color: #009ddc;
+        font-family: marseilleFont;
+      }
+      #checkoutTitle {
+        margin-top: -50px;
+        font-size: 80px;
+        padding-bottom: 20px;
+      }
+      #disclaimer {
+        color: red;
+      }
+      #disclaimerP {
+        padding-top: 30px;
+      }
+      #discountImg {
+        width: 100%;
+      }
+      #labelFan {
+        padding-top: 50px;
+      }
+      #moneyTag {
+        color: #009ddc;
+        font-family: marseilleFont;
+      }
+      #priceButton {
+        background-color: #009ddc;
+        font-family: marseilleFont;
+        color: white;
+      }
+      .cartItems {
+        /* padding:1px; */
+        text-align: center;
+        font-family: marseilleFont;
+      }
+      #main-menu {
+        z-index: 500;
+        font-family: marseilleFont;
+      }
+      .backgroundColor {
+        background-color: #13233d;
+      }
+      #tickets {
+        /* background: -webkit-gradient(linear, left top, right top, from(white), to(black));
                   background: linear-gradient(to right, white 0%, black 100%); } */
 
-              /* background-image: url(https://images.unsplash.com/photo-1516731566880-919c39006c9d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80);
+        /* background-image: url(https://images.unsplash.com/photo-1516731566880-919c39006c9d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80);
                   background-size: cover; */
-            }
-            #actvities {
-              /* background: -webkit-gradient(linear, left top, right top, from(white), to(black));
+      }
+      #actvities {
+        /* background: -webkit-gradient(linear, left top, right top, from(white), to(black));
                   background: linear-gradient(to right, white 0%, black 100%); }
       /*
                   background-image: url(https://images.unsplash.com/photo-1516731566880-919c39006c9d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80);
                   background-size: cover; */
-            }
-            #timer {
-              padding-top: 20px;
-              color:#009ddc !important;
-              font-size: 90px;
-            }
-            #random {
-              border: 2px solid red;
-            }
-            #timerDays {
-              font-size: 20px;
-              padding-right: 20px;
-              font-family: marseilleHeader;
-            }
-            #timerHours {
-              font-size: 20px;
-              padding-right: 20px;
-              font-family: marseilleHeader;
-            }
-            #timerMin {
-              font-size: 20px;
-              font-family: marseilleHeader;
-              padding-right: 20px;
-            }
-            #timerSec {
-              font-family: marseilleHeader;
-              font-size: 20px;
-              padding-right: 10px;
-            }
-            .removeItem {
-              /* border-radius: 5px; */
-              border: none;
-              color: red;
-              background: transparent;
-              font-size: 25px;
-            }
-            #cartTotal {
-              text-align: center;
-              font-family: marseilleFont;
-            }
-            #cart {
-              /* border:1px solid red;  */
-              height: 300px;
-              overflow: scroll;
-              font-family: marseilleFont;
-            }
-            .cartHotelName {
-              font-size: 18px;
-              font-weight: 700;
-              font-family: marseilleFont;
-              color: #009ddc;
-            }
-            .cartHotelPrice {
-              color: green;
-              font-size: 12px;
-              font-family: marseilleFont;
-              padding-top: 2px;
-            }
-            .cartRoomNumber {
-              color: #009ddc;
-              font-family: marseilleFont;
-              font-size: 10px;
-            }
-            #mobile {
-              margin-top: -70px;
-              font-family: marseilleFont;
-            }
-            .logo {
-              margin-top: -100px;
-              padding: 20px;
-              font-family: marseilleFont;
-            }
-            #marseilleLogo {
-              margin-left: 25px;
-            }
-            #checkoutButton {
-              text-align: center;
-              width: 400px;
-              /* margin-left: 350px; */
-              margin: 0 auto;
-            }
-            .backgroundColorTwo{
-              background-image: url('assets/images/backgroundOM.002.jpeg');
-            }
-            #creditCards{
-              margin-top: 32px;
-            }
-            #fanArrow{
-              /* font-size: 35px;
+      }
+      #timer {
+        padding-top: 20px;
+        color: #009ddc !important;
+        font-size: 90px;
+      }
+      #random {
+        border: 2px solid red;
+      }
+      #timerDays {
+        font-size: 20px;
+        padding-right: 20px;
+        font-family: marseilleHeader;
+      }
+      #timerHours {
+        font-size: 20px;
+        padding-right: 20px;
+        font-family: marseilleHeader;
+      }
+      #timerMin {
+        font-size: 20px;
+        font-family: marseilleHeader;
+        padding-right: 20px;
+      }
+      #timerSec {
+        font-family: marseilleHeader;
+        font-size: 20px;
+        padding-right: 10px;
+      }
+      .removeItem {
+        /* border-radius: 5px; */
+        border: none;
+        color: red;
+        background: transparent;
+        font-size: 25px;
+      }
+      #cartTotal {
+        text-align: center;
+        font-family: marseilleFont;
+      }
+      #cart {
+        /* border:1px solid red;  */
+        margin-top: 120px;
+        height: 300px;
+        overflow: scroll;
+        font-family: marseilleFont;
+      }
+      #navItems {
+        margin-left: 420px;
+      }
+      .cartHotelName {
+        font-size: 18px;
+        font-weight: 700;
+        font-family: marseilleFont;
+        color: #009ddc;
+      }
+      .cartHotelPrice {
+        color: green;
+        font-size: 12px;
+        font-family: marseilleFont;
+        padding-top: 2px;
+      }
+      .cartRoomNumber {
+        color: #009ddc;
+        font-family: marseilleFont;
+        font-size: 10px;
+      }
+      #mobile {
+        margin-top: -70px;
+        font-family: marseilleFont;
+      }
+      .logo {
+        margin-top: -100px;
+        padding: 20px;
+        font-family: marseilleFont;
+      }
+      #marseilleLogo {
+        margin-left: 45px;
+      }
+      #checkoutButton {
+        text-align: center;
+        width: 400px;
+        /* margin-left: 350px; */
+        margin: 0 auto;
+      }
+      .backgroundColorTwo {
+        background-image: url("assets/images/backgroundOM.002.jpeg");
+      }
+      #creditCards {
+        margin-top: 32px;
+      }
+
+      #fanArrow {
+        /* font-size: 35px;
               =
             
               margin-top: 85px; */
-              background-color:#009ddc !important;
-              margin-top: 60px;
-              width: 250px;
-              height: 35px;
-            }
-            #button {
-              padding-top: 25px;
-              text-align: center;
-            }
-            .formText {
-              font-size: 18px;
-              font-weight: 700;
-              font-family: marseilleFont;
-            }
-            .topPadding {
-              padding-top: 20px;
-            }
-            .navMine {
-              padding-top: 10px;
-              font-size: 20px;
-              color:#009ddc;
-              font-weight: 700;
-              font-family: marseilleText;
-            }
-            #navMineCart{
-              font-family: marseilleText;
-            }
-            .hotelTitle {
-              color: #c6a55b;
-              font-family: marseilleHeader;
-              font-size: 80px;
-            }
-            .sectionOne {
-              /* background: -webkit-gradient(
+        background-color: #009ddc !important;
+        margin-top: 60px;
+        width: 250px;
+        height: 35px;
+      }
+      #button {
+        padding-top: 25px;
+        text-align: center;
+      }
+      .formText {
+        font-size: 18px;
+        font-weight: 700;
+        font-family: marseilleFont;
+      }
+      .topPadding {
+        padding-top: 20px;
+      }
+      .navMine {
+        padding-top: 10px;
+        font-size: 25px;
+        color: #009ddc !important;
+        font-weight: 700;
+        font-family: marseilleText;
+      }
+
+      .navMineTwo{
+        color: white !important;
+      }
+      #navMineCart {
+        font-family: marseilleText;
+      }
+      .navShadow {
+        /* -webkit-box-shadow: 0 8px 6px -6px black;
+        -moz-box-shadow: 0 8px 6px -6px black;
+        box-shadow: 0 8px 6px -6px black; */
+        background-color:  #009ddc;
+      }
+      .hotelTitle {
+        color: #c6a55b;
+        font-family: marseilleHeader;
+        font-size: 80px;
+      }
+      .sectionOne {
+        /* background: -webkit-gradient(
                     linear,
                     left top,
                     right top,
@@ -231,58 +246,58 @@
                   padding-bottom: 0;
                   padding-top: 80px; */
 
-              height: 900px;
+        height: 900px;
 
-              /* background-image: url("http://soccerstadiumdigest.com/wp-content/uploads/2018/07/Audi-Field-26.jpg"); */
-              background-image: url("https://66.media.tumblr.com/a856977c173e83708a0a35f11966a587/tumblr_pskuomBBe61vp5j01o1_1280.png");
-              background-size: cover;
-            }
-            #tourDetails {
-              height: 600px;
-              border: 2px solid red;
-            }
-            #goOn {
-              font-size: 40px;
-              font-family: marseilleFont;
-              margin-top: 60px;
-              /* animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+        /* background-image: url("http://soccerstadiumdigest.com/wp-content/uploads/2018/07/Audi-Field-26.jpg"); */
+        background-image: url("https://66.media.tumblr.com/a856977c173e83708a0a35f11966a587/tumblr_pskuomBBe61vp5j01o1_1280.png");
+        background-size: cover;
+      }
+      #tourDetails {
+        height: 600px;
+        border: 2px solid red;
+      }
+      #goOn {
+        font-size: 40px;
+        font-family: marseilleFont;
+        margin-top: 60px;
+        /* animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
                    */
-              color: #c6a55b;
+        color: #c6a55b;
 
-              animation: shake 4s infinite;
-              transform: translate3d(0, 0, 0);
-              backface-visibility: hidden;
-              perspective: 1000px;
-              animation-iteration-count: infinite;
-            }
-            @keyframes shake {
-              10%,
-              90% {
-                transform: translate3d(-1px, 0, 0);
-              }
+        animation: shake 4s infinite;
+        transform: translate3d(0, 0, 0);
+        backface-visibility: hidden;
+        perspective: 1000px;
+        animation-iteration-count: infinite;
+      }
+      @keyframes shake {
+        10%,
+        90% {
+          transform: translate3d(-1px, 0, 0);
+        }
 
-              20%,
-              80% {
-                transform: translate3d(2px, 0, 0);
-              }
+        20%,
+        80% {
+          transform: translate3d(2px, 0, 0);
+        }
 
-              30%,
-              50%,
-              70% {
-                transform: translate3d(-4px, 0, 0);
-              }
+        30%,
+        50%,
+        70% {
+          transform: translate3d(-4px, 0, 0);
+        }
 
-              40%,
-              60% {
-                transform: translate3d(4px, 0, 0);
-              }
-              60%,
-              100% {
-                transform: translate3d(0, 0, 0);
-              }
-            }
-            .sectionTwo {
-              /* background: -webkit-gradient(
+        40%,
+        60% {
+          transform: translate3d(4px, 0, 0);
+        }
+        60%,
+        100% {
+          transform: translate3d(0, 0, 0);
+        }
+      }
+      .sectionTwo {
+        /* background: -webkit-gradient(
                     linear,
                     left top,
                     right top,
@@ -293,345 +308,344 @@
                   height: 1000px;
                   padding-bottom: 0;
                   padding-top: 80px; */
-            }
-            #dateSection {
-              padding-bottom: 50px;
-            }
-            #checkIn {
-              /* width: 330px;
+      }
+      #dateSection {
+        padding-bottom: 50px;
+      }
+      #checkIn {
+        /* width: 330px;
               margin-left: 200px;
               font-family: marseilleFont; */
-            }
+      }
 
-            #theTour {
-              height: 900px;
-              width: 100%;
-              background: url("https://66.media.tumblr.com/030087c0e9303d1957d75add0c90fa24/tumblr_pskwsp9WZm1vp5j01o1_1280.png");
+      #theTour {
+        height: 900px;
+        width: 100%;
+        background: url("https://66.media.tumblr.com/030087c0e9303d1957d75add0c90fa24/tumblr_pskwsp9WZm1vp5j01o1_1280.png");
 
-              background-size: cover;
-            }
-            #tourLogo {
-              text-align: right;
-              color: white;
-              font-family: marseilleHeader;
-              padding-right: 50px;
-              font-size: 80px;
-            }
-            #tourHeader {
-              font-size: 60px;
-              text-align: right;
-              font-family: marseilleHeader;
-              padding-right: 30px;
-            }
-            .tourP {
-              color: white;
-            }
+        background-size: cover;
+      }
+      #tourLogo {
+        text-align: right;
+        color: white;
+        font-family: marseilleHeader;
+        padding-right: 50px;
+        font-size: 80px;
+      }
+      #tourHeader {
+        font-size: 60px;
+        text-align: right;
+        font-family: marseilleHeader;
+        padding-right: 30px;
+      }
+      .tourP {
+        color: white;
+      }
 
-            #firstP {
-              text-align: right;
-              font-size: 17px;
-              font-family: marseilleText;
-              padding-right: 60px;
-            }
+      #firstP {
+        text-align: right;
+        font-size: 17px;
+        font-family: marseilleText;
+        padding-right: 60px;
+      }
 
-            #secondP {
-              /* text-align: right; */
-              font-size: 18px;
-              font-family: marseilleText;
-            }
-            #secondPdiv {
-              margin-left: 559px;
-              width: 1000px;
-              line-height: 10px;
-            }
-            #thirdP {
-              padding-top: 20px;
-              margin-left: 559px;
-              font-size: 18px;
-              font-family: marseilleText;
-            }
-            #tourPlacing {
-              margin-top: 270px;
-            }
-            #checkInLabel {
-              margin-left: 200px;
-              font-family: marseilleFont;
-            }
+      #secondP {
+        /* text-align: right; */
+        font-size: 18px;
+        font-family: marseilleText;
+      }
+      #secondPdiv {
+        margin-left: 559px;
+        width: 1000px;
+        line-height: 10px;
+      }
+      #thirdP {
+        padding-top: 20px;
+        margin-left: 559px;
+        font-size: 18px;
+        font-family: marseilleText;
+      }
+      #tourPlacing {
+        margin-top: 270px;
+      }
+      #checkInLabel {
+        margin-left: 200px;
+        font-family: marseilleFont;
+      }
 
-            #checkOut {
-              width: 330px;
-              font-family: marseilleFont;
-            }
-            #numberOfRooms {
-              /* margin-top: -90px;
+      #checkOut {
+        width: 330px;
+        font-family: marseilleFont;
+      }
+      #numberOfRooms {
+        /* margin-top: -90px;
               font-family: marseilleFont;
               width: 250px;
               margin-left: 420px; */
-            }
-            #checkOutLabel {
-            }
-            #mainText {
-              color: white;
-              font-family: marseilleFont;
-              text-align: center;
-            }
-            #headerText {
-              font-size: 180px;
-              padding-top: 100px;
-              letter-spacing: 3px;
-              width: 100%;
-              font-family: marseilleHeader;
-              color:#c6a55b;
-            }
-            .box {
-              /* -webkit-box-shadow: 0px 1px 5px 3px #f9f9f9; */
-              /* box-shadow: 0px 1px 5px 3px #f9f9f9; */
-              background: #ffffff;
-              border: 1px solid rgba(89, 96, 130, 0.1);
-              padding: 30px 25px 25px;
-            }
-            .pickleRick {
-              height: 48px;
-            }
-            #cartHeader {
-              padding-top: 30px;
-              font-size: 20px;
-              font-family: marseilleText;
-              color:#009ddc;
-              font-weight: 700;
-            }
-            #cartTotal {
-              font-size: 22px;
-              color:#009ddc;
-              font-family: marseilleText;
-              /* color: #c6a55b; */
-              /* color: #009ddc; */
+      }
+      #checkOutLabel {
+      }
+      #mainText {
+        color: white;
+        font-family: marseilleFont;
+        text-align: center;
+      }
+      #headerText {
+        font-size: 180px;
+        padding-top: 100px;
+        letter-spacing: 3px;
+        width: 100%;
+        font-family: marseilleHeader;
+        color: #c6a55b;
+      }
+      .box {
+        /* -webkit-box-shadow: 0px 1px 5px 3px #f9f9f9; */
+        /* box-shadow: 0px 1px 5px 3px #f9f9f9; */
+        background: #ffffff;
+        border: 1px solid rgba(89, 96, 130, 0.1);
+        padding: 30px 25px 25px;
+      }
+      .pickleRick {
+        height: 48px;
+      }
+      #cartHeader {
+        padding-top: 30px;
+        font-size: 20px;
+        font-family: marseilleText;
+        color: #009ddc;
+        font-weight: 700;
+      }
+      #cartTotal {
+        font-size: 22px;
+        color: #009ddc;
+        font-family: marseilleText;
+        /* color: #c6a55b; */
+        /* color: #009ddc; */
 
-              font-weight: 700;
-            }
-            .banner {
-              width: 100%;
-            }
-            #bannePic {
-              width: 100%;
-              height: 500px;
-            }
-            .starIcon {
-              padding-left: 5px;
-              font-size: 20px;
-              color: #c6a55b;
-            }
-            .hotelAddress {
-              font-size: 12px;
-            }
-            #cartList {
-              text-align: center;
-              padding-top: 5px;
-              overflow: scroll;
-              font-family: marseilleFont;
-              -webkit-overflow-scrolling: touch;
-            }
-            .bookButton {
-              width: 150px;
-            }
-            .box img {
-              height: 250px;
-              -webkit-box-shadow: 0px 1px 5px 3px #f9f9f9;
-              width: 250px;
-              border-radius: 10px;
-            }
-            .subtitles {
-              color: #c6a55b;
-              font-family: marseilleFont;
-            }
-            #hotelClickBait {
-              padding-top: 20px;
-              font-size: 18px;
-              font-family: marseilleFont;
-            }
-            #hotelCellOne {
-              height: 400px;
-              font-family: marseilleFont;
-            }
-            #marseille {
-              color: #009ddc;
-              font-family: marseilleFont;
-            }
-            #timer {
-                color: #009ddc;
-              font-weight: 700;
-              font-family: marseilleHeader;
+        font-weight: 700;
+      }
+      .banner {
+        width: 100%;
+      }
+      #bannePic {
+        width: 100%;
+        height: 500px;
+      }
+      .starIcon {
+        padding-left: 5px;
+        font-size: 20px;
+        color: #c6a55b;
+      }
+      .hotelAddress {
+        font-size: 12px;
+      }
+      #cartList {
+        text-align: center;
+        padding-top: 5px;
+        overflow: scroll;
+        font-family: marseilleFont;
+        -webkit-overflow-scrolling: touch;
+      }
+      .bookButton {
+        width: 150px;
+      }
+      .box img {
+        height: 250px;
+        -webkit-box-shadow: 0px 1px 5px 3px #f9f9f9;
+        width: 250px;
+        border-radius: 10px;
+      }
+      .subtitles {
+        color: #c6a55b;
+        font-family: marseilleFont;
+      }
+      #hotelClickBait {
+        padding-top: 20px;
+        font-size: 18px;
+        font-family: marseilleFont;
+      }
+      #hotelCellOne {
+        height: 400px;
+        font-family: marseilleFont;
+      }
+      #marseille {
+        color: #009ddc;
+        font-family: marseilleFont;
+      }
+      #timer {
+        color: #009ddc;
+        font-weight: 700;
+        font-family: marseilleHeader;
 
+        text-align: center;
+      }
 
-              text-align: center;
-            }
+      #teamInfo {
+        width: 100%;
+        height: 600px;
+        /* background-image: url('./assets/images/marseilleTeam.png'); */
+        /* background-size: cover; */
+        /* background-color:red; */
+      }
+      input[type="checkbox"] {
+        width: 20px;
+        height: 20px;
+        background: white;
+        border-radius: 5px;
+        border: 1px solid #555;
+      }
 
-            #teamInfo {
-              width: 100%;
-              height: 600px;
-              /* background-image: url('./assets/images/marseilleTeam.png'); */
-              /* background-size: cover; */
-              /* background-color:red; */
-            }
-            input[type="checkbox"] {
-              width: 20px;
-              height: 20px;
-              background: white;
-              border-radius: 5px;
-              border: 1px solid #555;
-            }
-
-            #transferText {
-              color: #009ddc;
-              margin-left: 10px;
-            }
-            #teamPic {
-              border-radius: 5px;
-              margin-top: 20px;
-              height: 600px;
-              width: 90%;
-            }
-            .hotelsImg {
-              /* height: 100px;
+      #transferText {
+        color: #009ddc;
+        margin-left: 10px;
+      }
+      #teamPic {
+        border-radius: 5px;
+        margin-top: 20px;
+        height: 600px;
+        width: 90%;
+      }
+      .hotelsImg {
+        /* height: 100px;
               width: 100px; */
-              /* padding-left: 5px; */
-              margin-left: 3px;
-              margin-top: 3px;
-            }
-            #boxOne {
-              padding-left: 0 !important;
-              padding-top: 0 !important;
-            }
-            #left-sidebar {
-              z-index: 500; /*Add this*/
-              font-family: marseilleFont;
-              vertical-align: middle;
-              line-height: 20px;
+        /* padding-left: 5px; */
+        margin-left: 3px;
+        margin-top: 3px;
+      }
+      #boxOne {
+        padding-left: 0 !important;
+        padding-top: 0 !important;
+      }
+      #left-sidebar {
+        z-index: 500; /*Add this*/
+        font-family: marseilleFont;
+        vertical-align: middle;
+        line-height: 20px;
 
-              height: 100%;
-              font-family: Lato, sans-serif;
-              position: fixed;
+        height: 100%;
+        font-family: Lato, sans-serif;
+        position: fixed;
 
-              top: 0;
-              left: 1%;
-              width: 200px;
-              max-width: 500px;
-              min-width: 150px;
-              background: -moz-linear-gradient(
-                top,
-                rgba(0, 0, 0, 0.29) 0%,
-                rgba(0, 0, 0, 0) 78%,
-                rgba(0, 0, 0, 0) 100%
-              );
-              background: -webkit-gradient(
-                linear,
-                left top,
-                left bottom,
-                color-stop(0%, rgba(0, 0, 0, 0.29)),
-                color-stop(78%, rgba(0, 0, 0, 0)),
-                color-stop(100%, rgba(0, 0, 0, 0))
-              );
-              background: -webkit-linear-gradient(
-                top,
-                rgba(0, 0, 0, 0.29) 0%,
-                rgba(0, 0, 0, 0) 78%,
-                rgba(0, 0, 0, 0) 100%
-              );
-              background: -o-linear-gradient(
-                top,
-                rgba(0, 0, 0, 0.29) 0%,
-                rgba(0, 0, 0, 0) 78%,
-                rgba(0, 0, 0, 0) 100%
-              );
-              background: -ms-linear-gradient(
-                top,
-                rgba(0, 0, 0, 0.29) 0%,
-                rgba(0, 0, 0, 0) 78%,
-                rgba(0, 0, 0, 0) 100%
-              );
-              background: linear-gradient(
-                to bottom,
-                rgba(0, 0, 0, 0.29) 0%,
-                rgba(0, 0, 0, 0) 78%,
-                rgba(0, 0, 0, 0) 100%
-              );
-              filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4a000000', endColorstr='#00000000',GradientType=0 );
-            }
-            #transfer {
-              margin-left: 10px;
-            }
-            .navLinks {
-              color: #c6a55b;
-              font-family: marseilleText;
-            }
+        top: 0;
+        left: 1%;
+        width: 200px;
+        max-width: 500px;
+        min-width: 150px;
+        background: -moz-linear-gradient(
+          top,
+          rgba(0, 0, 0, 0.29) 0%,
+          rgba(0, 0, 0, 0) 78%,
+          rgba(0, 0, 0, 0) 100%
+        );
+        background: -webkit-gradient(
+          linear,
+          left top,
+          left bottom,
+          color-stop(0%, rgba(0, 0, 0, 0.29)),
+          color-stop(78%, rgba(0, 0, 0, 0)),
+          color-stop(100%, rgba(0, 0, 0, 0))
+        );
+        background: -webkit-linear-gradient(
+          top,
+          rgba(0, 0, 0, 0.29) 0%,
+          rgba(0, 0, 0, 0) 78%,
+          rgba(0, 0, 0, 0) 100%
+        );
+        background: -o-linear-gradient(
+          top,
+          rgba(0, 0, 0, 0.29) 0%,
+          rgba(0, 0, 0, 0) 78%,
+          rgba(0, 0, 0, 0) 100%
+        );
+        background: -ms-linear-gradient(
+          top,
+          rgba(0, 0, 0, 0.29) 0%,
+          rgba(0, 0, 0, 0) 78%,
+          rgba(0, 0, 0, 0) 100%
+        );
+        background: linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0.29) 0%,
+          rgba(0, 0, 0, 0) 78%,
+          rgba(0, 0, 0, 0) 100%
+        );
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4a000000', endColorstr='#00000000',GradientType=0 );
+      }
+      #transfer {
+        margin-left: 10px;
+      }
+      .navLinks {
+        color: #c6a55b;
+        font-family: marseilleText;
+      }
 
-            .subHeaders {
-              font-size: 50px;
-              font-family: marseilleFont;
-            }
+      .subHeaders {
+        font-size: 50px;
+        font-family: marseilleFont;
+      }
 
-            .aboutIcons {
-              font-size: 40px;
-              color: #24a6d9;
-            }
-            .aboutIcons:hover {
-              animation: shake 4s infinite;
-              transform: translate3d(0, 0, 0);
-              backface-visibility: hidden;
-              perspective: 1000px;
-            }
+      .aboutIcons {
+        font-size: 40px;
+        color: #24a6d9;
+      }
+      .aboutIcons:hover {
+        animation: shake 4s infinite;
+        transform: translate3d(0, 0, 0);
+        backface-visibility: hidden;
+        perspective: 1000px;
+      }
 
-            @keyframes shake {
-              10%,
-              90% {
-                transform: translate3d(-1px, 0, 0);
-              }
+      @keyframes shake {
+        10%,
+        90% {
+          transform: translate3d(-1px, 0, 0);
+        }
 
-              20%,
-              80% {
-                transform: translate3d(2px, 0, 0);
-              }
+        20%,
+        80% {
+          transform: translate3d(2px, 0, 0);
+        }
 
-              30%,
-              50%,
-              70% {
-                transform: translate3d(-4px, 0, 0);
-              }
+        30%,
+        50%,
+        70% {
+          transform: translate3d(-4px, 0, 0);
+        }
 
-              40%,
-              60% {
-                transform: translate3d(4px, 0, 0);
-              }
-            }
-            #roomDropDown {
-              width: 200px;
-              font-family: marseilleFont;
-            }
-            #roomDropDown option {
-              padding: 20px;
-              font-family: marseilleFont;
-            }
-            #ticketCat {
-              font-family: marseilleFont;
-              width: 190px;
-              margin: auto;
-            }
-            @font-face {
-              font-family: marseilleFont;
-              src: url("./assets/fonts/Avenir.ttc");
-            }
-            @font-face {
-              font-family: marseilleHeader;
-              src: url("./assets/fonts/big_noodle_titling.ttf");
-            }
-            @font-face {
-              font-family: marseilleText;
-              src: url("./assets/fonts/shkoder_1989_black.ttf");
-            }
+        40%,
+        60% {
+          transform: translate3d(4px, 0, 0);
+        }
+      }
+      #roomDropDown {
+        width: 200px;
+        font-family: marseilleFont;
+      }
+      #roomDropDown option {
+        padding: 20px;
+        font-family: marseilleFont;
+      }
+      #ticketCat {
+        font-family: marseilleFont;
+        width: 190px;
+        margin: auto;
+      }
+      @font-face {
+        font-family: marseilleFont;
+        src: url("./assets/fonts/Avenir.ttc");
+      }
+      @font-face {
+        font-family: marseilleHeader;
+        src: url("./assets/fonts/big_noodle_titling.ttf");
+      }
+      @font-face {
+        font-family: marseilleText;
+        src: url("./assets/fonts/shkoder_1989_black.ttf");
+      }
 
-            a:hover {
-              color: #009ddc !important;
-            }
+      a:hover {
+        color: #009ddc !important;
+      }
     </style>
   </head>
   <body
