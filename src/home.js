@@ -10,19 +10,18 @@ import Testimonial from "./components/testimonial";
 import Activities from "./components/activities";
 import FAQ from "./components/faq";
 import Contact from "./components/contact";
-import Subscribe from "./components/subscribe";
-import Footer from "./components/footer";
-import { Link } from "react-router-dom";
+import Package from "./components/package";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Banner from "./components/banner";
 import Navbar from "./components/navbar";
 import { faArrowAltCircleDown } from "@fortawesome/fontawesome-free-regular";
-import PaymentCard from "react-payment-card-component";
+
 import Timer from "react-compound-timer";
-import Popup from "./components/popUp";
+
 import { faPlusSquare } from "@fortawesome/fontawesome-free-regular";
 import Cart from "./components/cart";
+
 
 import FormService from "./components/formService";
 //Testing DATE PICKER FOR REACT
@@ -42,7 +41,8 @@ class Home extends React.Component {
       numRoom: 0,
       // clientFirstName : " ",
       // clientLastName  : " ",
-      stayData: []
+      stayData: [],
+      packages:[],
 
       // checkOut: " ",
       // fanClubNumber: " ",
@@ -173,14 +173,17 @@ class Home extends React.Component {
     this.setState({ numRoom: e });
   };
 
+  
   handleFormSubmit = e => {
     e.preventDefault();
+
     console.log("form trying to be submitted");
     const {
       cart,
       clientFirstName,
       clientLastName,
       stayData,
+      email,
       fanClubNumber,
       address,
       city,
@@ -192,6 +195,8 @@ class Home extends React.Component {
       securityCode
     } = this.state;
 
+    alert(`Your Order has been received by one of our agents. You will received a confirmation email to ${clientFirstName} within 24 hours with an invoice attatched`);
+    
     this.FormService.addShoppingCart({
       cart,
       clientFirstName,
@@ -226,6 +231,14 @@ class Home extends React.Component {
     });
   };
 
+  onPackageClick = e => {
+    console.log('entro en package homeee click baby');
+    let packages = e;
+    let packageChoice = packages[0];
+    console.log('package being delivered to home', packageChoice);
+    // let joined = this.state.packages.concat(packageChoice);
+    this.setState({ packages: packageChoice });
+  }
   render() {
     document.body.classList.remove("inner-page");
     console.log(
@@ -247,6 +260,7 @@ class Home extends React.Component {
             cartUpdatorHotelOne={this.cartUpdatorHotelOne}
             stayData={this.state.stayData}
             numRoom={this.state.numRoom}
+            packages={this.state.packages}
           />
           {/* Default First Section Class className="slide-bg" */}
 
@@ -326,11 +340,14 @@ class Home extends React.Component {
 					<i></i>
 				</div> */}
           <div id="jumbotron" className="container">
+
             <div className="row">
               <div className="col-md-12">
                 <div className="d-flex-1">
                   <div id="mainText">
                     <div>
+
+      
                       <h1 id="headerText" className="mainTitle">
                         OM U.S EXPERIENCE
                         <br />
@@ -407,6 +424,7 @@ class Home extends React.Component {
         </section>
         <About />
         {/*Price Component*/}
+        <Package ref="packages" onPackageClick={this.onPackageClick} />
         <Price ref="price" onTicketClick={this.onTicketClick} />
         {/*Team Component*/}
         {/* <Team /> */}
@@ -471,6 +489,110 @@ class Home extends React.Component {
                   </div>
                 </div>
               </div>
+              <h2 className="fuck">Person One</h2>
+              <div className="row">
+                <div className="col-md-6">
+                  <label className="formText" htmlFor="firstName">
+                    First Name :{" "}
+                  </label>
+                  <input
+                    autoComplete="off"
+                    className="form-control"
+                    id="firstName"
+                    name="clientFirstName"
+                    onChange={e => this.handleChange(e)}
+                    type="text"
+                  />
+                </div>
+                <div className="col-md-6">
+                  <label className="formText" htmlFor="lastName">
+                    Last Name :{" "}
+                  </label>
+                  <input
+                    autoComplete="off"
+                    className="form-control"
+                    id="lastName"
+                    name="clientLastName"
+                    onChange={e => this.handleChange(e)}
+                    type="text"
+                  />
+                </div>
+              </div>
+              <div className="row">
+                <div className="col-md-12">
+                  <label className="formText" htmlFor="checkOut">
+                    Email:{" "}
+                  </label>
+                  <input
+                    autoComplete="off"
+                    className="form-control"
+                    placeholder=".com"
+                    id="email"
+                    name="email"
+                    onChange={e => this.handleChange(e)}
+                    type="email"
+                  />
+                </div>
+              </div>
+              <div className="row">
+                <div className="col-md-6">
+                  <label className="formText" htmlFor="firstName">
+                    Passport Number :{" "}
+                  </label>
+                  <input
+                    autoComplete="off"
+                    className="form-control"
+                    id="passportNum"
+                    name="passportNum"
+                    onChange={e => this.handleChange(e)}
+                    type="text"
+                  />
+                </div>
+                <div className="col-md-6">
+                  <label className="formText" htmlFor="lastName">
+                    Country Of Issue :{" "}
+                  </label>
+                  <input
+                    autoComplete="off"
+                    className="form-control"
+                    id="countryIssue"
+                    name="countryIssue"
+                    onChange={e => this.handleChange(e)}
+                    type="text"
+                  />
+                </div>
+              </div>
+              <div className="row">
+                <div className="col-md-6">
+                  <label className="formText" htmlFor="firstName">
+                    Date of Issue :{" "}
+                  </label>
+                  <input
+                    autoComplete="off"
+                    className="form-control"
+                    id="passportNum"
+                    name="passportNum"
+                    onChange={e => this.handleChange(e)}
+                    type="date"
+                  />
+                </div>
+                <div className="col-md-6">
+                  <label className="formText" htmlFor="lastName">
+                    Nationality:{" "}
+                  </label>
+                  <input
+                    autoComplete="off"
+                    className="form-control"
+                    id="countryIssue"
+                    name="countryIssue"
+                    onChange={e => this.handleChange(e)}
+                    type="text"
+                  />
+                </div>
+              </div>
+<br></br>
+              <h2 className="fuck">Person Two</h2>
+              <br></br>
               <div className="row">
                 <div className="col-md-6">
                   <label className="formText" htmlFor="firstName">
@@ -794,8 +916,8 @@ class Home extends React.Component {
         {/* </div> */}
         {/* </section> */}
         {/*end download section*/}
-        {/* Contact Component
-       <Contact /> */}
+ {/* Contact Component */}
+       <Contact /> 
         {/*Subscription Component*/}
         {/* <Subscribe /> */}
         {/*Footer Component*/}

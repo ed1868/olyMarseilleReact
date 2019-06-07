@@ -6,6 +6,7 @@ const CartItem = ({
   hotelPrice,
   hotelTotalPrice,
   roomNumber,
+  gameOneName,
   id,
   cartUpdatorHotelOne,
   ticketName,
@@ -17,6 +18,7 @@ const CartItem = ({
   activityDate,
   activityTime
 }) => {
+  console.log('YOOOO OWHAT THE FUCK IS UP ', gameOneName)
   console.log("YOU ARE NOW IN THE CART ITEM COMPONENT HERE ARE YOUR ITEMS ");
   console.log('THIS IS THE TOTAL IN THE CART ITEM COMPONENT', total);
   console.log("1", hotelName);

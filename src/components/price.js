@@ -8,7 +8,7 @@ class Price extends React.Component {
       ticketOne: [
         {
           price: 35.44,
-          ticketName: "D.C United Vs Marseille'",
+          ticketName: "Girondins de Bordeaux Vs O.Marseille'",
           time: "7:00",
           ticketId: Number(0),
           totalPrice: 35.44,
@@ -17,7 +17,7 @@ class Price extends React.Component {
       ticketTwo: [
         {
           price: 45.00,
-          ticketName: "D.C United Vs Marseille'",
+          ticketName: "Montpellier HSC Vs As Saint Etienne'",
           time: "7:00",
           totalPrice: 45.00,
           ticketId: Number(1),
@@ -26,7 +26,7 @@ class Price extends React.Component {
       ticketThree: [
         {
           price: 50.44,
-          ticketName: "D.C United Vs Marseille'",
+          ticketName: "D.C. United Vs  Olympic Marseille'",
           time: "7:00",
           totalPrice: 50.44,
           ticketId: Number(2),
@@ -100,7 +100,7 @@ class Price extends React.Component {
       }
       this.props.onTicketClick(this.state.ticketTwo);
     }
-    
+
     if (e.target.id == ticketTwo.ticketId && this.state.option == 2) {
       console.log(
         "TICKET TWO OPTION TWO IS TRYING TO BE ADDED TO HOME COMPONENT"

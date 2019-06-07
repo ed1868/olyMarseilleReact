@@ -29,9 +29,9 @@ class Root extends React.Component {
   	return(
   		<BrowserRouter basename={'/'} >
 		  	<Switch>
-			  <Route exact path={`${process.env.PUBLIC_URL}/`} component={App}/>
+			  {/* <Route exact path={`${process.env.PUBLIC_URL}/`} component={App}/> */}
 			  <Route path={`${process.env.PUBLIC_URL}/home`} component={Home}/>
-			  <Route path={`${process.env.PUBLIC_URL}/blog-details`} component={BlogDetails}/>
+			  {/* <Route path={`${process.env.PUBLIC_URL}/blog-details`} component={BlogDetails}/>
 			  <Route path={`${process.env.PUBLIC_URL}/blog-list`} component={BlogList}/>
 			  <Route path={`${process.env.PUBLIC_URL}/blog-left-sidebar`} component={BlogLeftSidebar}/>
 			  <Route path={`${process.env.PUBLIC_URL}/blog-right-sidebar`} component={BlogRightSidebar}/>
@@ -46,7 +46,7 @@ class Root extends React.Component {
 			  <Route path={`${process.env.PUBLIC_URL}/faq`} component={Faq}/>
 			  <Route path={`${process.env.PUBLIC_URL}/request`} component={Request}/>
 			  <Route path={`${process.env.PUBLIC_URL}/download`} component={Download}/>
-			  <Route path={`${process.env.PUBLIC_URL}/coming-soon`} component={ComingSoon}/>
+			  <Route path={`${process.env.PUBLIC_URL}/coming-soon`} component={ComingSoon}/> */}
 			  <Route component={NoMatch} />
 			</Switch>
 		</BrowserRouter>

@@ -11,9 +11,6 @@ import {
 } from "@fortawesome/fontawesome-free-regular";
 
 class About extends React.Component {
-
-
-
   render() {
     return (
       <section id="about" className="sectionTwo">
@@ -30,9 +27,7 @@ class About extends React.Component {
                   />
                 </div>
               </div>
-  
-      
-         
+
               {/* <div className="row">
                 <div className="col-md-12">
                   <ul class="nav nav-tabs">
@@ -138,16 +133,22 @@ class About extends React.Component {
               <div className="col-md-12">
                 <div className="chat-slide">
                   <h3>
-                    Audi Field will have French accent with four-team tournament
-                    this summer Including your very own{" "}
+                    Offering you package deals which include games and
+                    activities!{" "}
                     <span style={{ color: " #009DDC;" }} id="marseille">
                       Olympic Marseille
                     </span>
                   </h3>
                   <br />
                   <h3>
-                    We Will Provide you with the best deals on hotels, Tickets
-                    to watch this thrilling tournament with style and comfort
+                    Training session ? or an Exclusive party after watching the
+                    game. We will make sure you have a unique experience.
+                    <br></br>
+                    <br></br>
+                     With
+                    three unbeatable deals and or selection of hotels which
+                    range from comfort, premium to our luxury stays to ensure
+                    you have an unforgetable experience
                   </h3>
                   {/* <img id="teamPic" src="assets/images/marseilleTeam.png" alt="stay-connected"/> */}
                   <p id="disclaimerP">
