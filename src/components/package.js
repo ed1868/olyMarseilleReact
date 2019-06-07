@@ -78,7 +78,8 @@ export default class Package extends Component {
 
   onPackageClick = e => {
     e.preventDefault();
-
+    var element = document.getElementById("hotels");
+    element.scrollIntoView();
     console.log("entro en on package click");
 
     let packageOne = this.state.packageOne[0];
