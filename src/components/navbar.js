@@ -86,7 +86,7 @@ class Navbar extends React.Component {
     return (
     <nav className="navbar transparent fixed-top navbar-expand-lg">
     <a className="navbar-brand" href="#">
-    <img style={{ width: 110, height: 150 }}id="marseilleLogo" src="assets/images/OM.png" alt="" />
+    <img style={{ width: 70, height: 90 }}id="marseilleLogo" src="assets/images/OM.png" alt="" />
       </a>
     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>
