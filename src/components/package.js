@@ -134,7 +134,7 @@ export default class Package extends Component {
     // Dynamic Price Data Easy to Update
     let data = [
       {
-        title: "The Hat Trick",
+        title: "3 GAMES ",
         id: 0,
         gameOne: "Montepellier HSC VS AS Saint Etienne",
         gameTwo: "O.Marseille VS Girondins de Bordeaux",
@@ -149,7 +149,7 @@ export default class Package extends Component {
         }
       },
       {
-        title: "The Double Header",
+        title: "2 GAMES",
         id: 1,
         gameOne: "Montepellier HSC VS AS Saint Etienne",
         gameTwo: "O.Marseille VS Girondins de Bordeaux",
@@ -161,7 +161,7 @@ export default class Package extends Component {
         }
       },
       {
-        title: "The Double Header pt 2",
+        title: "2 GAMES PT 2",
         id: 2,
         gameTwo: "O.Marseille VS Girondins de Bordeaux",
         gameThree: "Tournament Championship Game",

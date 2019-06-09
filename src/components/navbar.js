@@ -29,6 +29,57 @@ class Navbar extends React.Component {
 
     let total = 0;
 
+    //PACKAGE PRICING LOGIC
+    // console.log( 'THIS IS THE PACKAGE PROP IN THE CARS COMPONENT ',this.state.packages)
+    let packages = this.props.packages;
+
+    console.log("los packets", packages);
+    //GAMES
+    let gameOneName = packages.gameOne;
+    let gameOnePrice = packages.gameOneTotalPrice;
+    let gameTwoName = packages.gameTwo;
+    let gameTwoPrice = packages.gameTwoTotalPrice;
+    console.log("game two price", gameTwoPrice);
+    let gameThreeName = packages.gameThree;
+    let gameThreePrice = packages.gameThreeTotalPrice;
+
+    if (gameOnePrice != undefined) {
+      total += gameOnePrice;
+    }
+    if (gameTwoPrice != undefined) {
+      total += gameTwoPrice;
+    }
+    if (gameThreePrice != undefined) {
+      total += gameThreePrice;
+    }
+    //ACTIVITIES
+
+    let activityOne = packages.activityOne;
+    let activityOneTotalPrice = packages.activityOneTotalPrice;
+    let activityTwo = packages.activityTwo;
+    let activityTwoTotalPrice = packages.activityTwoTotalPrice;
+    let activityThree = packages.activityThree;
+    let activityThreeTotalPrice = packages.activityThreeTotalPrice;
+
+    let activityFour = packages.activityFour;
+    let activityFourTotalPrice = packages.activityFourTotalPrice;
+
+    if (activityOneTotalPrice != undefined) {
+      total += activityOneTotalPrice;
+    }
+    if (activityTwoTotalPrice != undefined) {
+      total += activityTwoTotalPrice;
+    }
+    if (activityThreeTotalPrice != undefined) {
+      total += activityThreeTotalPrice;
+    }
+    if (activityFourTotalPrice != undefined) {
+      total += activityFourTotalPrice;
+    }
+
+    console.log(gameOnePrice);
+
+    //////////////////////////////////////
     let totalRooms = this.state.stayData[2];
     let checkoutDate = this.state.stayData[1];
 
@@ -109,6 +160,10 @@ class Navbar extends React.Component {
         <li className="nav-item">
         <a id="idActivities" className="nav-link text-center navMine" href="#activities">ACTIVITIES</a>
         </li>
+        <li className="nav-item">
+        
+        <a id="navCart" className="nav-link text-center navMine" href="#"><img id="cartImg" src ="assets/images/MYCART.png" /><span id="masterOfCoin">My Cart {total} </span></a>
+        </li>
         {/* <li className="nav-item dropdown">
           <a className="nav-link dropdown-toggle navMine" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Dropdown
@@ -127,6 +182,9 @@ class Navbar extends React.Component {
   
     </div>
   </nav>
+
+
+
 
       // <nav className="navbar navbar-expand">
       //       <div className="container-fluid">

@@ -253,6 +253,7 @@ class Home extends React.Component {
           cartUpdatorHotelOne={this.cartUpdatorHotelOne}
           stayData={this.state.stayData}
           numRoom={this.state.numRoom}
+          packages={this.state.packages}
         />
         <section id="sectionOne" className="sectionOne">
           <Cart
@@ -349,7 +350,7 @@ class Home extends React.Component {
 
       
                       <h1 id="headerText" className="mainTitle">
-                        OM U.S EXPERIENCE
+                      OM U.S TOUR EXPERIENCE 
                         <br />
                         <span className="mainTitle" />
                       </h1>
@@ -398,28 +399,42 @@ class Home extends React.Component {
           <h2 id="tourLogo">The Tour</h2>
           <div id="tourPlacing">
             <h1 id="tourHeader">
-              Welcome on the official website of OM Tour in the U.S !
+            WELCOME TO THE OFFICIAL WEBSITE OF OM TOUR IN THE U.S !
             </h1>
-            <p id="firstP" className="tourP">
+            <p id="tourFirst" className="tourP">
               In partnership with EA Sports, LFP will launch a preseason tour in
               the United States in July called « EA Ligue 1 Games
+              
             </p>
-            <div id="secondPdiv">
-              <p id="secondP" className="tourP">
+            <p id="tourFirst" className="tourP">
+            From July 18th to 21st, 2019, Olympique de Marseille, FC
+                Girondins de Bordeaux, Montpellier Hérault SC and AS Saint-Etienne 
+              
+            </p>
+            <p id="tourGoal" className="tourP">
+            will compete in a friendly tournament at Audi
+                Field
+              
+            </p>
+            <p id="tourFirst" className="tourP">
+            <br></br>
+              <br></br>
+            <span id="dearFans">Dear fans abroad</span>,
+              <br /> Don't miss this chance to see OM playing and experience the
+              tour like no one else! <br></br>
+              <a id="experienceButton"  href="#disclaimer" className="btn btn-primary">DISCOVER THE EXPERIENCE</a>
+            </p>
+           
+            {/* <div id="secondPdiv">
+              <p id="tourSecond" className="tourP">
                 From July 18th to 21st, 2019, Olympique de Marseille, FC
                 Girondins de Bordeaux, Montpellier Hérault SC and AS
                 Saint-Etienne will compete in a friendly tournament at Audi
-                Field, the 20,000-seat home of Major League Soccer’s D.C.
-                United. In addition to that, Olympique de Marseille will face
-                D.C United in a friendly game on Wednesday, July 24th.
+                Field
               </p>
-            </div>
+      
+            </div> */}
 
-            <p id="thirdP" className="tourP">
-              Dear fans abroad,
-              <br /> Don't miss this chance to see OM playing and experience the
-              tour like no one else! 
-            </p>
           </div>
         </section>
         <About />
