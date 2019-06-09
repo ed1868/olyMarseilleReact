@@ -225,7 +225,7 @@ export default class Package extends Component {
         gameThree != undefined
       ) {
         return (
-          <div className="item" id="tickets" key={i}>
+          <div className="item" id="packages" key={i}>
             <div className="package-box">
               <h3 className="packageTitle">{val.title}</h3>
               <div className="price-box">
@@ -460,19 +460,19 @@ export default class Package extends Component {
     });
 
     return (
-      <section className="backgroundColor" id="tickets">
+      <section id="packages">
         <div className="container">
           <div className="row">
             <div className="col-md-12 text-center">
               <div className="section-title">
-                <h2 id="packageHeader" className="hotelTitle">
+                <h2 id="packageHeader" >
                   The Packages
                 </h2>
-                <img
+                {/* <img
                   src="assets/images/blueTitleLine.png"
                   alt="title-line"
                   className="img-fluid"
-                />
+                /> */}
               </div>
             </div>
             <div className="col-md-12 text-center">
