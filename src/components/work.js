@@ -66,8 +66,8 @@ class Work extends React.Component {
       //   }
       // ],
       roomOption: Number(0),
-      numberOfNights : 4,
-      numberOfRooms : 1,
+      numberOfNights: 4,
+      numberOfRooms: 1
       // roomOptionTwo: Number(0),
       // roomOptionThree: Number(0)
     };
@@ -81,25 +81,18 @@ class Work extends React.Component {
     let roomNumber = this.state.numberOfRooms;
     this.props.onStay(checkIn);
     this.props.onStay(roomNumber);
-    
+
     let checkInDay = this.state.checkInDay;
     let checkOutDay = this.state.checkOutDay;
 
     let totalNights = checkOutDay - checkInDay;
 
-
-
-
-
     var element = document.getElementById("activities");
     element.scrollIntoView();
 
     let staringPrice = this.state.hotelOne[0].price * this.state.numberOfRooms;
-    let numberOfNights = totalNights
+    let numberOfNights = totalNights;
     let price = staringPrice * numberOfNights;
-
-
-    
 
     // this.props.hotelPriceUpdator(roomNumber);
 
@@ -111,15 +104,12 @@ class Work extends React.Component {
 
     // console.log('esto es el base price' , basePrice)
 
-  
-
     if (this.state.roomOption == 0 || this.state.roomOption == 1) {
       // this.props.onClick(this.state.hotelOne);
-  
+
       this.state.hotelOne[0].typeOfRoom = "One King Bed";
       this.state.hotelOne[0].totalPrice = price;
       this.props.onClick(this.state.hotelOne);
-
     }
     if (this.state.roomOption == 2) {
       this.state.hotelOne[0].typeOfRoom = "Two Queen Beds";
@@ -129,13 +119,12 @@ class Work extends React.Component {
     }
   };
 
-
   onClickTwo = e => {
     e.preventDefault();
     console.log("ive been clicked Two");
     var element = document.getElementById("activities");
     element.scrollIntoView();
-    
+
     let staringPrice = this.state.hotelTwo[0].price * this.state.numberOfRooms;
     let numberOfNights = this.state.numberOfNights;
     let price = staringPrice * numberOfNights;
@@ -159,7 +148,8 @@ class Work extends React.Component {
     console.log("number 3");
     var element = document.getElementById("activities");
     element.scrollIntoView();
-    let staringPrice = this.state.hotelThree[0].price * this.state.numberOfRooms;
+    let staringPrice =
+      this.state.hotelThree[0].price * this.state.numberOfRooms;
     let numberOfNights = this.state.numberOfNights;
     let price = staringPrice * numberOfNights;
 
@@ -185,11 +175,10 @@ class Work extends React.Component {
 
   numberOfNights = e => {
     e.preventDefault();
-    console.log('entro pal party ');
+    console.log("entro pal party ");
     let numberOfNights = Number(e.target.value);
-    this.setState({numberOfNights : numberOfNights});
-
-  }
+    this.setState({ numberOfNights: numberOfNights });
+  };
   // roomTwoOption = e => {
   //   e.preventDefault();
   //   let roomOptionId = Number(e.target.value);
@@ -210,10 +199,9 @@ class Work extends React.Component {
   handleCheckInChange = e => {
     const { name, value } = e.target;
 
-    
     let cutStr = value.substring(8, 10);
 
-    console.log('cut STR' , cutStr)
+    console.log("cut STR", cutStr);
     console.log("estoy adentro de el handle change", name);
     console.log("estoy adentro de el handle change", value);
 
@@ -222,20 +210,16 @@ class Work extends React.Component {
   };
 
   handleCheckoutChange = e => {
-    console.log('entro en checkout');
+    console.log("entro en checkout");
 
-    const {name , value} = e.target;
+    const { name, value } = e.target;
 
-
-
-    let cutStr = value.substring(8,10);
-
+    let cutStr = value.substring(8, 10);
 
     console.log(cutStr);
     this.setState({ ...this.state, [name]: [value] });
     this.setState({ ...this.state, checkOutDay: Number(cutStr) });
-    
-  }
+  };
   handleRoomPrince = e => {
     e.preventDefault();
     console.log("entro en handle room price");
@@ -246,12 +230,11 @@ class Work extends React.Component {
   render() {
     //PRICE RENDERING
 
-    let hotelOnePrice = "149.44"
+    let hotelOnePrice = "149.44";
 
-  
-    let hotelTwoPrice = "235.64"
+    let hotelTwoPrice = "235.64";
 
-    let hotelThreePrice = "150.99"
+    let hotelThreePrice = "150.99";
     return (
       <section className="backgroundColor" id="hotels">
         <div className="container">
@@ -281,7 +264,7 @@ class Work extends React.Component {
                 className="form-control"
                 id="checkIn"
                 name="checkIn"
-                min="2019-07-17" 
+                min="2019-07-17"
                 max="2019-07-25"
                 onChange={e => this.handleCheckInChange(e)}
                 type="date"
@@ -295,7 +278,7 @@ class Work extends React.Component {
                   <option value="4">4 Nights - 07/18 to 07/22 </option>
                   <option value="8">8 Nights - 07/17 to 07/25 </option>
                 </select> */}
-               <input
+              <input
                 autoComplete="off"
                 className="form-control"
                 id="checkOut"
@@ -304,7 +287,7 @@ class Work extends React.Component {
                 name="checkOut"
                 onChange={e => this.handleCheckoutChange(e)}
                 type="date"
-              /> 
+              />
             </div>
             <div className="col-md-4 ">
               <label id="" className="text-white" htmlFor="numberOfRooms">
@@ -333,7 +316,7 @@ class Work extends React.Component {
                   src="https://cache.marriott.com/marriottassets/marriott/WASYV/wasyv-exterior-7552-hor-wide.jpg?downsize=2880px:*"
                   alt=""
                 />
-                <h3>Courtyard Marriott</h3>
+                <h3>Courtyard Marriott Capitol Hill/Navy Yard</h3>
 
                 <FontAwesomeIcon className="starIcon" icon={faStar} />
                 <FontAwesomeIcon className="starIcon" icon={faStar} />
@@ -342,22 +325,66 @@ class Work extends React.Component {
                 <FontAwesomeIcon className="starIcon" icon={faStar} />
 
                 <p>Services: Pool-side Bar , Gym , 20% off Bistro Restaurant</p>
+                <p>2 night minimum</p>
+                <button
+                  type="button"
+                  class="btn btn-info btn-lg"
+                  data-toggle="modal"
+                  data-target="#myModal"
+                >
+                  Hotel Pictures
+                </button>
+
+                <div id="myModal" class="modal fade" role="dialog">
+                  <div class="modal-dialog">
+                    <div id="modalBody" class="modal-content">
+                      <div class="modal-header">
+                        <button
+                          type="button"
+                          class="close"
+                          data-dismiss="modal"
+                        >
+                          &times;
+                        </button>
+                        <h4 class="modal-title">Modal Header</h4>
+                      </div>
+                      <div class="modal-body">
+                        {/* <p>Some text in the modal.</p> */}
+
+
+
+                        <img className="modalPics" src="https://66.media.tumblr.com/4283456dd8ced5ba08578e429629a854/tumblr_psuti88Rxw1vp5j01o1_1280.jpg" />
+                        <br></br>
+                        <img  className="modalPics" src="https://66.media.tumblr.com/6a62bcec5dcab9d9fa4314ae331ea6cd/tumblr_psuti88Rxw1vp5j01o2_1280.jpg" />
+                       <br></br>
+                        <img  className="modalPics" src="https://66.media.tumblr.com/92e6c7627c432f4ab385a29119a80cef/tumblr_psuti88Rxw1vp5j01o3_1280.jpg" />
+                      </div>
+                      <div class="modal-footer">
+                        <button
+                          type="button"
+                          class="btn btn-default"
+                          data-dismiss="modal"
+                        >
+                          Close
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
                 <p className="pickleRick" />
                 <hr />
-                <p>1919 Connecticut Ave NW</p>
-                <p className="hotelAddress">1 mile from stadium</p>
+                <p>140 L St SE, Washington, DC 20003 </p>
+                <p className="hotelAddress">.9 miles from Audi Field</p>
                 <hr />
                 <label for="roomOption">Room :</label>
                 <select className="form-control" onChange={this.roomOption}>
                   <option value="1">One King Bed</option>
-                  <option value="2">Two Queen Beds</option>
+                  <option value="2">Queen/Queen Beds</option>
                 </select>
                 <br />
                 <p>
                   <span className="hotelPrice">${hotelOnePrice} per Night</span>
                 </p>
-
-
 
                 <button
                   type="submit"
@@ -367,8 +394,6 @@ class Work extends React.Component {
                 >
                   Add
                 </button>
-
-
               </div>
             </div>
             <div className="col-lg-4 text-center">
@@ -402,7 +427,6 @@ class Work extends React.Component {
                 <p>
                   <span className="hotelPrice">${hotelTwoPrice} per Night</span>
                 </p>
-                
 
                 <button
                   type="submit"
@@ -412,7 +436,6 @@ class Work extends React.Component {
                   {" "}
                   Add
                 </button>
-        
               </div>
             </div>
             <div className="col-lg-4 text-center">

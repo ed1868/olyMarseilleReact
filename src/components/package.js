@@ -137,7 +137,10 @@ export default class Package extends Component {
         title: "3 GAMES ",
         id: 0,
         gameOne: "Montepellier HSC VS AS Saint Etienne",
+        gameOneTeamOneUrl: "assets/images/MONTPELLIERcouleur.png",
+        gameOneTeamTwoUrl:"assets/images/SAINTETIENNEcouleur.png",
         gameTwo: "O.Marseille VS Girondins de Bordeaux",
+        
         gameThree: "Tournament Championship Game",
         activities: {
           activityOne: "Access to OM special area in the stadium",
@@ -212,8 +215,11 @@ export default class Package extends Component {
     // Dynamic Price Data Loop
     let DataList = data.map((val, i) => {
       let gameOne = val.gameOne;
+      let gameOneTeamOneUrl = val.gameOneTeamOneUrl;
+      let gameOneTeamTwoUrl = val.gameOneTeamTwoUrl;
       let gameTwo = val.gameTwo;
       let gameThree = val.gameThree;
+    
       let activityOne = val.activities.activityOne;
       let activityTwo = val.activities.activityTwo;
       let activityThree = val.activities.activityThree;
@@ -232,6 +238,7 @@ export default class Package extends Component {
                 <h3 className="packageGameHeader">Games Included</h3>
                 {/* <ul> */}
                 <p>{gameOne}</p>
+                {/* <p><img className="gameLogo" src={gameOneTeamOneUrl} /> Vs <img className="gameLogo"  src={gameOneTeamTwoUrl} /></p> */}
                 <br />
                 <p>{gameTwo}</p>
                 <br />
