@@ -14,7 +14,7 @@ class Work extends React.Component {
       hotelOne: [
         {
           price: "149.44",
-          hotelName: "Hotel Washington Hilton",
+          hotelName: "Courtyard Marriott Capitol Hill/Navy Yard",
           option: Number(0),
           hotelId: Number(0),
           typeOfRoom: " ",
@@ -31,11 +31,12 @@ class Work extends React.Component {
       // ],
       hotelTwo: [
         {
-          price: "235.64",
-          hotelName: "The Ritz-Carlton",
+          price: "191.97",
+          hotelName: "Residence Inn by Marriott Capitol Hill/Navy Yard",
           option: Number(0),
           hotelId: Number(1),
-          typeOfRoom: " "
+          typeOfRoom: " ",
+          totalPrice: " "
         }
       ],
       // hotelTwoOptTwo: [
@@ -49,8 +50,8 @@ class Work extends React.Component {
       // ],
       hotelThree: [
         {
-          price: "150.99",
-          hotelName: "Hyatt House",
+          price: "437.95",
+          hotelName: "W Washington DC",
           option: Number(1),
           hotelId: Number(2),
           typeOfRoom: " "
@@ -67,7 +68,10 @@ class Work extends React.Component {
       // ],
       roomOption: Number(0),
       numberOfNights: 4,
-      numberOfRooms: 1
+      numberOfRooms: 1,
+      rateOne: "false",
+      rateTwo: "false",
+      rateThree: "false"
       // roomOptionTwo: Number(0),
       // roomOptionThree: Number(0)
     };
@@ -200,8 +204,20 @@ class Work extends React.Component {
     const { name, value } = e.target;
 
     let cutStr = value.substring(8, 10);
-
     console.log("cut STR", cutStr);
+    if (cutStr == 17 || cutStr == 18) {
+      console.log("entro en el primer rate de el tercer hotel ");
+
+    }
+    if (cutStr == 19 || cutStr == 20 || cutStr == 21) {
+      console.log("entro en el rate two de el 3rd hotel");
+      this.state.hotelThree[0].price = "250.60";
+    }
+    if(cutStr == 22 || cutStr == 23 || cutStr == 24){
+      console.log("entro en el tercer rate de el tercer hotel");
+      this.state.hotelThree[0].price = "371.28";
+    }
+
     console.log("estoy adentro de el handle change", name);
     console.log("estoy adentro de el handle change", value);
 
@@ -232,9 +248,21 @@ class Work extends React.Component {
 
     let hotelOnePrice = "149.44";
 
-    let hotelTwoPrice = "235.64";
+    let hotelTwoPrice = "191.97";
 
-    let hotelThreePrice = "150.99";
+    let hotelThreePrice = "437.95";
+if(this.state.rateOne == true){
+  hotelThreePrice = "437.95";
+}
+
+if(this.state.rateTwo == true){
+  hotelThreePrice = "250.60"
+}
+
+if(this.state.rateThree == true){
+  hotelThreePrice = "371.28"
+}
+
     return (
       <section className="backgroundColor" id="hotels">
         <div className="container">
@@ -310,25 +338,28 @@ class Work extends React.Component {
 
           <div className="row">
             <div className="col-lg-4 text-center">
-              <div className="box">
+              <div id="boxOneRadius" className="box">
                 <img
                   className="hotelsImg"
                   src="https://cache.marriott.com/marriottassets/marriott/WASYV/wasyv-exterior-7552-hor-wide.jpg?downsize=2880px:*"
                   alt=""
                 />
                 <h3>Courtyard Marriott Capitol Hill/Navy Yard</h3>
-
+                <br />
                 <FontAwesomeIcon className="starIcon" icon={faStar} />
                 <FontAwesomeIcon className="starIcon" icon={faStar} />
                 <FontAwesomeIcon className="starIcon" icon={faStar} />
                 <FontAwesomeIcon className="starIcon" icon={faStar} />
-                <FontAwesomeIcon className="starIcon" icon={faStar} />
-
-                <p>Services: Pool-side Bar , Gym , 20% off Bistro Restaurant</p>
+                {/* <FontAwesomeIcon className="starIcon" icon={faStar} /> */}
+                <br />
+                <br />
+                <p className="hotelP">
+                  Services: Pool-side Bar , Gym , 20% off Bistro Restaurant
+                </p>
                 <p>2 night minimum</p>
                 <button
                   type="button"
-                  class="btn btn-info btn-lg"
+                  className="btn btn-info btn-lg hotelPicButton"
                   data-toggle="modal"
                   data-target="#myModal"
                 >
@@ -336,33 +367,42 @@ class Work extends React.Component {
                 </button>
 
                 <div id="myModal" class="modal fade" role="dialog">
-                  <div class="modal-dialog">
-                    <div id="modalBody" class="modal-content">
-                      <div class="modal-header">
+                  <div className="modal-dialog">
+                    <div id="modalBody" className="modal-content">
+                      <div className="modal-header">
                         <button
                           type="button"
-                          class="close"
+                          className="close "
                           data-dismiss="modal"
                         >
                           &times;
                         </button>
-                        <h4 class="modal-title">Modal Header</h4>
+                        <h4 className="hotelModelTitle">
+                          Courtyard Marriott Capitol Hill/Navy Yard
+                        </h4>
                       </div>
-                      <div class="modal-body">
+                      <div className="modal-body">
                         {/* <p>Some text in the modal.</p> */}
 
-
-
-                        <img className="modalPics" src="https://66.media.tumblr.com/4283456dd8ced5ba08578e429629a854/tumblr_psuti88Rxw1vp5j01o1_1280.jpg" />
-                        <br></br>
-                        <img  className="modalPics" src="https://66.media.tumblr.com/6a62bcec5dcab9d9fa4314ae331ea6cd/tumblr_psuti88Rxw1vp5j01o2_1280.jpg" />
-                       <br></br>
-                        <img  className="modalPics" src="https://66.media.tumblr.com/92e6c7627c432f4ab385a29119a80cef/tumblr_psuti88Rxw1vp5j01o3_1280.jpg" />
+                        <img
+                          className="modalPics"
+                          src="https://66.media.tumblr.com/4283456dd8ced5ba08578e429629a854/tumblr_psuti88Rxw1vp5j01o1_1280.jpg"
+                        />
+                        <br />
+                        <img
+                          className="modalPics"
+                          src="https://66.media.tumblr.com/6a62bcec5dcab9d9fa4314ae331ea6cd/tumblr_psuti88Rxw1vp5j01o2_1280.jpg"
+                        />
+                        <br />
+                        <img
+                          className="modalPics"
+                          src="https://66.media.tumblr.com/92e6c7627c432f4ab385a29119a80cef/tumblr_psuti88Rxw1vp5j01o3_1280.jpg"
+                        />
                       </div>
                       <div class="modal-footer">
                         <button
                           type="button"
-                          class="btn btn-default"
+                          className="btn btn-default "
                           data-dismiss="modal"
                         >
                           Close
@@ -390,33 +430,94 @@ class Work extends React.Component {
                   type="submit"
                   id="hotelOne"
                   onClick={this.onClick}
-                  className="btn btn-primary bookButton"
+                  className="btn btn-primary bookButton "
                 >
                   Add
                 </button>
               </div>
             </div>
+
             <div className="col-lg-4 text-center">
-              <div className="box">
+              <div id="boxTwoRadius" className="box">
                 <img
                   className="hotelsImg"
                   src="https://d3hfxk7rwdcpol.cloudfront.net/CSN/ee3d0813-fc18-45c4-95e1-f159157807a3/images/33b1eb6e29c046498adef9a038fb2e44_LARGE.jpg"
                 />
-                <h3>Hampton Inn & Suites Washington </h3>
-
-                <FontAwesomeIcon className="starIcon" icon={faStar} />
-                <FontAwesomeIcon className="starIcon" icon={faStar} />
-                <FontAwesomeIcon className="starIcon" icon={faStar} />
-                <FontAwesomeIcon className="starIcon" icon={faStar} />
-                <FontAwesomeIcon className="starIcon" icon={faStar} />
-
-                <p>
-                  Services: Pool-side Bar , Gym , 24 hr Pavilion Pantry Market
-                </p>
+                <h3>Residence Inn Capitol Hill/Navy Yard </h3>
                 <br />
+                <FontAwesomeIcon className="starIcon" icon={faStar} />
+                <FontAwesomeIcon className="starIcon" icon={faStar} />
+                <FontAwesomeIcon className="starIcon" icon={faStar} />
+                <FontAwesomeIcon className="starIcon" icon={faStar} />
+                {/* <FontAwesomeIcon className="starIcon" icon={faStar} /> */}
+                <br />
+                <br />
+                <p id="hotelTwoP" className="hotelP">
+                  Services: Free breakfast , Gym , 24 hr Pavilion Pantry Market
+                </p>
+
+                <p>2 night minimum</p>
+
+                <button
+                  type="button"
+                  className="btn btn-info btn-lg hotelPicButton"
+                  data-toggle="modal"
+                  data-target="#hotelTwoModal"
+                >
+                  Hotel Pictures
+                </button>
+
+                <div id="hotelTwoModal" class="modal fade" role="dialog">
+                  <div className="modal-dialog">
+                    <div id="modalBody" className="modal-content">
+                      <div className="modal-header">
+                        <button
+                          type="button"
+                          className="close "
+                          data-dismiss="modal"
+                        >
+                          &times;
+                        </button>
+                        <h4 className="hotelModelTitle">
+                          Residence Inn Capitol Hill/Navy Yard
+                        </h4>
+                      </div>
+                      <div className="modal-body">
+                        {/* <p>Some text in the modal.</p> */}
+
+                        <img
+                          className="modalPics"
+                          src="https://cache.marriott.com/marriottassets/marriott/WASXR/wasxr-exterior-0001-hor-wide.jpg?downsize=2880px:*"
+                        />
+                        <br />
+                        <img
+                          className="modalPics"
+                          src="https://cache.marriott.com/marriottassets/marriott/WASXR/wasxr-lobby-0038-hor-wide.jpg?downsize=2880px:*"
+                        />
+                        <br />
+                        <img
+                          className="modalPics"
+                          src="https://cache.marriott.com/marriottassets/marriott/WASXR/wasxr-suite-0006-hor-wide.jpg?downsize=2880px:*"
+                        />
+                      </div>
+                      <div class="modal-footer">
+                        <button
+                          type="button"
+                          className="btn btn-default "
+                          data-dismiss="modal"
+                        >
+                          Close
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <p className="pickleRickTwo" />
                 <hr />
-                <p>1265 First St SE</p>
-                <p className="hotelAddress">5 Miles from Stadium</p>
+
+                <p>1233 1St SE, Washington, DC 20003 </p>
+                <p className="hotelAddress">0.7 Miles from Audi Field</p>
                 <hr />
                 <label for="roomOption">Room :</label>
                 <select className="form-control" onChange={this.roomOption}>
@@ -439,13 +540,13 @@ class Work extends React.Component {
               </div>
             </div>
             <div className="col-lg-4 text-center">
-              <div className="box">
+              <div id="boxThreeRadius" className="box">
                 <img
                   className="hotelsImg"
                   src="https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_470,q_auto,w_805/uploadimages/28/19/28194712.jpeg"
                   alt=""
                 />
-                <h3>Homewood Inn & Suites</h3>
+                <h3>W Washington DC</h3>
 
                 <FontAwesomeIcon className="starIcon" icon={faStar} />
                 <FontAwesomeIcon className="starIcon" icon={faStar} />

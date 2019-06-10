@@ -253,19 +253,20 @@ export default class Package extends Component {
               <br />
               <h3 className="packageTitle">Activities</h3>
               {/* <ul> */}
-              <p>{activityOne}</p>
+              <p className="activitiesPackage">{activityOne}</p>
               <br />
-              <p>{activityTwo}</p>
+              <p className="activitiesPackage">{activityTwo}</p>
               <br />
-              <p>{activityThree}</p>
+              <p className="activitiesPackage">Exclusive events at Audi Field</p>
               <br />
-              <p>{activityFour}</p>
+              {/* <p>{activityFour}</p> */}
               {/* </ul> */}
 
               <br />
+              <p id="ex"></p>
               <input
                 autoComplete="off"
-                className="form-control "
+                className="form-control"
                 id="quantity"
                 placeholder="Quantity  "
                 name="quantity"
@@ -311,15 +312,14 @@ export default class Package extends Component {
               <br />
               <h3 className="packageTitle">Activities</h3>
               {/* <ul id="special"> */}
-              <p>{activityOne}</p>
+              <p className="activitiesPackage">{activityOne}</p>
               <br />
-              <p>{activityTwo}</p>
+              <p className="activitiesPackage">{activityTwo}</p>
               <br />
-              <p>{activityThree}</p>
+              <p className="activitiesPackage">Exclusive events at Audi Field</p>
               <br />
-              <br />
-              <br />
-              <br />
+ 
+             
 
               {/* </ul> */}
 
@@ -355,9 +355,9 @@ export default class Package extends Component {
               <div className="price-box">
                 <h3 className="packageGameHeader">Games Included</h3>
                 {/* <ul> */}
-                <p>{gameTwo}</p>
+                <p className="activitiesPackage">{gameTwo}</p>
                 <br />
-                <p>{gameThree}</p>
+                <p className="activitiesPackage">Exclusive events at Audi Field</p>
                 <br />
                 <br />
                 <br />
@@ -371,11 +371,11 @@ export default class Package extends Component {
               <br />
               <h3 className="packageTitle">Activities</h3>
               {/* <ul id="specialTwo"> */}
-              <p>{activityOne}</p>
+              <p className="activitiesPackage">{activityOne}</p>
               <br />
-              <p>{activityThree}</p>
+              <p className="activitiesPackage">Exclusive events at Audi Field</p>
               <br />
-              <p>{activityFour}</p>
+              {/* <p>{activityFour}</p> */}
               <br />
               <br />
               <br />
