@@ -22,7 +22,6 @@ import Timer from "react-compound-timer";
 import { faPlusSquare } from "@fortawesome/fontawesome-free-regular";
 import Cart from "./components/cart";
 
-
 import FormService from "./components/formService";
 //Testing DATE PICKER FOR REACT
 
@@ -42,8 +41,8 @@ class Home extends React.Component {
       // clientFirstName : " ",
       // clientLastName  : " ",
       stayData: [],
-      packages:[],
-      packageId:" "
+      packages: [],
+      packageId: " "
 
       // checkOut: " ",
       // fanClubNumber: " ",
@@ -89,7 +88,7 @@ class Home extends React.Component {
   onClick = e => {
     console.log("FIRST HOTEL OPTION ENTERED HOME");
     let hotelOne = e;
- 
+
     let hotelData = hotelOne[0];
 
     console.log(hotelData);
@@ -105,7 +104,6 @@ class Home extends React.Component {
 
     this.state.stayData.push(e);
   };
-
 
   onClickTwo = e => {
     console.log(e);
@@ -160,7 +158,6 @@ class Home extends React.Component {
     this.setState({ discountedTotal: Math.round(10 * calculation) / 10 });
   };
   handleChange = e => {
-
     const { name, value } = e.target;
     // console.log(this.state.client[0]);
 
@@ -174,10 +171,8 @@ class Home extends React.Component {
     );
 
     this.setState({ numRoom: e });
-
   };
 
-  
   handleFormSubmit = e => {
     e.preventDefault();
 
@@ -199,8 +194,10 @@ class Home extends React.Component {
       securityCode
     } = this.state;
 
-    alert(`Your Order has been received by one of our agents. You will received a confirmation email to ${clientFirstName} within 24 hours with an invoice attatched`);
-    
+    alert(
+      `Your Order has been received by one of our agents. You will received a confirmation email to ${clientFirstName} within 24 hours with an invoice attatched`
+    );
+
     this.FormService.addShoppingCart({
       cart,
       clientFirstName,
@@ -236,21 +233,20 @@ class Home extends React.Component {
   };
 
   onPackageClick = e => {
-    console.log('entro en package homeee click baby');
+    console.log("entro en package homeee click baby");
     let packages = e;
     let packageChoice = packages[0];
-    console.log('package being delivered to home', packageChoice);
+    console.log("package being delivered to home", packageChoice);
     // let joined = this.state.packages.concat(packageChoice);
     this.state.packageId = packageChoice.packageId;
     this.setState({ packages: packageChoice });
-  }
+  };
   render() {
     document.body.classList.remove("inner-page");
     console.log(
       "THIS WILL BE THE CURRENT STATE OF THE HOME COMPONENT",
       this.state
     );
-
 
     // if(packageData.packageId == 0){
     //   packageName = "Package One";
@@ -272,8 +268,7 @@ class Home extends React.Component {
           stayData={this.state.stayData}
           numRoom={this.state.numRoom}
           packages={this.state.packages}
-          packageId ={this.state.packageId}
-    
+          packageId={this.state.packageId}
         />
         <section id="sectionOne" className="sectionOne">
           {/* <Cart
@@ -361,16 +356,13 @@ class Home extends React.Component {
 					<i></i>
 				</div> */}
           <div id="jumbotron" className="container">
-
             <div className="row">
               <div className="col-md-12">
                 <div className="d-flex-1">
                   <div id="mainText">
                     <div>
-
-      
                       <h1 id="headerText" className="mainTitle">
-                      OM U.S TOUR EXPERIENCE 
+                        OM U.S TOUR EXPERIENCE 
                         <br />
                         <span className="mainTitle" />
                       </h1>
@@ -419,32 +411,34 @@ class Home extends React.Component {
           <h2 id="tourLogo">The Tour</h2>
           <div id="tourPlacing">
             <h1 id="tourHeader">
-            WELCOME TO THE OFFICIAL WEBSITE OF OM TOUR IN THE U.S !
+              WELCOME TO THE OFFICIAL WEBSITE OF OM TOUR IN THE U.S !
             </h1>
             <p id="tourFirst" className="tourP">
               In partnership with EA Sports, LFP will launch a preseason tour in
               the United States in July called « EA Ligue 1 Games
-              
             </p>
             <p id="tourFirst" className="tourP">
-            From July 18th to 21st, 2019, Olympique de Marseille, FC
-                Girondins de Bordeaux, Montpellier Hérault SC and AS Saint-Etienne 
-              
+              From July 18th to 21st, 2019, Olympique de Marseille, FC Girondins
+              de Bordeaux, Montpellier Hérault SC and AS Saint-Etienne
             </p>
             <p id="tourGoal" className="tourP">
-            will compete in a friendly tournament at Audi
-                Field
-              
+              will compete in a friendly tournament at Audi Field
             </p>
             <p id="tourFirst" className="tourP">
-            <br></br>
-              <br></br>
-            <span id="dearFans">Dear fans abroad</span>,
+              <br />
+              <br />
+              <span id="dearFans">Dear fans abroad</span>,
               <br /> Don't miss this chance to see OM playing and experience the
-              tour like no one else! <br></br>
-              <a id="experienceButton"  href="#disclaimer" className="btn btn-primary">DISCOVER THE EXPERIENCE</a>
+              tour like no one else! <br />
+              <a
+                id="experienceButton"
+                href="#disclaimer"
+                className="btn btn-primary"
+              >
+                DISCOVER THE EXPERIENCE
+              </a>
             </p>
-           
+
             {/* <div id="secondPdiv">
               <p id="tourSecond" className="tourP">
                 From July 18th to 21st, 2019, Olympique de Marseille, FC
@@ -454,7 +448,6 @@ class Home extends React.Component {
               </p>
       
             </div> */}
-
           </div>
         </section>
         <About />
@@ -625,112 +618,110 @@ class Home extends React.Component {
                   />
                 </div>
               </div>
-<br></br>
-<div className="hidden">
-
-
-              <h2 className="fuck">Person Two</h2>
-              <br></br>
-              <div className="row">
-                <div className="col-md-6">
-                  <label className="formText" htmlFor="firstName">
-                    First Name :{" "}
-                  </label>
-                  <input
-                    autoComplete="off"
-                    className="form-control"
-                    id="firstName"
-                    name="clientFirstName"
-                    onChange={e => this.handleChange(e)}
-                    type="text"
-                  />
+              <br />
+              <div className="hidden">
+                <h2 className="fuck">Person Two</h2>
+                <br />
+                <div className="row">
+                  <div className="col-md-6">
+                    <label className="formText" htmlFor="firstName">
+                      First Name :{" "}
+                    </label>
+                    <input
+                      autoComplete="off"
+                      className="form-control"
+                      id="firstName"
+                      name="clientFirstName"
+                      onChange={e => this.handleChange(e)}
+                      type="text"
+                    />
+                  </div>
+                  <div className="col-md-6">
+                    <label className="formText" htmlFor="lastName">
+                      Last Name :{" "}
+                    </label>
+                    <input
+                      autoComplete="off"
+                      className="form-control"
+                      id="lastName"
+                      name="clientLastName"
+                      onChange={e => this.handleChange(e)}
+                      type="text"
+                    />
+                  </div>
                 </div>
-                <div className="col-md-6">
-                  <label className="formText" htmlFor="lastName">
-                    Last Name :{" "}
-                  </label>
-                  <input
-                    autoComplete="off"
-                    className="form-control"
-                    id="lastName"
-                    name="clientLastName"
-                    onChange={e => this.handleChange(e)}
-                    type="text"
-                  />
+                <div className="row">
+                  <div className="col-md-12">
+                    <label className="formText" htmlFor="checkOut">
+                      Email:{" "}
+                    </label>
+                    <input
+                      autoComplete="off"
+                      className="form-control"
+                      placeholder=".com"
+                      id="email"
+                      name="email"
+                      onChange={e => this.handleChange(e)}
+                      type="email"
+                    />
+                  </div>
                 </div>
-              </div>
-              <div className="row">
-                <div className="col-md-12">
-                  <label className="formText" htmlFor="checkOut">
-                    Email:{" "}
-                  </label>
-                  <input
-                    autoComplete="off"
-                    className="form-control"
-                    placeholder=".com"
-                    id="email"
-                    name="email"
-                    onChange={e => this.handleChange(e)}
-                    type="email"
-                  />
+                <div className="row">
+                  <div className="col-md-6">
+                    <label className="formText" htmlFor="firstName">
+                      Passport Number :{" "}
+                    </label>
+                    <input
+                      autoComplete="off"
+                      className="form-control"
+                      id="passportNum"
+                      name="passportNum"
+                      onChange={e => this.handleChange(e)}
+                      type="text"
+                    />
+                  </div>
+                  <div className="col-md-6">
+                    <label className="formText" htmlFor="lastName">
+                      Country Of Issue :{" "}
+                    </label>
+                    <input
+                      autoComplete="off"
+                      className="form-control"
+                      id="countryIssue"
+                      name="countryIssue"
+                      onChange={e => this.handleChange(e)}
+                      type="text"
+                    />
+                  </div>
                 </div>
-              </div>
-              <div className="row">
-                <div className="col-md-6">
-                  <label className="formText" htmlFor="firstName">
-                    Passport Number :{" "}
-                  </label>
-                  <input
-                    autoComplete="off"
-                    className="form-control"
-                    id="passportNum"
-                    name="passportNum"
-                    onChange={e => this.handleChange(e)}
-                    type="text"
-                  />
+                <div className="row">
+                  <div className="col-md-6">
+                    <label className="formText" htmlFor="firstName">
+                      Date of Issue :{" "}
+                    </label>
+                    <input
+                      autoComplete="off"
+                      className="form-control"
+                      id="passportNum"
+                      name="passportNum"
+                      onChange={e => this.handleChange(e)}
+                      type="date"
+                    />
+                  </div>
+                  <div className="col-md-6">
+                    <label className="formText" htmlFor="lastName">
+                      Nationality:{" "}
+                    </label>
+                    <input
+                      autoComplete="off"
+                      className="form-control"
+                      id="countryIssue"
+                      name="countryIssue"
+                      onChange={e => this.handleChange(e)}
+                      type="text"
+                    />
+                  </div>
                 </div>
-                <div className="col-md-6">
-                  <label className="formText" htmlFor="lastName">
-                    Country Of Issue :{" "}
-                  </label>
-                  <input
-                    autoComplete="off"
-                    className="form-control"
-                    id="countryIssue"
-                    name="countryIssue"
-                    onChange={e => this.handleChange(e)}
-                    type="text"
-                  />
-                </div>
-              </div>
-              <div className="row">
-                <div className="col-md-6">
-                  <label className="formText" htmlFor="firstName">
-                    Date of Issue :{" "}
-                  </label>
-                  <input
-                    autoComplete="off"
-                    className="form-control"
-                    id="passportNum"
-                    name="passportNum"
-                    onChange={e => this.handleChange(e)}
-                    type="date"
-                  />
-                </div>
-                <div className="col-md-6">
-                  <label className="formText" htmlFor="lastName">
-                    Nationality:{" "}
-                  </label>
-                  <input
-                    autoComplete="off"
-                    className="form-control"
-                    id="countryIssue"
-                    name="countryIssue"
-                    onChange={e => this.handleChange(e)}
-                    type="text"
-                  />
-                </div>
-              </div>
               </div>
               {/* <div className="row">
                 <div className="col-md-12">
@@ -876,14 +867,13 @@ class Home extends React.Component {
               </div>
               <div className="row topPadding">
                 <div className="col-md-12">
-                <label className="formText" htmlFor="ask">
-                    Have A Question ? {" "}
+                  <label className="formText" htmlFor="ask">
+                    Have A Question ?{" "}
                   </label>
                   <textarea
                     autoComplete="off"
                     className="form-control"
                     placeholder="Ask away"
-            
                     id="question"
                     name="question"
                     onChange={e => this.handleChange(e)}
@@ -919,7 +909,7 @@ class Home extends React.Component {
         {/*Testimonial Component*/}
         {/* <Testimonial /> */}
         {/*Faq Component*/}
-        {/* <FAQ /> */}
+        <FAQ />
         {/*Blog Component*/}
         {/* <Blog /> */}
         {/*download section*/}
@@ -972,8 +962,8 @@ class Home extends React.Component {
         {/* </div> */}
         {/* </section> */}
         {/*end download section*/}
- {/* Contact Component */}
-       <Contact /> 
+        {/* Contact Component */}
+        <Contact />
         {/*Subscription Component*/}
         {/* <Subscribe /> */}
         {/*Footer Component*/}

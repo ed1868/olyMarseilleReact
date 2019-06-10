@@ -5,7 +5,7 @@ class FAQ extends React.Component {
   render() {
 		
   	return (
-        <section className="theme-bg faq " id="faq">
+        <section className="faq " id="faq">
            <div className="container">
               <div className="row">
                  <div className="col-md-12 text-center">
@@ -22,7 +22,7 @@ class FAQ extends React.Component {
                           <div className="card-header" id="headingzero">
                              <h5 className="mb-0">
                                 <button className="faq-link" type="button" data-toggle="collapse" data-target="#collapsezero" aria-expanded="false" aria-controls="collapsezero">
-                                   01 We're ready to start now
+                                   01 When Will My Credit Card Be Charged ?
                                    <i className="fa fa-angle-down pull-right"></i>
                                 </button>
                              </h5>
@@ -30,7 +30,7 @@ class FAQ extends React.Component {
 
                           <div id="collapsezero" className="collapse" aria-labelledby="headingzero" data-parent="#accordionExample">
                              <div className="card-body">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do ei temporo incididunt ut labore et dolore magna aliqua. Ut enim ad minim exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute dolor in reprehenderit in voluptate velit esse cillum dolore
+                                Great Question ! Our team will receive your request for booking and tickets. We will Email you an Invoice within 24 hours with an order number and your booking details. We promise not to charge until every single Item on the cart is booked and ready for you.
                              </div>
                           </div>
                        </div>
@@ -83,7 +83,7 @@ class FAQ extends React.Component {
                     </div>
                  </div>
                  <div className="col-lg-6 text-center">
-                    <img src="assets/images/faq.png" className="img-fluid" alt="" />
+                    <img id="faqImage" src="assets/images/marseilleLogo.png" className="img-fluid" alt="" />
                  </div>
               </div>
            </div>
