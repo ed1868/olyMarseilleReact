@@ -235,6 +235,7 @@ class Work extends React.Component {
     this.setState({ ...this.state, [name]: [value] });
     this.setState({ ...this.state, checkOutDay: Number(cutStr) });
   };
+  
   handleRoomPrince = e => {
     e.preventDefault();
     console.log("entro en handle room price");

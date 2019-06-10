@@ -8,7 +8,10 @@ class Navbar extends React.Component {
     this.state = {
       items: this.props.cart,
       numRoom: this.props.numRoom,
-      stayData: this.props.stayData
+      stayData: this.props.stayData,
+      packageName : this.props.packageName,
+      packageId : this.props.packageId
+     
     };
   }
 
@@ -23,17 +26,10 @@ class Navbar extends React.Component {
     this.props.cartUpdatorHotelOne(this.props.cart);
   };
 
-  showCart = e => {
-    e.preventDefault();
-
-    
-   
-
-    console.log('uoure clicking the cart');
-  }
   render() {
     console.log("las props", this.props.cart);
     console.log("las props stayData", this.state.stayData);
+
 
     let total = 0;
 
@@ -47,7 +43,7 @@ class Navbar extends React.Component {
     let gameOnePrice = packages.gameOneTotalPrice;
     let gameTwoName = packages.gameTwo;
     let gameTwoPrice = packages.gameTwoTotalPrice;
-    console.log("game two price", gameTwoPrice);
+
     let gameThreeName = packages.gameThree;
     let gameThreePrice = packages.gameThreeTotalPrice;
 
@@ -102,7 +98,6 @@ class Navbar extends React.Component {
     let idMaker = 0;
 
     const cartItems = this.props.cart.map(item => {
-      console.log(item);
       let hotelName = item.hotelName;
       let hotelPrice = item.price;
       let hotelTotalPrice = item.totalPrice;
@@ -117,6 +112,7 @@ class Navbar extends React.Component {
       let activityPrice = item.price;
       let activityDate = item.date;
       let activityTime = item.time;
+      let packageId = this.state.packageId;
 
       // total += Number(totalTracker);
 
@@ -127,6 +123,7 @@ class Navbar extends React.Component {
           hotelPrice={hotelPrice}
           hotelTotalPrice={hotelTotalPrice}
           ticketTotalPrice={ticketTotalPrice}
+          packageId ={this.state.packageId}
           roomNumber={roomNumber}
           hotelId={hotelId}
           id={id}
@@ -141,6 +138,8 @@ class Navbar extends React.Component {
         />
       );
     });
+
+
 
     return (
     <nav className="navbar transparent fixed-top navbar-expand-lg">
@@ -172,6 +171,7 @@ class Navbar extends React.Component {
         <div>
         <a id="navbarDropdown" onClick={this.showCart} className="nav-link dropdown-toggle text-center navMine" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#"><img id="cartImg" src ="assets/images/MYCART.png" /><span id="masterOfCoin">My Cart {total} </span></a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        
           <a class="dropdown-item" href="#">   {cartItems}</a>
 
           <div class="dropdown-divider"></div>

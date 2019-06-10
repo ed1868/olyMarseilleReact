@@ -6,67 +6,60 @@ export default class Package extends Component {
     this.state = {
       packageOne: [
         {
+          gameOne: "Montepellier HSC VS AS Saint Etienne",
+          gameOneTotalPrice: 45.0,
+          gameTwo: "O.Marseille VS Girondins de Bordeaux",
+          gameTwoTotalPrice: 35.44,
+          gameThree: "Tournament Championship Game",
+          gameThreeTotalPrice: 50.44,
+          activityOne: "Access to OM special area in the stadium",
+          activityOneTotalPrice: 10,
+          activityTwo: "Training Session + Transport on July 19th. Time TBC",
+          activityTwoTotalPrice: 20,
+          activityThree:
+            "Exclusive Party on Saturday July 20th, Evening-Time TBC",
+          activityThreeTotalPRice: 30,
+          activityFour:
+            "Friendly Game on Wednesday July 24th, Afternoon-Time TBC",
+          activityFourTotalPrice: 40,
 
-            gameOne: "Montepellier HSC VS AS Saint Etienne",
-            gameOneTotalPrice: 45.0,
-            gameTwo: "O.Marseille VS Girondins de Bordeaux",
-            gameTwoTotalPrice: 35.44,
-            gameThree: "Tournament Championship Game",
-            gameThreeTotalPrice: 50.44
-          ,
-      
-            activityOne: "Access to OM special area in the stadium",
-            activityOneTotalPrice: 10,
-            activityTwo: "Training Session + Transport on July 19th. Time TBC",
-            activityTwoTotalPrice: 20,
-            activityThree:
-              "Exclusive Party on Saturday July 20th, Evening-Time TBC",
-            activityThreeTotalPRice: 30,
-            activityFour:
-              "Friendly Game on Wednesday July 24th, Afternoon-Time TBC",
-            activityFourTotalPrice: 40,
- 
           packageId: Number(0)
         }
       ],
       packageTwo: [
         {
-      
-            gameOne: "Montepellier HSC VS AS Saint Etienne",
-            gameOneTotalPrice: 45.0,
-            gameTwo: "O.Marseille VS Girondins de Bordeaux",
-            gameTwoTotalPrice: 35.44,
-  
-   
-            activityOne: "Access to OM special area in the stadium",
-            activityOneTotalPrice: 10,
-            activityTwo: "Training Session + Transport on July 19th. Time TBC",
-            activityTwoTotalPrice: 20,
-            activityThree:
-              "Exclusive Party on Saturday July 20th, Evening-Time TBC",
-            activityThreeTotalPRice: 30,
-  
+          gameOne: "Montepellier HSC VS AS Saint Etienne",
+          gameOneTotalPrice: 45.0,
+          gameTwo: "O.Marseille VS Girondins de Bordeaux",
+          gameTwoTotalPrice: 35.44,
+
+          activityOne: "Access to OM special area in the stadium",
+          activityOneTotalPrice: 10,
+          activityTwo: "Training Session + Transport on July 19th. Time TBC",
+          activityTwoTotalPrice: 20,
+          activityThree:
+            "Exclusive Party on Saturday July 20th, Evening-Time TBC",
+          activityThreeTotalPRice: 30,
+
           packageId: Number(1)
         }
       ],
       packageThree: [
         {
-   
-            gameTwo: "O.Marseille VS Girondins de Bordeaux",
-            gameTwoTotalPrice: 35.44,
-            gameThree: "Tournament Championship Game",
-            gameThreeTotalPrice: 50.44,
+          gameTwo: "O.Marseille VS Girondins de Bordeaux",
+          gameTwoTotalPrice: 35.44,
+          gameThree: "Tournament Championship Game",
+          gameThreeTotalPrice: 50.44,
 
-   
-            activityOne: "Access to OM special area in the stadium",
-            activityOneTotalPrice: 10,
-            activityThree:
-              "Exclusive Party on Saturday July 20th, Evening-Time TBC",
-            activityThreeTotalPRice: 30,
-            activityFour:
-              "Friendly Game on Wednesday July 24th, Afternoon-Time TBC",
-            activityFourTotalPrice: 40,
-  
+          activityOne: "Access to OM special area in the stadium",
+          activityOneTotalPrice: 10,
+          activityThree:
+            "Exclusive Party on Saturday July 20th, Evening-Time TBC",
+          activityThreeTotalPRice: 30,
+          activityFour:
+            "Friendly Game on Wednesday July 24th, Afternoon-Time TBC",
+          activityFourTotalPrice: 40,
+
           packageId: Number(2)
         }
       ],
@@ -137,11 +130,13 @@ export default class Package extends Component {
         title: "3 GAMES ",
         id: 0,
         gameOne: "Montepellier HSC VS AS Saint Etienne",
-        gameOneTeamOneUrl: "assets/images/BORDEAUXTwo.png",
+        gameOneTeamOneUrl: "assets/images/MONTPELLIERcouleur.png",
+        gameOneTeamTwoUrl: "assets/images/SAINTETIENNEcouleur.png",
 
-        gameOneTeamTwoUrl:"assets/images/MONTPELLIERcouleur.png",
         gameTwo: "O.Marseille VS Girondins de Bordeaux",
-        
+        gameTwoTeamOneUrl: "assets/images/marseilleGameLogo.png",
+        gameTwoTeamTwoUrl: "assets/images/BORDEAUXcouleur.png",
+
         gameThree: "Tournament Championship Game",
         activities: {
           activityOne: "Access to OM special area in the stadium",
@@ -156,7 +151,12 @@ export default class Package extends Component {
         title: "2 GAMES",
         id: 1,
         gameOne: "Montepellier HSC VS AS Saint Etienne",
+        gameOneTeamOneUrl: "assets/images/MONTPELLIERcouleur.png",
+        gameOneTeamTwoUrl: "assets/images/SAINTETIENNEcouleur.png",
         gameTwo: "O.Marseille VS Girondins de Bordeaux",
+        gameTwoTeamOneUrl: "assets/images/marseilleGameLogo.png",
+        gameTwoTeamTwoUrl: "assets/images/BORDEAUXcouleur.png",
+
         activities: {
           activityOne: "Access to OM special area in the stadium",
           activityTwo: "Training Session + Transport on July 19th. Time TBC",
@@ -168,6 +168,9 @@ export default class Package extends Component {
         title: "2 GAMES PT 2",
         id: 2,
         gameTwo: "O.Marseille VS Girondins de Bordeaux",
+        gameTwoTeamOneUrl: "assets/images/marseilleGameLogo.png",
+        gameTwoTeamTwoUrl: "assets/images/BORDEAUXcouleur.png",
+
         gameThree: "Tournament Championship Game",
         activities: {
           activityOne: "Access to OM special area in the stadium",
@@ -216,11 +219,18 @@ export default class Package extends Component {
     // Dynamic Price Data Loop
     let DataList = data.map((val, i) => {
       let gameOne = val.gameOne;
+      console.log("game one = ", gameOne);
       let gameOneTeamOneUrl = val.gameOneTeamOneUrl;
+      console.log("game one team on url = ", gameOneTeamOneUrl);
       let gameOneTeamTwoUrl = val.gameOneTeamTwoUrl;
       let gameTwo = val.gameTwo;
+      let gameTwoTeamOneUrl = val.gameTwoTeamOneUrl;
+      let gameTwoTeamTwoUrl = val.gameTwoTeamTwoUrl;
       let gameThree = val.gameThree;
-    
+      let urlOne = gameOneTeamOneUrl;
+
+      console.log("URL ONE", urlOne);
+
       let activityOne = val.activities.activityOne;
       let activityTwo = val.activities.activityTwo;
       let activityThree = val.activities.activityThree;
@@ -239,16 +249,31 @@ export default class Package extends Component {
                 <h3 className="packageGameHeader">Games Included</h3>
                 {/* <ul> */}
                 {/* <p>{gameOne}</p> */}
-              <div className="row">
-                <div className="col-md-12">
-               <img className="heightPic" src={gameOneTeamOneUrl} /> <strong className="vs">VS.</strong> <img className="heightPic"src={gameOneTeamTwoUrl} />
-
+                <div className="row">
+                  <div className="col-md-12">
+                    <img className="heightPic" src={gameOneTeamOneUrl} />{" "}
+                    <strong className="vs">VS.</strong>{" "}
+                    <img
+                      id="special"
+                      className="heightPic"
+                      src={gameOneTeamTwoUrl}
+                    />
+                  </div>
                 </div>
-              </div>
                 <br />
-                <p>{gameTwo}</p>
+                <div className="row">
+                  <div className="col-md-12">
+                    <img id="marseilleSpecial" src={gameTwoTeamOneUrl} />{" "}
+                    <strong className="vs">VS.</strong>{" "}
+                    <img
+                      // id="special"
+                      className="heightPic"
+                      src={gameTwoTeamTwoUrl}
+                    />
+                  </div>
+                </div>
                 <br />
-                <p>{gameThree}</p>
+                <p className="unknown">{gameThree}</p>
                 <br />
                 {/* </ul> */}
 
@@ -263,13 +288,15 @@ export default class Package extends Component {
               <br />
               <p className="activitiesPackage">{activityTwo}</p>
               <br />
-              <p className="activitiesPackage">Exclusive events at Audi Field</p>
+              <p className="activitiesPackage">
+                Exclusive events at Audi Field
+              </p>
               <br />
               {/* <p>{activityFour}</p> */}
               {/* </ul> */}
 
               <br />
-              <p id="ex"></p>
+              <p id="ex" />
               <input
                 autoComplete="off"
                 className="form-control"
@@ -301,31 +328,54 @@ export default class Package extends Component {
               <h3 className="packageTitle">{val.title}</h3>
               <div className="price-box">
                 <h3 className="packageGameHeader">Games Included</h3>
+                <div className="row">
+                  <div className="col-md-12">
+                    <img className="heightPic" src={gameOneTeamOneUrl} />{" "}
+                    <strong className="vs">VS.</strong>{" "}
+                    <img
+                      id="special"
+                      className="heightPic"
+                      src={gameOneTeamTwoUrl}
+                    />
+                  </div>
+                </div>
+                <br />
                 {/* <ul> */}
-                <p>{gameOne}</p>
+                {/* <p></p> */}
                 <br />
-                <p>{gameTwo}</p>
-                <br />
+                <div className="row">
+                  <div className="col-md-12">
+                    <img id="marseilleSpecial" src={gameTwoTeamOneUrl} />{" "}
+                    <strong id="vsSpecialTwo" className="vs">
+                      VS.
+                    </strong>{" "}
+                    <img
+                      id="specialTwo"
+                      className="heightPic"
+                      src={gameTwoTeamTwoUrl}
+                    />
+                  </div>
+                </div>
                 <br />
                 <br />
                 <br />
                 {/* </ul> */}
 
-                <h5 className="plan-clr">
+                <h5 id="helper" className="plan-clr">
                   <span className="d-block" />
                 </h5>
               </div>
-              <br />
+              <p id="helperTwo" />
               <h3 className="packageTitle">Activities</h3>
               {/* <ul id="special"> */}
               <p className="activitiesPackage">{activityOne}</p>
               <br />
               <p className="activitiesPackage">{activityTwo}</p>
               <br />
-              <p className="activitiesPackage">Exclusive events at Audi Field</p>
+              <p className="activitiesPackage">
+                Exclusive events at Audi Field
+              </p>
               <br />
- 
-             
 
               {/* </ul> */}
 
@@ -361,16 +411,32 @@ export default class Package extends Component {
               <div className="price-box">
                 <h3 className="packageGameHeader">Games Included</h3>
                 {/* <ul> */}
-                <p className="activitiesPackage">{gameTwo}</p>
+                <div className="row">
+                  <div className="col-md-12">
+                    <img id="marseilleSpecial" src={gameTwoTeamOneUrl} />{" "}
+                    <strong className="vs">VS.</strong>{" "}
+                    <img
+                      // id="special"
+                      className="heightPic"
+                      src={gameTwoTeamTwoUrl}
+                    />
+                  </div>
+                </div>
                 <br />
-                <p className="activitiesPackage">Exclusive events at Audi Field</p>
                 <br />
                 <br />
+                <p className="unknown">{gameThree}</p>
+                {/* <p className="activitiesPackage">
+                  Exclusive events at Audi Field
+                </p> */}
+                <br />
+                <br />
+                <p id="custom" />
                 <br />
                 <br />
                 {/* </ul> */}
 
-                <h5 className="plan-clr">
+                <h5 id="helper" className="plan-clr">
                   <span className="d-block" />
                 </h5>
               </div>
@@ -379,13 +445,15 @@ export default class Package extends Component {
               {/* <ul id="specialTwo"> */}
               <p className="activitiesPackage">{activityOne}</p>
               <br />
-              <p className="activitiesPackage">Exclusive events at Audi Field</p>
+              <p className="activitiesPackage">
+                Exclusive events at Audi Field
+              </p>
               <br />
               {/* <p>{activityFour}</p> */}
               <br />
               <br />
               <br />
-              <br />
+              <p id="fillerTwo"></p>
 
               {/* </ul> */}
 
@@ -413,63 +481,63 @@ export default class Package extends Component {
           </div>
         );
       }
-      if (gameOne != undefined) {
-        return (
-          <div className="item" id="tickets" key={i}>
-            <div className="package-box">
-              <h3 className="packageTitle">{val.title}</h3>
-              <div className="price-box">
-                <h3 className="packageGameHeader">Games Included</h3>
-                <ul>
-                  <li className="games">{gameOne}</li>
-                  <br />
-                  <br />
-                  <br />
-                  <br />
-                </ul>
+      // if (gameOne == undefined) {
+      //   return (
+      //     <div className="item" id="tickets" key={i}>
+      //       <div className="package-box">
+      //         <h3 className="packageTitle">{val.title}</h3>
+      //         <div className="price-box">
+      //           <h3 className="packageGameHeader">Games Included</h3>
+      //           <ul>
+      //             <li className="games">{gameTwo}</li>
+      //             <br />
+      //             <br />
+      //             <br />
+      //             <br />
+      //           </ul>
 
-                <h5 className="plan-clr">
-                  <span className="d-block" />
-                </h5>
-              </div>
-              <br />
-              <h3 className="packageTitle">Activities</h3>
-              <ul>
-                <li className="activities">{activityOne}</li>
-                <br />
-                <li className="activities">{activityThree}</li>
-                <br />
-                <li className="activities">{activityFour}</li>
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-              </ul>
+      //           <h5 className="plan-clr">
+      //             <span className="d-block" />
+      //           </h5>
+      //         </div>
+      //         <br />
+      //         <h3 className="packageTitle">Activities</h3>
+      //         <ul>
+      //           <li className="activities">{activityOne}</li>
+      //           <br />
+      //           <li className="activities">{activityThree}</li>
+      //           <br />
+      //           <li className="activities">{activityFour}</li>
+      //           <br />
+      //           <br />
+      //           <br />
+      //           <br />
+      //           <br />
+      //         </ul>
 
-              <br />
-              <input
-                autoComplete="off"
-                className="form-control "
-                id="quantity"
-                placeholder="Quantity  "
-                name="quantity"
-                // onChange={e => this.handleRoomPrince(e)}
-                type="number"
-              />
+      //         <br />
+      //         <input
+      //           autoComplete="off"
+      //           className="form-control "
+      //           id="quantity"
+      //           placeholder="Quantity  "
+      //           name="quantity"
+      //           // onChange={e => this.handleRoomPrince(e)}
+      //           type="number"
+      //         />
 
-              <div className="price-plan text-center" />
-              <button
-                onClick={this.onPackageClick}
-                id={val.id}
-                className="btn btn-primary bookButton"
-              >
-                Add
-              </button>
-            </div>
-          </div>
-        );
-      }
+      //         <div className="price-plan text-center" />
+      //         <button
+      //           onClick={this.onPackageClick}
+      //           id={val.id}
+      //           className="btn btn-primary bookButton"
+      //         >
+      //           Add
+      //         </button>
+      //       </div>
+      //     </div>
+      //   );
+      // }
     });
 
     return (
@@ -478,9 +546,7 @@ export default class Package extends Component {
           <div className="row">
             <div className="col-md-12 text-center">
               <div className="section-title">
-                <h2 id="packageHeader" >
-                  The Packages
-                </h2>
+                <h2 id="packageHeader">The Packages</h2>
                 {/* <img
                   src="assets/images/blueTitleLine.png"
                   alt="title-line"

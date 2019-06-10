@@ -6,6 +6,7 @@ const CartItem = ({
   hotelPrice,
   hotelTotalPrice,
   roomNumber,
+  packageId,
   gameOneName,
   id,
   cartUpdatorHotelOne,
@@ -18,19 +19,9 @@ const CartItem = ({
   activityDate,
   activityTime
 }) => {
-  console.log('YOOOO OWHAT THE FUCK IS UP ', gameOneName)
-  console.log("YOU ARE NOW IN THE CART ITEM COMPONENT HERE ARE YOUR ITEMS ");
-  console.log('THIS IS THE TOTAL IN THE CART ITEM COMPONENT', total);
-  console.log("1", hotelName);
-  console.log("2", hotelPrice);
-  console.log("3", roomNumber);
-  console.log("4", ticketName);
-  console.log('ticketTotal', ticketTotalPrice);
-  console.log("5", ticketPrice);
-  console.log("6", activityName);
-  console.log("7", activityPrice);
-  console.log("8", activityDate);
-  console.log("9", activityTime);
+ 
+ 
+
 
   if (hotelName != undefined && hotelTotalPrice != undefined) {
     return (
@@ -67,7 +58,7 @@ const CartItem = ({
   if (activityName != undefined) {
     return (
       <div>
-        <div className="dropdown-item">
+        <div id="cartList" className="dropdown-item">
           <button onClick={cartUpdatorHotelOne} id={id} className="removeItem">
             ✖
           </button>

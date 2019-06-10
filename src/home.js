@@ -43,6 +43,7 @@ class Home extends React.Component {
       // clientLastName  : " ",
       stayData: [],
       packages:[],
+      packageId:" "
 
       // checkOut: " ",
       // fanClubNumber: " ",
@@ -88,7 +89,7 @@ class Home extends React.Component {
   onClick = e => {
     console.log("FIRST HOTEL OPTION ENTERED HOME");
     let hotelOne = e;
-    console.log("pinga--", e);
+ 
     let hotelData = hotelOne[0];
 
     console.log(hotelData);
@@ -104,6 +105,8 @@ class Home extends React.Component {
 
     this.state.stayData.push(e);
   };
+
+
   onClickTwo = e => {
     console.log(e);
     console.log("SECOND HOTEL OPTION HAS ENTERED HOME");
@@ -113,7 +116,7 @@ class Home extends React.Component {
     let joined = this.state.cart.concat(hotelData);
     this.setState({ cart: joined });
 
-    console.log("Final SECOND before nav", this.state.cart);
+    // console.log("Final SECOND before nav", this.state.cart);
   };
 
   onClickThree = e => {
@@ -125,7 +128,7 @@ class Home extends React.Component {
     let joined = this.state.cart.concat(hotelData);
     this.setState({ cart: joined });
 
-    console.log("Final THIRD before nav", this.state.cart);
+    // console.log("Final THIRD before nav", this.state.cart);
   };
 
   cartUpdatorHotelOne = e => {
@@ -157,7 +160,7 @@ class Home extends React.Component {
     this.setState({ discountedTotal: Math.round(10 * calculation) / 10 });
   };
   handleChange = e => {
-    console.log("changing");
+
     const { name, value } = e.target;
     // console.log(this.state.client[0]);
 
@@ -171,6 +174,7 @@ class Home extends React.Component {
     );
 
     this.setState({ numRoom: e });
+
   };
 
   
@@ -237,6 +241,7 @@ class Home extends React.Component {
     let packageChoice = packages[0];
     console.log('package being delivered to home', packageChoice);
     // let joined = this.state.packages.concat(packageChoice);
+    this.state.packageId = packageChoice.packageId;
     this.setState({ packages: packageChoice });
   }
   render() {
@@ -246,6 +251,19 @@ class Home extends React.Component {
       this.state
     );
 
+
+    // if(packageData.packageId == 0){
+    //   packageName = "Package One";
+    // }
+
+    // if(packageData.packageId == 1){
+    //   packageName = "Package Two";
+    // }
+
+    // if(packageData.packageId == 2 ){
+    //   packageName = "Package Three";
+    // }
+
     return (
       <div>
         <Navbar
@@ -254,15 +272,17 @@ class Home extends React.Component {
           stayData={this.state.stayData}
           numRoom={this.state.numRoom}
           packages={this.state.packages}
+          packageId ={this.state.packageId}
+    
         />
         <section id="sectionOne" className="sectionOne">
-          <Cart
+          {/* <Cart
             cart={this.state.cart}
             cartUpdatorHotelOne={this.cartUpdatorHotelOne}
             stayData={this.state.stayData}
             numRoom={this.state.numRoom}
             packages={this.state.packages}
-          />
+          /> */}
           {/* Default First Section Class className="slide-bg" */}
 
           {/* <section id="sectionOne" className="sectionOne">
