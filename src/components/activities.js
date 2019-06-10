@@ -264,13 +264,13 @@ class Activities extends React.Component {
                 <li>Duration: {val.duration}</li>
                 <li>Per Ticket</li>
               </ul>
-              <button
+              {/* <button
                 onClick={this.onClickActivity}
                 id={val.id}
                 className="btn btn-primary bookButton"
               >
                 Add
-              </button>
+              </button> */}
             </div>
           </div>
         </div>
@@ -278,7 +278,7 @@ class Activities extends React.Component {
     });
 
     return (
-      <section className="backgroundColorTwo" id="activities">
+      <section className="" id="activities">
         {/* <section className="theme-bg" id="activities"> */}
         <div className="container">
           <div className="row">

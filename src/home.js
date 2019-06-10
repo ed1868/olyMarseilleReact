@@ -850,6 +850,23 @@ class Home extends React.Component {
                   />
                 </div>
               </div>
+              <div className="row topPadding">
+                <div className="col-md-12">
+                <label className="formText" htmlFor="ask">
+                    Have A Question ? {" "}
+                  </label>
+                  <textarea
+                    autoComplete="off"
+                    className="form-control"
+                    placeholder="Ask away"
+            
+                    id="question"
+                    name="question"
+                    onChange={e => this.handleChange(e)}
+                    type="text"
+                  />
+                </div>
+              </div>
               {/* <PaymentCard
       bank="itau"
       model="personnalite"

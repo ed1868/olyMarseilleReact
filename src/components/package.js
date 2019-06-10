@@ -137,8 +137,9 @@ export default class Package extends Component {
         title: "3 GAMES ",
         id: 0,
         gameOne: "Montepellier HSC VS AS Saint Etienne",
-        gameOneTeamOneUrl: "assets/images/MONTPELLIERcouleur.png",
-        gameOneTeamTwoUrl:"assets/images/SAINTETIENNEcouleur.png",
+        gameOneTeamOneUrl: "assets/images/BORDEAUXTwo.png",
+
+        gameOneTeamTwoUrl:"assets/images/MONTPELLIERcouleur.png",
         gameTwo: "O.Marseille VS Girondins de Bordeaux",
         
         gameThree: "Tournament Championship Game",
@@ -237,8 +238,13 @@ export default class Package extends Component {
               <div className="price-box">
                 <h3 className="packageGameHeader">Games Included</h3>
                 {/* <ul> */}
-                <p>{gameOne}</p>
-                {/* <p><img className="gameLogo" src={gameOneTeamOneUrl} /> Vs <img className="gameLogo"  src={gameOneTeamTwoUrl} /></p> */}
+                {/* <p>{gameOne}</p> */}
+              <div className="row">
+                <div className="col-md-12">
+               <img className="heightPic" src={gameOneTeamOneUrl} /> <strong className="vs">VS.</strong> <img className="heightPic"src={gameOneTeamTwoUrl} />
+
+                </div>
+              </div>
                 <br />
                 <p>{gameTwo}</p>
                 <br />

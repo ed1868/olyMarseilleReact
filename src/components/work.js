@@ -263,7 +263,7 @@ class Work extends React.Component {
     }
 
     return (
-      <section className="backgroundColor" id="hotels">
+      <section  id="hotels">
         <div className="container">
           <div className="row">
             <div className="col-md-8 offset-md-2 text-center">

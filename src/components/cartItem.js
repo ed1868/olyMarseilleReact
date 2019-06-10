@@ -35,7 +35,7 @@ const CartItem = ({
   if (hotelName != undefined && hotelTotalPrice != undefined) {
     return (
       <div>
-        <div>
+        <div className="dropdown-item">
           <button onClick={cartUpdatorHotelOne} id={id} className="removeItem">
             ✖
           </button>
@@ -51,7 +51,7 @@ const CartItem = ({
   if (ticketName != undefined && ticketTotalPrice != undefined) {
     return (
       <div>
-        <div>
+        <div className="dropdown-item">
           <button onClick={cartUpdatorHotelOne} id={id} className="removeItem">
             ✖
           </button>
@@ -67,7 +67,7 @@ const CartItem = ({
   if (activityName != undefined) {
     return (
       <div>
-        <div>
+        <div className="dropdown-item">
           <button onClick={cartUpdatorHotelOne} id={id} className="removeItem">
             ✖
           </button>

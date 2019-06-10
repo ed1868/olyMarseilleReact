@@ -23,6 +23,14 @@ class Navbar extends React.Component {
     this.props.cartUpdatorHotelOne(this.props.cart);
   };
 
+  showCart = e => {
+    e.preventDefault();
+
+    
+   
+
+    console.log('uoure clicking the cart');
+  }
   render() {
     console.log("las props", this.props.cart);
     console.log("las props stayData", this.state.stayData);
@@ -160,10 +168,32 @@ class Navbar extends React.Component {
         <li className="nav-item">
         <a id="idActivities" className="nav-link text-center navMine" href="#activities">ACTIVITIES</a>
         </li>
-        <li className="nav-item">
-        
-        <a id="navCart" className="nav-link text-center navMine" href="#"><img id="cartImg" src ="assets/images/MYCART.png" /><span id="masterOfCoin">My Cart {total} </span></a>
+        <li className="nav-item dropdown">
+        <div>
+        <a id="navbarDropdown" onClick={this.showCart} className="nav-link dropdown-toggle text-center navMine" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#"><img id="cartImg" src ="assets/images/MYCART.png" /><span id="masterOfCoin">My Cart {total} </span></a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">   {cartItems}</a>
+
+          <div class="dropdown-divider"></div>
+
+        </div>
+        {/* <ul>
+      {cartItems}
+        </ul> */}
+        </div>
         </li>
+
+        {/* <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li> */}
         {/* <li className="nav-item dropdown">
           <a className="nav-link dropdown-toggle navMine" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Dropdown
