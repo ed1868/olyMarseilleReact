@@ -219,9 +219,9 @@ export default class Package extends Component {
     // Dynamic Price Data Loop
     let DataList = data.map((val, i) => {
       let gameOne = val.gameOne;
-      console.log("game one = ", gameOne);
+
       let gameOneTeamOneUrl = val.gameOneTeamOneUrl;
-      console.log("game one team on url = ", gameOneTeamOneUrl);
+
       let gameOneTeamTwoUrl = val.gameOneTeamTwoUrl;
       let gameTwo = val.gameTwo;
       let gameTwoTeamOneUrl = val.gameTwoTeamOneUrl;
@@ -229,8 +229,7 @@ export default class Package extends Component {
       let gameThree = val.gameThree;
       let urlOne = gameOneTeamOneUrl;
 
-      console.log("URL ONE", urlOne);
-
+      
       let activityOne = val.activities.activityOne;
       let activityTwo = val.activities.activityTwo;
       let activityThree = val.activities.activityThree;

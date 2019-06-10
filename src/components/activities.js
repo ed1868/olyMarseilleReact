@@ -8,7 +8,7 @@ class Activities extends React.Component {
       activityOne: [
         {
           price: "54.00",
-          activityName: "DC Unveiled",
+          activityName: "Access to OM special area in the stadium",
           date: "05/20/2019",
           duration: "2 hours",
           totalPrice: "54.00",
@@ -21,9 +21,9 @@ class Activities extends React.Component {
       activityTwo: [
         {
           price: "60.00",
-          activityName: "Monuments By NIght'",
+          activityName: "Training Session W/ Team",
           duration: "2 hours",
-          date: "05/21/2019",
+          date: "07/19/2019",
           totalPrice: "60.00",
           time: "8:00pm",
           description:
@@ -34,9 +34,9 @@ class Activities extends React.Component {
       activityThree: [
         {
           price: "34.00",
-          activityName: "Museum of American History Thru Music'",
+          activityName: "Exclusive Party , Evening-Time TBC'",
           duration: "2 hours",
-          date: "05/22/2019",
+          date: "07/20/2019",
           totalPrice: "34.00",
           description:
             "Travel through time and experience US History with a musical twist! Learn the evolution of spiritual music to blues, jazz & rock n roll, as well as the controversies of the American national anthem.Live out your DJ dreams by learning a funky beat with your local guide as well! ",
@@ -47,7 +47,7 @@ class Activities extends React.Component {
       activityFour: [
         {
           price: "34.00",
-          activityName: "Smithsonian American Art Adventure",
+          activityName: "Friendly Game , Afternoon-Time TBC",
           duration: "2 hours",
           date: "05/22/2019",
           totalPrice: "34.00",
@@ -166,7 +166,7 @@ class Activities extends React.Component {
     // Dynamic Price Data Easy to Update
     let data = [
       {
-        title: "Electric Roadster Tour : DC Unveiled",
+        title: "Access to OM special area in the stadium",
         id: 0,
         duration: "2 hours",
         lable: "07/24/2019",
@@ -179,12 +179,12 @@ class Activities extends React.Component {
         link: "#"
       },
       {
-        title: "Electric Roadster Tour : Monuments By Night",
+        title: "Training Session + Transport . Time TBC",
         id: 1,
         duration: "2 hours",
         price: "60.00",
-        lable: "07/27/2019",
-        time: "8:00pm",
+        lable: "07/19/2019 or 07/23/2019",
+        time: "TBC",
         description:
           " Hop on board an open-air sustainable electric Red Roadster for a journey through the most iconic DC monuments and memorials by night. Enjoy the Washington Monument, Licoln, FDR and Jefferson Memorials plus many more ",
         features:
@@ -192,12 +192,12 @@ class Activities extends React.Component {
         link: "#"
       },
       {
-        title: "Museum of American History Thru Music",
+        title: "Exclusive Party , Evening-Time TBC",
         id: 2,
         duration: "2 hours",
-        lable: "07/29/2019",
+        lable: "07/20/2019",
         price: "34.00",
-        time: "1:00pm",
+        time: "TBC",
         description:
           "Travel through time and experience US History with a musical twist! Learn the evolution of spiritual music to blues, jazz & rock n roll, as well as the controversies of the American national anthem.Live out your DJ dreams by learning a funky beat with your local guide as well! ",
         features:
@@ -205,43 +205,43 @@ class Activities extends React.Component {
         link: "#"
       },
       {
-        title: "Smithsonian American Art Adventure",
+        title: "Friendly Game , Afternoon-Time TBC",
         id: 3,
-        lable: "07/29/2019",
+        lable: "07/24/2019",
         duration: "2 hours",
         price: "34.00",
-        time: "5:00pm",
+        time: "TBC",
         description:
           "Dive into American History through art as you tour one of the world’s largest collections of art while listening to your local guide tell amazing tales of the power players who shaped the country ",
         features:
           "<li>Section 100, Row 02</li><li>unlimited attachment</li><li>customize theme</li><li>priority email support</li><li>priority email support</li>",
         link: "#"
       },
-      {
-        title: "French Speaking Tour through Washington DC",
-        lable: "07/29/2019",
-        duration: "4 hours",
-        id: 4,
-        price: "46.00",
-        time: "5:00pm",
-        description:
-          "xperience The Capitol, Supreme Court, Library of Congress, Thomas Jefferson Memorial, Lincoln Memorial and more with a french-speaking local guide.",
-        features:
-          "<li>Section 100, Row 02</li><li>unlimited attachment</li><li>customize theme</li><li>priority email support</li><li>priority email support</li>",
-        link: "#"
-      },
-      {
-        title: "Rooftop Party at Audi Field or SIX FLAGS America         ",
-        id: 5,
-        duration: "4 hours",
-        lable: "07/20/2019",
-        price: "100.00",
-        time: "8:00pm",
-        description: "After party at the rooftop of the Audi Field Stadium",
-        features:
-          "<li>Section 100, Row 02</li><li>real time sync</li><li>unlimited attachment</li><li>customize theme</li><li>priority email support</li>",
-        link: "#"
-      }
+      // {
+      //   title: "French Speaking Tour through Washington DC",
+      //   lable: "07/29/2019",
+      //   duration: "4 hours",
+      //   id: 4,
+      //   price: "46.00",
+      //   time: "5:00pm",
+      //   description:
+      //     "xperience The Capitol, Supreme Court, Library of Congress, Thomas Jefferson Memorial, Lincoln Memorial and more with a french-speaking local guide.",
+      //   features:
+      //     "<li>Section 100, Row 02</li><li>unlimited attachment</li><li>customize theme</li><li>priority email support</li><li>priority email support</li>",
+      //   link: "#"
+      // },
+      // {
+      //   title: "Rooftop Party at Audi Field or SIX FLAGS America         ",
+      //   id: 5,
+      //   duration: "4 hours",
+      //   lable: "07/20/2019",
+      //   price: "100.00",
+      //   time: "8:00pm",
+      //   description: "After party at the rooftop of the Audi Field Stadium",
+      //   features:
+      //     "<li>Section 100, Row 02</li><li>real time sync</li><li>unlimited attachment</li><li>customize theme</li><li>priority email support</li>",
+      //   link: "#"
+      // }
     ];
 
     // Dynamic Price Data Loop
@@ -284,12 +284,9 @@ class Activities extends React.Component {
           <div className="row">
             <div className="col-md-12 text-center">
               <div className="section-title">
-                <h2 className="hotelTitle">Activities</h2>
-                <img
-                  src="assets/images/blueTitleLine.png"
-                  alt="title-line"
-                  className="img-fluid"
-                />
+                <h2 className="headers">Activities</h2>
+        
+          
               </div>
             </div>
             <div className="col-md-12 text-center">

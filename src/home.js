@@ -626,6 +626,9 @@ class Home extends React.Component {
                 </div>
               </div>
 <br></br>
+<div className="hidden">
+
+
               <h2 className="fuck">Person Two</h2>
               <br></br>
               <div className="row">
@@ -727,6 +730,7 @@ class Home extends React.Component {
                     type="text"
                   />
                 </div>
+              </div>
               </div>
               {/* <div className="row">
                 <div className="col-md-12">

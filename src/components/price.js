@@ -288,14 +288,14 @@ class Price extends React.Component {
           <div className="row">
             <div className="col-md-12 text-center">
               <div className="section-title">
-                <h2 id="ticketHeader" className="hotelTitle">
+                <h2 id="ticketHeader" className="headers">
                   Tickets
                 </h2>
-                <img
+                {/* <img
                   src="assets/images/blueTitleLine.png"
                   alt="title-line"
                   className="img-fluid"
-                />
+                /> */}
               </div>
             </div>
             <div className="col-md-12 text-center">

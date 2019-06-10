@@ -4,8 +4,10 @@ import DayPicker, { DateUtils } from "react-day-picker";
 import "react-day-picker/lib/style.css";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faStar } from "@fortawesome/fontawesome-free-solid";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendar, faFutbol } from "@fortawesome/fontawesome-free-regular";
+
 
 class Work extends React.Component {
   constructor(props) {
@@ -269,12 +271,12 @@ class Work extends React.Component {
           <div className="row">
             <div className="col-md-8 offset-md-2 text-center">
               <div className="section-title">
-                <h2 className="hotelTitle">Hotels</h2>
-                <img
+                <h2 className="headers">Hotels</h2>
+                {/* <img
                   src="assets/images/blueTitleLine.png"
                   alt="white-line"
                   className="img-fluid"
-                />
+                /> */}
                 <p className="text-white" id="hotelClickBait">
                   Choose from our selection of Hand-Picked luxury hotels at the
                   best rates you will encouter
@@ -452,7 +454,9 @@ class Work extends React.Component {
                 {/* <FontAwesomeIcon className="starIcon" icon={faStar} /> */}
                 <br />
                 <br />
+        
                 <p id="hotelTwoP" className="hotelP">
+       
                   Services: Free breakfast , Gym , 24 hr Pavilion Pantry Market
                 </p>
 
