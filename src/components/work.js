@@ -207,13 +207,12 @@ class Work extends React.Component {
     console.log("cut STR", cutStr);
     if (cutStr == 17 || cutStr == 18) {
       console.log("entro en el primer rate de el tercer hotel ");
-
     }
     if (cutStr == 19 || cutStr == 20 || cutStr == 21) {
       console.log("entro en el rate two de el 3rd hotel");
       this.state.hotelThree[0].price = "250.60";
     }
-    if(cutStr == 22 || cutStr == 23 || cutStr == 24){
+    if (cutStr == 22 || cutStr == 23 || cutStr == 24) {
       console.log("entro en el tercer rate de el tercer hotel");
       this.state.hotelThree[0].price = "371.28";
     }
@@ -251,17 +250,17 @@ class Work extends React.Component {
     let hotelTwoPrice = "191.97";
 
     let hotelThreePrice = "437.95";
-if(this.state.rateOne == true){
-  hotelThreePrice = "437.95";
-}
+    if (this.state.rateOne == true) {
+      hotelThreePrice = "437.95";
+    }
 
-if(this.state.rateTwo == true){
-  hotelThreePrice = "250.60"
-}
+    if (this.state.rateTwo == true) {
+      hotelThreePrice = "250.60";
+    }
 
-if(this.state.rateThree == true){
-  hotelThreePrice = "371.28"
-}
+    if (this.state.rateThree == true) {
+      hotelThreePrice = "371.28";
+    }
 
     return (
       <section className="backgroundColor" id="hotels">
@@ -466,7 +465,7 @@ if(this.state.rateThree == true){
                 >
                   Hotel Pictures
                 </button>
-
+                
                 <div id="hotelTwoModal" class="modal fade" role="dialog">
                   <div className="modal-dialog">
                     <div id="modalBody" className="modal-content">
@@ -546,18 +545,82 @@ if(this.state.rateThree == true){
                   src="https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_470,q_auto,w_805/uploadimages/28/19/28194712.jpeg"
                   alt=""
                 />
-                <h3>W Washington DC</h3>
+                <br />
+                <h3>W Hotels Washington DC</h3>
+                <br></br>
+                <br></br>
+                <FontAwesomeIcon className="starIcon" icon={faStar} />
+                <FontAwesomeIcon className="starIcon" icon={faStar} />
+                <FontAwesomeIcon className="starIcon" icon={faStar} />
+                <FontAwesomeIcon className="starIcon" icon={faStar} />
+                <FontAwesomeIcon className="starIcon" icon={faStar} />
+                <br />
+                <br />
+                <p id="hotelTwoP" className="hotelP">
+                  Services: Free breakfast , Gym , 24 hr Pavilion Pantry Market
+                </p>
 
-                <FontAwesomeIcon className="starIcon" icon={faStar} />
-                <FontAwesomeIcon className="starIcon" icon={faStar} />
-                <FontAwesomeIcon className="starIcon" icon={faStar} />
-                <FontAwesomeIcon className="starIcon" icon={faStar} />
+                <p>2 night minimum</p>
 
-                <p>Services: Pool-side Bar , Gym ,Business Center</p>
-                <p className="pickleRick" />
+                <button
+                  type="button"
+                  className="btn btn-info btn-lg hotelPicButton"
+                  data-toggle="modal"
+                  data-target="#hotelThreeModal"
+                >
+                  Hotel Pictures
+                </button>
+                <br></br>
+                <br></br>
+                <div id="hotelThreeModal" class="modal fade" role="dialog">
+                  <div className="modal-dialog">
+                    <div id="modalBody" className="modal-content">
+                      <div className="modal-header">
+                        <button
+                          type="button"
+                          className="close "
+                          data-dismiss="modal"
+                        >
+                          &times;
+                        </button>
+                        <h4 className="hotelModelTitle">
+                          W Hotel Washington D.C
+                        </h4>
+                      </div>
+                      <div className="modal-body">
+                        {/* <p>Some text in the modal.</p> */}
+
+                        <img
+                          className="modalPics"
+                          src="https://cache.marriott.com/marriottassets/marriott/WASWH/waswh-queen-guestroom-3804-hor-wide.jpg?downsize=2880px:*"
+                        />
+                        <br />
+                        <img
+                          className="modalPics"
+                          src="https://cache.marriott.com/marriottassets/marriott/WASWH/waswh-king-guestroom-3895-hor-wide.jpg?downsize=2880px:*"
+                        />
+                        <br />
+                        <img
+                          className="modalPics"
+                          src="https://cache.marriott.com/marriottassets/marriott/WASWH/waswh-front-desk-8241-hor-wide.jpg?downsize=2880px:*"
+                        />
+                      </div>
+                      <div class="modal-footer">
+                        <button
+                          type="button"
+                          className="btn btn-default "
+                          data-dismiss="modal"
+                        >
+                          Close
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <p className="pickleRickThree" />
                 <hr />
-                <p>1919 Connecticut Ave NW</p>
-                <p className="hotelAddress">.8 miles from Audi Field</p>
+                <p>515 15th St NW, Washington, DC 20004</p>
+                <p className="hotelAddress">2.9 miles from Audi Field</p>
                 <hr />
                 <label for="roomOption">Room :</label>
                 <select className="form-control" onChange={this.roomOption}>
