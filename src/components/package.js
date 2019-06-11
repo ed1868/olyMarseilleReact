@@ -235,6 +235,7 @@ export default class Package extends Component {
       let gameTwoTeamTwoUrl = val.gameTwoTeamTwoUrl;
       let gameThree = val.gameThree;
       let urlOne = gameOneTeamOneUrl;
+      let gameFour = "3rd Place Game";
 
 
       let activityOne = val.activities.activityOne;
@@ -255,7 +256,7 @@ export default class Package extends Component {
                 <h3 className="packageGameHeader">Games Included</h3>
                 {/* <ul> */}
                 {/* <p>{gameOne}</p> */}
-                <div className="row">
+                {/* <div className="row">
                   <div className="col-md-12">
                     <img className="heightPic" src={gameOneTeamOneUrl} />{" "}
                     <strong className="vs">VS.</strong>{" "}
@@ -265,8 +266,8 @@ export default class Package extends Component {
                       src={gameOneTeamTwoUrl}
                     />
                   </div>
-                </div>
-                <br />
+                </div> */}
+                
                 <div className="row">
                   <div className="col-md-12">
                     <img id="marseilleSpecial" src={gameTwoTeamOneUrl} />{" "}
@@ -280,6 +281,7 @@ export default class Package extends Component {
                 </div>
                 <br />
                 <p className="unknown">{gameThree}</p>
+                <p className="unknown">{gameFour}</p>
                 <br />
                 {/* </ul> */}
 
@@ -334,7 +336,7 @@ export default class Package extends Component {
               <h3 className="packageTitle">{val.title}</h3>
               <div className="price-box">
                 <h3 className="packageGameHeader">Games Included</h3>
-                <div className="row">
+                {/* <div className="row">
                   <div className="col-md-12">
                     <img className="heightPic" src={gameOneTeamOneUrl} />{" "}
                     <strong className="vs">VS.</strong>{" "}
@@ -344,11 +346,11 @@ export default class Package extends Component {
                       src={gameOneTeamTwoUrl}
                     />
                   </div>
-                </div>
-                <br />
+                </div> */}
+                
                 {/* <ul> */}
                 {/* <p></p> */}
-                <br />
+                
                 <div className="row">
                   <div className="col-md-12">
                     <img id="marseilleSpecial" src={gameTwoTeamOneUrl} />{" "}
@@ -364,6 +366,8 @@ export default class Package extends Component {
                 </div>
                 <br />
                 <br />
+                <br></br>
+                <p className="unknown">{gameFour}</p>
                 <br />
                 {/* </ul> */}
 
@@ -435,11 +439,12 @@ export default class Package extends Component {
                 {/* <p className="activitiesPackage">
                   Exclusive events at Audi Field
                 </p> */}
-                <br />
+                    <br />
+                {/* <br />
                 <br />
                 <p id="custom" />
                 <br />
-                <br />
+                <br /> */}
                 {/* </ul> */}
 
                 <h5 id="helper" className="plan-clr">

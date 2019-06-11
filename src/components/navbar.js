@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import CartItem from "../components/cartItem";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowAltCircleDown } from "@fortawesome/fontawesome-free-regular";
 
 class Navbar extends React.Component {
   constructor(props) {
@@ -157,6 +159,7 @@ class Navbar extends React.Component {
     });
 
     return (
+      
       <nav className="navbar transparent fixed-top navbar-expand-lg">
         <a className="navbar-brand" href="#">
           <img
@@ -170,12 +173,13 @@ class Navbar extends React.Component {
           className="navbar-toggler"
           type="button"
           data-toggle="collapse"
+    
           data-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent"
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span className="navbar-toggler-icon" />
+         <FontAwesomeIcon  className="navResponsive" icon={faArrowAltCircleDown} />
         </button>
 
         <div className="collapse navbar-collapse " id="navbarSupportedContent">

@@ -373,7 +373,7 @@ class Home extends React.Component {
                       <br />
                       {/* <h3 id="timer">Timer Will Go Here</h3> */}
                       <div id="timer">
-                        <Timer initialTime={4000000000} direction="backward">
+                        <Timer initialTime={3300000000} direction="backward">
                           {() => (
                             <React.Fragment>
                               <Timer.Days /> <span id="timerDays">days</span>
