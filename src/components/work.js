@@ -56,7 +56,8 @@ class Work extends React.Component {
           hotelName: "W Washington DC",
           option: Number(1),
           hotelId: Number(2),
-          typeOfRoom: " "
+          typeOfRoom: " ",
+          totalPrice:" "
         }
       ],
       // hotelThreeOptTwo: [

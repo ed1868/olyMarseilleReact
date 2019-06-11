@@ -87,7 +87,7 @@ class Home extends React.Component {
   //HOTEL CART PROP SYSTEM
   onClick = e => {
     console.log("FIRST HOTEL OPTION ENTERED HOME");
-    let hotelOne = e;
+  let hotelOne = e;
 
     let hotelData = hotelOne[0];
 
@@ -95,7 +95,7 @@ class Home extends React.Component {
     let joined = this.state.cart.concat(hotelData);
     this.setState({ cart: joined });
 
-    console.log("Final before nav", this.state.cart);
+    console.log("Final before nav", this.state.cart);  
   };
 
   onStay = e => {
@@ -236,10 +236,12 @@ class Home extends React.Component {
     console.log("entro en package homeee click baby");
     let packages = e;
     let packageChoice = packages[0];
+    this.state.packageId = packageChoice.packageId;
     console.log("package being delivered to home", packageChoice);
     // let joined = this.state.packages.concat(packageChoice);
-    this.state.packageId = packageChoice.packageId;
-    this.setState({ packages: packageChoice });
+    let joined = this.state.cart.concat(packageChoice);
+    this.setState({ cart: joined });
+    
   };
   render() {
     document.body.classList.remove("inner-page");

@@ -2,6 +2,8 @@ import React, { Component } from "react";
 
 const CartItem = ({
   total,
+  packageName,
+  packageTotalPrice,
   hotelName,
   hotelPrice,
   hotelTotalPrice,
@@ -20,7 +22,22 @@ const CartItem = ({
   activityTime
 }) => {
  
- 
+ if(packageName != undefined){
+  return (
+    <div>
+      <div className="dropdown-item">
+        <button onClick={cartUpdatorHotelOne} id={id} className="removeItem">
+          ✖
+        </button>
+        <li className="cartHotelName">
+          <strong>{packageName}</strong>
+        </li>
+        <li className="cartHotelPrice">${packageTotalPrice}</li>
+        {/* <li className="cartRoomNumber"># Rooms:{roomNumber}</li> */}
+      </div>
+    </div>
+  );
+ }
 
 
   if (hotelName != undefined && hotelTotalPrice != undefined) {

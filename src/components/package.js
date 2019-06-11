@@ -5,7 +5,8 @@ export default class Package extends Component {
     super(props);
     this.state = {
       packageOne: [
-        {
+        { 
+          packageTitle:"Package One",
           gameOne: "Montepellier HSC VS AS Saint Etienne",
           gameOneTotalPrice: 45.0,
           gameTwo: "O.Marseille VS Girondins de Bordeaux",
@@ -23,11 +24,13 @@ export default class Package extends Component {
             "Friendly Game on Wednesday July 24th, Afternoon-Time TBC",
           activityFourTotalPrice: 40,
 
-          packageId: Number(0)
+          packageId: Number(0),
+          packageTotalPrice: 230.88
         }
       ],
       packageTwo: [
         {
+          packageTitle:"Package Two",
           gameOne: "Montepellier HSC VS AS Saint Etienne",
           gameOneTotalPrice: 45.0,
           gameTwo: "O.Marseille VS Girondins de Bordeaux",
@@ -41,11 +44,13 @@ export default class Package extends Component {
             "Exclusive Party on Saturday July 20th, Evening-Time TBC",
           activityThreeTotalPRice: 30,
 
-          packageId: Number(1)
+          packageId: Number(1),
+          packageTotalPrice:122.44
         }
       ],
       packageThree: [
         {
+          packageTitle:"Package Three",
           gameTwo: "O.Marseille VS Girondins de Bordeaux",
           gameTwoTotalPrice: 35.44,
           gameThree: "Tournament Championship Game",
@@ -60,7 +65,9 @@ export default class Package extends Component {
             "Friendly Game on Wednesday July 24th, Afternoon-Time TBC",
           activityFourTotalPrice: 40,
 
-          packageId: Number(2)
+          packageId: Number(2),
+          packageTotalPrice:165.88
+
         }
       ],
       option: Number(0)
@@ -229,7 +236,7 @@ export default class Package extends Component {
       let gameThree = val.gameThree;
       let urlOne = gameOneTeamOneUrl;
 
-      
+
       let activityOne = val.activities.activityOne;
       let activityTwo = val.activities.activityTwo;
       let activityThree = val.activities.activityThree;

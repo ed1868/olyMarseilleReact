@@ -9,9 +9,8 @@ class Navbar extends React.Component {
       items: this.props.cart,
       numRoom: this.props.numRoom,
       stayData: this.props.stayData,
-      packageName : this.props.packageName,
-      packageId : this.props.packageId
-     
+      packageName: this.props.packageName,
+      packageId: this.props.packageId
     };
   }
 
@@ -30,74 +29,88 @@ class Navbar extends React.Component {
     console.log("las props", this.props.cart);
     console.log("las props stayData", this.state.stayData);
 
-
     let total = 0;
 
     //PACKAGE PRICING LOGIC
-    // console.log( 'THIS IS THE PACKAGE PROP IN THE CARS COMPONENT ',this.state.packages)
-    let packages = this.props.packages;
+    // let packages = this.props.cart;
 
-    console.log("los packets", packages);
+    // console.log("los packets", packages);
     //GAMES
-    let gameOneName = packages.gameOne;
-    let gameOnePrice = packages.gameOneTotalPrice;
-    let gameTwoName = packages.gameTwo;
-    let gameTwoPrice = packages.gameTwoTotalPrice;
+    // let gameOneName = packages.gameOne;
+    // let gameOnePrice = packages.gameOneTotalPrice;
+    // let gameTwoName = packages.gameTwo;
+    // let gameTwoPrice = packages.gameTwoTotalPrice;
 
-    let gameThreeName = packages.gameThree;
-    let gameThreePrice = packages.gameThreeTotalPrice;
+    // let gameThreeName = packages.gameThree;
+    // let gameThreePrice = packages.gameThreeTotalPrice;
 
-    if (gameOnePrice != undefined) {
-      total += gameOnePrice;
-    }
-    if (gameTwoPrice != undefined) {
-      total += gameTwoPrice;
-    }
-    if (gameThreePrice != undefined) {
-      total += gameThreePrice;
-    }
+    // if (gameOnePrice != undefined) {
+    //   total += gameOnePrice;
+    // }
+    // if (gameTwoPrice != undefined) {
+    //   total += gameTwoPrice;
+    // }
+    // if (gameThreePrice != undefined) {
+    //   total += gameThreePrice;
+    // }
     //ACTIVITIES
 
-    let activityOne = packages.activityOne;
-    let activityOneTotalPrice = packages.activityOneTotalPrice;
-    let activityTwo = packages.activityTwo;
-    let activityTwoTotalPrice = packages.activityTwoTotalPrice;
-    let activityThree = packages.activityThree;
-    let activityThreeTotalPrice = packages.activityThreeTotalPrice;
+    // let activityOne = packages.activityOne;
+    // let activityOneTotalPrice = packages.activityOneTotalPrice;
+    // let activityTwo = packages.activityTwo;
+    // let activityTwoTotalPrice = packages.activityTwoTotalPrice;
+    // let activityThree = packages.activityThree;
+    // let activityThreeTotalPrice = packages.activityThreeTotalPrice;
 
-    let activityFour = packages.activityFour;
-    let activityFourTotalPrice = packages.activityFourTotalPrice;
+    // let activityFour = packages.activityFour;
+    // let activityFourTotalPrice = packages.activityFourTotalPrice;
 
-    if (activityOneTotalPrice != undefined) {
-      total += activityOneTotalPrice;
-    }
-    if (activityTwoTotalPrice != undefined) {
-      total += activityTwoTotalPrice;
-    }
-    if (activityThreeTotalPrice != undefined) {
-      total += activityThreeTotalPrice;
-    }
-    if (activityFourTotalPrice != undefined) {
-      total += activityFourTotalPrice;
-    }
+    // if (activityOneTotalPrice != undefined) {
+    //   total += activityOneTotalPrice;
+    // }
+    // if (activityTwoTotalPrice != undefined) {
+    //   total += activityTwoTotalPrice;
+    // }
+    // if (activityThreeTotalPrice != undefined) {
+    //   total += activityThreeTotalPrice;
+    // }
+    // if (activityFourTotalPrice != undefined) {
+    //   total += activityFourTotalPrice;
+    // }
 
-    console.log(gameOnePrice);
+    // console.log(gameOnePrice);
 
     //////////////////////////////////////
     let totalRooms = this.state.stayData[2];
     let checkoutDate = this.state.stayData[1];
 
     const totalTracker = this.props.cart.map(item => {
-      console.log("TOTAL TRACKER ITEMS", item);
+      console.log("TOTAL TRACKER ITEMS");
+
+      let packageTotalPrice = item.packageTotalPrice;
+
+      if (packageTotalPrice != undefined) {
+        console.log("locaaaaaa-");
+        total += packageTotalPrice;
+      }
+
+      console.log(total);
 
       let currentPrice = item.totalPrice;
 
-      total += Number(currentPrice);
+      if (currentPrice != undefined) {
+        total += Number(currentPrice);
+        console.log("la segunda loca", total);
+      }
+
       return total;
     });
+
     let idMaker = 0;
 
     const cartItems = this.props.cart.map(item => {
+      let packageName = item.packageTitle;
+      let packageTotalPrice = item.packageTotalPrice;
       let hotelName = item.hotelName;
       let hotelPrice = item.price;
       let hotelTotalPrice = item.totalPrice;
@@ -119,11 +132,13 @@ class Navbar extends React.Component {
       return (
         <CartItem
           total={total}
+          packageName={packageName}
+          packageTotalPrice = {packageTotalPrice}
           hotelName={hotelName}
           hotelPrice={hotelPrice}
           hotelTotalPrice={hotelTotalPrice}
           ticketTotalPrice={ticketTotalPrice}
-          packageId ={this.state.packageId}
+          packageId={this.state.packageId}
           roomNumber={roomNumber}
           hotelId={hotelId}
           id={id}
@@ -139,51 +154,105 @@ class Navbar extends React.Component {
       );
     });
 
-
-
     return (
-    <nav className="navbar transparent fixed-top navbar-expand-lg">
-    <a className="navbar-brand" href="#">
-    <img style={{ width: 70, height: 90 }}id="marseilleLogo" src="assets/images/OM.png" alt="" />
-      </a>
-    <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span className="navbar-toggler-icon"></span>
-    </button>
-  
-    <div className="collapse navbar-collapse " id="navbarSupportedContent">
-      <ul id="navItems" className="navbar-nav mr-auto">
-        <li className="nav-item active">
-        <a id="homeNav" className="nav-link text-center navMine" href="#sectionOne">HOME<span className="sr-only">(current)</span></a>
-        </li>
-        <li className="nav-item">
-        <a  id="aboutNav"className="nav-link text-center navMine" href="#theTour">TOUR</a>
-        </li>
-        <li className="nav-item">
-        <a  id="idNav"className="nav-link text-center navMine" href="#tickets">TICKETS</a>
-        </li>
-        <li className="nav-item">
-        <a  id="hotelNav"className="nav-link text-center navMine" href="#hotels">HOTELS</a>
-        </li>
-        <li className="nav-item">
-        <a id="idActivities" className="nav-link text-center navMine" href="#activities">ACTIVITIES</a>
-        </li>
-        <li className="nav-item dropdown">
-        <div>
-        <a id="navbarDropdown" onClick={this.showCart} className="nav-link dropdown-toggle text-center navMine" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#"><img id="cartImg" src ="assets/images/MYCART.png" /><span id="masterOfCoin">My Cart {total} </span></a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-        
-          <a class="dropdown-item" href="#">   {cartItems}</a>
+      <nav className="navbar transparent fixed-top navbar-expand-lg">
+        <a className="navbar-brand" href="#">
+          <img
+            style={{ width: 70, height: 90 }}
+            id="marseilleLogo"
+            src="assets/images/OM.png"
+            alt=""
+          />
+        </a>
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon" />
+        </button>
 
-          <div class="dropdown-divider"></div>
+        <div className="collapse navbar-collapse " id="navbarSupportedContent">
+          <ul id="navItems" className="navbar-nav mr-auto">
+            <li className="nav-item active">
+              <a
+                id="homeNav"
+                className="nav-link text-center navMine"
+                href="#sectionOne"
+              >
+                HOME<span className="sr-only">(current)</span>
+              </a>
+            </li>
+            <li className="nav-item">
+              <a
+                id="aboutNav"
+                className="nav-link text-center navMine"
+                href="#theTour"
+              >
+                TOUR
+              </a>
+            </li>
+            <li className="nav-item">
+              <a
+                id="idNav"
+                className="nav-link text-center navMine"
+                href="#tickets"
+              >
+                TICKETS
+              </a>
+            </li>
+            <li className="nav-item">
+              <a
+                id="hotelNav"
+                className="nav-link text-center navMine"
+                href="#hotels"
+              >
+                HOTELS
+              </a>
+            </li>
+            <li className="nav-item">
+              <a
+                id="idActivities"
+                className="nav-link text-center navMine"
+                href="#activities"
+              >
+                ACTIVITIES
+              </a>
+            </li>
+            <li className="nav-item dropdown">
+              <div>
+                <a
+                  id="navbarDropdown"
+                  onClick={this.showCart}
+                  className="nav-link dropdown-toggle text-center navMine"
+                  role="button"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  href="#"
+                >
+                  <img id="cartImg" src="assets/images/MYCART.png" />
+                  <span id="masterOfCoin">My Cart {total} </span>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="#">
+                    {" "}
+                    {cartItems}
+                  </a>
 
-        </div>
-        {/* <ul>
+                  <div class="dropdown-divider" />
+                </div>
+                {/* <ul>
       {cartItems}
         </ul> */}
-        </div>
-        </li>
+              </div>
+            </li>
 
-        {/* <li class="nav-item dropdown">
+            {/* <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Dropdown
         </a>
@@ -194,7 +263,7 @@ class Navbar extends React.Component {
           <a class="dropdown-item" href="#">Something else here</a>
         </div>
       </li> */}
-        {/* <li className="nav-item dropdown">
+            {/* <li className="nav-item dropdown">
           <a className="nav-link dropdown-toggle navMine" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Dropdown
           </a>
@@ -208,13 +277,9 @@ class Navbar extends React.Component {
         <li className="nav-item">
           <a className="nav-link" href="#hotels" >Disabled</a>
         </li> */}
-      </ul>
-  
-    </div>
-  </nav>
-
-
-
+          </ul>
+        </div>
+      </nav>
 
       // <nav className="navbar navbar-expand">
       //       <div className="container-fluid">
@@ -349,53 +414,53 @@ class Navbar extends React.Component {
       // 		</div>
       // 	</div>
       // </nav>
-            // <section id="left-sidebar">
-            //   <div class="logo">
-            //     <a href="#about" className="navbar-brand">
-            //       <img
-            //         id="marseilleLogo"
-            //         style={{ width: 110, height: 150 }}
-            //         src="assets/images/OM.png"
-            //         // src="assets/images/marseilleLogo.png"
-            //         alt="logo"
-            //       />
-            //     </a>
-            //   </div>
+      // <section id="left-sidebar">
+      //   <div class="logo">
+      //     <a href="#about" className="navbar-brand">
+      //       <img
+      //         id="marseilleLogo"
+      //         style={{ width: 110, height: 150 }}
+      //         src="assets/images/OM.png"
+      //         // src="assets/images/marseilleLogo.png"
+      //         alt="logo"
+      //       />
+      //     </a>
+      //   </div>
 
-            //   <div
-            //     id="mobile-menu-icon"
-            //     className="visible-xs"
-            //     onclick="toggle_main_menu();"
-            //   >
-            //     <span class="glyphicon glyphicon-th" />
-            //   </div>
+      //   <div
+      //     id="mobile-menu-icon"
+      //     className="visible-xs"
+      //     onclick="toggle_main_menu();"
+      //   >
+      //     <span class="glyphicon glyphicon-th" />
+      //   </div>
 
-            //   <ul id="main-menu">
-            //     <li className="nav-item ">
-            //       <a id="homeNav" className="nav-link text-center navMine" href="#sectionOne">
-            //         Home
-            //       </a>
-            //     </li>
-            //     <li className="nav-item">
-            //       <a  id="aboutNav"className="nav-link text-center navMine" href="#about">
-            //         About
-            //       </a>
-            //     </li>
-            //     <li className="nav-item">
-            //       <a  id="hotelNav"className="nav-link text-center navMine" href="#hotels">
-            //         Hotels
-            //       </a>
-            //     </li>
-            //     <li className="nav-item">
-            //       <a  id="idNav"className="nav-link text-center navMine" href="#tickets">
-            //         Tickets
-            //       </a>
-            //     </li>
-            //     <li className="nav-item">
-            //       <a id="idActivities" className="nav-link text-center navMine" href="#activities">
-            //         Activities
-            //       </a>
-            //     </li>
+      //   <ul id="main-menu">
+      //     <li className="nav-item ">
+      //       <a id="homeNav" className="nav-link text-center navMine" href="#sectionOne">
+      //         Home
+      //       </a>
+      //     </li>
+      //     <li className="nav-item">
+      //       <a  id="aboutNav"className="nav-link text-center navMine" href="#about">
+      //         About
+      //       </a>
+      //     </li>
+      //     <li className="nav-item">
+      //       <a  id="hotelNav"className="nav-link text-center navMine" href="#hotels">
+      //         Hotels
+      //       </a>
+      //     </li>
+      //     <li className="nav-item">
+      //       <a  id="idNav"className="nav-link text-center navMine" href="#tickets">
+      //         Tickets
+      //       </a>
+      //     </li>
+      //     <li className="nav-item">
+      //       <a id="idActivities" className="nav-link text-center navMine" href="#activities">
+      //         Activities
+      //       </a>
+      //     </li>
 
       /*
                 <li className="nav-item">
@@ -403,19 +468,16 @@ class Navbar extends React.Component {
                     Cart
                   </a>
                 </li> */
-            //   </ul>
-            //   <div id="cart">
-      			// 		<a id='cartHeader' className="nav-link text-center navMineCart">
-      			// 			Cart</a>
-            //     <ul id="cartList">{cartItems}</ul>
-            //   </div>
-            //   <p id="cartTotal" value={total}>Total ${total} </p>
-            // </section>
-            
-            
+      //   </ul>
+      //   <div id="cart">
+      // 		<a id='cartHeader' className="nav-link text-center navMineCart">
+      // 			Cart</a>
+      //     <ul id="cartList">{cartItems}</ul>
+      //   </div>
+      //   <p id="cartTotal" value={total}>Total ${total} </p>
+      // </section>
     );
   }
 }
 
 export default Navbar;
-
