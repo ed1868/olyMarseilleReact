@@ -161,7 +161,8 @@ class Work extends React.Component {
 
 
       console.log('STARTING PRICE ON HOTEL THREE------', staringPrice);
-    let numberOfNights = this.state.numberOfNights;
+      // this.state.checkOutDay += 1;
+    let numberOfNights = this.state.checkOutDay - this.state.checkInDay;
     let price = staringPrice * numberOfNights;
 
     if (this.state.roomOption == 0 || this.state.roomOption == 1) {
