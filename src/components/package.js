@@ -25,7 +25,8 @@ export default class Package extends Component {
           activityFourTotalPrice: 40.0,
 
           packageId: Number(0),
-          packageTotalPrice: 230.88
+          packageTotalPrice: 230.88,
+          quantity: 1
         }
       ],
       packageTwo: [
@@ -45,7 +46,8 @@ export default class Package extends Component {
           activityThreeTotalPRice: 30.0,
 
           packageId: Number(1),
-          packageTotalPrice: 122.44
+          packageTotalPrice: 122.44,
+          quantity: 1
         }
       ],
       packageThree: [
@@ -66,7 +68,8 @@ export default class Package extends Component {
           activityFourTotalPrice: 40.0,
 
           packageId: Number(2),
-          packageTotalPrice: 165.88
+          packageTotalPrice: 165.88,
+          quantity: 1
         }
       ],
       option: Number(0),
@@ -98,6 +101,7 @@ export default class Package extends Component {
         this.state.packageOne[0].packageTotalPrice * this.state.packageQuantity;
 
       packageOne.packageTotalPrice = staringPrice;
+      packageOne.quantity = Number(this.state.packageQuantity);
 
       this.props.onPackageClick(this.state.packageOne);
     }
@@ -107,7 +111,10 @@ export default class Package extends Component {
       let staringPrice =
         this.state.packageTwo[0].packageTotalPrice * this.state.packageQuantity;
 
-      packageTwo.packageTotalPrice = staringPrice;    
+      packageTwo.packageTotalPrice = staringPrice;  
+      packageTwo.quantity = Number(this.state.packageQuantity);
+      
+      
       this.props.onPackageClick(this.state.packageTwo);
     }
     if (e.target.id == packageThree.packageId) {
@@ -116,6 +123,9 @@ export default class Package extends Component {
       this.state.packageThree[0].packageTotalPrice * this.state.packageQuantity;
 
       packageThree.packageTotalPrice = staringPrice;  
+      packageThree.quantity = Number(this.state.packageQuantity);
+
+
       this.props.onPackageClick(this.state.packageThree);
     }
   };
@@ -158,14 +168,14 @@ export default class Package extends Component {
         gameOneTeamOneUrl: "assets/images/MONTPELLIERcouleur.png",
         gameOneTeamTwoUrl: "assets/images/SAINTETIENNEcouleur.png",
 
-        gameTwo: "O.Marseille VS Girondins de Bordeaux",
+        gameTwo: "3rd place game OR Championship Game TBC",
         gameTwoTeamOneUrl: "assets/images/marseilleGameLogo.png",
         gameTwoTeamTwoUrl: "assets/images/BORDEAUXcouleur.png",
 
-        gameThree: "Tournament Championship Game",
+        gameThree: "Friendly between OM and D.C United",
         activities: {
           activityOne: "Access to OM special area in the stadium",
-          activityTwo: "Training Session + Transport on July 19th. Time TBC",
+          activityTwo: "Training Session + Transport on July 19th and July 23rd. Time TBC",
           activityThree:
             "Exclusive Party on Saturday July 20th, Evening-Time TBC",
           activityFour:
@@ -178,13 +188,13 @@ export default class Package extends Component {
         gameOne: "Montepellier HSC VS AS Saint Etienne",
         gameOneTeamOneUrl: "assets/images/MONTPELLIERcouleur.png",
         gameOneTeamTwoUrl: "assets/images/SAINTETIENNEcouleur.png",
-        gameTwo: "O.Marseille VS Girondins de Bordeaux",
+        gameTwo: "3rd place game OR Championship Game TBC",
         gameTwoTeamOneUrl: "assets/images/marseilleGameLogo.png",
         gameTwoTeamTwoUrl: "assets/images/BORDEAUXcouleur.png",
 
         activities: {
           activityOne: "Access to OM special area in the stadium",
-          activityTwo: "Training Session + Transport on July 19th. Time TBC",
+          activityTwo: "Training Session + Transport on July 19th and July 23rd. Time TBC",
           activityThree:
             "Exclusive Party on Saturday July 20th, Evening-Time TBC"
         }
@@ -192,11 +202,11 @@ export default class Package extends Component {
       {
         title: "2 GAMES PT 2",
         id: 2,
-        gameTwo: "O.Marseille VS Girondins de Bordeaux",
+        gameTwo: "3rd place game OR Championship Game TBC",
         gameTwoTeamOneUrl: "assets/images/marseilleGameLogo.png",
         gameTwoTeamTwoUrl: "assets/images/BORDEAUXcouleur.png",
 
-        gameThree: "Tournament Championship Game",
+        gameThree: "Friendly between OM and D.C United",
         activities: {
           activityOne: "Access to OM special area in the stadium",
           activityThree:
@@ -297,8 +307,8 @@ export default class Package extends Component {
                   </div>
                 </div>
                 <br />
+                <p className="unknown">{gameTwo}</p>
                 <p className="unknown">{gameThree}</p>
-                <p className="unknown">{gameFour}</p>
                 <br />
                 {/* </ul> */}
 
@@ -384,7 +394,7 @@ export default class Package extends Component {
                 <br />
                 <br />
                 <br />
-                <p className="unknown">{gameFour}</p>
+                <p className="unknown">{gameTwo}</p>
                 <br />
                 {/* </ul> */}
 

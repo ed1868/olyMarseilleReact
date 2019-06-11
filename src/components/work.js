@@ -20,7 +20,7 @@ class Work extends React.Component {
           option: Number(0),
           hotelId: Number(0),
           typeOfRoom: " ",
-          totalPrice: ""
+          totalPrice: 149.44,
         }
       ],
       // hotelOneOptTwo: [
@@ -38,7 +38,7 @@ class Work extends React.Component {
           option: Number(0),
           hotelId: Number(1),
           typeOfRoom: " ",
-          totalPrice: " "
+          totalPrice: 191.97,
         }
       ],
       // hotelTwoOptTwo: [
@@ -57,7 +57,7 @@ class Work extends React.Component {
           option: Number(1),
           hotelId: Number(2),
           typeOfRoom: " ",
-          totalPrice:" "
+          totalPrice: 437.95,
         }
       ],
       // hotelThreeOptTwo: [
@@ -133,8 +133,8 @@ class Work extends React.Component {
     element.scrollIntoView();
 
     let staringPrice = this.state.hotelTwo[0].price * this.state.numberOfRooms;
-    let numberOfNights = this.state.numberOfNights;
-    let price = staringPrice * numberOfNights;
+    // let numberOfNights = this.state.numberOfNights;
+    let price = staringPrice ;
 
     if (this.state.roomOption == 0 || this.state.roomOption == 1) {
       this.state.hotelTwo[0].typeOfRoom = "One Kind Bed";
@@ -157,6 +157,10 @@ class Work extends React.Component {
     element.scrollIntoView();
     let staringPrice =
       this.state.hotelThree[0].price * this.state.numberOfRooms;
+
+
+
+      console.log('STARTING PRICE ON HOTEL THREE------', staringPrice);
     let numberOfNights = this.state.numberOfNights;
     let price = staringPrice * numberOfNights;
 
@@ -352,7 +356,7 @@ class Work extends React.Component {
                 <FontAwesomeIcon className="starIcon" icon={faStar} />
                 <FontAwesomeIcon className="starIcon" icon={faStar} />
                 <FontAwesomeIcon className="starIcon" icon={faStar} />
-                <FontAwesomeIcon className="starIcon" icon={faStar} />
+                {/* <FontAwesomeIcon className="starIcon" icon={faStar} /> */}
                 {/* <FontAwesomeIcon className="starIcon" icon={faStar} /> */}
                 <br />
                 <br />

@@ -193,7 +193,7 @@ class Price extends React.Component {
     // Dynamic Price Data Easy to Update
     let data = [
       {
-        title: "Girondins de Bordeaux Vs OM",
+        title: "Girondins de Bordeaux Vs O.Marseille",
         id: 0,
         lable: "07/24/2019",
         price: "35.44",
@@ -202,7 +202,7 @@ class Price extends React.Component {
         link: "#"
       },
       {
-        title: "3rd Place Game",
+        title: "3rd Place Game or Tournament Championship",
         id: 1,
         lable: "07/27/2019",
         price: "45.00",
@@ -211,7 +211,7 @@ class Price extends React.Component {
         link: "#"
       },
       {
-        title: "Tournament Championship",
+        title: "D.C. United Vs  Olympic Marseille",
         id: 2,
         lable: "07/29/2019",
         price: "50.44",

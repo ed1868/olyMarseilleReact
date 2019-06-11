@@ -429,7 +429,7 @@ class Home extends React.Component {
                 in the United States in July called « EA Ligue 1 Games
               </p>
               <p className="tourP">
-                From July 18th to 21st, 2019, Olympique de Marseille, FC
+                From July 18th to 24th, 2019, Olympique de Marseille, FC
                 Girondins de Bordeaux, Montpellier Hérault SC and AS
                 Saint-Etienne
               </p>

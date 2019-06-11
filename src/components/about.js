@@ -27,7 +27,6 @@ class About extends React.Component {
                   />
                 </div>
               </div>
-
               {/* <div className="row">
                 <div className="col-md-12">
                   <ul class="nav nav-tabs">
@@ -129,32 +128,32 @@ class About extends React.Component {
                       <p>Some content in menu 2.</p>
                     </div>
                   </div> */}
-
+              {/* Offering you package deals which include game tickets, OM
+              exclusive activities and hotel accommodations" Choose from 3
+              properties at unbeatable rates ranging from comfort, premium to
+              luxury to ensure you have an unforgettable experience */}
               <div className="col-md-12">
                 <div className="chat-slide">
                   <h3>
-                    Offering you package deals which include games and
-                    activities!{" "}
-                    <span style={{ color: " #009DDC;" }} id="marseille">
+                    Offering you package deals which include games andOffering
+                    you package deals which include game tickets, activities!{" "}
+                    {/* <span style={{ color: " #009DDC;" }} id="marseille">
                       Olympic Marseille
-                    </span>
+                    </span> */}
                   </h3>
                   <br />
                   <h3>
-                    Training session ? or an Exclusive party after watching the
-                    game. We will make sure you have a unique experience.
-                    <br></br>
-                    <br></br>
-                     With
-                    three unbeatable deals and or selection of hotels which
-                    range from comfort, premium to our luxury stays to ensure
-                    you have an unforgetable experience
+                  <span id="marseille">Olympic Marseille </span>exclusive activities and hotel accommodations
+                    <br />
+                    <br />
+                    Choose from 3 properties at unbeatable rates ranging from
+                    comfort, premium to luxury to ensure you have an
+                    unforgettable experience
                   </h3>
                   {/* <img id="teamPic" src="assets/images/marseilleTeam.png" alt="stay-connected"/> */}
                   <p id="disclaimerP">
                     {" "}
-                    <span id="disclaimer">NOT</span> included in packages -
-                    Flights – Airport transfer – VISA formalities – Hotel taxes
+                    <span id="disclaimer">NOT</span> included - flights, airport transfers, VISA formalities, hotel incidentals
                   </p>
                 </div>
               </div>
