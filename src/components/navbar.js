@@ -102,6 +102,7 @@ class Navbar extends React.Component {
         total += Number(currentPrice);
         console.log("la segunda loca", total);
       }
+            // Math.round(10 * this.state.ticketTwo[0].price) / 10;
 
       return total;
     });
@@ -126,6 +127,7 @@ class Navbar extends React.Component {
       let activityDate = item.date;
       let activityTime = item.time;
       let packageId = this.state.packageId;
+
 
       // total += Number(totalTracker);
 
@@ -236,7 +238,7 @@ class Navbar extends React.Component {
                   href="#"
                 >
                   <img id="cartImg" src="assets/images/MYCART.png" />
-                  <span id="masterOfCoin">My Cart {total} </span>
+                  <span id="masterOfCoin">My Cart ${total} </span>
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <a class="dropdown-item" href="#">

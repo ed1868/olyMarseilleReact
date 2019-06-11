@@ -109,7 +109,6 @@ class Price extends React.Component {
         this.state.ticketTwo[0].totalPrice += transfer;
       }
       this.state.ticketTwo[0].totalPrice += 10;
-      // Math.round(10 * this.state.ticketTwo[0].price) / 10;
       console.log("option two", this.state.ticketTwo);
 
       this.props.onTicketClick(this.state.ticketTwo);

@@ -278,7 +278,7 @@ class Work extends React.Component {
                   alt="white-line"
                   className="img-fluid"
                 /> */}
-                <p className="text-white" id="hotelClickBait">
+                <p  id="hotelClickBait">
                   Choose from our selection of Hand-Picked luxury hotels at the
                   best rates you will encouter
                 </p>
@@ -287,7 +287,7 @@ class Work extends React.Component {
           </div>
           <div id="dateSection" className="row">
             <div id="toDate" className="col-md-4 ">
-              <label id="" className="text-white" htmlFor="checkIn">
+              <label id="checkInLabel" className="text-white" htmlFor="checkIn">
                 Check In :
               </label>
               <input
@@ -302,7 +302,7 @@ class Work extends React.Component {
               />
             </div>
             <div className="col-md-4 ">
-              <label id="" className="text-white" htmlFor="checkOut">
+              <label id="checkOutLabel" className="text-white" htmlFor="checkOut">
                 Check Out:
               </label>
               {/* <select className="form-control" onChange={this.numberOfNights}>
@@ -321,7 +321,7 @@ class Work extends React.Component {
               />
             </div>
             <div className="col-md-4 ">
-              <label id="" className="text-white" htmlFor="numberOfRooms">
+              <label id="numOfRoomsLabel" className="text-white" htmlFor="numberOfRooms">
                 # of Rooms :
               </label>
 
