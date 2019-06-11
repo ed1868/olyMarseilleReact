@@ -633,12 +633,14 @@ section {
 /*=====================
     04.about section start
 ==========================*/
+@media(min-width: 992px) {
 .about-box {
     border-bottom: 1px solid $color_alto_approx;
     padding-bottom: 58px;
 }
 .about-border {
     border-right: 1px solid $color_alto_approx;
+}
 }
 .chat-box {
     text-align: center;
@@ -657,6 +659,7 @@ section {
     padding-top: 58px;
     h3 {
         margin-top: 0;
+        font-size: 18px;
         margin-bottom: 5px;
     }
 }

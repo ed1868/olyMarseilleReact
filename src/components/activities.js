@@ -284,8 +284,8 @@ class Activities extends React.Component {
           <div className="row">
             <div className="col-md-12 text-center">
               <div className="section-title">
-                <h2 className="headers">Activities</h2>
-        
+                <h2 id="activityHeader">Activities</h2>
+                {/* className="headers" */}
           
               </div>
             </div>

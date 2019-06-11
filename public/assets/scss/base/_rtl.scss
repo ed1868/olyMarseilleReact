@@ -90,10 +90,12 @@
         }
       }
     }
+    @media(min-width: 992px) {
     .about-border {
       border-left: 1px solid #dddddd;
       border-right: none;
     }
+  }
     .slide-text{
       text-align: right;
     }

@@ -19,7 +19,7 @@ class About extends React.Component {
             <div className="row">
               <div className="col-md-12 text-center">
                 <div className="section-title">
-                  <h2 className="aboutTitle">THE EXPERIENCE</h2>
+                  <h2 id="experienceHeader">THE EXPERIENCE</h2>
                   <img
                     src="assets/images/blueTitleLine.png"
                     alt="title-line"

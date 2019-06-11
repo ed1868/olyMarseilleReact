@@ -419,8 +419,15 @@
       transform: scale(0.7);
     }
     h2 {
-      font-size: 28px;
+      font-size: 50px;
       margin-bottom: 10px;
+    }
+  }
+  @media(min-width: 992px) {
+    .section-title{
+      h2 {
+        font-size: 80px;
+      }
     }
   }
 
@@ -491,6 +498,7 @@
       }
     }
   }
+  @media(min-width: 992px) {
   .about-box{
     padding-bottom: 0;
     .chat-box{
@@ -499,6 +507,7 @@
       border-bottom: 1px solid $color_alto_approx;
     }
   }
+}
   .about-border{
     &+div{
       &+div{
@@ -1316,6 +1325,7 @@
       display: none;
     }
   }
+  @media(min-width: 992px) {
   .about-border{
 
     &+ div {
@@ -1327,6 +1337,7 @@
       }
     }
   }
+}
   .marg-20 {
     margin: 7px auto;
   }
@@ -1480,6 +1491,11 @@
   .section-title h2 {
     font-size: 24px;
     margin-bottom: 0;
+  }
+    @media(min-width: 992px) {
+    .section-title h2 {
+      font-size: 38px;
+    }
   }
   .chat-slide h3 {
     font-size: 18px;

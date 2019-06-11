@@ -421,8 +421,10 @@ class Home extends React.Component {
           <h2 id="tourLogo">The Tour</h2>
           <div className="row">
             <div className="col-md-5" />
-
+          
             <div id="theTourInsideText" className="col-md-7">
+       
+              <p id="fillingIt"></p>
               <h1 id="tourHeader">WELCOME TO THE OFFICIAL WEBSITE OF OM TOUR IN THE U.S!</h1>
               <p className="tourP">
                 In partnership with EA Sports, LFP will launch a preseason tour
@@ -437,9 +439,7 @@ class Home extends React.Component {
                 Dear fans abroad, Don't miss this chance to see OM playing and
                 experience the tour like no one else!
               </p>
-              <br></br>
-              <br></br>
-              <br></br>
+             <br></br>
               <a
                 id="experienceButton"
                 href="#disclaimer"

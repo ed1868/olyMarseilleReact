@@ -277,7 +277,7 @@ class Work extends React.Component {
           <div className="row">
             <div className="col-md-8 offset-md-2 text-center">
               <div className="section-title">
-                <h2 className="headers">Hotels</h2>
+                <h2 id="hotelHead" >Hotels</h2>
                 {/* <img
                   src="assets/images/blueTitleLine.png"
                   alt="white-line"
@@ -373,7 +373,7 @@ class Work extends React.Component {
                 >
                   Hotel Pictures
                 </button>
-
+                {/* <p className="roomStock"> 10 ROOMS LEFT!</p> */}
                 <div id="myModal" class="modal fade" role="dialog">
                   <div className="modal-dialog">
                     <div id="modalBody" className="modal-content">
@@ -574,6 +574,7 @@ class Work extends React.Component {
                 </p>
 
                 <p>2 night minimum</p>
+                
 
                 <button
                   type="button"
@@ -585,6 +586,8 @@ class Work extends React.Component {
                 </button>
                 <br></br>
                 <br></br>
+                {/* <p className="roomStock"> 10 ROOMS LEFT!</p> */}
+                {/* <br></br> */}
                 <div id="hotelThreeModal" class="modal fade" role="dialog">
                   <div className="modal-dialog">
                     <div id="modalBody" className="modal-content">
