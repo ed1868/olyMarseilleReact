@@ -532,6 +532,7 @@ class Home extends React.Component {
                   <label id="labelFan" className="formText" htmlFor="checkOut">
                     OM Nation Membership :{" "}
                   </label>
+     
                   <input
                     autoComplete="off"
                     className="form-control"
@@ -540,6 +541,7 @@ class Home extends React.Component {
                     onChange={e => this.handleChange(e)}
                     type="text"
                   />
+                               <span id="note">*Note that this will only be valid for game tickets</span>
                 </div>
                 <div className="col-md-3">
                   {/* <FontAwesomeIcon

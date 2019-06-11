@@ -211,7 +211,7 @@ class Price extends React.Component {
         link: "#"
       },
       {
-        title: "D.C. United Vs  Olympic Marseille",
+        title: "D.C. United Vs  Olympic Marseille (friendly)",
         id: 2,
         lable: "07/29/2019",
         price: "50.44",

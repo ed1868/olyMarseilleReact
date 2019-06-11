@@ -450,19 +450,20 @@ export default class Package extends Component {
                 {/* <ul> */}
                 <div className="row">
                   <div className="col-md-12">
-                    <img id="marseilleSpecial" src={gameTwoTeamOneUrl} />{" "}
-                    <strong className="vs">VS.</strong>{" "}
-                    <img
-                      // id="special"
-                      className="heightPic"
-                      src={gameTwoTeamTwoUrl}
-                    />
+                    <img id="topLogos" src="assets/images/topLogos.png" />{" "}
+       
                   </div>
                 </div>
                 <br />
                 <br />
                 <br />
-                <p className="unknown">{gameThree}</p>
+                {/* <p className="unknown">{gameThree}</p> */}
+                <div className="row">
+                  <div className="col-md-12">
+                    <img id="newPic" src="assets/images/triLogo.png" />
+
+                  </div>
+                </div>
                 {/* <p className="activitiesPackage">
                   Exclusive events at Audi Field
                 </p> */}

@@ -425,13 +425,14 @@ class Work extends React.Component {
                 <p className="hotelAddress">.9 miles from Audi Field</p>
                 <hr />
                 <label for="roomOption">Room :</label>
-                <select className="form-control" onChange={this.roomOption}>
+                <p>1 king bed or 2 doubles</p>
+                {/* <select className="form-control" onChange={this.roomOption}>
                   <option value="1">One King Bed</option>
                   <option value="2">Queen/Queen Beds</option>
-                </select>
+                </select> */}
                 <br />
                 <p>
-                  <span className="hotelPrice">${hotelOnePrice} per Night</span>
+                  <span className="hotelPrice">${hotelOnePrice} per Night/taxes Included</span>
                 </p>
 
                 <button
@@ -530,13 +531,14 @@ class Work extends React.Component {
                 <p className="hotelAddress">0.7 Miles from Audi Field</p>
                 <hr />
                 <label for="roomOption">Room :</label>
-                <select className="form-control" onChange={this.roomOption}>
+                <p>1 king bed or 2 doubles</p>
+                {/* <select className="form-control" onChange={this.roomOption}>
                   <option value="1">One King Bed</option>
                   <option value="2">Two Queen Beds</option>
-                </select>
+                </select> */}
                 <br />
                 <p>
-                  <span className="hotelPrice">${hotelTwoPrice} per Night</span>
+                  <span className="hotelPrice">${hotelTwoPrice} per Night/taxes Included</span>
                 </p>
 
                 <button
@@ -568,7 +570,7 @@ class Work extends React.Component {
                 <br />
                 <br />
                 <p id="hotelTwoP" className="hotelP">
-                  Services: Free breakfast , Gym , 24 hr Pavilion Pantry Market
+                  Services:  Gym ,Spa Services , Rooftop Bar,
                 </p>
 
                 <p>2 night minimum</p>
@@ -634,15 +636,16 @@ class Work extends React.Component {
                 <p className="hotelAddress">2.9 miles from Audi Field</p>
                 <hr />
                 <label for="roomOption">Room :</label>
-                <select className="form-control" onChange={this.roomOption}>
+                <p>1 queen bed or 2 doubles</p>
+                {/* <select className="form-control" onChange={this.roomOption}>
                   <option value="1">One King Bed</option>
                   <option value="2">Two Queen Beds</option>
-                </select>
+                </select> */}
                 <br />
 
                 <p>
                   <span className="hotelPrice">
-                    ${hotelThreePrice} per Night
+                    ${hotelThreePrice} per Night/taxes Included
                   </span>
                 </p>
 
