@@ -14,15 +14,15 @@ export default class Package extends Component {
           gameThree: "Tournament Championship Game",
           gameThreeTotalPrice: 50.44,
           activityOne: "Access to OM special area in the stadium",
-          activityOneTotalPrice: 10,
+          activityOneTotalPrice: 10.00,
           activityTwo: "Training Session + Transport on July 19th. Time TBC",
-          activityTwoTotalPrice: 20,
+          activityTwoTotalPrice: 20.00,
           activityThree:
             "Exclusive Party on Saturday July 20th, Evening-Time TBC",
-          activityThreeTotalPRice: 30,
+          activityThreeTotalPRice: 30.00,
           activityFour:
             "Friendly Game on Wednesday July 24th, Afternoon-Time TBC",
-          activityFourTotalPrice: 40,
+          activityFourTotalPrice: 40.00,
 
           packageId: Number(0),
           packageTotalPrice: 230.88
@@ -32,17 +32,17 @@ export default class Package extends Component {
         {
           packageTitle:"Package Two",
           gameOne: "Montepellier HSC VS AS Saint Etienne",
-          gameOneTotalPrice: 45.0,
+          gameOneTotalPrice: 45.00,
           gameTwo: "O.Marseille VS Girondins de Bordeaux",
           gameTwoTotalPrice: 35.44,
 
           activityOne: "Access to OM special area in the stadium",
-          activityOneTotalPrice: 10,
+          activityOneTotalPrice: 10.00,
           activityTwo: "Training Session + Transport on July 19th. Time TBC",
-          activityTwoTotalPrice: 20,
+          activityTwoTotalPrice: 20.00,
           activityThree:
             "Exclusive Party on Saturday July 20th, Evening-Time TBC",
-          activityThreeTotalPRice: 30,
+          activityThreeTotalPRice: 30.00,
 
           packageId: Number(1),
           packageTotalPrice:122.44
@@ -57,13 +57,13 @@ export default class Package extends Component {
           gameThreeTotalPrice: 50.44,
 
           activityOne: "Access to OM special area in the stadium",
-          activityOneTotalPrice: 10,
+          activityOneTotalPrice: 10.00,
           activityThree:
             "Exclusive Party on Saturday July 20th, Evening-Time TBC",
-          activityThreeTotalPRice: 30,
+          activityThreeTotalPRice: 30.00,
           activityFour:
             "Friendly Game on Wednesday July 24th, Afternoon-Time TBC",
-          activityFourTotalPrice: 40,
+          activityFourTotalPrice: 40.00,
 
           packageId: Number(2),
           packageTotalPrice:165.88

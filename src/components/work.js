@@ -15,7 +15,7 @@ class Work extends React.Component {
     this.state = {
       hotelOne: [
         {
-          price: "149.44",
+          price: 149.44,
           hotelName: "Courtyard Marriott Capitol Hill/Navy Yard",
           option: Number(0),
           hotelId: Number(0),
@@ -33,7 +33,7 @@ class Work extends React.Component {
       // ],
       hotelTwo: [
         {
-          price: "191.97",
+          price: 191.97,
           hotelName: "Residence Inn by Marriott Capitol Hill/Navy Yard",
           option: Number(0),
           hotelId: Number(1),
@@ -52,7 +52,7 @@ class Work extends React.Component {
       // ],
       hotelThree: [
         {
-          price: "437.95",
+          price: 437.95,
           hotelName: "W Washington DC",
           option: Number(1),
           hotelId: Number(2),
