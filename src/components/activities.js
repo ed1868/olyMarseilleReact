@@ -251,11 +251,11 @@ class Activities extends React.Component {
           <div className="package-box">
             <h3 className="subtitles">{val.title}</h3>
             <div className="price-box">
-              <span id="moneyTag">$</span>
+              {/* <span id="moneyTag">$</span>
               <h2 className="prices">{val.price}</h2>
               <h5 className="plan-clr">
                 <span className="d-block" />
-              </h5>
+              </h5> */}
             </div>
             <div className="price-plan text-center">
               <ul>

@@ -87,7 +87,7 @@ class Home extends React.Component {
   //HOTEL CART PROP SYSTEM
   onClick = e => {
     console.log("FIRST HOTEL OPTION ENTERED HOME");
-  let hotelOne = e;
+    let hotelOne = e;
 
     let hotelData = hotelOne[0];
 
@@ -95,7 +95,7 @@ class Home extends React.Component {
     let joined = this.state.cart.concat(hotelData);
     this.setState({ cart: joined });
 
-    console.log("Final before nav", this.state.cart);  
+    console.log("Final before nav", this.state.cart);
   };
 
   onStay = e => {
@@ -241,7 +241,6 @@ class Home extends React.Component {
     // let joined = this.state.packages.concat(packageChoice);
     let joined = this.state.cart.concat(packageChoice);
     this.setState({ cart: joined });
-    
   };
   render() {
     document.body.classList.remove("inner-page");
@@ -372,20 +371,28 @@ class Home extends React.Component {
                       <br />
                       <br />
                       {/* <h3 id="timer">Timer Will Go Here</h3> */}
-                      <div id="timer">
-                        <Timer initialTime={3300000000} direction="backward">
-                          {() => (
-                            <React.Fragment>
-                              <Timer.Days /> <span id="timerDays">days</span>
-                              <Timer.Hours id="timerHour" />
-                              <span id="timerHours">Hours</span>
-                              <Timer.Minutes id="timerMin" />
-                              <span id="timerMin">Min</span>
-                              <Timer.Seconds id="timerSec" />
-                              <span id="timerSec">Sec</span>
-                            </React.Fragment>
-                          )}
-                        </Timer>
+                      <div className="row">
+                        <div className="col-md-12">
+                          <div id="timer">
+                            <Timer
+                              initialTime={3300000000}
+                              direction="backward"
+                            >
+                              {() => (
+                                <React.Fragment>
+                                  <Timer.Days />{" "}
+                                  <span id="timerDays">days</span>
+                                  <Timer.Hours id="timerHour" />
+                                  <span id="timerHours">Hours</span>
+                                  <Timer.Minutes id="timerMin" />
+                                  <span id="timerMin">Min</span>
+                                  <Timer.Seconds id="timerSec" />
+                                  <span id="timerSec">Sec</span>
+                                </React.Fragment>
+                              )}
+                            </Timer>
+                          </div>
+                        </div>
                       </div>
                     </div>
                     <FontAwesomeIcon id="goOn" icon={faArrowAltCircleDown} />
@@ -411,7 +418,37 @@ class Home extends React.Component {
         {/* About Component*/}
         <section id="theTour">
           <h2 id="tourLogo">The Tour</h2>
-          <div id="tourPlacing">
+          <div className="row">
+            <div className="col-md-5" />
+
+            <div id="theTourInsideText" className="col-md-7">
+              <h1 id="tourHeader">WELCOME TO THE OFFICIAL WEBSITE OF OM TOUR IN THE U.S!</h1>
+              <p className="tourP">
+                In partnership with EA Sports, LFP will launch a preseason tour
+                in the United States in July called « EA Ligue 1 Games
+              </p>
+              <p className="tourP">
+                From July 18th to 21st, 2019, Olympique de Marseille, FC
+                Girondins de Bordeaux, Montpellier Hérault SC and AS
+                Saint-Etienne
+              </p>
+              <p className="tourP">
+                Dear fans abroad, Don't miss this chance to see OM playing and
+                experience the tour like no one else!
+              </p>
+              <br></br>
+              <br></br>
+              <br></br>
+              <a
+                id="experienceButton"
+                href="#disclaimer"
+                className="btn btn-primary"
+              >
+                DISCOVER THE EXPERIENCE
+              </a>
+            </div>
+          </div>
+          {/* <div id="tourPlacing">
             <h1 id="tourHeader">
               WELCOME TO THE OFFICIAL WEBSITE OF OM TOUR IN THE U.S !
             </h1>
@@ -439,9 +476,9 @@ class Home extends React.Component {
               >
                 DISCOVER THE EXPERIENCE
               </a>
-            </p>
+            </p> */}
 
-            {/* <div id="secondPdiv">
+          {/* <div id="secondPdiv">
               <p id="tourSecond" className="tourP">
                 From July 18th to 21st, 2019, Olympique de Marseille, FC
                 Girondins de Bordeaux, Montpellier Hérault SC and AS
@@ -450,7 +487,7 @@ class Home extends React.Component {
               </p>
       
             </div> */}
-          </div>
+          {/* </div> */}
         </section>
         <About />
         {/*Price Component*/}
