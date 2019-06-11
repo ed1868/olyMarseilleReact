@@ -42,7 +42,8 @@ class Home extends React.Component {
       // clientLastName  : " ",
       stayData: [],
       packages: [],
-      packageId: " "
+      packageId: " ",
+
 
       // checkOut: " ",
       // fanClubNumber: " ",
@@ -514,6 +515,7 @@ class Home extends React.Component {
 
         {/* CHECK OUT FORM  */}
         <section id="checkoutForm">
+  
           <h1 id="checkoutTitle" className="text-center hotelTitle">
             Checkout Form
           </h1>

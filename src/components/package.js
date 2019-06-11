@@ -5,8 +5,8 @@ export default class Package extends Component {
     super(props);
     this.state = {
       packageOne: [
-        { 
-          packageTitle:"Package One",
+        {
+          packageTitle: "Package One",
           gameOne: "Montepellier HSC VS AS Saint Etienne",
           gameOneTotalPrice: 45.0,
           gameTwo: "O.Marseille VS Girondins de Bordeaux",
@@ -14,15 +14,15 @@ export default class Package extends Component {
           gameThree: "Tournament Championship Game",
           gameThreeTotalPrice: 50.44,
           activityOne: "Access to OM special area in the stadium",
-          activityOneTotalPrice: 10.00,
+          activityOneTotalPrice: 10.0,
           activityTwo: "Training Session + Transport on July 19th. Time TBC",
-          activityTwoTotalPrice: 20.00,
+          activityTwoTotalPrice: 20.0,
           activityThree:
             "Exclusive Party on Saturday July 20th, Evening-Time TBC",
-          activityThreeTotalPRice: 30.00,
+          activityThreeTotalPRice: 30.0,
           activityFour:
             "Friendly Game on Wednesday July 24th, Afternoon-Time TBC",
-          activityFourTotalPrice: 40.00,
+          activityFourTotalPrice: 40.0,
 
           packageId: Number(0),
           packageTotalPrice: 230.88
@@ -30,51 +30,56 @@ export default class Package extends Component {
       ],
       packageTwo: [
         {
-          packageTitle:"Package Two",
+          packageTitle: "Package Two",
           gameOne: "Montepellier HSC VS AS Saint Etienne",
-          gameOneTotalPrice: 45.00,
+          gameOneTotalPrice: 45.0,
           gameTwo: "O.Marseille VS Girondins de Bordeaux",
           gameTwoTotalPrice: 35.44,
 
           activityOne: "Access to OM special area in the stadium",
-          activityOneTotalPrice: 10.00,
+          activityOneTotalPrice: 10.0,
           activityTwo: "Training Session + Transport on July 19th. Time TBC",
-          activityTwoTotalPrice: 20.00,
+          activityTwoTotalPrice: 20.0,
           activityThree:
             "Exclusive Party on Saturday July 20th, Evening-Time TBC",
-          activityThreeTotalPRice: 30.00,
+          activityThreeTotalPRice: 30.0,
 
           packageId: Number(1),
-          packageTotalPrice:122.44
+          packageTotalPrice: 122.44
         }
       ],
       packageThree: [
         {
-          packageTitle:"Package Three",
+          packageTitle: "Package Three",
           gameTwo: "O.Marseille VS Girondins de Bordeaux",
           gameTwoTotalPrice: 35.44,
           gameThree: "Tournament Championship Game",
           gameThreeTotalPrice: 50.44,
 
           activityOne: "Access to OM special area in the stadium",
-          activityOneTotalPrice: 10.00,
+          activityOneTotalPrice: 10.0,
           activityThree:
             "Exclusive Party on Saturday July 20th, Evening-Time TBC",
-          activityThreeTotalPRice: 30.00,
+          activityThreeTotalPRice: 30.0,
           activityFour:
             "Friendly Game on Wednesday July 24th, Afternoon-Time TBC",
-          activityFourTotalPrice: 40.00,
+          activityFourTotalPrice: 40.0,
 
           packageId: Number(2),
-          packageTotalPrice:165.88
-
+          packageTotalPrice: 165.88
         }
       ],
-      option: Number(0)
+      option: Number(0),
+      packageQuantity: 1
     };
   }
 
-  numberOfTickets = e => {};
+  numberOfTickets = e => {
+    e.preventDefault();
+
+    console.log(e.target.value);
+    this.setState({ packageQuantity: e.target.value });
+  };
 
   onPackageClick = e => {
     e.preventDefault();
@@ -85,19 +90,32 @@ export default class Package extends Component {
     let packageOne = this.state.packageOne[0];
     let packageTwo = this.state.packageTwo[0];
     let packageThree = this.state.packageThree[0];
+
     if (e.target.id == packageOne.packageId) {
       console.log("you hit package one baby ");
+
+      let staringPrice =
+        this.state.packageOne[0].packageTotalPrice * this.state.packageQuantity;
+
+      packageOne.packageTotalPrice = staringPrice;
 
       this.props.onPackageClick(this.state.packageOne);
     }
     if (e.target.id == packageTwo.packageId) {
       console.log("you hit package two baby ");
 
+      let staringPrice =
+        this.state.packageTwo[0].packageTotalPrice * this.state.packageQuantity;
+
+      packageTwo.packageTotalPrice = staringPrice;    
       this.props.onPackageClick(this.state.packageTwo);
     }
     if (e.target.id == packageThree.packageId) {
       console.log("you hit package three baby ");
+      let staringPrice =
+      this.state.packageThree[0].packageTotalPrice * this.state.packageQuantity;
 
+      packageThree.packageTotalPrice = staringPrice;  
       this.props.onPackageClick(this.state.packageThree);
     }
   };
@@ -237,7 +255,6 @@ export default class Package extends Component {
       let urlOne = gameOneTeamOneUrl;
       let gameFour = "3rd Place Game";
 
-
       let activityOne = val.activities.activityOne;
       let activityTwo = val.activities.activityTwo;
       let activityThree = val.activities.activityThree;
@@ -267,7 +284,7 @@ export default class Package extends Component {
                     />
                   </div>
                 </div> */}
-                
+
                 <div className="row">
                   <div className="col-md-12">
                     <img id="marseilleSpecial" src={gameTwoTeamOneUrl} />{" "}
@@ -311,7 +328,7 @@ export default class Package extends Component {
                 id="quantity"
                 placeholder="Quantity  "
                 name="quantity"
-                // onChange={e => this.handleRoomPrince(e)}
+                onChange={e => this.numberOfTickets(e)}
                 type="number"
               />
 
@@ -347,10 +364,10 @@ export default class Package extends Component {
                     />
                   </div>
                 </div> */}
-                
+
                 {/* <ul> */}
                 {/* <p></p> */}
-                
+
                 <div className="row">
                   <div className="col-md-12">
                     <img id="marseilleSpecial" src={gameTwoTeamOneUrl} />{" "}
@@ -366,7 +383,7 @@ export default class Package extends Component {
                 </div>
                 <br />
                 <br />
-                <br></br>
+                <br />
                 <p className="unknown">{gameFour}</p>
                 <br />
                 {/* </ul> */}
@@ -396,7 +413,7 @@ export default class Package extends Component {
                 id="quantity"
                 placeholder="Quantity  "
                 name="quantity"
-                // onChange={e => this.handleRoomPrince(e)}
+                onChange={e => this.numberOfTickets(e)}
                 type="number"
               />
 
@@ -439,7 +456,7 @@ export default class Package extends Component {
                 {/* <p className="activitiesPackage">
                   Exclusive events at Audi Field
                 </p> */}
-                    <br />
+                <br />
                 {/* <br />
                 <br />
                 <p id="custom" />
@@ -464,7 +481,7 @@ export default class Package extends Component {
               <br />
               <br />
               <br />
-              <p id="fillerTwo"></p>
+              <p id="fillerTwo" />
 
               {/* </ul> */}
 
@@ -475,7 +492,7 @@ export default class Package extends Component {
                 id="quantity"
                 placeholder="Quantity  "
                 name="quantity"
-                // onChange={e => this.handleRoomPrince(e)}
+                onChange={e => this.numberOfTickets(e)}
                 type="number"
               />
 
