@@ -80,7 +80,7 @@ class About extends React.Component {
                           icon={faFutbol}
                         />
                       </a>
-                      <h3 className="sub-title subtitles">Games</h3>
+                      <h3 className="subtitles">Games</h3>
                     </div>
                   </div>
                   <div className="col-lg-4 col-6 about-border">
@@ -89,7 +89,7 @@ class About extends React.Component {
                       <a href="#hotels">
                         <FontAwesomeIcon className="aboutIcons" icon={faBed} />{" "}
                       </a>
-                      <h3 className="sub-title subtitles">Hotels</h3>
+                      <h3 className="subtitles">Hotels</h3>
                     </div>
                   </div>
                   <div className="col-lg-4 col-6">
@@ -102,7 +102,7 @@ class About extends React.Component {
                           icon={faCalendar}
                         />
                       </a>
-                      <h3 className="sub-title subtitles">Activities</h3>
+                      <h3 className="subtitles">Activities</h3>
                     </div>
                   </div>
 
