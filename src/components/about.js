@@ -3,6 +3,7 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBed } from "@fortawesome/fontawesome-free-solid";
 import { faTicketAlt } from "@fortawesome/fontawesome-free-solid";
+import { faArrowAltCircleDown } from "@fortawesome/fontawesome-free-regular";
 
 import {
   faCalendar,
@@ -156,6 +157,7 @@ class About extends React.Component {
                     <span id="disclaimer">NOT</span> included - flights, airport transfers, VISA formalities, hotel incidentals
                   </i>
                   </p>
+                 <a href="#packages" > <FontAwesomeIcon id="aboutCircle" icon={faArrowAltCircleDown} /> </a>
                 </div>
               </div>
             </div>
@@ -164,6 +166,7 @@ class About extends React.Component {
         {/* <div className="container-fluid text-center">
                  <img src="assets/images/banner.png" alt="banner.png" className="img-fluid full-banner"/>
               </div> */}
+                  
       </section>
     );
   }
