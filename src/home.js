@@ -250,18 +250,36 @@ class Home extends React.Component {
       this.state
     );
 
-    // if(packageData.packageId == 0){
-    //   packageName = "Package One";
-    // }
+    // const personFormMaker = this.props.cart.map(item => {
+      // let packageName = item.packageTitle;
 
-    // if(packageData.packageId == 1){
-    //   packageName = "Package Two";
-    // }
 
-    // if(packageData.packageId == 2 ){
-    //   packageName = "Package Three";
-    // }
+      // total += Number(totalTracker);
 
+      // return (
+      //   <CartItem
+      //     total={total}
+      //     packageName={packageName}
+      //     packageTotalPrice = {packageTotalPrice}
+      //     hotelName={hotelName}
+      //     hotelPrice={hotelPrice}
+      //     hotelTotalPrice={hotelTotalPrice}
+      //     ticketTotalPrice={ticketTotalPrice}
+      //     packageId={this.state.packageId}
+      //     roomNumber={roomNumber}
+      //     hotelId={hotelId}
+      //     id={id}
+      //     ticketName={ticketName}
+      //     ticketPrice={ticketPrice}
+      //     ticketTime={ticketTime}
+      //     activityName={activityName}
+      //     activityPrice={activityPrice}
+      //     activityDate={activityDate}
+      //     activityTime={activityTime}
+      //     cartUpdatorHotelOne={this.cartUpdatorHotelOne}
+      //   />
+      // );
+    // });
     return (
       <div>
         <Navbar
@@ -418,7 +436,11 @@ class Home extends React.Component {
         {/* Home One Section End */}
         {/* About Component*/}
         <section id="theTour">
-          <h2 id="tourLogo">The Tour</h2>
+        <div className="row">
+            <div className="col-md-12">
+            <h2 id="tourTitle">The Tour</h2>
+            </div>
+          </div>
           <div className="row">
             <div className="col-md-5" />
           
@@ -492,7 +514,7 @@ class Home extends React.Component {
         </section>
         <About />
         {/*Price Component*/}
-        <Package ref="packages" onPackageClick={this.onPackageClick} />
+        <Package ref="packages" onPackageClick={this.onPackageClick}  personUpdator={this.personUpdator}/>
         <Price ref="price" onTicketClick={this.onTicketClick} />
         {/*Team Component*/}
         {/* <Team /> */}

@@ -81,7 +81,8 @@ export default class Package extends Component {
     e.preventDefault();
 
     console.log(e.target.value);
-    this.setState({ packageQuantity: e.target.value });
+    this.setState({ packageQuantity: Number(e.target.value)});
+
   };
 
   onPackageClick = e => {
@@ -89,6 +90,8 @@ export default class Package extends Component {
     var element = document.getElementById("hotels");
     element.scrollIntoView();
     console.log("entro en on package click");
+  
+
 
     let packageOne = this.state.packageOne[0];
     let packageTwo = this.state.packageTwo[0];
@@ -128,6 +131,9 @@ export default class Package extends Component {
 
       this.props.onPackageClick(this.state.packageThree);
     }
+  
+   
+
   };
 
   render() {
