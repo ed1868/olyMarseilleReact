@@ -9,6 +9,7 @@ class Price extends React.Component {
         {
           price: 35.44,
           ticketName: "Girondins de Bordeaux Vs O.Marseille'",
+          ticketUrl:"assets/images/topLogos.png",
           time: "7:00",
           ticketId: Number(0),
           totalPrice: 35.44,
@@ -18,6 +19,7 @@ class Price extends React.Component {
         {
           price: 45.00,
           ticketName: "Montpellier HSC Vs As Saint Etienne'",
+          ticketUrl:"assets/images/triLogoTwo.png",
           time: "7:00",
           totalPrice: 45.00,
           ticketId: Number(1),
@@ -27,6 +29,7 @@ class Price extends React.Component {
         {
           price: 50.44,
           ticketName: "D.C. United Vs  Olympic Marseille'",
+          ticketUrl:"assets/images/dcunited.png",
           time: "7:00",
           totalPrice: 50.44,
           ticketId: Number(2),
@@ -196,6 +199,7 @@ class Price extends React.Component {
         title: "Girondins de Bordeaux Vs O.Marseille",
         id: 0,
         lable: "07/24/2019",
+        ticketUrl:"assets/images/topLogos.png",
         price: "35.44",
         features:
           "<li>Section 100, Row 02</li><li>real time sync</li><li>unlimited attachment</li><li>customize theme</li><li>priority email support</li>",
@@ -205,6 +209,7 @@ class Price extends React.Component {
         title: "3rd Place Game or Tournament Championship",
         id: 1,
         lable: "07/27/2019",
+        ticketUrl:"assets/images/triLogoTwo.png",
         price: "45.00",
         features:
           "<li>Section 100, Row 02</li><li>real time sync</li><li>unlimited attachment</li><li>customize theme</li><li>priority email support</li>",
@@ -214,6 +219,7 @@ class Price extends React.Component {
         title: "D.C. United Vs  Olympic Marseille (friendly)",
         id: 2,
         lable: "07/29/2019",
+        ticketUrl:"assets/images/dcunited.png",
         price: "50.44",
         features:
           "<li>Section 100, Row 02</li><li>unlimited attachment</li><li>customize theme</li><li>priority email support</li><li>priority email support</li>",
@@ -228,13 +234,14 @@ class Price extends React.Component {
       return (
         <div className="item" id="tickets" key={i}>
           <div className="package-box">
-            <h3 className="subtitles">{val.title}</h3>
+            {/* <h3 className="subtitles">{val.title}</h3> */}
+            <img className="ticketLogos" src={val.ticketUrl} />
             <div className="price-box">
-              <span id="moneyTag">$</span>
+              {/* <span id="moneyTag">$</span>
               <h2 className="prices">{val.price}</h2>
               <h5 className="plan-clr">
                 <span className="d-block" />
-              </h5>
+              </h5> */}
             </div>
             <br />
             <select

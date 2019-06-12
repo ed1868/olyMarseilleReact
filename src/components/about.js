@@ -151,9 +151,10 @@ class About extends React.Component {
                     unforgettable experience
                   </h3>
                   {/* <img id="teamPic" src="assets/images/marseilleTeam.png" alt="stay-connected"/> */}
-                  <p id="disclaimerP">
+                  <p id="disclaimerP"><i>
                     {" "}
                     <span id="disclaimer">NOT</span> included - flights, airport transfers, VISA formalities, hotel incidentals
+                  </i>
                   </p>
                 </div>
               </div>
