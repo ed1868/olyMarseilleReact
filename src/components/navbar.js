@@ -230,6 +230,7 @@ class Navbar extends React.Component {
               </a>
             </li>
             <li className="nav-item dropdown">
+              
               <div>
                 <a
                   id="navbarDropdown"
@@ -241,16 +242,21 @@ class Navbar extends React.Component {
                   aria-expanded="false"
                   href="#"
                 >
-                  <img id="cartImg" src="assets/images/MYCART.png" />
                   <span id="masterOfCoin">My Cart ${total} </span>
+                  <img id="cartImg" src="assets/images/MYCART.png" />
                 </a>
+              
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <div className="row">
+                    <div className="col-md-12">
                   <a class="dropdown-item" href="#">
                     {" "}
                     {cartItems}
                   </a>
 
-                  <div class="dropdown-divider" />
+                  <div id="divider" class="dropdown-divider" />
+                  </div>
+                  </div>
                 </div>
                 {/* <ul>
       {cartItems}

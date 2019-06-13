@@ -24,11 +24,12 @@ import Cart from "./components/cart";
 
 import FormService from "./components/formService";
 //Testing DATE PICKER FOR REACT
-
+import { Link } from 'react-router-dom';
 import "react-dates/initialize";
 import "react-dates/lib/css/_datepicker.css";
 import { SingleDatePicker } from "react-dates";
-
+import { Player } from 'video-react';
+import 'video-react/dist/video-react.css';
 library.add(faArrowAltCircleDown);
 
 class Home extends React.Component {
@@ -250,36 +251,18 @@ class Home extends React.Component {
       this.state
     );
 
-    // const personFormMaker = this.props.cart.map(item => {
-      // let packageName = item.packageTitle;
+    // if(packageData.packageId == 0){
+    //   packageName = "Package One";
+    // }
 
+    // if(packageData.packageId == 1){
+    //   packageName = "Package Two";
+    // }
 
-      // total += Number(totalTracker);
+    // if(packageData.packageId == 2 ){
+    //   packageName = "Package Three";
+    // }
 
-      // return (
-      //   <CartItem
-      //     total={total}
-      //     packageName={packageName}
-      //     packageTotalPrice = {packageTotalPrice}
-      //     hotelName={hotelName}
-      //     hotelPrice={hotelPrice}
-      //     hotelTotalPrice={hotelTotalPrice}
-      //     ticketTotalPrice={ticketTotalPrice}
-      //     packageId={this.state.packageId}
-      //     roomNumber={roomNumber}
-      //     hotelId={hotelId}
-      //     id={id}
-      //     ticketName={ticketName}
-      //     ticketPrice={ticketPrice}
-      //     ticketTime={ticketTime}
-      //     activityName={activityName}
-      //     activityPrice={activityPrice}
-      //     activityDate={activityDate}
-      //     activityTime={activityTime}
-      //     cartUpdatorHotelOne={this.cartUpdatorHotelOne}
-      //   />
-      // );
-    // });
     return (
       <div>
         <Navbar
@@ -374,7 +357,12 @@ class Home extends React.Component {
 					<i></i>
 					<i></i>
 					<i></i>
-				</div> */}
+        </div> */}
+        {/* <div className="video-bg">
+          <Player autoPlay loop>
+            <source src="assets/video/Marseille Background.mp4" />
+          </Player>
+        </div> */}
           <div id="jumbotron" className="container">
             <div className="row">
               <div className="col-md-12">
@@ -422,7 +410,7 @@ class Home extends React.Component {
                 <div className="home-right">
                   <div className="mobile-slid"> */}
               {/* <img
-             
+
                       src="assets/images/marseilleFirst.png"
                       alt="top1"
                       className="img-fluid"
@@ -436,16 +424,17 @@ class Home extends React.Component {
         {/* Home One Section End */}
         {/* About Component*/}
         <section id="theTour">
-        <div className="row">
+          <div className="row">
             <div className="col-md-12">
             <h2 id="tourTitle">The Tour</h2>
             </div>
           </div>
+          
           <div className="row">
             <div className="col-md-5" />
-          
+
             <div id="theTourInsideText" className="col-md-7">
-       
+
               <p id="fillingIt"></p>
               <h1 id="tourHeader">WELCOME TO THE OFFICIAL WEBSITE OF OM TOUR IN THE U.S!</h1>
               <p className="tourP">
@@ -464,7 +453,7 @@ class Home extends React.Component {
              <br></br>
               <a
                 id="experienceButton"
-                href="#disclaimer"
+                href="#about"
                 className="btn btn-primary"
               >
                 DISCOVER THE EXPERIENCE
@@ -508,13 +497,14 @@ class Home extends React.Component {
                 Saint-Etienne will compete in a friendly tournament at Audi
                 Field
               </p>
-      
+
             </div> */}
           {/* </div> */}
+          
         </section>
         <About />
         {/*Price Component*/}
-        <Package ref="packages" onPackageClick={this.onPackageClick}  personUpdator={this.personUpdator}/>
+        <Package ref="packages" onPackageClick={this.onPackageClick} />
         <Price ref="price" onTicketClick={this.onTicketClick} />
         {/*Team Component*/}
         {/* <Team /> */}
@@ -536,439 +526,19 @@ class Home extends React.Component {
         {/*ScreenShot Component*/}
 
         {/* CHECK OUT FORM  */}
-        <section id="checkoutForm">
-  
+        <section className="checkoutForm backgroundColor" id="checkoutForm">
+
           <h1 id="checkoutTitle" className="text-center hotelTitle">
-            Checkout Form
+            Checkout your purchase
           </h1>
-          <div className="container">
-            <form className="" onSubmit={this.handleFormSubmit}>
-              <div className="row">
-                <div className="col-md-4">
-                  <img
-                    id="discountImg"
-                    src="https://66.media.tumblr.com/b3900f6abb6350b67164b3a71f7aaa49/tumblr_pskz23rhlc1vp5j01o1_1280.png"
-                  />
-                </div>
-                <div className="col-md-5">
-                  <label id="labelFan" className="formText" htmlFor="checkOut">
-                    OM Nation Membership :{" "}
-                  </label>
-     
-                  <input
-                    autoComplete="off"
-                    className="form-control"
-                    id="fanClubNumber"
-                    name="fanClubNumber"
-                    onChange={e => this.handleChange(e)}
-                    type="text"
-                  />
-                               <span id="note">*Note that this will only be valid for game tickets</span>
-                </div>
-                <div className="col-md-3">
-                  {/* <FontAwesomeIcon
-                  id="fanArrow"
-                  onClick={this.fanValidation}
-                  className=""
-                  icon={faPlusSquare}
-                /> */}
-                  <div id="button" className="col-md-12">
-                    <input
-                      className="btn btn-primary"
-                      id="fanArrow"
-                      onClick={this.fanValidation}
-                      value="Apply my promotion code"
-                    />
-                  </div>
-                </div>
-              </div>
-              <h2 className="fuck">Person One</h2>
-              <div className="row">
-                <div className="col-md-6">
-                  <label className="formText" htmlFor="firstName">
-                    First Name :{" "}
-                  </label>
-                  <input
-                    autoComplete="off"
-                    className="form-control"
-                    id="firstName"
-                    name="clientFirstName"
-                    onChange={e => this.handleChange(e)}
-                    type="text"
-                  />
-                </div>
-                <div className="col-md-6">
-                  <label className="formText" htmlFor="lastName">
-                    Last Name :{" "}
-                  </label>
-                  <input
-                    autoComplete="off"
-                    className="form-control"
-                    id="lastName"
-                    name="clientLastName"
-                    onChange={e => this.handleChange(e)}
-                    type="text"
-                  />
-                </div>
-              </div>
-              <div className="row">
-                <div className="col-md-12">
-                  <label className="formText" htmlFor="checkOut">
-                    Email:{" "}
-                  </label>
-                  <input
-                    autoComplete="off"
-                    className="form-control"
-                    placeholder=".com"
-                    id="email"
-                    name="email"
-                    onChange={e => this.handleChange(e)}
-                    type="email"
-                  />
-                </div>
-              </div>
-              <div className="row">
-                <div className="col-md-6">
-                  <label className="formText" htmlFor="firstName">
-                    Passport Number :{" "}
-                  </label>
-                  <input
-                    autoComplete="off"
-                    className="form-control"
-                    id="passportNum"
-                    name="passportNum"
-                    onChange={e => this.handleChange(e)}
-                    type="text"
-                  />
-                </div>
-                <div className="col-md-6">
-                  <label className="formText" htmlFor="lastName">
-                    Country Of Issue :{" "}
-                  </label>
-                  <input
-                    autoComplete="off"
-                    className="form-control"
-                    id="countryIssue"
-                    name="countryIssue"
-                    onChange={e => this.handleChange(e)}
-                    type="text"
-                  />
-                </div>
-              </div>
-              <div className="row">
-                <div className="col-md-6">
-                  <label className="formText" htmlFor="firstName">
-                    Date of Issue :{" "}
-                  </label>
-                  <input
-                    autoComplete="off"
-                    className="form-control"
-                    id="passportNum"
-                    name="passportNum"
-                    onChange={e => this.handleChange(e)}
-                    type="date"
-                  />
-                </div>
-                <div className="col-md-6">
-                  <label className="formText" htmlFor="lastName">
-                    Nationality:{" "}
-                  </label>
-                  <input
-                    autoComplete="off"
-                    className="form-control"
-                    id="countryIssue"
-                    name="countryIssue"
-                    onChange={e => this.handleChange(e)}
-                    type="text"
-                  />
-                </div>
-              </div>
-              <br />
-              <div className="hidden">
-                <h2 className="fuck">Person Two</h2>
-                <br />
-                <div className="row">
-                  <div className="col-md-6">
-                    <label className="formText" htmlFor="firstName">
-                      First Name :{" "}
-                    </label>
-                    <input
-                      autoComplete="off"
-                      className="form-control"
-                      id="firstName"
-                      name="clientFirstName"
-                      onChange={e => this.handleChange(e)}
-                      type="text"
-                    />
-                  </div>
-                  <div className="col-md-6">
-                    <label className="formText" htmlFor="lastName">
-                      Last Name :{" "}
-                    </label>
-                    <input
-                      autoComplete="off"
-                      className="form-control"
-                      id="lastName"
-                      name="clientLastName"
-                      onChange={e => this.handleChange(e)}
-                      type="text"
-                    />
-                  </div>
-                </div>
-                <div className="row">
-                  <div className="col-md-12">
-                    <label className="formText" htmlFor="checkOut">
-                      Email:{" "}
-                    </label>
-                    <input
-                      autoComplete="off"
-                      className="form-control"
-                      placeholder=".com"
-                      id="email"
-                      name="email"
-                      onChange={e => this.handleChange(e)}
-                      type="email"
-                    />
-                  </div>
-                </div>
-                <div className="row">
-                  <div className="col-md-6">
-                    <label className="formText" htmlFor="firstName">
-                      Passport Number :{" "}
-                    </label>
-                    <input
-                      autoComplete="off"
-                      className="form-control"
-                      id="passportNum"
-                      name="passportNum"
-                      onChange={e => this.handleChange(e)}
-                      type="text"
-                    />
-                  </div>
-                  <div className="col-md-6">
-                    <label className="formText" htmlFor="lastName">
-                      Country Of Issue :{" "}
-                    </label>
-                    <input
-                      autoComplete="off"
-                      className="form-control"
-                      id="countryIssue"
-                      name="countryIssue"
-                      onChange={e => this.handleChange(e)}
-                      type="text"
-                    />
-                  </div>
-                </div>
-                <div className="row">
-                  <div className="col-md-6">
-                    <label className="formText" htmlFor="firstName">
-                      Date of Issue :{" "}
-                    </label>
-                    <input
-                      autoComplete="off"
-                      className="form-control"
-                      id="passportNum"
-                      name="passportNum"
-                      onChange={e => this.handleChange(e)}
-                      type="date"
-                    />
-                  </div>
-                  <div className="col-md-6">
-                    <label className="formText" htmlFor="lastName">
-                      Nationality:{" "}
-                    </label>
-                    <input
-                      autoComplete="off"
-                      className="form-control"
-                      id="countryIssue"
-                      name="countryIssue"
-                      onChange={e => this.handleChange(e)}
-                      type="text"
-                    />
-                  </div>
-                </div>
-              </div>
-              {/* <div className="row">
-                <div className="col-md-12">
-                  <label className="formText" htmlFor="checkOut">
-                    Fan Club ID :{" "}
-                  </label>
-                  <input
-                    autoComplete="off"
-                    className="form-control"
-                    id="fanClubNumber"
-                    name="fanClubNumber"
-                    onChange={e => this.handleChange(e)}
-                    type="text"
-                  />
-                </div>
-              </div> */}
-              <br />
-              <br />
-
-              <div className="row">
-                <div className="col-md-12">
-                  <label className="formText" htmlFor="checkOut">
-                    Address:{" "}
-                  </label>
-                  <input
-                    autoComplete="off"
-                    className="form-control"
-                    placeholder="Address"
-                    id="address"
-                    name="address"
-                    onChange={e => this.handleChange(e)}
-                    type="text"
-                  />
-                </div>
-              </div>
-
-              <div className="row topPadding">
-                <div className="col-md-4">
-                  <input
-                    autoComplete="off"
-                    className="form-control"
-                    placeholder="city"
-                    id="city"
-                    name="city"
-                    onChange={e => this.handleChange(e)}
-                    type="text"
-                  />
-                </div>
-                <div className="col-md-4">
-                  <input
-                    autoComplete="off"
-                    className="form-control"
-                    placeholder="State"
-                    id="state"
-                    name="state"
-                    onChange={e => this.handleChange(e)}
-                    type="text"
-                  />
-                </div>
-                <div className="col-md-4">
-                  <input
-                    autoComplete="off"
-                    className="form-control"
-                    placeholder="Zip Code"
-                    id="zipcode"
-                    name="zipcode"
-                    onChange={e => this.handleChange(e)}
-                    type="text"
-                  />
-                </div>
-              </div>
-              <br />
-              <br />
-              <div className="row topPadding">
-                <div className="col-md-12">
-                  <label className="formText" htmlFor="paymentDetails">
-                    Name On Card :{" "}
-                  </label>
-                  <input
-                    autoComplete="off"
-                    className="form-control"
-                    placeholder="Name on card"
-                    id="nameOnCard"
-                    name="nameOnCard"
-                    onChange={e => this.handleChange(e)}
-                    type="text"
-                  />
-                </div>
-              </div>
-
-              <div className="row topPadding">
-                <div className="col-md-8">
-                  <label className="formText" htmlFor="paymentDetails">
-                    Credit Card Number :{" "}
-                  </label>
-                  <input
-                    autoComplete="off"
-                    className="form-control"
-                    placeholder="cc number"
-                    id="creditCardNumber"
-                    name="creditCardNumber"
-                    onChange={e => this.handleChange(e)}
-                    type="text"
-                  />
-                </div>
-                <div className="col-md-4">
-                  <img
-                    id="creditCards"
-                    className="img-responsive"
-                    src="http://i76.imgup.net/accepted_c22e0.png"
-                  />
-                </div>
-              </div>
-              <div className="row topPadding">
-                <div className="col-md-6">
-                  <label className="formText" htmlFor="paymentDetails">
-                    Expiration Date :{" "}
-                  </label>
-                  <input
-                    autoComplete="off"
-                    className="form-control"
-                    placeholder="Exp Date"
-                    id="expirationDate"
-                    name="expirationDate"
-                    onChange={e => this.handleChange(e)}
-                    type="text"
-                  />
-                </div>
-                <div className="col-md-6">
-                  <label className="formText" htmlFor="paymentDetails">
-                    Security Number :{" "}
-                  </label>
-                  <input
-                    autoComplete="off"
-                    className="form-control"
-                    placeholder="000"
-                    id="securityCode"
-                    name="securityCode"
-                    onChange={e => this.handleChange(e)}
-                    type="text"
-                  />
-                </div>
-              </div>
-              <div className="row topPadding">
-                <div className="col-md-12">
-                  <label className="formText" htmlFor="ask">
-                    Have A Question ?{" "}
-                  </label>
-                  <textarea
-                    autoComplete="off"
-                    className="form-control"
-                    placeholder="Ask away"
-                    id="question"
-                    name="question"
-                    onChange={e => this.handleChange(e)}
-                    type="text"
-                  />
-                </div>
-              </div>
-              {/* <PaymentCard
-      bank="itau"
-      model="personnalite"
-      type="black"
-      brand="mastercard"
-      number="4111111111111111"
-      cvv="202"
-      holderName="Owen Lars"
-      expiration="12/20"
-      flipped={false}
-    /> */}
-              <div className="row">
-                <div id="button" className="col-md-12">
-                  <input
-                    className="btn btn-primary"
-                    id="checkoutButton"
-                    type="submit"
-                    value="Submit"
-                  />
-                </div>
-              </div>
-            </form>
+          
+          <div className="button-container">
+              <Link id="checkOutLinkButton" className="btn draw-border" to={{
+                    pathname: '/checkout',
+                    state: this.state,
+                }}>Go to my shopping cart</Link>
           </div>
+
         </section>
         {/* <ScreenShot /> */}
         {/*Testimonial Component*/}

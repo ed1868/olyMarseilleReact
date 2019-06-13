@@ -21,7 +21,7 @@
 11.Blog section css
 12.Download section css
 13.Contact section css
-14.footer section css
+14.foote@me section css
 15.Blog pages css
 16.inner Page css
 17 Review page css
@@ -1149,6 +1149,7 @@ section {
     h3 {
         margin-top: 0;
         margin-bottom: 30px;
+        padding: 0 10px;
     }
 }
 .price-box {
@@ -2784,6 +2785,7 @@ li.nav-item.dropdown {
             border-bottom: none;
         }
     }
+
     .Copyright-section p {
         text-align: center;
         width: 100%;
@@ -2791,6 +2793,109 @@ li.nav-item.dropdown {
         margin-bottom: 0;
     }
 }
+.mb-10 {
+    margin-bottom: 10px;
+}
+
+.box h3 {
+    font-family: marseilleHeader;
+    font-size: 24px;
+}
+
+.servicesIcon {
+    font-size: 24px;
+    color: #009ddc;
+    margin-right: 10px;
+}
+@mixin btn-border-drawing($color:  #009ddc, $hover: black, $width: 2px, $vertical: top, $horizontal: left, $duration: 0.25s) {
+    box-shadow: inset 0 0 0 $width $color;
+    color: $color;
+    transition: color $duration $duration/3;
+    position: relative;
+    
+    &::before,
+    &::after {
+      border: 0 solid transparent;
+      box-sizing: border-box;
+      content: '';
+      pointer-events: none;
+      position: absolute;
+      width: 0; height: 0;
+      
+      #{$vertical}: 0; 
+      #{$horizontal}: 0;
+    }
+  
+    &::before {
+      $h-side: if($horizontal == 'left', 'right', 'left');
+      
+      border-#{$vertical}-width: $width;
+      border-#{$h-side}-width: $width;
+    }
+    
+    &::after {
+      $v-side: if($vertical == 'top', 'bottom', 'top');
+      
+      border-#{$v-side}-width: $width;
+      border-#{$horizontal}-width: $width;
+    }
+    
+    &:hover {
+      color: $hover;
+      
+      &::before,
+      &::after {
+        border-color: $hover;
+        transition: border-color 0s, width $duration, height $duration;
+        width: 100%;
+        height: 100%;
+      }
+      
+      &::before { transition-delay: 0s, 0s, $duration; }
+      
+      &::after { transition-delay: 0s, $duration, 0s; }
+    }
+  }
+  
+  .draw-border {
+    @include btn-border-drawing(#58afd1,  #c6a55b , 4px, bottom, right);
+  }
+  
+  //=== Button styling, semi-ignore
+  .btn {
+    background: none;
+    border: none;
+  
+    cursor: pointer;
+    line-height: 1.5;
+    font-weight: 700;
+    font: 700 1.2rem marseilleHeader;
+    padding: 1em 2em;
+    font-size: 20px;
+    letter-spacing: 0.05rem;
+    
+    &:focus { outline: 2px dotted #55d7dc; }
+  }
+  
+  //=== Pen styling, ignore
+  
+.video-bg { 
+    width: 100%; 
+    height: 100vh; 
+    background: red; 
+    /* overflow: hidden; */ 
+    position: absolute; 
+    top: 0; 
+} 
+ 
+.video-react { 
+    padding: 0 !important; 
+} 
+
+
 /*========================
  22.landing page css ends
 ==========================*/
+
+
+

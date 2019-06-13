@@ -10,7 +10,7 @@ class Price extends React.Component {
           price: 35.44,
           ticketName: "Girondins de Bordeaux Vs O.Marseille'",
           ticketUrl:"assets/images/topLogos.png",
-          time: "7:00",
+          time: "9:00",
           ticketId: Number(0),
           totalPrice: 35.44,
         }
@@ -20,7 +20,7 @@ class Price extends React.Component {
           price: 45.00,
           ticketName: "Montpellier HSC Vs As Saint Etienne'",
           ticketUrl:"assets/images/triLogoTwo.png",
-          time: "7:00",
+          time: "9:00",
           totalPrice: 45.00,
           ticketId: Number(1),
         }
@@ -30,7 +30,7 @@ class Price extends React.Component {
           price: 50.44,
           ticketName: "D.C. United Vs  Olympic Marseille'",
           ticketUrl:"assets/images/dcunited.png",
-          time: "7:00",
+          time: "8:00",
           totalPrice: 50.44,
           ticketId: Number(2),
           
@@ -198,8 +198,9 @@ class Price extends React.Component {
       {
         title: "Girondins de Bordeaux Vs O.Marseille",
         id: 0,
-        lable: "07/24/2019",
+        lable: "07/18/2019",
         ticketUrl:"assets/images/topLogos.png",
+        time:"9:00pm",
         price: "35.44",
         features:
           "<li>Section 100, Row 02</li><li>real time sync</li><li>unlimited attachment</li><li>customize theme</li><li>priority email support</li>",
@@ -208,8 +209,9 @@ class Price extends React.Component {
       {
         title: "3rd Place Game or Tournament Championship",
         id: 1,
-        lable: "07/27/2019",
+        lable: "07/21/2019",
         ticketUrl:"assets/images/triLogoTwo.png",
+        time:"9:00pm",
         price: "45.00",
         features:
           "<li>Section 100, Row 02</li><li>real time sync</li><li>unlimited attachment</li><li>customize theme</li><li>priority email support</li>",
@@ -218,8 +220,9 @@ class Price extends React.Component {
       {
         title: "D.C. United Vs  Olympic Marseille (friendly)",
         id: 2,
-        lable: "07/29/2019",
+        lable: "07/24/2019",
         ticketUrl:"assets/images/dcunited.png",
+        time:"8:00pm",
         price: "50.44",
         features:
           "<li>Section 100, Row 02</li><li>unlimited attachment</li><li>customize theme</li><li>priority email support</li><li>priority email support</li>",
@@ -244,7 +247,7 @@ class Price extends React.Component {
               </h5> */}
             </div>
             <br />
-            <select
+            {/* <select
               id="ticketCat"
               className="form-control"
               onChange={this.roomOption}
@@ -252,12 +255,13 @@ class Price extends React.Component {
               <option value="0">Gold Ticket $10 more!</option>
               <option value="2">Silver Ticket $20 more!</option>
               <option value="3">Bronze Ticket $20 more!</option>
-            </select>
+            </select> */}
 
             <div className="price-plan text-center">
               <ul>
-                <li>{val.lable}</li>
-                <li>7:00pm</li>
+                <li className="priceDetails">{val.lable}</li>
+                <li className="priceDetails">{val.time}</li>
+                <li className="priceDetails">Exclusive OM Fan Section</li>
                 {/* <li>
                   <input
                     onChange={this.transferCheck}
@@ -271,17 +275,17 @@ class Price extends React.Component {
                     Add Transfer To and From for $55/person{" "}
                   </span>
                 </li> */}
-
+{/* 
                 <li>Section 100, Row 02</li>
-                <li>Per Ticket</li>
+                <li>Per Ticket</li> */}
               </ul>
-              <button
+              {/* <button
                 onClick={this.onClickTicket}
                 id={val.id}
                 className="btn btn-primary bookButton"
               >
                 Add
-              </button>
+              </button> */}
             </div>
           </div>
         </div>

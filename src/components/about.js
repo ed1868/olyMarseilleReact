@@ -21,11 +21,13 @@ class About extends React.Component {
               <div className="col-md-12 text-center">
                 <div className="section-title">
                   <h2 id="experienceHeader">THE EXPERIENCE</h2>
-                  <img
+                  <br></br>
+                  <br></br>
+                  {/* <img
                     src="assets/images/blueTitleLine.png"
                     alt="title-line"
                     className="img-fluid"
-                  />
+                  /> */}
                 </div>
               </div>
               {/* <div className="row">
@@ -133,7 +135,7 @@ class About extends React.Component {
               exclusive activities and hotel accommodations" Choose from 3
               properties at unbeatable rates ranging from comfort, premium to
               luxury to ensure you have an unforgettable experience */}
-              <div className="col-md-12">
+              <div id="experienceText" className="col-md-12">
                 <div className="chat-slide">
                   <h3>
                     Offering you package deals which include games andOffering
@@ -142,7 +144,7 @@ class About extends React.Component {
                       Olympic Marseille
                     </span> */}
                   </h3>
-                  <br />
+      
                   <h3>
                   <span id="marseille">Olympic Marseille </span>exclusive activities and hotel accommodations
                     <br />
