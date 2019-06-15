@@ -4,6 +4,7 @@ import DayPicker, { DateUtils } from "react-day-picker";
 import "react-day-picker/lib/style.css";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faStar } from "@fortawesome/fontawesome-free-solid";
+import OwlCarousel from "react-owl-carousel";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -254,349 +255,347 @@ class Work extends React.Component {
     const { name, value } = e.target;
     this.setState({ ...this.state, numberOfRooms: Number(value) });
   };
-
   render() {
-    //PRICE RENDERING
+    // OwlCarousel Option for Prices
+    console.log(this.state);
+    const options = {
+      0: {
+        items: 1,
+        nav: false,
+        dots: true
+      },
+      600: {
+        items: 2,
+        nav: false,
+        dots: true
+      },
+      767: {
+        items: 2,
+        nav: false,
+        dots: true
+      },
+      // 992: {
+      //   items: 3,
+      //   nav: false,
+      //   dots: true
+      // }
+      // 1000:{
+      //     items:4
+      // }
+    };
 
-    let hotelOnePrice = "149.44";
+    // Dynamic Price Data Easy to Update
+    let data = [
+      {
+        hotelTitle: "Courtyard Marriott Capitol Hill/Navy Yard",
+        hotelMainUrl:"https://cache.marriott.com/marriottassets/marriott/WASYV/wasyv-exterior-7552-hor-wide.jpg?downsize=2880px:*",
+        id: 0,
+        lable: "07/18/2019",
+        hotelAddress: "140 L St SE, Washington, DC 20003",
+        milesAway: " 0.9 miles from Audi Field",
+        pictureOne: "https://66.media.tumblr.com/4283456dd8ced5ba08578e429629a854/tumblr_psuti88Rxw1vp5j01o1_1280.jpg",
+        pictureTwo:"https://66.media.tumblr.com/6a62bcec5dcab9d9fa4314ae331ea6cd/tumblr_psuti88Rxw1vp5j01o2_1280.jpg",
+        pictureThree:"https://66.media.tumblr.com/92e6c7627c432f4ab385a29119a80cef/tumblr_psuti88Rxw1vp5j01o3_1280.jpg",
+        price: "149.44",
+        features:
+          "<li>Section 100, Row 02</li><li>real time sync</li><li>unlimited attachment</li><li>customize theme</li><li>priority email support</li>",
+        link: "#"
+      },
+      {
+        hotelTitle: "Residence Inn Capitol Hill/Navy Yard",
+        hotelMainUrl:"https://d3hfxk7rwdcpol.cloudfront.net/CSN/ee3d0813-fc18-45c4-95e1-f159157807a3/images/33b1eb6e29c046498adef9a038fb2e44_LARGE.jpg",
+        id: 1,
+        lable: "07/21/2019",
+        hotelAddress:"1233 1St SE, Washington, DC 20003",
+        milesAway:"0.7 Miles from Audi Field",
+        pictureOne: "https://cache.marriott.com/marriottassets/marriott/WASXR/wasxr-exterior-0001-hor-wide.jpg?downsize=2880px:*",
+        pictureTwo:"https://cache.marriott.com/marriottassets/marriott/WASXR/wasxr-lobby-0038-hor-wide.jpg?downsize=2880px:*",
+        pictureThree:"https://cache.marriott.com/marriottassets/marriott/WASXR/wasxr-suite-0006-hor-wide.jpg?downsize=2880px:*",
+        price:"191.97",
+        features:
+          "<li>Section 100, Row 02</li><li>real time sync</li><li>unlimited attachment</li><li>customize theme</li><li>priority email support</li>",
+        link: "#"
+      },
+      
+      // {title: 'D.C United Vs Marseille', lable:'07/29/2019', price:'190', features:'<li>Section 100, Row 02</li><li>unlimited attachment</li><li>customize theme</li><li>priority email support</li><li>priority email support</li>', link:'#'},
+      // {title: 'D.C United Vs Marseilled', lable:'07/29/2019', price:'359', features:'<li>Section 100, Row 02</li><li>unlimited attachment</li><li>customize theme</li><li>priority email support</li><li>priority email support</li>', link:'#'},
+    ];
 
-    let hotelTwoPrice = "191.97";
+    // Dynamic Price Data Loop
+    let DataList = data.map((val, i) => {
+      if(val.id == 0){
+        return (
+          <div className="item" id="tickets" key={i}>
+           <div className="section-title">
+           <div id="boxOneRadius" className="box">
+                 <img
+                    className="hotelsImg"
+                    src={val.hotelMainUrl}
+                    alt=""
+                  />
+                  <h3>{val.hotelTitle}</h3>
+                  <FontAwesomeIcon className="starIcon" icon={faStar} />
+                  <FontAwesomeIcon className="starIcon" icon={faStar} />
+                  <FontAwesomeIcon className="starIcon" icon={faStar} />
+                  <br />
+               <br />
+                   <p>
+                     <FontAwesomeIcon
+                      className="servicesIcon"
+                      icon={faSwimmingPool}
+                    />{" "}
+                    Swimming Pool{" "}
+                  </p>
+  
+                  <p>
+                    <FontAwesomeIcon className="servicesIcon" icon={faRunning} />
+                    Fitness Gym
+                  </p>
+                  <p>
+                    <FontAwesomeIcon className="servicesIcon" icon={faUtensils} />
+                    20% off Hotel Bistro
+                  </p>
+                  <br />
+                  <br />
+                  <p>2 nights minimum</p>
+                      <button
+                    type="button"
+                    className="btn btn-info btn-lg hotelPicButton"
+                    data-toggle="modal"
+                    data-target="#myModal"
+                  >
+                    Hotel Pictures
+                  </button>
+                  {/* <p className="roomStock"> 10 ROOMS LEFT!</p> */}
+                  <div id="myModal" class="modal fade" role="dialog">
+                    <div className="modal-dialog">
+                      <div id="modalBody" className="modal-content">
+                        <div className="modal-header">
+                          <button
+                            type="button"
+                            className="close "
+                            data-dismiss="modal"
+                          >
+                            &times;
+                          </button>
+                          <h4 className="hotelModelTitle">
+                          {val.hotelTitle}
+                          </h4>
+                        </div>
+                        <div className="modal-body">
+                          {/* <p>Some text in the modal.</p> */}
+  
+                          <img
+                            className="modalPics"
+                            src={val.pictureOne}
+                          />
+                          <br />
+                          <img
+                            className="modalPics"
+                            src={val.pictureTwo}
+                          />
+                          <br />
+                          <img
+                            className="modalPics"
+                            src={val.pictureThree}
+                          />
+                        </div>
+                        <div class="modal-footer">
+                          <button
+                            type="button"
+                            className="btn btn-default "
+                            data-dismiss="modal"
+                          >
+                            Close
+                          </button>
+                        </div>
+              
+    
+                      </div>
+                      
+                    </div>
+                    
+                  </div>
+                  <p className="pickleRick" />
+                   <hr />
+                   <p>{val.hotelAddress} </p>
+                   <p className="hotelAddress">{val.milesAway}</p>
+                   <hr />
+                   <label for="roomOption">Room :</label>
+                   <p>1 king bed or 2 doubles</p>
+                   {/* <select className="form-control" onChange={this.roomOption}>
+  //                   <option value="1">One King Bed</option>
+  //                   <option value="2">Queen/Queen Beds</option>
+  //                 </select> */}
+                  <br />
+                   <p>
+                     <span className="hotelPrice">
+                       ${val.price} per Night/taxes Included
+                     </span>
+                   </p>
+  
+           </div>
+          </div>
+          </div>
+        );
+      }
 
-    let hotelThreePrice = "437.95";
-    if (this.state.rateOne == true) {
-      hotelThreePrice = "437.95";
-    }
+      if(val.id == 1){
+        return(
+        <div className="item" id="tickets" key={i}>
+        <div className="section-title">
+        <div id="boxOneRadius" className="box">
+              <img
+                 className="hotelsImg"
+                 src={val.hotelMainUrl}
+                 alt=""
+               />
+               <h3>{val.hotelTitle}</h3>
+               <FontAwesomeIcon className="starIcon" icon={faStar} />
+               <FontAwesomeIcon className="starIcon" icon={faStar} />
+               <FontAwesomeIcon className="starIcon" icon={faStar} />
+               <FontAwesomeIcon className="starIcon" icon={faStar} />
+               <br />
+            <br />
+            <p>
+                   <FontAwesomeIcon
+                     className="servicesIcon"
+                    icon={faSwimmingPool}
+                   />{" "}
+                   Swimming Pool{" "}
+                 </p>
 
-    if (this.state.rateTwo == true) {
-      hotelThreePrice = "250.60";
-    }
+                 <p>
+                   <FontAwesomeIcon className="servicesIcon" icon={faRunning} />
+                   Fitness Gym
+                 </p>
+             <p>
+                <FontAwesomeIcon
+                   className="servicesIcon"
+                  icon={faDrumstickBite}
+                 />
+                 Pavilion pantry market
+                 </p>
+               <br />
+               <br />
+               <p>2 nights minimum</p>
+                   <button
+                 type="button"
+                 className="btn btn-info btn-lg hotelPicButton"
+                 data-toggle="modal"
+                 data-target="#myModalTwo"
+               >
+                 Hotel Pictures
+               </button>
+               {/* <p className="roomStock"> 10 ROOMS LEFT!</p> */}
+               <div id="myModalTwo" class="modal fade" role="dialog">
+                 <div className="modal-dialog">
+                   <div id="modalBody" className="modal-content">
+                     <div className="modal-header">
+                       <button
+                         type="button"
+                         className="close "
+                         data-dismiss="modal"
+                       >
+                         &times;
+                       </button>
+                       <h4 className="hotelModelTitle">
+                          {val.hotelTitle}
+                       </h4>
+                     </div>
+                     <div className="modal-body">
+                       {/* <p>Some text in the modal.</p> */}
 
-    if (this.state.rateThree == true) {
-      hotelThreePrice = "371.28";
-    }
+                       <img
+                            className="modalPics"
+                            src={val.pictureOne}
+                          />
+                          <br />
+                          <img
+                            className="modalPics"
+                            src={val.pictureTwo}
+                          />
+                          <br />
+                          <img
+                            className="modalPics"
+                            src={val.pictureThree}
+                          />
+                     </div>
+                     <div class="modal-footer">
+                       <button
+                         type="button"
+                         className="btn btn-default "
+                         data-dismiss="modal"
+                       >
+                         Close
+                       </button>
+                     </div>
+           
+ 
+                   </div>
+                   
+                 </div>
+                 
+               </div>
+               <p className="pickleRick" />
+                <hr />
+                <p>{val.hotelAddress} </p>
+                <p className="hotelAddress">{val.milesAway}</p>
+                <hr />
+                <label for="roomOption">Room :</label>
+                <p>1 king bed or 2 doubles</p>
+                {/* <select className="form-control" onChange={this.roomOption}>
+//                   <option value="1">One King Bed</option>
+//                   <option value="2">Queen/Queen Beds</option>
+//                 </select> */}
+               <br />
+                <p>
+                  <span className="hotelPrice">
+                    ${val.price} per Night/taxes Included
+                  </span>
+                </p>
+
+        </div>
+       </div>
+       </div>
+        )
+      }
+
+    });
 
     return (
-      <section id="hotels">
+      <section className="backgroundColor" id="tickets">
         <div className="container">
           <div className="row">
-            <div className="col-md-8 offset-md-2 text-center">
+            <div className="col-md-12 text-center">
               <div className="section-title">
-                <h2 id="hotelHead">Hotels</h2>
+                <h2 id="ticketHeader" className="headers">
+                  HOTELS
+                </h2>
                 {/* <img
                   src="assets/images/blueTitleLine.png"
-                  alt="white-line"
+                  alt="title-line"
                   className="img-fluid"
                 /> */}
               </div>
             </div>
-          </div>
-          <div id="dateSection" className="row">
-            <div id="toDate" className="col-md-4 ">
-              <label id="checkInLabel" className="text-white" htmlFor="checkIn">
-                Check In :
-              </label>
-              <input
-                autoComplete="off"
-                className="form-control"
-                id="checkIn"
-                name="checkIn"
-                min="2019-07-17"
-                max="2019-07-25"
-                onChange={e => this.handleCheckInChange(e)}
-                type="date"
-              />
-            </div>
-            <div className="col-md-4 ">
-              <label
-                id="checkOutLabel"
-                className="text-white"
-                htmlFor="checkOut"
+            <div className="col-md-12 text-center">
+              <OwlCarousel
+                className="plan-slider owl-carousel owl-theme"
+                loop={false}
+                items={3}
+                margin={15}
+                navClass={["owl-prev", "owl-next"]}
+                navText={[
+                  '<i class="fa fa-angle-left"></i>',
+                  '<i class="fa fa-angle-right"></i>'
+                ]}
+                nav={true}
+                dots={false}
+                responsive={options}
               >
-                Check Out:
-              </label>
-              {/* <select className="form-control" onChange={this.numberOfNights}>
-                  <option value="4">4 Nights - 07/18 to 07/22 </option>
-                  <option value="8">8 Nights - 07/17 to 07/25 </option>
-                </select> */}
-              <input
-                autoComplete="off"
-                className="form-control"
-                id="checkOut"
-                min="2019-07-17"
-                max="2019-07-25"
-                name="checkOut"
-                onChange={e => this.handleCheckoutChange(e)}
-                type="date"
-              />
-            </div>
-            <div className="col-md-4 ">
-              <label
-                id="numOfRoomsLabel"
-                className="text-white"
-                htmlFor="numberOfRooms"
-              >
-                # of Rooms :
-              </label>
-
-              <input
-                autoComplete="off"
-                className="form-control "
-                id="numberOfRooms"
-                placeholder="Number of Rooms "
-                name="numberOfRooms"
-                onChange={e => this.handleRoomPrince(e)}
-                type="number"
-              />
-            </div>
-          </div>
-
-          {/* HOTEL LIST RENDERING */}
-
-          <div className="row">
-            <div className="col-lg-6 text-center">
-              <div id="boxOneRadius" className="box">
-                <img
-                  className="hotelsImg"
-                  src="https://cache.marriott.com/marriottassets/marriott/WASYV/wasyv-exterior-7552-hor-wide.jpg?downsize=2880px:*"
-                  alt=""
-                />
-                <h3>Courtyard Marriott Capitol Hill/Navy Yard</h3>
-                <FontAwesomeIcon className="starIcon" icon={faStar} />
-                <FontAwesomeIcon className="starIcon" icon={faStar} />
-                <FontAwesomeIcon className="starIcon" icon={faStar} />
-                {/* <FontAwesomeIcon className="starIcon" icon={faStar} /> */}
-                {/* <FontAwesomeIcon className="starIcon" icon={faStar} /> */}
-                <br />
-                <br />
-                <p>
-                  <FontAwesomeIcon
-                    className="servicesIcon"
-                    icon={faSwimmingPool}
-                  />{" "}
-                  Swimming Pool{" "}
-                </p>
-
-                <p>
-                  <FontAwesomeIcon className="servicesIcon" icon={faRunning} />
-                  Fitness Gym
-                </p>
-                <p>
-                  <FontAwesomeIcon className="servicesIcon" icon={faUtensils} />
-                  20% off Hotel Bistro
-                </p>
-                <br />
-                <br />
-                <p>2 night minimum</p>
-                <button
-                  type="button"
-                  className="btn btn-info btn-lg hotelPicButton"
-                  data-toggle="modal"
-                  data-target="#myModal"
-                >
-                  Hotel Pictures
-                </button>
-                {/* <p className="roomStock"> 10 ROOMS LEFT!</p> */}
-                <div id="myModal" class="modal fade" role="dialog">
-                  <div className="modal-dialog">
-                    <div id="modalBody" className="modal-content">
-                      <div className="modal-header">
-                        <button
-                          type="button"
-                          className="close "
-                          data-dismiss="modal"
-                        >
-                          &times;
-                        </button>
-                        <h4 className="hotelModelTitle">
-                          Courtyard Marriott Capitol Hill/Navy Yard
-                        </h4>
-                      </div>
-                      <div className="modal-body">
-                        {/* <p>Some text in the modal.</p> */}
-
-                        <img
-                          className="modalPics"
-                          src="https://66.media.tumblr.com/4283456dd8ced5ba08578e429629a854/tumblr_psuti88Rxw1vp5j01o1_1280.jpg"
-                        />
-                        <br />
-                        <img
-                          className="modalPics"
-                          src="https://66.media.tumblr.com/6a62bcec5dcab9d9fa4314ae331ea6cd/tumblr_psuti88Rxw1vp5j01o2_1280.jpg"
-                        />
-                        <br />
-                        <img
-                          className="modalPics"
-                          src="https://66.media.tumblr.com/92e6c7627c432f4ab385a29119a80cef/tumblr_psuti88Rxw1vp5j01o3_1280.jpg"
-                        />
-                      </div>
-                      <div class="modal-footer">
-                        <button
-                          type="button"
-                          className="btn btn-default "
-                          data-dismiss="modal"
-                        >
-                          Close
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <p className="pickleRick" />
-                <hr />
-                <p>140 L St SE, Washington, DC 20003 </p>
-                <p className="hotelAddress">.9 miles from Audi Field</p>
-                <hr />
-                <label for="roomOption">Room :</label>
-                <p>1 king bed or 2 doubles</p>
-                {/* <select className="form-control" onChange={this.roomOption}>
-                  <option value="1">One King Bed</option>
-                  <option value="2">Queen/Queen Beds</option>
-                </select> */}
-                <br />
-                <p>
-                  <span className="hotelPrice">
-                    ${hotelOnePrice} per Night/taxes Included
-                  </span>
-                </p>
-
-                <button
-                  type="submit"
-                  id="hotelOne"
-                  onClick={this.onClick}
-                  className="btn btn-primary bookButton "
-                >
-                  Add
-                </button>
-              </div>
-            </div>
-
-            <div className="col-lg-6 text-center">
-              <div id="boxTwoRadius" className="box">
-                <img
-                  className="hotelsImg"
-                  src="https://d3hfxk7rwdcpol.cloudfront.net/CSN/ee3d0813-fc18-45c4-95e1-f159157807a3/images/33b1eb6e29c046498adef9a038fb2e44_LARGE.jpg"
-                />
-                <h3>Residence Inn Capitol Hill/Navy Yard </h3>
-                <FontAwesomeIcon className="starIcon" icon={faStar} />
-                <FontAwesomeIcon className="starIcon" icon={faStar} />
-                <FontAwesomeIcon className="starIcon" icon={faStar} />
-                <FontAwesomeIcon className="starIcon" icon={faStar} />
-                {/* <FontAwesomeIcon className="starIcon" icon={faStar} /> */}
-                <br />
-                <br />
-                <p>
-                  <FontAwesomeIcon
-                    className="servicesIcon"
-                    icon={faSwimmingPool}
-                  />{" "}
-                  Swimming Pool{" "}
-                </p>
-
-                <p>
-                  <FontAwesomeIcon className="servicesIcon" icon={faRunning} />
-                  Fitness Gym
-                </p>
-                <p>
-                <FontAwesomeIcon
-                  className="servicesIcon"
-                  icon={faDrumstickBite}
-                />
-                Pavilion pantry market
-                </p>
-
-                {/* <FontAwesomeIcon className="servicesIcon" icon={faRunning} /> */}
-                {/* <FontAwesomeIcon
-                  className="servicesIcon"
-                  icon={faShoppingBasket}
-                /> */}
-                <br />
-                <br />
-
-                <p>2 night minimum</p>
-
-                <button
-                  type="button"
-                  className="btn btn-info btn-lg hotelPicButton"
-                  data-toggle="modal"
-                  data-target="#hotelTwoModal"
-                >
-                  Hotel Pictures
-                </button>
-
-                <div id="hotelTwoModal" class="modal fade" role="dialog">
-                  <div className="modal-dialog">
-                    <div id="modalBody" className="modal-content">
-                      <div className="modal-header">
-                        <button
-                          type="button"
-                          className="close "
-                          data-dismiss="modal"
-                        >
-                          &times;
-                        </button>
-                        <h4 className="hotelModelTitle">
-                          Residence Inn Capitol Hill/Navy Yard
-                        </h4>
-                      </div>
-                      <div className="modal-body">
-                        {/* <p>Some text in the modal.</p> */}
-
-                        <img
-                          className="modalPics"
-                          src="https://cache.marriott.com/marriottassets/marriott/WASXR/wasxr-exterior-0001-hor-wide.jpg?downsize=2880px:*"
-                        />
-                        <br />
-                        <img
-                          className="modalPics"
-                          src="https://cache.marriott.com/marriottassets/marriott/WASXR/wasxr-lobby-0038-hor-wide.jpg?downsize=2880px:*"
-                        />
-                        <br />
-                        <img
-                          className="modalPics"
-                          src="https://cache.marriott.com/marriottassets/marriott/WASXR/wasxr-suite-0006-hor-wide.jpg?downsize=2880px:*"
-                        />
-                      </div>
-                      <div class="modal-footer">
-                        <button
-                          type="button"
-                          className="btn btn-default "
-                          data-dismiss="modal"
-                        >
-                          Close
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <p className="pickleRickTwo" />
-                <hr />
-
-                <p>1233 1St SE, Washington, DC 20003 </p>
-                <p className="hotelAddress">0.7 Miles from Audi Field</p>
-                <hr />
-                <label for="roomOption">Room :</label>
-                <p>1 king bed or 2 doubles</p>
-                {/* <select className="form-control" onChange={this.roomOption}>
-                  <option value="1">One King Bed</option>
-                  <option value="2">Two Queen Beds</option>
-                </select> */}
-                <br />
-                <p>
-                  <span className="hotelPrice">
-                    ${hotelTwoPrice} per Night/taxes Included
-                  </span>
-                </p>
-
-                <button
-                  type="submit"
-                  onClick={this.onClickTwo}
-                  className="btn btn-primary bookButton"
-                >
-                  {" "}
-                  Add
-                </button>
-              </div>
+                {DataList}
+              </OwlCarousel>
             </div>
           </div>
         </div>
@@ -604,5 +603,354 @@ class Work extends React.Component {
     );
   }
 }
+//   render() {
+//     //PRICE RENDERING
+
+//     let hotelOnePrice = "149.44";
+
+//     let hotelTwoPrice = "191.97";
+
+//     let hotelThreePrice = "437.95";
+//     if (this.state.rateOne == true) {
+//       hotelThreePrice = "437.95";
+//     }
+
+//     if (this.state.rateTwo == true) {
+//       hotelThreePrice = "250.60";
+//     }
+
+//     if (this.state.rateThree == true) {
+//       hotelThreePrice = "371.28";
+//     }
+
+//     return (
+//       <section id="hotels">
+//         <div className="container">
+//           <div className="row">
+//             <div className="col-md-8 offset-md-2 text-center">
+//               <div className="section-title">
+//                 <h2 id="hotelHead">Hotels</h2>
+//                 {/* <img
+//                   src="assets/images/blueTitleLine.png"
+//                   alt="white-line"
+//                   className="img-fluid"
+//                 /> */}
+//               </div>
+//             </div>
+//           </div>
+//           <div id="dateSection" className="row">
+//             <div id="toDate" className="col-md-4 ">
+//               {/* <label id="checkInLabel" className="text-white" htmlFor="checkIn">
+//                 Check In :
+//               </label> */}
+//               {/* <input
+//                 autoComplete="off"
+//                 className="form-control"
+//                 id="checkIn"
+//                 name="checkIn"
+//                 min="2019-07-17"
+//                 max="2019-07-25"
+//                 onChange={e => this.handleCheckInChange(e)}
+//                 type="date"
+//               /> */}
+//             </div>
+//             <div className="col-md-4 ">
+//               {/* <label
+//                 id="checkOutLabel"
+//                 className="text-white"
+//                 htmlFor="checkOut"
+//               >
+//                 Check Out:
+//               </label> */}
+//               {/* <select className="form-control" onChange={this.numberOfNights}>
+//                   <option value="4">4 Nights - 07/18 to 07/22 </option>
+//                   <option value="8">8 Nights - 07/17 to 07/25 </option>
+//                 </select> */}
+//               {/* <input
+//                 autoComplete="off"
+//                 className="form-control"
+//                 id="checkOut"
+//                 min="2019-07-17"
+//                 max="2019-07-25"
+//                 name="checkOut"
+//                 onChange={e => this.handleCheckoutChange(e)}
+//                 type="date"
+//               /> */}
+//             </div>
+//             <div className="col-md-4 ">
+//               {/* <label
+//                 id="numOfRoomsLabel"
+//                 className="text-white"
+//                 htmlFor="numberOfRooms"
+//               >
+//                 # of Rooms :
+//               </label> */}
+
+//               {/* <input
+//                 autoComplete="off"
+//                 className="form-control "
+//                 id="numberOfRooms"
+//                 placeholder="Number of Rooms "
+//                 name="numberOfRooms"
+//                 onChange={e => this.handleRoomPrince(e)}
+//                 type="number"
+//               /> */}
+//             </div>
+//           </div>
+
+//           {/* HOTEL LIST RENDERING */}
+
+//           <div className="row">
+//             <div className="col-lg-6 text-center">
+//               <div id="boxOneRadius" className="box">
+//                 <img
+//                   className="hotelsImg"
+//                   src="https://cache.marriott.com/marriottassets/marriott/WASYV/wasyv-exterior-7552-hor-wide.jpg?downsize=2880px:*"
+//                   alt=""
+//                 />
+//                 <h3>Courtyard Marriott Capitol Hill/Navy Yard</h3>
+//                 <FontAwesomeIcon className="starIcon" icon={faStar} />
+//                 <FontAwesomeIcon className="starIcon" icon={faStar} />
+//                 <FontAwesomeIcon className="starIcon" icon={faStar} />
+//                 {/* <FontAwesomeIcon className="starIcon" icon={faStar} /> */}
+//                 {/* <FontAwesomeIcon className="starIcon" icon={faStar} /> */}
+//                 <br />
+//                 <br />
+//                 <p>
+//                   <FontAwesomeIcon
+//                     className="servicesIcon"
+//                     icon={faSwimmingPool}
+//                   />{" "}
+//                   Swimming Pool{" "}
+//                 </p>
+
+//                 <p>
+//                   <FontAwesomeIcon className="servicesIcon" icon={faRunning} />
+//                   Fitness Gym
+//                 </p>
+//                 <p>
+//                   <FontAwesomeIcon className="servicesIcon" icon={faUtensils} />
+//                   20% off Hotel Bistro
+//                 </p>
+//                 <br />
+//                 <br />
+//                 <p>2 night minimum</p>
+//                 <button
+//                   type="button"
+//                   className="btn btn-info btn-lg hotelPicButton"
+//                   data-toggle="modal"
+//                   data-target="#myModal"
+//                 >
+//                   Hotel Pictures
+//                 </button>
+//                 {/* <p className="roomStock"> 10 ROOMS LEFT!</p> */}
+//                 <div id="myModal" class="modal fade" role="dialog">
+//                   <div className="modal-dialog">
+//                     <div id="modalBody" className="modal-content">
+//                       <div className="modal-header">
+//                         <button
+//                           type="button"
+//                           className="close "
+//                           data-dismiss="modal"
+//                         >
+//                           &times;
+//                         </button>
+//                         <h4 className="hotelModelTitle">
+//                           Courtyard Marriott Capitol Hill/Navy Yard
+//                         </h4>
+//                       </div>
+//                       <div className="modal-body">
+//                         {/* <p>Some text in the modal.</p> */}
+
+//                         <img
+//                           className="modalPics"
+//                           src="https://66.media.tumblr.com/4283456dd8ced5ba08578e429629a854/tumblr_psuti88Rxw1vp5j01o1_1280.jpg"
+//                         />
+//                         <br />
+//                         <img
+//                           className="modalPics"
+//                           src="https://66.media.tumblr.com/6a62bcec5dcab9d9fa4314ae331ea6cd/tumblr_psuti88Rxw1vp5j01o2_1280.jpg"
+//                         />
+//                         <br />
+//                         <img
+//                           className="modalPics"
+//                           src="https://66.media.tumblr.com/92e6c7627c432f4ab385a29119a80cef/tumblr_psuti88Rxw1vp5j01o3_1280.jpg"
+//                         />
+//                       </div>
+//                       <div class="modal-footer">
+//                         <button
+//                           type="button"
+//                           className="btn btn-default "
+//                           data-dismiss="modal"
+//                         >
+//                           Close
+//                         </button>
+//                       </div>
+//                     </div>
+//                   </div>
+//                 </div>
+//                 <p className="pickleRick" />
+//                 <hr />
+//                 <p>140 L St SE, Washington, DC 20003 </p>
+//                 <p className="hotelAddress">0.9 miles from Audi Field</p>
+//                 <hr />
+//                 <label for="roomOption">Room :</label>
+//                 <p>1 king bed or 2 doubles</p>
+//                 {/* <select className="form-control" onChange={this.roomOption}>
+//                   <option value="1">One King Bed</option>
+//                   <option value="2">Queen/Queen Beds</option>
+//                 </select> */}
+//                 <br />
+//                 <p>
+//                   <span className="hotelPrice">
+//                     ${hotelOnePrice} per Night/taxes Included
+//                   </span>
+//                 </p>
+
+//                 {/* <button
+//                   type="submit"
+//                   id="hotelOne"
+//                   onClick={this.onClick}
+//                   className="btn btn-primary bookButton "
+//                 >
+//                   Add
+//                 </button> */}
+//               </div>
+//             </div>
+
+//             <div className="col-lg-6 text-center">
+//               <div id="boxTwoRadius" className="box">
+//                 <img
+//                   className="hotelsImg"
+//                   src="https://d3hfxk7rwdcpol.cloudfront.net/CSN/ee3d0813-fc18-45c4-95e1-f159157807a3/images/33b1eb6e29c046498adef9a038fb2e44_LARGE.jpg"
+//                 />
+//                 <h3>Residence Inn Capitol Hill/Navy Yard </h3>
+//                 <FontAwesomeIcon className="starIcon" icon={faStar} />
+//                 <FontAwesomeIcon className="starIcon" icon={faStar} />
+//                 <FontAwesomeIcon className="starIcon" icon={faStar} />
+//                 <FontAwesomeIcon className="starIcon" icon={faStar} />
+//                 {/* <FontAwesomeIcon className="starIcon" icon={faStar} /> */}
+//                 <br />
+//                 <br />
+//                 <p>
+//                   <FontAwesomeIcon
+//                     className="servicesIcon"
+//                     icon={faSwimmingPool}
+//                   />{" "}
+//                   Swimming Pool{" "}
+//                 </p>
+
+//                 <p>
+//                   <FontAwesomeIcon className="servicesIcon" icon={faRunning} />
+//                   Fitness Gym
+//                 </p>
+//                 <p>
+//                 <FontAwesomeIcon
+//                   className="servicesIcon"
+//                   icon={faDrumstickBite}
+//                 />
+//                 Pavilion pantry market
+//                 </p>
+
+//                 {/* <FontAwesomeIcon className="servicesIcon" icon={faRunning} /> */}
+//                 {/* <FontAwesomeIcon
+//                   className="servicesIcon"
+//                   icon={faShoppingBasket}
+//                 /> */}
+//                 <br />
+//                 <br />
+
+//                 <p>2 nights minimum</p>
+
+//                 <button
+//                   type="button"
+//                   className="btn btn-info btn-lg hotelPicButton"
+//                   data-toggle="modal"
+//                   data-target="#hotelTwoModal"
+//                 >
+//                   Hotel Pictures
+//                 </button>
+
+//                 <div id="hotelTwoModal" class="modal fade" role="dialog">
+//                   <div className="modal-dialog">
+//                     <div id="modalBody" className="modal-content">
+//                       <div className="modal-header">
+//                         <button
+//                           type="button"
+//                           className="close "
+//                           data-dismiss="modal"
+//                         >
+//                           &times;
+//                         </button>
+//                         <h4 className="hotelModelTitle">
+//                           Residence Inn Capitol Hill/Navy Yard
+//                         </h4>
+//                       </div>
+//                       <div className="modal-body">
+//                         {/* <p>Some text in the modal.</p> */}
+
+//                         <img
+//                           className="modalPics"
+//                           src="https://cache.marriott.com/marriottassets/marriott/WASXR/wasxr-exterior-0001-hor-wide.jpg?downsize=2880px:*"
+//                         />
+//                         <br />
+//                         <img
+//                           className="modalPics"
+//                           src="https://cache.marriott.com/marriottassets/marriott/WASXR/wasxr-lobby-0038-hor-wide.jpg?downsize=2880px:*"
+//                         />
+//                         <br />
+//                         <img
+//                           className="modalPics"
+//                           src="https://cache.marriott.com/marriottassets/marriott/WASXR/wasxr-suite-0006-hor-wide.jpg?downsize=2880px:*"
+//                         />
+//                       </div>
+//                       <div class="modal-footer">
+//                         <button
+//                           type="button"
+//                           className="btn btn-default "
+//                           data-dismiss="modal"
+//                         >
+//                           Close
+//                         </button>
+//                       </div>
+//                     </div>
+//                   </div>
+//                 </div>
+
+//                 <p className="pickleRickTwo" />
+//                 <hr />
+
+//                 <p>1233 1St SE, Washington, DC 20003 </p>
+//                 <p className="hotelAddress">0.7 Miles from Audi Field</p>
+//                 <hr />
+//                 <label for="roomOption">Room :</label>
+//                 <p>1 king bed or 2 doubles</p>
+//                 {/* <select className="form-control" onChange={this.roomOption}>
+//                   <option value="1">One King Bed</option>
+//                   <option value="2">Two Queen Beds</option>
+//                 </select> */}
+//                 <br />
+//                 <p>
+//                   <span className="hotelPrice">
+//                     ${hotelTwoPrice} per Night/taxes Included
+//                   </span>
+//                 </p>
+
+//                 {/* <button
+//                   type="submit"
+//                   onClick={this.onClickTwo}
+//                   className="btn btn-primary bookButton"
+//                 >
+//                   {" "}
+//                   Add
+//                 </button> */}
+//               </div>
+//             </div>
+//           </div>
+//         </div>
+//       </section>
+//     );
+//   }
+// }
 
 export default Work;
