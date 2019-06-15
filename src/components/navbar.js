@@ -12,7 +12,8 @@ class Navbar extends React.Component {
       numRoom: this.props.numRoom,
       stayData: this.props.stayData,
       packageName: this.props.packageName,
-      packageId: this.props.packageId
+      packageId: this.props.packageId,
+      bgMenu: (this.props.bgMenu ? true : false)
     };
   }
 
@@ -159,8 +160,8 @@ class Navbar extends React.Component {
     });
 
     return (
-      
-      <nav className="navbar transparent fixed-top navbar-expand-lg">
+
+      <nav className={'navbar transparent fixed-top navbar-expand-lg ' + (this.state.bgMenu ? 'navShadow bgMenuTrue' : '')}>
         <a className="navbar-brand" href="#">
           <img
             style={{ width: 70, height: 90 }}
@@ -173,7 +174,7 @@ class Navbar extends React.Component {
           className="navbar-toggler"
           type="button"
           data-toggle="collapse"
-    
+
           data-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent"
           aria-expanded="false"
@@ -229,40 +230,7 @@ class Navbar extends React.Component {
                 ACTIVITIES
               </a>
             </li>
-            <li className="nav-item dropdown">
-              
-              <div>
-                <a
-                  id="navbarDropdown"
-                  onClick={this.showCart}
-                  className="nav-link dropdown-toggle text-center navMine"
-                  role="button"
-                  data-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                  href="#"
-                >
-                  <span id="masterOfCoin">My Cart ${total} </span>
-                  <img id="cartImg" src="assets/images/MYCART.png" />
-                </a>
-              
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <div className="row">
-                    <div className="col-md-12">
-                  <a class="dropdown-item" href="#">
-                    {" "}
-                    {cartItems}
-                  </a>
 
-                  <div id="divider" class="dropdown-divider" />
-                  </div>
-                  </div>
-                </div>
-                {/* <ul>
-      {cartItems}
-        </ul> */}
-              </div>
-            </li>
 
             {/* <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
