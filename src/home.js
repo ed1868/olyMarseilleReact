@@ -24,12 +24,12 @@ import Cart from "./components/cart";
 
 import FormService from "./components/formService";
 //Testing DATE PICKER FOR REACT
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import "react-dates/initialize";
 import "react-dates/lib/css/_datepicker.css";
 import { SingleDatePicker } from "react-dates";
-import { Player } from 'video-react';
-import 'video-react/dist/video-react.css';
+import { Player } from "video-react";
+import "video-react/dist/video-react.css";
 library.add(faArrowAltCircleDown);
 
 class Home extends React.Component {
@@ -43,8 +43,7 @@ class Home extends React.Component {
       // clientLastName  : " ",
       stayData: [],
       packages: [],
-      packageId: " ",
-
+      packageId: " "
 
       // checkOut: " ",
       // fanClubNumber: " ",
@@ -233,7 +232,9 @@ class Home extends React.Component {
       securityCode: " "
     });
   };
-
+  handlePageChange() {
+    window.location.replace("http://18.219.186.56/checkout");
+  }
   onPackageClick = e => {
     console.log("entro en package homeee click baby");
     let packages = e;
@@ -358,11 +359,23 @@ class Home extends React.Component {
 					<i></i>
 					<i></i>
         </div> */}
-        {/* <div className="video-bg">
-          <Player autoPlay loop>
-            <source src="assets/video/Marseille Background.mp4" />
-          </Player>
-        </div> */}
+          <div className="video-bg">
+            <video
+              style={{
+                objectFit: "cover",
+
+                width: "100%",
+                height: "100%"
+              }}
+              src="assets/video/Marseille Background.mp4"
+              autoPlay
+              muted={true}
+              loop
+            />
+            {/*<Player autoPlay loop muted="false">*/}
+            {/*  <source src="assets/video/Marseille Background.mp4" />*/}
+            {/*</Player>*/}
+          </div>
           <div id="jumbotron" className="container">
             <div className="row">
               <div className="col-md-12">
@@ -370,7 +383,7 @@ class Home extends React.Component {
                   <div id="mainText">
                     <div>
                       <h1 id="headerText" className="mainTitle">
-                        OM U.S TOUR EXPERIENCE 
+                        OM US TOUR EXPERIENCE 
                         <br />
                         <span className="mainTitle" />
                       </h1>
@@ -388,12 +401,27 @@ class Home extends React.Component {
                               {() => (
                                 <React.Fragment>
                                   <Timer.Days />{" "}
-                                  <span id="timerDays">days</span>
-                                  <Timer.Hours id="timerHour" />
+                                  <span id="timerDays">Days</span>
+                                  <Timer.Hours
+                                    id="timerHour"
+                                    formatValue={value =>
+                                      `${value < 10 ? `0${value}` : value}`
+                                    }
+                                  />
                                   <span id="timerHours">Hours</span>
-                                  <Timer.Minutes id="timerMin" />
+                                  <Timer.Minutes
+                                    id="timerMin"
+                                    formatValue={value =>
+                                      `${value < 10 ? `0${value}` : value}`
+                                    }
+                                  />
                                   <span id="timerMin">Min</span>
-                                  <Timer.Seconds id="timerSec" />
+                                  <Timer.Seconds
+                                    id="timerSec"
+                                    formatValue={value =>
+                                      `${value < 10 ? `0${value}` : value}`
+                                    }
+                                  />
                                   <span id="timerSec">Sec</span>
                                 </React.Fragment>
                               )}
@@ -402,7 +430,10 @@ class Home extends React.Component {
                         </div>
                       </div>
                     </div>
-                    <FontAwesomeIcon id="goOn" icon={faArrowAltCircleDown} />
+
+                    <a href="#theTour">
+                      <FontAwesomeIcon id="goOn" icon={faArrowAltCircleDown} />
+                    </a>
                   </div>
                 </div>
               </div>
@@ -426,36 +457,38 @@ class Home extends React.Component {
         <section id="theTour">
           <div className="row">
             <div className="col-md-12">
-            <h2 id="tourTitle">The Tour</h2>
+              <h2 id="tourTitle">The Tour</h2>
             </div>
           </div>
-          
+
           <div className="row">
             <div className="col-md-5" />
 
             <div id="theTourInsideText" className="col-md-7">
-
-              <p id="fillingIt"></p>
-              <h1 id="tourHeader">WELCOME TO THE OFFICIAL WEBSITE OF OM TOUR IN THE U.S!</h1>
+              <p id="fillingIt" />
+              <h1 id="tourHeader">
+                WELCOME TO THE OFFICIAL WEBSITE OF OM TOUR IN THE US!
+              </h1>
               <p className="tourP">
-                In partnership with EA Sports, LFP will launch a preseason tour
-                in the United States in July called « EA Ligue 1 Games
+                From July 17th to July 24th, the club will travel to Washington
+                DC to play two matches in the EA Ligue 1 tournament and a
+                friendly match against the local team D.C United.
+                {/* In partnership with EA Sports, LFP will launch a preseason tour
+                in the United States in July called « EA Ligue 1 Games */}
               </p>
               <p className="tourP">
-                From July 18th to 24th, 2019, Olympique de Marseille, FC
+                This summer, you will be able to attend to the club's first tour
+                across the Atlantic.
+                {/* From July 18th to 24th, 2019, Olympique de Marseille, FC
                 Girondins de Bordeaux, Montpellier Hérault SC and AS
-                Saint-Etienne
+                Saint-Etienne */}
               </p>
               <p className="tourP">
                 Dear fans abroad, Don't miss this chance to see OM playing and
-                experience the tour like no one else!
+                experience the tour like no one else! 
               </p>
-             <br></br>
-              <a
-                id="experienceButton"
-                href="#about"
-                className="btn btn-primary"
-              >
+              <br />
+              <a id="jim" href="#about" className="btn btn-primary ">
                 DISCOVER THE EXPERIENCE
               </a>
             </div>
@@ -500,11 +533,10 @@ class Home extends React.Component {
 
             </div> */}
           {/* </div> */}
-          
         </section>
         <About />
         {/*Price Component*/}
-        <Package ref="packages" onPackageClick={this.onPackageClick} />
+        {/*<Package ref="packages" onPackageClick={this.onPackageClick} />*/}
         <Price ref="price" onTicketClick={this.onTicketClick} />
         {/*Team Component*/}
         {/* <Team /> */}
@@ -527,24 +559,37 @@ class Home extends React.Component {
 
         {/* CHECK OUT FORM  */}
         <section className="checkoutForm backgroundColor" id="checkoutForm">
-
-          <h1 id="checkoutTitle" className="text-center hotelTitle">
+          {/* <h1 id="checkoutTitle" className="text-center hotelTitle">
             Checkout your purchase
-          </h1>
-          
-          <div className="button-container">
+          </h1> */}
+
+          {/* <div className="button-container">
               <Link id="checkOutLinkButton" className="btn draw-border" to={{
                     pathname: '/checkout',
                     state: this.state,
-                }}>Go to my shopping cart</Link>
-          </div>
+                }}>Join US !</Link>
+          </div> */}
 
+          <div id="newButton">
+            <div onClick={this.handlePageChange} className="btn btn-two">
+              <Link
+                id="joinUs"
+                className=""
+                to={{
+                  pathname: "/checkout",
+                  state: this.state
+                }}
+              >
+                Join US!
+              </Link>
+            </div>
+          </div>
         </section>
         {/* <ScreenShot /> */}
         {/*Testimonial Component*/}
         {/* <Testimonial /> */}
         {/*Faq Component*/}
-        <FAQ />
+        {/*<FAQ /> */}
         {/*Blog Component*/}
         {/* <Blog /> */}
         {/*download section*/}
