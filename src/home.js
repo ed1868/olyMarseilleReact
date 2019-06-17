@@ -275,6 +275,7 @@ class Home extends React.Component {
           packageId={this.state.packageId}
         />
         <section id="sectionOne" className="sectionOne">
+	   
           {/* <Cart
             cart={this.state.cart}
             cartUpdatorHotelOne={this.cartUpdatorHotelOne}

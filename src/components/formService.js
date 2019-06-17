@@ -14,34 +14,36 @@ console.log('you are now on the add shopping cart function');
 
 console.log(carts);
 
-console.log('THIS IS THE CART ITEMS',carts.cart)
+let payload="";
+
+// console.log('THIS IS THE CART ITEMS',carts.cart)
 
 // const bodyFormData = new FormData();
 // bodyFormData.append("clientFirstName" , 'el pussy');
 
 
 
-let payload = {
-  hotelName : carts.hotelName,
-  cart : carts.cart,
-  numberOfNights : carts.numberOfNights,
-  checkIn : carts.stayData[0],
-  checkOut : carts.stayData[1],
-  numOfRooms : carts.stayData[2],
-  pricePerNight : carts.pricePerNight,
-  fanClubNumber : carts.fanClubNumber,
-  gameType : carts.gameType,
-  gameTicketQuantity : carts.gameTicketQuantity,
-  city : carts.city,
-  state : carts.state,
-  zipcode : carts.zipcode,
-  nameOnCard : carts.nameOnCard,
-  creditCardNumber : carts.creditCardNumber,
-  expirationDate : carts.expirationDate,
-  securityCode : carts.securityCode
+// let payload = {
+//   hotelName : carts.hotelName,
+//   cart : carts.cart,
+//   numberOfNights : carts.numberOfNights,
+//   checkIn : carts.stayData[0],
+//   checkOut : carts.stayData[1],
+//   numOfRooms : carts.stayData[2],
+//   pricePerNight : carts.pricePerNight,
+//   fanClubNumber : carts.fanClubNumber,
+//   gameType : carts.gameType,
+//   gameTicketQuantity : carts.gameTicketQuantity,
+//   city : carts.city,
+//   state : carts.state,
+//   zipcode : carts.zipcode,
+//   nameOnCard : carts.nameOnCard,
+//   creditCardNumber : carts.creditCardNumber,
+//   expirationDate : carts.expirationDate,
+//   securityCode : carts.securityCode
 
-}
-console.log('body form data', payload);
+// }
+// console.log('body form data', payload);
 
 axios({
   method: 'post',
