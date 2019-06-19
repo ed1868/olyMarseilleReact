@@ -3,80 +3,76 @@ import axios from "axios";
 class FormService {
   constructor() {
     this.service = axios.create({
-      baseURL:  `${process.env.REACT_APP_API_URL}/`,
+      baseURL:  `http://localhost:3000`,
       withCredentials: true
-     
+
     });
   }
 
-  addShoppingCart = carts => {
-console.log('you are now on the add shopping cart function');
-
-console.log(carts);
-
-let payload="";
-
-// console.log('THIS IS THE CART ITEMS',carts.cart)
-
-// const bodyFormData = new FormData();
-// bodyFormData.append("clientFirstName" , 'el pussy');
+  addCheckOutForm = items => {
 
 
 
-// let payload = {
-//   hotelName : carts.hotelName,
-//   cart : carts.cart,
-//   numberOfNights : carts.numberOfNights,
-//   checkIn : carts.stayData[0],
-//   checkOut : carts.stayData[1],
-//   numOfRooms : carts.stayData[2],
-//   pricePerNight : carts.pricePerNight,
-//   fanClubNumber : carts.fanClubNumber,
-//   gameType : carts.gameType,
-//   gameTicketQuantity : carts.gameTicketQuantity,
-//   city : carts.city,
-//   state : carts.state,
-//   zipcode : carts.zipcode,
-//   nameOnCard : carts.nameOnCard,
-//   creditCardNumber : carts.creditCardNumber,
-//   expirationDate : carts.expirationDate,
-//   securityCode : carts.securityCode
 
-// }
-// console.log('body form data', payload);
+let payload = {
+  clientFirstName : items.clientFirstName,
+  clientLastName : items.clientLastName,
+  checkIn: items.checkIn,
+  checkOut: items.checkOut,
+  currentStep: items.currentStep,
+  email: items.email,
+  transportation: items.transportation,
+  fanClubNumber: items.fanClubNumber,
+  fanPlay: items.fanPlay,
+  hotelRooms : items.hotelRooms,
+  hotels: items.hotels,
+  phoneNumber: items.phoneNum,
+  questions: items.questions,
+  numOfPeople : items.numOfPeople,
+  tickets: items.tickets,
+  ticketOne : items.tickets[0],
+  ticketTwo : items.tickets[1],
+  ticketThree : items.tickets[2],
+  address : items.address,
+  city: items.city,
+  country: items.country,
+  nationality : items.nationality,
+  state : items.state,
+  zip : items.zip,
+  transportation : items.transportation
+
+
+}
+
+
+
+console.log('body form data', payload);
 
 axios({
   method: 'post',
-  url: 'http://localhost:3000/checkout',
+  url: 'https://omustourexperience.com:3000/checkout', 
   data: payload,
   config: { headers: {'Content-Type': 'multipart/form-data' }}
   })
-  .then(function (response) {
-      //handle success
-      console.log(response);
-  })
-  .catch(function (response) {
-      //handle error
-      console.log(response);
-  });
+
 
   //   const formData = new FormData();
-    
+
   //   Object.keys(carts).forEach(key => formData.append(key, carts[key]));
   //   console.log(carts)
-    
+
   //   return this.service.post('/checkout', formData,{
   //     headers: {
   //       "Content-Type": "multipart/form-data"
   //     }
   //   }
-    
-       
-    
+
+
+
   // ).then(response => response.data)
     }
 
-   
+
 
   }
 
