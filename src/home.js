@@ -30,6 +30,7 @@ import "react-dates/lib/css/_datepicker.css";
 import { SingleDatePicker } from "react-dates";
 import { Player } from "video-react";
 import "video-react/dist/video-react.css";
+import { get } from "https";
 library.add(faArrowAltCircleDown);
 
 class Home extends React.Component {
@@ -174,66 +175,62 @@ class Home extends React.Component {
     this.setState({ numRoom: e });
   };
 
-  handleFormSubmit = e => {
+  onformSubmit = e => {
     e.preventDefault();
 
-    console.log("form trying to be submitted");
-    const {
-      cart,
-      clientFirstName,
-      clientLastName,
-      stayData,
-      email,
-      fanClubNumber,
-      address,
-      city,
-      state,
-      zipcode,
-      nameOnCard,
-      creditCardNumber,
-      expirationDate,
-      securityCode
-    } = this.state;
+    console.log("form trying to be submitted at home");
+    // const {
+    //   clientFirstName,
+    //   clientLastName,
+    //   checkIn,
+    //   checkOut,
+    //   currentStep,
+    //   email,
+    //   fanClubNumber,
+    //   fanPlay,
+    //   hotelRooms,
+    //   hotels,
+    //   phoneNum,
+    //   questions,
+    //   tickets
+    // } = this.state;
 
-    alert(
-      `Your Order has been received by one of our agents. You will received a confirmation email to ${clientFirstName} within 24 hours with an invoice attatched`
-    );
 
-    this.FormService.addShoppingCart({
-      cart,
-      clientFirstName,
-      clientLastName,
-      stayData,
-      fanClubNumber,
-      address,
-      city,
-      state,
-      zipcode,
-      nameOnCard,
-      creditCardNumber,
-      expirationDate,
-      securityCode
-    });
-    this.setState({
-      cart: [],
-      clientFirstName: " ",
-      stayData: [],
-      clientLastName: " ",
-      checkIn: " ",
-      checkOut: " ",
-      fanClubNumber: " ",
-      address: " ",
-      city: " ",
-      state: " ",
-      zipcode: " ",
-      nameOnCard: " ",
-      creditCardNumber: " ",
-      expirationDate: " ",
-      securityCode: " "
-    });
+    // this.FormService.addShoppingCart({
+    //   clientFirstName,
+    //   clientLastName,
+    //   checkIn,
+    //   checkOut,
+    //   currentStep,
+    //   email,
+    //   fanClubNumber,
+    //   fanPlay,
+    //   hotelRooms,
+    //   hotels,
+    //   phoneNum,
+    //   questions,
+    //   tickets
+    // });
+    // this.setState({
+    //   // cart: [],
+    //   // clientFirstName: " ",
+    //   // stayData: [],
+    //   // clientLastName: " ",
+    //   // checkIn: " ",
+    //   // checkOut: " ",
+    //   // fanClubNumber: " ",
+    //   // address: " ",
+    //   // city: " ",
+    //   // state: " ",
+    //   // zipcode: " ",
+    //   // nameOnCard: " ",
+    //   // creditCardNumber: " ",
+    //   // expirationDate: " ",
+    //   // securityCode: " "
+    // });
   };
   handlePageChange() {
-    window.location.replace("http://18.219.186.56/checkout");
+    window.location.replace("http://omustourexperience.com/checkout");
   }
   onPackageClick = e => {
     console.log("entro en package homeee click baby");
@@ -251,6 +248,32 @@ class Home extends React.Component {
       "THIS WILL BE THE CURRENT STATE OF THE HOME COMPONENT",
       this.state
     );
+
+    let time = Date.now();
+    
+
+
+  let getTime = () => {
+
+    // console.log('entro en get time');
+    let num = Number(55000);
+
+    return num ;
+    // console.log('THIS IS THE TIMER START : ', start);
+    // console.log('THIS IS THE TOURNAMENT DATE : ',finish);
+
+    // let difference = start -= finish;
+    // console.log('THE MATH BABY ----', difference );
+   
+  }
+
+    let timeOfTournament = 2678400000;
+
+let currentTime = getTime();
+
+let counter =  getTime(time,timeOfTournament);
+
+console.log(counter);
 
     // if(packageData.packageId == 0){
     //   packageName = "Package One";
@@ -275,7 +298,6 @@ class Home extends React.Component {
           packageId={this.state.packageId}
         />
         <section id="sectionOne" className="sectionOne">
-	   
           {/* <Cart
             cart={this.state.cart}
             cartUpdatorHotelOne={this.cartUpdatorHotelOne}
@@ -396,17 +418,26 @@ class Home extends React.Component {
                         <div className="col-md-12">
                           <div id="timer">
                             <Timer
-                              initialTime={3300000000}
+                              // initialTime={currentTime}
+                              initialTime={2449200000}
                               direction="backward"
                             >
                               {() => (
                                 <React.Fragment>
-                                  <Timer.Days />{" "}
+                                  <Timer.Days formatValue={value => {
+                                 
+                                    return value;
+                                  }} />{" "}
                                   <span id="timerDays">Days</span>
                                   <Timer.Hours
                                     id="timerHour"
-                                    formatValue={value =>
-                                      `${value < 10 ? `0${value}` : value}`
+                                    formatValue={value => {
+
+
+                                      
+                                      return `${value < 10 ? `0${value}` : value}`
+                                    }
+                                      
                                     }
                                   />
                                   <span id="timerHours">Hours</span>
@@ -572,16 +603,16 @@ class Home extends React.Component {
           </div> */}
 
           <div id="newButton">
-            <div onClick={this.handlePageChange} className="btn btn-two">
+            <div id="bad" onClick={this.handlePageChange} className="btn btn-two">
               <Link
                 id="joinUs"
                 className=""
                 to={{
                   pathname: "/checkout",
-                  state: this.state
+                 
                 }}
               >
-                Join US!
+                BOOK NOW!
               </Link>
             </div>
           </div>
