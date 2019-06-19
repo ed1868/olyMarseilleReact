@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Olympic Marseille</title>
+    <title>Olympique de Marseille</title>
     <meta charset="utf-8"/>
     <meta name="author" content="pixelstrap"/>
-    <meta name="description" content="Olympic Marseille"/>
-    <meta name="keywords" content="Olympic Marseille"/>
+    <meta name="description" content="Olympique de Marseille"/>
+    <meta name="keywords" content="Olympique de Marseille"/>
+    <meta property="og:image" content="assets/images/OM.png">
     <meta
             name="viewport"
             content="width=device-width, initial-scale=1, maximum-scale=1"
     />
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <!-- Fav icon -->
-    <link rel="shortcut icon" href="assets/images/favicon.png"/>
+    <link rel="shortcut icon" href="assets/images/icon/favicon.ico"/>
     <!-- Font Family-->
     <link
             href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900"
@@ -27,7 +28,9 @@
         html {
             scroll-behavior: smooth;
         }
-
+h2{
+    color: #009ddc  !important;
+}
         .mainTitle {
             text-align: center;
             font-weight: 700;
@@ -88,11 +91,21 @@
 
         .activityPic {
             border-radius: 5px;
-            height: 250px;
+            /* height: 250px; */
+            /* width: 100% !important; */
         }
-
+        #goback{
+ color:red;
+}
+        .addOnFillers{
+            height: 70px !important;
+        }
         .addOnFiller {
             height: 45px !important;
+        }
+
+        .addOnFillerTwo{
+            height: 50px !important;
         }
 
         #discountImg {
@@ -358,7 +371,7 @@
         }
 
         #fansFriendly {
-            color: #B1926C;
+            color: white !important;
             font-family: marseilleHeader;
             font-size: 30px;
             padding-top: 5px !important;
@@ -567,11 +580,13 @@
             background-color: #009ddc !important;
             margin-top: 60px;
             width: 250px;
+            font-size: 19px;
             height: 35px;
         }
 
         #button {
             padding-top: 25px;
+            padding-bottom: 20px;
             text-align: center;
         }
 
@@ -728,6 +743,55 @@
       .checkout .next-step .btn, .checkout .checkout-controls .btn{
           background-color: #13233d;
       }
+      .overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+}
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+.popup {
+  margin: 70px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  width: 30%;
+  position: relative;
+  transition: all 5s ease-in-out;
+}
+
+.popup h2 {
+  margin-top: 0;
+  color: #333;
+  font-family: Tahoma, Arial, sans-serif;
+}
+.popup .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+.popup .close:hover {
+  color: #06D85F;
+}
+.popup .content {
+  max-height: 30%;
+  overflow: auto;
+}
 
         #johnMayer {
             background-color: #dfa375;
@@ -888,6 +952,10 @@
             #newButton{
                 text-align: center;
 
+            }
+            #bad{
+                /* border: 2px solid red; */
+                
             }
             .btn {
         position: relative;
@@ -1279,7 +1347,7 @@
         }
 
         #modalBody {
-            /* width: 900px !important; */
+            width: 900px !important;
         }
 
         .hotelModelTitle {
@@ -2090,7 +2158,7 @@
             /* background-size: cover; */
             /* background-color:red; */
         }
-#transferText{
+#transferText, #transferTraining{ 
     display: inline;
     margin-left: 40px !important;
 }
@@ -2205,7 +2273,7 @@
         }
 
         #about {
-            background-image: url('assets/images/newPackage.png');
+            background-image: url('assets/images/whiteLogoBackground.jpg');
             background-size: cover;
         }
 
@@ -2382,5 +2450,15 @@
 <!-- script js file -->
 <!-- <script src="assets/js/scroll.js"></script> -->
 <script></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-117506295-2"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-117506295-2');
+</script>
+
 </body>
 </html>
