@@ -2,129 +2,263 @@ import React from "react";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Contact from "../contact";
-import { faPlusSquare, faMinusSquare, faSquare, faCheckSquare } from "@fortawesome/fontawesome-free-regular";
+import {
+  faPlusSquare,
+  faMinusSquare,
+  faSquare,
+  faCheckSquare
+} from "@fortawesome/fontawesome-free-regular";
+import FormService from "../formService";
+import Popup from "reactjs-popup";
+
+import SweetAlert from "react-bootstrap-sweetalert";
 //Testing DATE PICKER FOR REACT
 
 const checkoutStyle = {
-  marginTop: '8rem',
-}
+  marginTop: "8rem"
+};
 
 class Checkout extends React.Component {
   constructor(props) {
     super(props);
-    this.props = props;
+    // this.props = props;
     this.state = {
-        ...this.props.location.state,
-        currentStep : 1,
-        hotels: [
-            {
-              price: 149.44,
-              hotelName: "Courtyard Marriott Capitol Hill/Navy Yard",
-              option: Number(0),
-              hotelId: Number(0),
-              typeOfRoom: " ",
-              selected: false,
-              img : 'https://cache.marriott.com/marriottassets/marriott/WASYV/wasyv-exterior-7552-hor-wide.jpg?downsize=2880px',
-              totalPrice: 149.44
-            },
-            {
-              price: 191.97,
-              hotelName: "Residence Inn by Marriott Capitol Hill/Navy Yard",
-              option: Number(0),
-              hotelId: Number(1),
-              typeOfRoom: " ",
-              selected: false,
-              img: 'https://d3hfxk7rwdcpol.cloudfront.net/CSN/ee3d0813-fc18-45c4-95e1-f159157807a3/images/33b1eb6e29c046498adef9a038fb2e44_LARGE.jpg',
-              totalPrice: 191.97
-            }
-        ],
-        hotelRooms: 0,
-        tickets: [
-            {
-              title: "Girondins de Bordeaux Vs O.Marseille",
-              id: 0,
-              lable: "07/18/2019",
-              ticketUrl:"assets/images/topLogos.png",
-              time:"9:00pm",
-              price: 35.44,
-              features:
-                "<li>Section 100, Row 02</li><li>real time sync</li><li>unlimited attachment</li><li>customize theme</li><li>priority email support</li>",
-              link: "#",
-              qty: 0,
-            },
-            {
-              title: "3rd Place Game or Tournament Championship",
-              id: 1,
-              lable: "07/21/2019",
-              ticketUrl:"assets/images/triLogoTwo.png",
-              time:"9:00pm",
-              price: 45.99,
-              features:
-                "<li>Section 100, Row 02</li><li>real time sync</li><li>unlimited attachment</li><li>customize theme</li><li>priority email support</li>",
-              link: "#",
-              qty: 0,
-            },
-            {
-              title: "D.C. United Vs  Olympic Marseille (friendly)",
-              id: 2,
-              lable: "07/24/2019",
-              ticketUrl:"assets/images/dcunited.png",
-              time:"8:00pm",
-              price: 50.44,
-              features:
-                "<li>Section 100, Row 02</li><li>unlimited attachment</li><li>customize theme</li><li>priority email support</li><li>priority email support</li>",
-              link: "#",
-              qty: 0,
-            }
-        ]
-    };
+      // ...this.props.location.state,
+      currentStep: 1,
+      hotels: [
+        {
+          price: 149.44,
+          hotelName: "Courtyard Marriott Capitol Hill/Navy Yard",
+          option: Number(0),
+          hotelId: Number(0),
+          typeOfRoom: " ",
+          selected: false,
+          img:
+            "https://cache.marriott.com/marriottassets/marriott/WASYV/wasyv-exterior-7552-hor-wide.jpg?downsize=2880px",
+          totalPrice: 149.44
+        },
+        {
+          price: 191.97,
+          hotelName: "Residence Inn by Marriott Capitol Hill/Navy Yard",
+          option: Number(0),
+          hotelId: Number(1),
+          typeOfRoom: " ",
+          selected: false,
+          img:
+            "https://cache.marriott.com/marriottassets/marriott/WASXR/wasxr-exterior-0001-hor-wide.jpg?downsize=2880px:*",
+          totalPrice: 191.97
+        }
+      ],
+      hotelRooms: 0,
 
+      tickets: [
+        {
+          title: "Girondins de Bordeaux Vs O.Marseille",
+          id: 0,
+          lable: "07/18/2019",
+          ticketUrl: "assets/images/topLogos.png",
+          time: "9:00pm",
+          price: 35.44,
+          features:
+            "<li>Section 100, Row 02</li><li>real time sync</li><li>unlimited attachment</li><li>customize theme</li><li>priority email support</li>",
+          link: "#",
+          qty: 0
+        },
+        {
+          title: "3rd Place Game or Tournament Championship",
+          id: 1,
+          lable: "07/21/2019",
+          ticketUrl: "assets/images/triLogoTwo.png",
+          time: "6:00pm or 9:00pm",
+          price: 45.99,
+          features:
+            "<li>Section 100, Row 02</li><li>real time sync</li><li>unlimited attachment</li><li>customize theme</li><li>priority email support</li>",
+          link: "#",
+          qty: 0
+        },
+        {
+          title: "D.C. United Vs  Olympique de Marseille (friendly)",
+          id: 2,
+          lable: "07/24/2019",
+          ticketUrl: "assets/images/dcunited.png",
+          time: "8:00pm",
+          price: 50.44,
+          features:
+            "<li>Section 100, Row 02</li><li>unlimited attachment</li><li>customize theme</li><li>priority email support</li><li>priority email support</li>",
+          link: "#",
+          qty: 0
+        }
+      ],
+      fanPlay: false,
+	  transportation : false,
+      freeGame: false,
+      numOfPeople: 1,
+      open:false,
+      alert: null,
+  
+    };
+    this.FormService = new FormService();
   }
-  minusTicket = (index) => {
-      let tkts = this.state.tickets.map((ticket, i) => {
-          if(index == i && ticket.qty > 1){
-              return {
-                  ...ticket,
-                  qty: ticket.qty - 1
-              }
-          }
-          return ticket;
+  
+  openModal (){
+    console.log('entroooo');
+    this.setState({ open: true })
+  }
+  closeModal () {
+    this.setState({ open: false })
+  }
+
+  popUp () {
+    console.log('IM GETTTING CALLED')
+
+      const getAlert = () => (
+        <SweetAlert 
+          success 
+          title="Success!" 
+          onConfirm={() => this.handleRedirect()}
+        >
+          Your request has been succesfully submitted! You will be receiving an email shortly of a copy of your request. Please give our agents 24 hours to email you a complete quote and payment instructions. Thank you!
+        </SweetAlert>
+      );
+  
+      this.setState({
+        alert: getAlert()
       });
-      this.updateTickets(tkts);
+    
+
+
+    // return (
+    //   <div>
+    //     <SweetAlert title="Your request has been succesfully submitted! You will be receiving an email shortly of a copy of your request. Please give our agents 24 hours to email you a complete quote and payment instructions. Thank you!" onConfirm={this.handleRedirect} />
+    //   </div>
+    // )
   }
-  plusTicket = (index) => {
-      let tkts = this.state.tickets.map((ticket, i) => {
-          if(index == i && ticket.qty < 10){
-              return {
-                  ...ticket,
-                  qty: ticket.qty + 1
-              }
-          }
-          return ticket;
-      });
-      this.updateTickets(tkts);
-  }
-  updateTickets = (tickets) => {
-      this.setState({tickets : tickets});
-  }
-  changeStep = (step) => {
-      this.setState({currentStep : step});
-  }
-  selectHotel = (index) => {
-      let newHotels = this.state.hotels.map((hotel, i) => {
-          if(i == index){
-              return {
-                  ...hotel,
-                  selected: !hotel.selected
-              }
-          }
-          return {
-              ...hotel,
-              selected: false,
-          };
-      });
-      this.setState({hotels : newHotels});
-  }
+
+  handleFormSubmit = e => {
+    e.preventDefault();
+
+
+    console.log("form trying to be submitted at checkout");
+
+// this.openModal();
+
+// this.popUp();
+
+    const {
+      clientFirstName,
+      clientLastName,
+      checkIn,
+      checkOut,
+      currentStep,
+      email,
+      fanClubNumber,
+	  transportation,
+      fanPlay,
+      address,
+      city,
+      country,
+      nationality,
+      state,
+      zip,
+      
+      hotelRooms,
+      hotels,
+      numOfPeople,
+      phoneNum,
+      questions,
+      tickets 
+    } = this.state;
+
+    this.FormService.addCheckOutForm({
+      clientFirstName,
+      clientLastName,
+      checkIn,
+      checkOut,
+	  transportation,
+      currentStep,
+      email,
+            address,
+      city,
+      country,
+      nationality,
+      state,
+      zip,
+      
+      numOfPeople,
+      fanClubNumber,
+      fanPlay,
+      hotelRooms,
+      hotels,
+      phoneNum,
+      questions,
+      tickets
+    })
+
+    this.popUp();
+
+
+  };
+  minusTicket = index => {
+    let tkts = this.state.tickets.map((ticket, i) => {
+      if (index == i && ticket.qty > 0) {
+        return {
+          ...ticket,
+          qty: ticket.qty - 1
+        };
+      }
+      return ticket;
+    });
+    this.updateTickets(tkts);
+  };
+  minusPerson = index => {
+    let num = 1;
+
+    let result = (this.state.numOfPeople -= num);
+
+    this.setState({ numOfPeople: result });
+  };
+
+  plusPerson = index => {
+    let num = 1;
+
+    let result = (this.state.numOfPeople += num);
+
+    this.setState({ numOfPeople: result });
+  };
+
+  plusTicket = index => {
+    let tkts = this.state.tickets.map((ticket, i) => {
+      if (index == i && ticket.qty < 10) {
+        return {
+          ...ticket,
+          qty: ticket.qty + 1
+        };
+      }
+      return ticket;
+    });
+    this.updateTickets(tkts);
+  };
+  updateTickets = tickets => {
+    this.setState({ tickets: tickets });
+  };
+  changeStep = step => {
+    this.setState({ currentStep: step });
+  };
+  selectHotel = index => {
+    let newHotels = this.state.hotels.map((hotel, i) => {
+      if (i == index) {
+        return {
+          ...hotel,
+          selected: !hotel.selected
+        };
+      }
+      return {
+        ...hotel,
+        selected: false
+      };
+    });
+    this.setState({ hotels: newHotels });
+  };
   handleChange = e => {
     const { name, value } = e.target;
     console.log(this.state);
@@ -133,90 +267,132 @@ class Checkout extends React.Component {
     this.setState({ ...this.state, [name]: value });
     console.log(this.state);
   };
-  transferCheck = e => {
-    console.log('entroooo');
 
-    console.log(e)
-    // if (this.state.transfer == false) {
-    //   this.setState({ transfer: true });
-    // } else {
-    //   this.setState({ transfer: false });
-    // }
+  handleCountry = e => {
+    // console.log(e.target);
 
+    const { name, value } = e.target;
+
+    this.setState({ ...this.state, [name]: value });
+  };
+  handleRedirect = e => {
+    window.location.replace("http://omustourexperience.com/");
+  };
+  willPlay = e => {
+    if (this.state.fanPlay == false) {
+      this.setState({ fanPlay: true });
+    }
+    if (this.state.fanPlay == true) {
+      this.setState({ fanPlay: false });
+    }
+  };
+  tTrainingEvent = e => {
+    if (this.state.transportation == false) {
+      this.setState({ transportation: true });
+    }
+    if (this.state.transportation == true) {
+      this.setState({ transportation: false });
+    }
+  };
+
+  freeGame = e => {
+    if (this.state.freeGame == false) {
+      this.setState({ freeGame: true });
+    }
+    if (this.state.freeGame == true) {
+      this.setState({ freeGame: false });
+    }
   };
   stepOneTickets = () => {
-      let ticketsList = this.state.tickets.map((ticket, i) => {
-          return (
-              <div className="row ticket-row">
-                  <div className="col-sm-12 col-md-4">
-                      <img className="ticketLogos" src={ticket.ticketUrl} />
-                  </div>
-                  <div className="col-sm-12 col-md-3 ticket-column">
-                      <span className="game_item">{ticket.lable}</span>
-                      <span className="game_item">{ticket.time}</span>
-                  </div>
-                  <div className="col-sm-12 col-md-3 ticket-column price-ticket">
-                      $ {ticket.price}
-                  </div>
-                  <div className="col-sm-12 col-md-2 ticket-column">
-                      <div>
-                          <span>
-                              <FontAwesomeIcon
-                                onClick={() => this.minusTicket(i)}
-                                className="qty-item-control"
-                                icon={faMinusSquare}/>
-                          </span>
-                          <span className="qty-item">{ticket.qty}</span>
-                          <span>
-                              <FontAwesomeIcon
-                                className="qty-item-control"
-                                onClick={() => this.plusTicket(i)}
-                                icon={faPlusSquare}/>
-                          </span>
-                      </div>
-                  </div>
-              </div>
-          );
-      });
-      ticketsList.unshift(<div className="col-md-12">
-        <h3 className="item-title">Choose your tickets.</h3>
-      </div>);
-      return ticketsList;
-  }
-  minusRooms = () => {
-      if(this.state.hotelRooms > 1){
-          this.setState({hotelRooms: this.state.hotelRooms - 1});
-      }
-  }
-  plusRooms = () => {
-      if(this.state.hotelRooms < 4){
-          this.setState({hotelRooms: this.state.hotelRooms + 1});
-      }
-  }
-  stepTwoHotels = () => {
-      let hotelList = this.state.hotels.map((hotel, index) => {
-          return <div className="col-md-6 hotel-container" onClick={() => this.selectHotel(index)}>
-              <div className={'hotel-selector' + (hotel.selected ? ' selected' : '')}>
-                  <img
-                    className="hotelsImg"
-                    src={hotel.img}
-                  />
-              <h3 className="hotel-title">{hotel.hotelName}</h3>
-
+    let ticketsList = this.state.tickets.map((ticket, i) => {
+      return (
+        <div className="row ticket-row">
+          <div className="col-sm-12 col-md-4">
+            <img className="ticketLogos" src={ticket.ticketUrl} />
+          </div>
+          <div className="col-sm-12 col-md-3 ticket-column">
+            {/* <span className="game_item">{ticket.lable}</span>
+            <span className="game_item">{ticket.time}</span> */}
+          </div>
+          <div className="col-sm-12 col-md-3 ticket-column ">
+            {/* $ {ticket.price} */}
+            <span className="game_item">{ticket.lable}</span>
+            <span className="game_item">{ticket.time}</span>
+          </div>
+          <div className="col-sm-12 col-md-2 ticket-column">
+            <div>
               <span>
-                  <FontAwesomeIcon
-                    className={'hotel-checkbox' + (hotel.selected ? ' selected' : '')}
-                    icon={(hotel.selected ? faCheckSquare : faSquare)}/>
+                <FontAwesomeIcon
+                  onClick={() => this.minusTicket(i)}
+                  className="qty-item-control"
+                  icon={faMinusSquare}
+                />
               </span>
-              </div>
+              <span className="qty-item">{ticket.qty}</span>
+              <span>
+                <FontAwesomeIcon
+                  className="qty-item-control"
+                  onClick={() => this.plusTicket(i)}
+                  icon={faPlusSquare}
+                />
+              </span>
+            </div>
           </div>
-      });
-      return <div className="row hotel-row">
-          <div className="col-md-12">
-              <h3 className="item-title">Choose your hotel</h3>
+        </div>
+      );
+    });
+    ticketsList.unshift(
+      <div className="col-md-12">
+        <h3 className="item-title">Games choice</h3>
+      </div>
+    );
+    return ticketsList;
+  };
+  minusRooms = () => {
+    if (this.state.hotelRooms > 0) {
+      this.setState({ hotelRooms: this.state.hotelRooms - 1 });
+    }
+  };
+  plusRooms = () => {
+    if (this.state.hotelRooms < 4) {
+      this.setState({ hotelRooms: this.state.hotelRooms + 1 });
+    }
+  };
+  stepTwoHotels = () => {
+    let hotelList = this.state.hotels.map((hotel, index) => {
+      return (
+        <div
+          className="col-md-6 hotel-container"
+          onClick={() => this.selectHotel(index)}
+        >
+          <div
+            className={"hotel-selector" + (hotel.selected ? " selected" : "")}
+          >
+            <img className="hotelsImg" src={hotel.img} />
+            <h3 className="hotel-title">{hotel.hotelName}</h3>
+            <p>2 nights minimum</p>
+            <br/>
+                <p> Maximum of 2 adults per room </p>
+            <span>
+              <FontAwesomeIcon
+                className={
+                  "hotel-checkbox" + (hotel.selected ? " selected" : "")
+                }
+                icon={hotel.selected ? faCheckSquare : faSquare}
+              />
+            </span>
           </div>
-          <div className="col-md-5 add-padding-left"><label id="" className="text-white hotel-label" htmlFor="checkIn">
-            Check In :
+        </div>
+      );
+    });
+    return (
+      <div className="row hotel-row">
+        <div className="col-md-12">
+          <h3 className="item-title">Choose your hotel</h3>
+        </div>
+        <div className="col-md-5 add-padding-left">
+          <label id="" className="text-white hotel-label" htmlFor="checkIn">
+            I will arrive on :
           </label>
           <input
             autoComplete="off"
@@ -227,9 +403,11 @@ class Checkout extends React.Component {
             max="2019-07-25"
             onChange={e => this.handleChange(e)}
             type="date"
-          /></div>
-      <div className="col-md-5"><label id="" className="text-white hotel-label" htmlFor="checkOut2">
-            Check Out :
+          />
+        </div>
+        <div className="col-md-5">
+          <label id="" className="text-white hotel-label" htmlFor="checkOut2">
+            I will leave on :
           </label>
           <input
             autoComplete="off"
@@ -240,123 +418,492 @@ class Checkout extends React.Component {
             max="2019-07-25"
             onChange={e => this.handleChange(e)}
             type="date"
-          /></div>
-      <div className="col-sm-12 col-md-2 ticket-column">
+          />
+        </div>
+        <div className="col-sm-12 col-md-2 ticket-column">
           <label id="" className="text-white hotel-label" htmlFor="checkOut2">
-                Rooms No. :
-              </label>
+            Rooms No. :
+          </label>
           <div>
-              <span>
-                  <FontAwesomeIcon
-                    onClick={() => this.minusRooms()}
-                    className="qty-item-control"
-                    icon={faMinusSquare}/>
-              </span>
-              <span className="qty-item">{this.state.hotelRooms}</span>
-              <span>
-                  <FontAwesomeIcon
-                    className="qty-item-control"
-                    onClick={() => this.plusRooms()}
-                    icon={faPlusSquare}/>
-              </span>
+            <span>
+              <FontAwesomeIcon
+                onClick={() => this.minusRooms()}
+                className="qty-item-control"
+                icon={faMinusSquare}
+              />
+            </span>
+            <span className="qty-item">{this.state.hotelRooms}</span>
+            <span>
+              <FontAwesomeIcon
+                className="qty-item-control"
+                onClick={() => this.plusRooms()}
+                icon={faPlusSquare}
+              />
+            </span>
           </div>
         </div>
 
         <div className="col-md-12">
-            <div className="row">
-                {hotelList}
-            </div>
+          <div className="row">{hotelList}</div>
         </div>
-
       </div>
-  }
+    );
+  };
   // stepThreeData = () => {
   //     return <div>Persoanl INFO</div>
   // }
   checkoutScreen = () => {
-      let step;
-      if(this.state.currentStep == 1){
-          step = this.stepOneTickets();
-      }else if(this.state.currentStep == 2){
-          step = this.stepTwoHotels();
-      }else if(this.state.currentStep == 3){
-          step = this.stepThreeData();
-      }
-      return <div className="container checkout" style={checkoutStyle}>
-        <div className="row">
-
-        </div>
+    let step;
+    if (this.state.currentStep == 1) {
+      step = this.stepOneTickets();
+    } else if (this.state.currentStep == 2) {
+      step = this.stepTwoHotels();
+    } else if (this.state.currentStep == 3) {
+      step = this.stepThreeData();
+    }
+    return (
+      <div className="container checkout" style={checkoutStyle}>
+        <div className="row" />
         {this.stepOneTickets()}
         {this.stepTwoHotels()}
         {this.stepThreeData()}
         <div className="col-md-12 checkout-controls">
-            <span className="btn btn-primary" onClick={() => this.mkCheckout()}>Send my request</span>
+          <span className="btn btn-primary" onClick={this.handleFormSubmit}>
+            Send my request
+          </span>
+          <div>{this.state.alert}</div>
+          {/* <div>Your request has been succesfully submitted! You will be receiving an email shortly of a copy of your request. Please give our agents 24 hours to email you a complete quote and payment instructions. Thank you! </div> */}
+          
+          {/* <Popup
+          open={this.state.open}
+          closeOnDocumentClick
+          // onClose={this.closeModal}
+          modal
+        >
+<span> Your request has been succesfully submitted! You will be receiving an email shortly of a copy of your request. Please give our agents 24 hours to email you a complete quote and payment instructions. Thank you! </span>
+        </Popup> */}
         </div>
-      </div>;
-  }
+        <div className="col-md-12 checkout-controls">
+          <span className="btn btn-primary" onClick={this.handleRedirect}>
+            Home
+          </span>
+        </div>
+
+      </div>
+    );
+  };
   stepThreeData = () => {
-      return <div><div className="row pax-row">
+    return (
+      <div>
+        <div className="row pax-row">
           <div className="col-md-12">
             <h3 className="item-title">Personal information</h3>
           </div>
-        <div className="col-md-6">
-          <label className="formText" htmlFor="firstName">
-            First Name :{" "}
-          </label>
-          <input
-            autoComplete="off"
-            className="form-control"
-            id="firstName"
-            name="clientFirstName"
-            onChange={e => this.handleChange(e)}
-            type="text"
-          />
+          <div className="col-md-6">
+            <label className="formText" htmlFor="firstName">
+              First Name :{" "}
+            </label>
+            <input
+              autoComplete="off"
+              className="form-control"
+              id="firstName"
+              name="clientFirstName"
+              onChange={e => this.handleChange(e)}
+              type="text"
+              required
+            />
+          </div>
+          <div className="col-md-6">
+            <label className="formText" htmlFor="lastName">
+              Last Name :{" "}
+            </label>
+            <input
+              autoComplete="off"
+              className="form-control"
+              id="lastName"
+              name="clientLastName"
+              onChange={e => this.handleChange(e)}
+              type="text"
+              required
+            />
+          </div>
         </div>
-        <div className="col-md-6">
-          <label className="formText" htmlFor="lastName">
-            Last Name :{" "}
-          </label>
-          <input
-            autoComplete="off"
-            className="form-control"
-            id="lastName"
-            name="clientLastName"
-            onChange={e => this.handleChange(e)}
-            type="text"
-          />
+        <div className="row">
+          <div className="col-md-6">
+            <label className="formText" htmlFor="checkOut">
+              E-mail Address:{" "}
+            </label>
+            <input
+              autoComplete="off"
+              className="form-control"
+              placeholder=".com"
+              id="email"
+              name="email"
+              required
+              onChange={e => this.handleChange(e)}
+              type="email"
+            
+            />
+          </div>
+          <div className="col-md-6">
+            <label className="formText" htmlFor="firstName">
+              Phone Number :{" "}
+            </label>
+            <input
+              autoComplete="off"
+              className="form-control"
+              id="phoneNum"
+              name="phoneNum"
+              onChange={e => this.handleChange(e)}
+              type="text"
+              required
+            />
+          </div>
         </div>
-      </div>
-      <div className="row">
-        <div className="col-md-6">
-          <label className="formText" htmlFor="checkOut">
-            Email:{" "}
-          </label>
-          <input
-            autoComplete="off"
-            className="form-control"
-            placeholder=".com"
-            id="email"
-            name="email"
-            onChange={e => this.handleChange(e)}
-            type="email"
-          />
+        <br />
+
+        <br />
+        <br />
+
+        {/* ADDRESS SECTION OF FORM  */}
+        <div className="row">
+          <div className="col-md-6">
+            <label className="formText" htmlFor="address">
+              Address:{" "}
+            </label>
+            <input
+              autoComplete="off"
+              className="form-control"
+              placeholder="address"
+              id="address"
+              name="address"
+              onChange={e => this.handleChange(e)}
+              type="text"
+            />
+          </div>
+          <div className="col-md-6">
+            <label className="formText" htmlFor="firstName">
+              City :{" "}
+            </label>
+            <input
+              autoComplete="off"
+              className="form-control"
+              id="city"
+              name="city"
+              onChange={e => this.handleChange(e)}
+              type="text"
+            />
+          </div>
         </div>
-        <div className="col-md-6">
-          <label className="formText" htmlFor="firstName">
-            Phone Number :{" "}
-          </label>
-          <input
-            autoComplete="off"
-            className="form-control"
-            id="phoneNum"
-            name="phoneNum"
-            onChange={e => this.handleChange(e)}
-            type="text"
-          />
+        <br />
+        <div className="row">
+          <div className="col-md-4">
+            <label className="formText" htmlFor="state">
+              State:{" "}
+            </label>
+            <input
+              autoComplete="off"
+              className="form-control"
+              placeholder="State"
+              id="state"
+              name="state"
+              onChange={e => this.handleChange(e)}
+              type="text"
+            />
+          </div>
+          <div className="col-md-4">
+            <label className="formText" htmlFor="state">
+              Zip:{" "}
+            </label>
+            <input
+              autoComplete="off"
+              className="form-control"
+              placeholder="Zip"
+              id="zip"
+              name="zip"
+              onChange={e => this.handleChange(e)}
+              type="text"
+            />
+          </div>
+          <div className="col-md-4">
+            <label className="formText" htmlFor="country">
+              Country:{" "}
+            </label>
+            <select
+              id="country"
+              name="country"
+              className="form-control nput-xlarge"
+              onChange={e => this.handleCountry(e)}
+            >
+              <option value="" selected="selected">
+                (please select a country)
+              </option>
+              <option value="AF">Afghanistan</option>
+              <option value="AL">Albania</option>
+              <option value="DZ">Algeria</option>
+              <option value="AS">American Samoa</option>
+              <option value="AD">Andorra</option>
+              <option value="AO">Angola</option>
+              <option value="AI">Anguilla</option>
+              <option value="AQ">Antarctica</option>
+              <option value="AG">Antigua and Barbuda</option>
+              <option value="AR">Argentina</option>
+              <option value="AM">Armenia</option>
+              <option value="AW">Aruba</option>
+              <option value="AU">Australia</option>
+              <option value="AT">Austria</option>
+              <option value="AZ">Azerbaijan</option>
+              <option value="BS">Bahamas</option>
+              <option value="BH">Bahrain</option>
+              <option value="BD">Bangladesh</option>
+              <option value="BB">Barbados</option>
+              <option value="BY">Belarus</option>
+              <option value="BE">Belgium</option>
+              <option value="BZ">Belize</option>
+              <option value="BJ">Benin</option>
+              <option value="BM">Bermuda</option>
+              <option value="BT">Bhutan</option>
+              <option value="BO">Bolivia</option>
+              <option value="BA">Bosnia and Herzegowina</option>
+              <option value="BW">Botswana</option>
+              <option value="BV">Bouvet Island</option>
+              <option value="BR">Brazil</option>
+              <option value="IO">British Indian Ocean Territory</option>
+              <option value="BN">Brunei Darussalam</option>
+              <option value="BG">Bulgaria</option>
+              <option value="BF">Burkina Faso</option>
+              <option value="BI">Burundi</option>
+              <option value="KH">Cambodia</option>
+              <option value="CM">Cameroon</option>
+              <option value="CA">Canada</option>
+              <option value="CV">Cape Verde</option>
+              <option value="KY">Cayman Islands</option>
+              <option value="CF">Central African Republic</option>
+              <option value="TD">Chad</option>
+              <option value="CL">Chile</option>
+              <option value="CN">China</option>
+              <option value="CX">Christmas Island</option>
+              <option value="CC">Cocos (Keeling) Islands</option>
+              <option value="CO">Colombia</option>
+              <option value="KM">Comoros</option>
+              <option value="CG">Congo</option>
+              <option value="CD">Congo, the Democratic Republic of the</option>
+              <option value="CK">Cook Islands</option>
+              <option value="CR">Costa Rica</option>
+              <option value="CI">Cote d'Ivoire</option>
+              <option value="HR">Croatia (Hrvatska)</option>
+              <option value="CU">Cuba</option>
+              <option value="CY">Cyprus</option>
+              <option value="CZ">Czech Republic</option>
+              <option value="DK">Denmark</option>
+              <option value="DJ">Djibouti</option>
+              <option value="DM">Dominica</option>
+              <option value="DO">Dominican Republic</option>
+              <option value="TP">East Timor</option>
+              <option value="EC">Ecuador</option>
+              <option value="EG">Egypt</option>
+              <option value="SV">El Salvador</option>
+              <option value="GQ">Equatorial Guinea</option>
+              <option value="ER">Eritrea</option>
+              <option value="EE">Estonia</option>
+              <option value="ET">Ethiopia</option>
+              <option value="FK">Falkland Islands (Malvinas)</option>
+              <option value="FO">Faroe Islands</option>
+              <option value="FJ">Fiji</option>
+              <option value="FI">Finland</option>
+              <option value="FR">France</option>
+              <option value="FX">France, Metropolitan</option>
+              <option value="GF">French Guiana</option>
+              <option value="PF">French Polynesia</option>
+              <option value="TF">French Southern Territories</option>
+              <option value="GA">Gabon</option>
+              <option value="GM">Gambia</option>
+              <option value="GE">Georgia</option>
+              <option value="DE">Germany</option>
+              <option value="GH">Ghana</option>
+              <option value="GI">Gibraltar</option>
+              <option value="GR">Greece</option>
+              <option value="GL">Greenland</option>
+              <option value="GD">Grenada</option>
+              <option value="GP">Guadeloupe</option>
+              <option value="GU">Guam</option>
+              <option value="GT">Guatemala</option>
+              <option value="GN">Guinea</option>
+              <option value="GW">Guinea-Bissau</option>
+              <option value="GY">Guyana</option>
+              <option value="HT">Haiti</option>
+              <option value="HM">Heard and Mc Donald Islands</option>
+              <option value="VA">Holy See (Vatican City State)</option>
+              <option value="HN">Honduras</option>
+              <option value="HK">Hong Kong</option>
+              <option value="HU">Hungary</option>
+              <option value="IS">Iceland</option>
+              <option value="IN">India</option>
+              <option value="ID">Indonesia</option>
+              <option value="IR">Iran (Islamic Republic of)</option>
+              <option value="IQ">Iraq</option>
+              <option value="IE">Ireland</option>
+              <option value="IL">Israel</option>
+              <option value="IT">Italy</option>
+              <option value="JM">Jamaica</option>
+              <option value="JP">Japan</option>
+              <option value="JO">Jordan</option>
+              <option value="KZ">Kazakhstan</option>
+              <option value="KE">Kenya</option>
+              <option value="KI">Kiribati</option>
+              <option value="KP">Korea, Democratic People's Republic of</option>
+              <option value="KR">Korea, Republic of</option>
+              <option value="KW">Kuwait</option>
+              <option value="KG">Kyrgyzstan</option>
+              <option value="LA">Lao People's Democratic Republic</option>
+              <option value="LV">Latvia</option>
+              <option value="LB">Lebanon</option>
+              <option value="LS">Lesotho</option>
+              <option value="LR">Liberia</option>
+              <option value="LY">Libyan Arab Jamahiriya</option>
+              <option value="LI">Liechtenstein</option>
+              <option value="LT">Lithuania</option>
+              <option value="LU">Luxembourg</option>
+              <option value="MO">Macau</option>
+              <option value="MK">
+                Macedonia, The Former Yugoslav Republic of
+              </option>
+              <option value="MG">Madagascar</option>
+              <option value="MW">Malawi</option>
+              <option value="MY">Malaysia</option>
+              <option value="MV">Maldives</option>
+              <option value="ML">Mali</option>
+              <option value="MT">Malta</option>
+              <option value="MH">Marshall Islands</option>
+              <option value="MQ">Martinique</option>
+              <option value="MR">Mauritania</option>
+              <option value="MU">Mauritius</option>
+              <option value="YT">Mayotte</option>
+              <option value="MX">Mexico</option>
+              <option value="FM">Micronesia, Federated States of</option>
+              <option value="MD">Moldova, Republic of</option>
+              <option value="MC">Monaco</option>
+              <option value="MN">Mongolia</option>
+              <option value="MS">Montserrat</option>
+              <option value="MA">Morocco</option>
+              <option value="MZ">Mozambique</option>
+              <option value="MM">Myanmar</option>
+              <option value="NA">Namibia</option>
+              <option value="NR">Nauru</option>
+              <option value="NP">Nepal</option>
+              <option value="NL">Netherlands</option>
+              <option value="AN">Netherlands Antilles</option>
+              <option value="NC">New Caledonia</option>
+              <option value="NZ">New Zealand</option>
+              <option value="NI">Nicaragua</option>
+              <option value="NE">Niger</option>
+              <option value="NG">Nigeria</option>
+              <option value="NU">Niue</option>
+              <option value="NF">Norfolk Island</option>
+              <option value="MP">Northern Mariana Islands</option>
+              <option value="NO">Norway</option>
+              <option value="OM">Oman</option>
+              <option value="PK">Pakistan</option>
+              <option value="PW">Palau</option>
+              <option value="PA">Panama</option>
+              <option value="PG">Papua New Guinea</option>
+              <option value="PY">Paraguay</option>
+              <option value="PE">Peru</option>
+              <option value="PH">Philippines</option>
+              <option value="PN">Pitcairn</option>
+              <option value="PL">Poland</option>
+              <option value="PT">Portugal</option>
+              <option value="PR">Puerto Rico</option>
+              <option value="QA">Qatar</option>
+              <option value="RE">Reunion</option>
+              <option value="RO">Romania</option>
+              <option value="RU">Russian Federation</option>
+              <option value="RW">Rwanda</option>
+              <option value="KN">Saint Kitts and Nevis</option>
+              <option value="LC">Saint LUCIA</option>
+              <option value="VC">Saint Vincent and the Grenadines</option>
+              <option value="WS">Samoa</option>
+              <option value="SM">San Marino</option>
+              <option value="ST">Sao Tome and Principe</option>
+              <option value="SA">Saudi Arabia</option>
+              <option value="SN">Senegal</option>
+              <option value="SC">Seychelles</option>
+              <option value="SL">Sierra Leone</option>
+              <option value="SG">Singapore</option>
+              <option value="SK">Slovakia (Slovak Republic)</option>
+              <option value="SI">Slovenia</option>
+              <option value="SB">Solomon Islands</option>
+              <option value="SO">Somalia</option>
+              <option value="ZA">South Africa</option>
+              <option value="GS">
+                South Georgia and the South Sandwich Islands
+              </option>
+              <option value="ES">Spain</option>
+              <option value="LK">Sri Lanka</option>
+              <option value="SH">St. Helena</option>
+              <option value="PM">St. Pierre and Miquelon</option>
+              <option value="SD">Sudan</option>
+              <option value="SR">Suriname</option>
+              <option value="SJ">Svalbard and Jan Mayen Islands</option>
+              <option value="SZ">Swaziland</option>
+              <option value="SE">Sweden</option>
+              <option value="CH">Switzerland</option>
+              <option value="SY">Syrian Arab Republic</option>
+              <option value="TW">Taiwan, Province of China</option>
+              <option value="TJ">Tajikistan</option>
+              <option value="TZ">Tanzania, United Republic of</option>
+              <option value="TH">Thailand</option>
+              <option value="TG">Togo</option>
+              <option value="TK">Tokelau</option>
+              <option value="TO">Tonga</option>
+              <option value="TT">Trinidad and Tobago</option>
+              <option value="TN">Tunisia</option>
+              <option value="TR">Turkey</option>
+              <option value="TM">Turkmenistan</option>
+              <option value="TC">Turks and Caicos Islands</option>
+              <option value="TV">Tuvalu</option>
+              <option value="UG">Uganda</option>
+              <option value="UA">Ukraine</option>
+              <option value="AE">United Arab Emirates</option>
+              <option value="GB">United Kingdom</option>
+              <option value="US">United States</option>
+              <option value="UM">United States Minor Outlying Islands</option>
+              <option value="UY">Uruguay</option>
+              <option value="UZ">Uzbekistan</option>
+              <option value="VU">Vanuatu</option>
+              <option value="VE">Venezuela</option>
+              <option value="VN">Viet Nam</option>
+              <option value="VG">Virgin Islands (British)</option>
+              <option value="VI">Virgin Islands (U.S.)</option>
+              <option value="WF">Wallis and Futuna Islands</option>
+              <option value="EH">Western Sahara</option>
+              <option value="YE">Yemen</option>
+              <option value="YU">Yugoslavia</option>
+              <option value="ZM">Zambia</option>
+              <option value="ZW">Zimbabwe</option>
+            </select>
+          </div>
         </div>
-      </div>
-      <br></br>
-      {/* <div className="row">
+        <br />
+        <div className="row">
+          <div className="col-md-6">
+            <label className="formText" htmlFor="nationality">
+              Nationality:{" "}
+            </label>
+            <input
+              autoComplete="off"
+              className="form-control"
+              placeholder="nationality"
+              id="nationality"
+              name="nationality"
+              onChange={e => this.handleChange(e)}
+              type="text"
+            />
+          </div>
+        </div>
+        <br />
+        <br />
+        {/* <div className="row">
           <div className="col-md-6">
               <label className="formText" htmlFor="transferText">
                 Add Transfer to OM training ? 
@@ -367,49 +914,153 @@ class Checkout extends React.Component {
           <input type="checkbox" onChange={e => this.transferCheck(e)} id="transferText" className="form-control"></input>
           </div>
       </div> */}
-      <div className="row">
+        <div className="row">
+          <div className="col-md-6">
+            <label className="formText" htmlFor="transferText">
+              I want to play in the OM team for the fans game !
+            </label>
+
+            <input
+              type="checkbox"
+              onChange={e => this.willPlay(e)}
+              id="transferText"
+              className="form-control"
+            />
+          </div>
+          {/* <div className="col-md-6">
+            <label className="formText" htmlFor="transferText">
+              Would you like to win a free game?
+            </label>
+
+            <input
+              type="checkbox"
+              onChange={e => this.freeGame(e)}
+              id="transferText"
+              className="form-control"
+            />
+          </div> */}
+        </div>
+		<div className="row">
+          <div className="col-md-6">
+            <label className="formText" htmlFor="transferTraining">
+              I need transportation for the training sessions
+            </label>
+
+            <input
+              type="checkbox"
+              onChange={e => this.tTrainingEvent(e)}
+              id="transferTraining"
+              className="form-control"
+            />
+          </div>
+        </div>
+        <br />
+        <br />
+        <label className="formText" htmlFor="peopleNum">
+          # of People :
+        </label>
+        <div>
+          <span>
+            <FontAwesomeIcon
+              onClick={e => this.minusPerson(e)}
+              className="qty-item-control"
+              icon={faMinusSquare}
+            />
+          </span>
+          <span className="qty-item">{this.state.numOfPeople}</span>
+          <span>
+            <FontAwesomeIcon
+              className="qty-item-control"
+              onClick={e => this.plusPerson(e)}
+              icon={faPlusSquare}
+            />
+          </span>
+        </div>
+
+        <br />
+        {/* <div className="row">
           <div className="col-md-6">
               <label className="formText" htmlFor="transferText">
-                I want to play in the OM team for the fans game !
+                Would you like to win a free game?
               </label>
               
-              <input type="checkbox" onChange={e => this.transferCheck(e)} id="transferText" className="form-control"></input>
+              <input type="checkbox" onChange={e => this.freeGame(e)} id="transferText" className="form-control"></input>
           </div>
 
-      </div>
-      <div className="row">
-          <div className="col-md-12">
-              <label className="formText" htmlFor="questionsText">
-                Questions?
-              </label>
-              <textarea id="questionsText" className="form-control questionsText"></textarea>
+      </div> */}
+        <div className="row">
+          <div className="col-md-4">
+            <img id="discountImg" src="assets/images/OMNationDiscount.png" />
           </div>
+          <div className="col-md-5">
+            <label id="labelFan" className="formText" htmlFor="checkOut">
+              OM Nation Membership :{" "}
+            </label>
+
+            <input
+              autoComplete="off"
+              className="form-control"
+              id="fanClubNumber"
+              name="fanClubNumber"
+              onChange={e => this.handleChange(e)}
+              type="text"
+            />
+            {/* <span id="note">*Note that this will only be valid for game tickets</span> */}
+          </div>
+          <div className="col-md-3">
+            {/* <FontAwesomeIcon
+                 id="fanArrow"
+                 onClick={this.fanValidation}
+                 className=""
+                 icon={faPlusSquare}
+               /> */}
+            {/* <div id="button" className="col-md-12">
+                   <input
+                     className="btn btn-primary"
+                     id="fanArrow"
+                     onClick={this.fanValidation}
+                     value="Apply my promotion code"
+                   />
+                 </div> */}
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-md-12">
+            <label className="formText" htmlFor="questionsText">
+              Questions?
+            </label>
+            <textarea
+              name="questions"
+              id="questionsText"
+              onChange={e => this.handleChange(e)}
+              className="form-control questionsText"
+            />
+          </div>
+        </div>
       </div>
-  </div>;
-  }
+    );
+  };
   cartUpdatorState = e => {
     console.log(e);
     console.log("DELETE CLICK HOTEL ONE HAS ENTERED HOME");
     this.setState({ cart: e });
-  }
+  };
   cartUpdator = e => {
-      let index = e.target.id;
-      let cart = this.state.cart.filter((item, i) => {
-          return i != index;
-      });
-      console.log('CART',cart);
-      this.cartUpdatorState(cart);
-  }
+    let index = e.target.id;
+    let cart = this.state.cart.filter((item, i) => {
+      return i != index;
+    });
+    console.log("CART", cart);
+    this.cartUpdatorState(cart);
+  };
+
   render() {
     document.body.classList.remove("inner-page");
     return (
       <div>
-
-          <div id="checkOutSection" className="container">
-
-          </div>
-          {this.checkoutScreen()}
-          <Contact />
+        <div id="checkOutSection" className="container" />
+        {this.checkoutScreen()}
+        <Contact />
       </div>
     );
   }
