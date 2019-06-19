@@ -32,7 +32,7 @@ class About extends React.Component {
       ticketThree: [
         {
           price: 50.44,
-          ticketName: "D.C. United Vs  Olympic Marseille'",
+          ticketName: "D.C. United Vs  Olympique de Marseille'",
           ticketUrl:"assets/images/dcunited.png",
           time: "8:00",
           totalPrice: 50.44,
@@ -258,7 +258,7 @@ class About extends React.Component {
             </select> */}
 
             <div id="" className="price-plan text-center">
-            <p id="hendrix">  From July 17TH to July 24th</p>
+            <p id="hendrix">  From July 17TH to July 25th</p>
               {/* <ul> */}
             
                 {/* <li className="priceDetails">{val.lable}</li> */}
@@ -363,19 +363,19 @@ class About extends React.Component {
             {/* <br /> */}
             <div className="row">
               <div className="col-md-12">
-                <img id="mayer" clasName="activityEx" src="assets/images/trainin.JPG"/>
+                <img id="mayer" clasName="activityEx" src="assets/images/tinyOne.png"/>
                 <p className="actOne">OPEN TRAINING SESSIONS</p>
               </div>
             </div>
             <div className="row">
               <div className="col-md-12">
-                <img id="mayer" clasName="activityEx" src="assets/images/friendlyActivity.JPG"/>
+                <img id="mayer" clasName="activityEx" src="assets/images/tinyTwo.png"/>
                 <p className="actOne">Exclusive OM Event</p>
               </div>
             </div>
             <div className="row">
               <div id="bunny" className="col-md-12">
-                <img id="mayer" clasName="activityEx" src="/assets/images/trainingSesh.jpg"/>
+                <img id="mayer" clasName="activityEx" src="/assets/images/tinyThree.png"/>
                 <p id="fansFriendly">OM VS D.C UNITED FANS FRIENDLY GAME</p>
               </div>
             </div>
@@ -641,12 +641,12 @@ export default About;
 //                     Offering you package deals which include games andOffering
 //                     you package deals which include game tickets, activities!{" "}
 //                     {/* <span style={{ color: " #009DDC;" }} id="marseille">
-//                       Olympic Marseille
+//                       Olympique de Marseille
 //                     </span> */}
 //                   </h3>
       
 //                   <h3>
-//                   <span id="marseille">Olympic Marseille </span>exclusive activities and hotel accommodations
+//                   <span id="marseille">Olympique de Marseille </span>exclusive activities and hotel accommodations
 //                     <br />
 //                     <br />
 //                     Choose from 3 properties at unbeatable rates ranging from
