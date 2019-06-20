@@ -2,6 +2,9 @@ import React from "react";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Contact from "../contact";
+import FAQ from "../faq";
+
+
 import {
   faPlusSquare,
   faMinusSquare,
@@ -89,12 +92,31 @@ class Checkout extends React.Component {
           qty: 0
         }
       ],
+      transports : [
+        {
+          transportName : "Transportation Roundtrip",
+          date:"07/19/2019",
+          price:30.00,
+          qty:0
+        },
+        {
+          transportName : "Transportation Roundtrip",
+          date:"07/23/2018",
+          price:30.00,
+          qty:0
+        }
+      ],
       fanPlay: false,
-	  transportation : false,
+	    transportation : false,
       freeGame: false,
       numOfPeople: 1,
       open:false,
       alert: null,
+      clientFirstName: " ",
+      clientLastName:" ",
+      email: " "
+
+      
   
     };
     this.FormService = new FormService();
@@ -134,11 +156,120 @@ class Checkout extends React.Component {
     // )
   }
 
+
+formValidation = e => {
+ 
+
+console.log('entro en click event ');
+
+console.log(this.state);
+let first = document.getElementById("firstName");
+let second = document.getElementById("lastName");
+let third = document.getElementById("email");
+let checkIn = document.getElementById("checkIn");
+
+let checkOut = document.getElementById("checkOut");
+
+
+let  firstDay = this.state.checkIn;
+let secondDay = this.state.checkOut;
+
+
+if(firstDay != undefined){
+  let checkInDay = firstDay.substring(8);
+
+
+  if(checkInDay <= 16 && firstDay != undefined){
+    let checkIn = document.getElementById("checkIn");
+    checkIn.style.border = "2px solid red";
+  }else{
+    checkIn.style.border=" 2px solid #ced4da";
+  }
+
+}
+
+if(secondDay != undefined){
+  let checkOutDay = secondDay.substring(8);
+
+  if(checkOutDay >= 26 && secondDay != undefined){
+    let checkOut = document.getElementById("checkOut");
+    checkOut.style.border = "2px solid red";
+  }else{
+    checkOut.style.border=" 2px solid #ced4da";
+  }
+}
+
+
+
+
+
+
+
+if(this.state.clientFirstName == " " || this.state.clientFirstName == undefined){
+  let first = document.getElementById("firstName");
+   first.style.border = "2px solid red"; 
+}else{
+  first.style.border=" 2px solid #ced4da";
+
+}
+
+if(this.state.clientLastName == " " || this.state.clientLastName == undefined){
+  let second = document.getElementById("lastName");
+   second.style.border = "2px solid red"; 
+}else{
+  second.style.border=" 2px solid #ced4da";
+}
+if(this.state.email == " " || this.state.email == undefined){
+  let third = document.getElementById("email");
+   third.style.border = "2px solid red"; 
+}else{
+  third.style.border=" 2px solid #ced4da";
+}
+
+
+
+
+  
+  
+  // // console.log(first);
+
+  //  first.style.border = "2px solid red"; 
+  //  last.style.border = "2px solid red"; 
+  //  email.style.border = "2px solid red"; 
+
+
+
+
+
+
+}
+handleDateLogic = e => {
+  e.preventDefault();
+
+  console.log(this.state);
+
+  let checkInValue = this.state.arrival;
+  let checkOutValue = this.state.departure;
+
+  console.log('this is the check in value', checkInValue);
+  console.log('this is the check out value', checkOutValue);
+
+  document.getElementById("checkIn").value =  checkInValue;
+  document.getElementById("checkOut").value = checkOutValue;
+
+  this.setState({ ...this.state, checkIn: checkInValue });
+
+
+
+}
+
   handleFormSubmit = e => {
     e.preventDefault();
 
 
     console.log("form trying to be submitted at checkout");
+
+    
 
 // this.openModal();
 
@@ -152,7 +283,8 @@ class Checkout extends React.Component {
       currentStep,
       email,
       fanClubNumber,
-	  transportation,
+      arrival,
+      departure,
       fanPlay,
       address,
       city,
@@ -160,7 +292,7 @@ class Checkout extends React.Component {
       nationality,
       state,
       zip,
-      
+      transports,
       hotelRooms,
       hotels,
       numOfPeople,
@@ -169,15 +301,24 @@ class Checkout extends React.Component {
       tickets 
     } = this.state;
 
+
+
+
+
+
+
+    
     this.FormService.addCheckOutForm({
       clientFirstName,
       clientLastName,
       checkIn,
       checkOut,
-	  transportation,
+      transports,
+      arrival,
+      departure,
       currentStep,
       email,
-            address,
+     address,
       city,
       country,
       nationality,
@@ -210,6 +351,23 @@ class Checkout extends React.Component {
     });
     this.updateTickets(tkts);
   };
+  minusTransport = index => {
+    let transports = this.state.transports.map((transport, i) => {
+      if (index == i && transport.qty > 0) {
+        return {
+          ...transport,
+          qty: transport.qty - 1
+        };
+      }
+      return transport;
+    });
+    this.updateTransports(transports);
+  };
+
+  updateTransports = transports => {
+    this.setState({ transports: transports });
+  };
+
   minusPerson = index => {
     let num = 1;
 
@@ -237,6 +395,25 @@ class Checkout extends React.Component {
       return ticket;
     });
     this.updateTickets(tkts);
+  };
+
+  
+  plusTransport = index => {
+  
+    let transports = this.state.transports.map((transport, i) => {
+
+
+ 
+      if (index == i && transport.qty < 10) {
+        return {
+          ...transport,
+          qty: transport.qty + 1
+        };
+      }
+      return transport;
+    });
+
+    this.updateTransports(transports);
   };
   updateTickets = tickets => {
     this.setState({ tickets: tickets });
@@ -342,11 +519,97 @@ class Checkout extends React.Component {
       );
     });
     ticketsList.unshift(
+
+
+
+
+
       <div className="col-md-12">
+              <div className="row">
+        <div className="col-md-6 add-padding-left">
+
+        <label id="" className="text-white hotel-label" htmlFor="checkIn">
+  I will arrive on :
+</label>
+<input
+  autoComplete="off"
+  className="form-control"
+  id="arrival"
+  name="arrival"
+  min="2019-07-01"
+  onChange={e => this.handleChange(e)}
+  type="date"
+/>
+
+          </div>
+
+
+          <div className="col-md-6">
+
+          <label id="" className="text-white hotel-label" htmlFor="checkOut2">
+  I will leave on :
+</label>
+<input
+  autoComplete="off"
+  className="form-control"
+  id="departure"
+  name="departure"
+  min="2019-07-01"
+  onChange={e => this.handleChange(e)}
+  type="date"
+/>
+
+          </div>
+        </div>
         <h3 className="item-title">Games choice</h3>
       </div>
     );
     return ticketsList;
+  };
+  stepOneTransport = () => {
+    let transportList = this.state.transports.map((transport, i) => {
+      return (
+        <div id="transportRow"className="row ticket-row">
+          <div className="col-sm-12 col-md-4">
+            <span className="transportTitle">{transport.transportName}</span>
+          </div>
+          <div className="col-sm-12 col-md-3 ticket-column">
+            <span className="game_item">{transport.date}</span>
+            {/* <span className="game_item">{ticket.time}</span> */}
+          </div>
+          <div className="col-sm-12 col-md-3 ticket-column ">
+           <span> $ {transport.price} </span>
+            {/* <span className="game_item">{ticket.lable}</span> */}
+            {/* <span className="game_item">{ticket.time}</span> */}
+          </div>
+          <div className="col-sm-12 col-md-2 ticket-column">
+            <div>
+              <span>
+                <FontAwesomeIcon
+                  onClick={() => this.minusTransport(i)}
+                  className="qty-item-control"
+                  icon={faMinusSquare}
+                />
+              </span>
+              <span className="qty-item">{transport.qty}</span>
+              <span>
+                <FontAwesomeIcon
+                  className="qty-item-control"
+                  onClick={() => this.plusTransport(i)}
+                  icon={faPlusSquare}
+                />
+              </span>
+            </div>
+          </div>
+        </div>
+      );
+    });
+    transportList.unshift(
+      <div className="col-md-12">
+        <h3 className="item-title">Transportation to Training session</h3>
+      </div>
+    );
+    return transportList;
   };
   minusRooms = () => {
     if (this.state.hotelRooms > 0) {
@@ -389,43 +652,10 @@ class Checkout extends React.Component {
       <div className="row hotel-row">
         <div className="col-md-12">
           <h3 className="item-title">Choose your hotel</h3>
-        </div>
-        <div className="col-md-5 add-padding-left">
-          <label id="" className="text-white hotel-label" htmlFor="checkIn">
-            I will arrive on :
+          <label  className="text-white hotel-label" htmlFor="checkIn">
+            Number of rooms ? 
           </label>
-          <input
-            autoComplete="off"
-            className="form-control"
-            id="checkIn"
-            name="checkIn"
-            min="2019-07-17"
-            max="2019-07-25"
-            onChange={e => this.handleChange(e)}
-            type="date"
-          />
-        </div>
-        <div className="col-md-5">
-          <label id="" className="text-white hotel-label" htmlFor="checkOut2">
-            I will leave on :
-          </label>
-          <input
-            autoComplete="off"
-            className="form-control"
-            id="checkOut2"
-            name="checkOut"
-            min="2019-07-17"
-            max="2019-07-25"
-            onChange={e => this.handleChange(e)}
-            type="date"
-          />
-        </div>
-        <div className="col-sm-12 col-md-2 ticket-column">
-          <label id="" className="text-white hotel-label" htmlFor="checkOut2">
-            Rooms No. :
-          </label>
-          <div>
-            <span>
+          <span id="finalSpace">
               <FontAwesomeIcon
                 onClick={() => this.minusRooms()}
                 className="qty-item-control"
@@ -440,9 +670,65 @@ class Checkout extends React.Component {
                 icon={faPlusSquare}
               />
             </span>
+          <div className="col-sm-12 col-md-2 ">
+
+          
+          <div>
+
           </div>
         </div>
+        </div>
 
+        <div className="col-md-4 add-padding-left">
+        <label id="buttonFiller" className="text-white hotel-label" htmlFor="checkIn">
+            Arrival button:
+          </label>
+          <input
+            value="same as arrival and departure"
+            className="dateFormatButton form-control"
+            id="sameDate"
+            name="sameDate"
+            onClick={e => this.handleDateLogic(e)}
+            type="button"
+          />
+        </div>
+        <div className="col-md-4 add-padding-left">
+          <label id="" className="text-white hotel-label" htmlFor="checkIn">
+            Check In :
+          </label>
+          <input
+            autoComplete="off"
+            className="form-control"
+            id="checkIn"
+            name="checkIn"
+            min="2019-07-17"
+            max="2019-07-25"
+            onChange={e => this.handleChange(e)}
+            type="date"
+          />
+     
+        </div>
+        
+        <div className="col-md-4">
+          <label id="" className="text-white hotel-label" htmlFor="checkOut2">
+            Check Out :
+          </label>
+          <input
+            autoComplete="off"
+            className="form-control"
+            id="checkOut"
+            name="checkOut"
+            min="2019-07-17"
+            max="2019-07-25"
+            onChange={e => this.handleChange(e)}
+            type="date"
+          />
+        </div>
+
+
+<div className="col-md-12">
+  <p id="warningHotel">     The OM US Tour Experience hotel special rates are available between July 17 and July 25.</p>
+</div>
         <div className="col-md-12">
           <div className="row">{hotelList}</div>
         </div>
@@ -465,12 +751,13 @@ class Checkout extends React.Component {
       <div className="container checkout" style={checkoutStyle}>
         <div className="row" />
         {this.stepOneTickets()}
+        {this.stepOneTransport()}
         {this.stepTwoHotels()}
         {this.stepThreeData()}
         <div className="col-md-12 checkout-controls">
-          <span className="btn btn-primary" onClick={this.handleFormSubmit}>
+          <button type="submit"  onClick={this.formValidation} className="btn btn-primary" >
             Send my request
-          </span>
+          </button>
           <div>{this.state.alert}</div>
           {/* <div>Your request has been succesfully submitted! You will be receiving an email shortly of a copy of your request. Please give our agents 24 hours to email you a complete quote and payment instructions. Thank you! </div> */}
           
@@ -556,7 +843,7 @@ class Checkout extends React.Component {
               name="phoneNum"
               onChange={e => this.handleChange(e)}
               type="text"
-              required
+         
             />
           </div>
         </div>
@@ -915,9 +1202,9 @@ class Checkout extends React.Component {
           </div>
       </div> */}
         <div className="row">
-          <div className="col-md-6">
-            <label className="formText" htmlFor="transferText">
-              I want to play in the OM team for the fans game !
+          <div className="col-md-8">
+            <label id="fansG" className="formText" htmlFor="transferText">
+              I want to play in the OM team for the fans game on July 24th!
             </label>
 
             <input
@@ -927,6 +1214,18 @@ class Checkout extends React.Component {
               className="form-control"
             />
           </div>
+          {/* <div className="col-md-6">
+            <label className="formText" htmlFor="transferTraining">
+              I need transportation for the training sessions
+            </label>
+
+            <input
+              type="checkbox"
+              onChange={e => this.tTrainingEvent(e)}
+              id="transferTraining"
+              className="form-control"
+            />
+          </div> */}
           {/* <div className="col-md-6">
             <label className="formText" htmlFor="transferText">
               Would you like to win a free game?
@@ -941,7 +1240,7 @@ class Checkout extends React.Component {
           </div> */}
         </div>
 		<div className="row">
-          <div className="col-md-6">
+          {/* <div className="col-md-6">
             <label className="formText" htmlFor="transferTraining">
               I need transportation for the training sessions
             </label>
@@ -952,14 +1251,14 @@ class Checkout extends React.Component {
               id="transferTraining"
               className="form-control"
             />
-          </div>
+          </div> */}
         </div>
         <br />
         <br />
-        <label className="formText" htmlFor="peopleNum">
+        {/* <label className="formText" htmlFor="peopleNum">
           # of People :
-        </label>
-        <div>
+        </label> */}
+        {/* <div>
           <span>
             <FontAwesomeIcon
               onClick={e => this.minusPerson(e)}
@@ -975,7 +1274,7 @@ class Checkout extends React.Component {
               icon={faPlusSquare}
             />
           </span>
-        </div>
+        </div> */}
 
         <br />
         {/* <div className="row">
@@ -1058,9 +1357,12 @@ class Checkout extends React.Component {
     document.body.classList.remove("inner-page");
     return (
       <div>
+        <form onSubmit={this.handleFormSubmit}>
         <div id="checkOutSection" className="container" />
         {this.checkoutScreen()}
-        <Contact />
+        </form>
+        {/* <Contact /> */}
+        <FAQ />
       </div>
     );
   }
