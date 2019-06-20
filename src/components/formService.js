@@ -3,7 +3,9 @@ import axios from "axios";
 class FormService {
   constructor() {
     this.service = axios.create({
-      baseURL:  `http://localhost:3000`,
+      baseURL: `http://localhost:3000/checkout`,
+      // baseURL: `http://localhost:3000/checkout`,
+      // baseURL:  `https://omustourexperience.com:3000`,
       withCredentials: true
 
     });
@@ -21,12 +23,14 @@ let payload = {
   checkOut: items.checkOut,
   currentStep: items.currentStep,
   email: items.email,
-  transportation: items.transportation,
+  transportation: items.transports,
   fanClubNumber: items.fanClubNumber,
   fanPlay: items.fanPlay,
   hotelRooms : items.hotelRooms,
   hotels: items.hotels,
   phoneNumber: items.phoneNum,
+  arrival:items.arrival,
+  departure:items.departure,
   questions: items.questions,
   numOfPeople : items.numOfPeople,
   tickets: items.tickets,
@@ -39,7 +43,7 @@ let payload = {
   nationality : items.nationality,
   state : items.state,
   zip : items.zip,
-  transportation : items.transportation
+
 
 
 }
@@ -50,7 +54,8 @@ console.log('body form data', payload);
 
 axios({
   method: 'post',
-  url: 'https://omustourexperience.com:3000/checkout', 
+  // url: 'https://omustourexperience.com:3000/checkout',
+  url: 'http://localhost:3000/checkout',
   data: payload,
   config: { headers: {'Content-Type': 'multipart/form-data' }}
   })
@@ -78,3 +83,5 @@ axios({
 
 
 export default FormService;
+
+
