@@ -40,22 +40,12 @@ class Home extends React.Component {
     this.state = {
       cart: [],
       numRoom: 0,
-      // clientFirstName : " ",
-      // clientLastName  : " ",
+
       stayData: [],
       packages: [],
       packageId: " "
 
-      // checkOut: " ",
-      // fanClubNumber: " ",
-      // address: " ",
-      // city: " ",
-      // state: " ",
-      // zipcode: " ",
-      // nameOnCard: " ",
-      // creditCardNumber: " ",
-      // expirationDate: " ",
-      // securityCode: " "
+
     };
 
     this.FormService = new FormService();
@@ -179,55 +169,7 @@ class Home extends React.Component {
     e.preventDefault();
 
     console.log("form trying to be submitted at home");
-    // const {
-    //   clientFirstName,
-    //   clientLastName,
-    //   checkIn,
-    //   checkOut,
-    //   currentStep,
-    //   email,
-    //   fanClubNumber,
-    //   fanPlay,
-    //   hotelRooms,
-    //   hotels,
-    //   phoneNum,
-    //   questions,
-    //   tickets
-    // } = this.state;
-
-
-    // this.FormService.addShoppingCart({
-    //   clientFirstName,
-    //   clientLastName,
-    //   checkIn,
-    //   checkOut,
-    //   currentStep,
-    //   email,
-    //   fanClubNumber,
-    //   fanPlay,
-    //   hotelRooms,
-    //   hotels,
-    //   phoneNum,
-    //   questions,
-    //   tickets
-    // });
-    // this.setState({
-    //   // cart: [],
-    //   // clientFirstName: " ",
-    //   // stayData: [],
-    //   // clientLastName: " ",
-    //   // checkIn: " ",
-    //   // checkOut: " ",
-    //   // fanClubNumber: " ",
-    //   // address: " ",
-    //   // city: " ",
-    //   // state: " ",
-    //   // zipcode: " ",
-    //   // nameOnCard: " ",
-    //   // creditCardNumber: " ",
-    //   // expirationDate: " ",
-    //   // securityCode: " "
-    // });
+  
   };
   handlePageChange() {
     window.location.replace("http://omustourexperience.com/checkout");
@@ -275,17 +217,6 @@ let counter =  getTime(time,timeOfTournament);
 
 console.log(counter);
 
-    // if(packageData.packageId == 0){
-    //   packageName = "Package One";
-    // }
-
-    // if(packageData.packageId == 1){
-    //   packageName = "Package Two";
-    // }
-
-    // if(packageData.packageId == 2 ){
-    //   packageName = "Package Three";
-    // }
 
     return (
       <div>
