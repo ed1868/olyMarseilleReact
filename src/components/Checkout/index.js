@@ -94,13 +94,13 @@ class Checkout extends React.Component {
       ],
       transports : [
         {
-          transportName : "Transportation Roundtrip",
+          transportName : "Transportation July 19 ",
           date:"07/19/2019",
           price:30.00,
           qty:0
         },
         {
-          transportName : "Transportation Roundtrip",
+          transportName : "Transportation July 23",
           date:"07/23/2018",
           price:30.00,
           qty:0
@@ -188,7 +188,7 @@ if(firstDay != undefined){
 
 }
 
-if(secondDay != undefined){
+if(secondDay != undefined || secondDay){
   let checkOutDay = secondDay.substring(8);
 
   if(checkOutDay >= 26 && secondDay != undefined){
@@ -302,7 +302,8 @@ handleDateLogic = e => {
     } = this.state;
 
 
-
+let transportOneData = this.state.transports[0];
+let transportTwoData = this.state.transports[1];
 
 
 
@@ -324,7 +325,8 @@ handleDateLogic = e => {
       nationality,
       state,
       zip,
-      
+      transportOneData,
+      transportTwoData,
       numOfPeople,
       fanClubNumber,
       fanPlay,
@@ -652,8 +654,11 @@ handleDateLogic = e => {
       <div className="row hotel-row">
         <div className="col-md-12">
           <h3 className="item-title">Choose your hotel</h3>
+          <br></br>
+          <br></br>
+          <br></br>
           <label  className="text-white hotel-label" htmlFor="checkIn">
-            Number of rooms ? 
+            Number of rooms<span id="fade">i</span> :
           </label>
           <span id="finalSpace">
               <FontAwesomeIcon
@@ -670,6 +675,39 @@ handleDateLogic = e => {
                 icon={faPlusSquare}
               />
             </span>
+         
+          <div className="col-sm-12 col-md-2 ">
+
+          
+          <div>
+
+          </div>
+        </div>
+        </div>
+        <div className="col-md-12">
+ 
+          <label  className="text-white hotel-label" htmlFor="checkIn">
+            Number of people :
+          </label>
+          <span id="finalSpace">
+              <FontAwesomeIcon
+                onClick={() => this.minusPerson()}
+                className="qty-item-control"
+                icon={faMinusSquare}
+              />
+            </span>
+            <span className="qty-item">{this.state.numOfPeople}</span>
+            <span>
+              <FontAwesomeIcon
+                className="qty-item-control"
+                onClick={() => this.plusPerson()}
+                icon={faPlusSquare}
+              />
+            </span>
+
+            <br></br>
+            <br></br>
+            <br></br>
           <div className="col-sm-12 col-md-2 ">
 
           
