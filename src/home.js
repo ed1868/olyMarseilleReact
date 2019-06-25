@@ -298,90 +298,7 @@ console.log(counter);
           packageId={this.state.packageId}
         />
         <section id="sectionOne" className="sectionOne">
-          {/* <Cart
-            cart={this.state.cart}
-            cartUpdatorHotelOne={this.cartUpdatorHotelOne}
-            stayData={this.state.stayData}
-            numRoom={this.state.numRoom}
-            packages={this.state.packages}
-          /> */}
-          {/* Default First Section Class className="slide-bg" */}
-
-          {/* <section id="sectionOne" className="sectionOne">
-          <section id="left-sidebar">
-            <div class="logo">
-              <a href="#about" className="navbar-brand">
-                <img
-                  id="marseilleLogo"
-                  style={{ width: 110, height: 150 }}
-                  src="assets/images/marseilleLogo.png"
-                  alt="logo"
-                />
-              </a>
-            </div>
-
-            <div
-              id="mobile-menu-icon"
-              className="visible-xs"
-              onclick="toggle_main_menu();"
-            >
-              <span class="glyphicon glyphicon-th" />
-            </div>
-
-            <ul id="main-menu">
-              <li className="nav-item ">
-                <a className="nav-link text-center navMine" href="#sectionOne">
-                  Home
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link text-center navMine" href="#about">
-                  About
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link text-center navMine" href="#hotels">
-                  Hotels
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link text-center navMine" href="#tickets">
-                  Tickets
-                </a>
-              </li>
-
-              <li className="nav-item">
-                <a className="nav-link text-center navMine" href="#games">
-                  Games
-                </a>
-              </li>
-
-              <li className="nav-item">
-                <a className="nav-link text-center navMine" href="#team">
-                  Team
-                </a>
-              </li>
-
-              <li className="nav-item">
-                <a
-                  className="nav-link text-center navMine"
-                  id="cart"
-                  href="#cart"
-                >
-                  Cart
-                </a>
-              </li>
-            </ul>
-          </section> */}
-          {/* Navbar Section */}
-
-          {/* Home One Section Start */}
-
-          {/* <div className="animation-circle">
-					<i></i>
-					<i></i>
-					<i></i>
-        </div> */}
+       
           <div className="video-bg">
             <video
               style={{
@@ -395,9 +312,7 @@ console.log(counter);
               muted={true}
               loop
             />
-            {/*<Player autoPlay loop muted="false">*/}
-            {/*  <source src="assets/video/Marseille Background.mp4" />*/}
-            {/*</Player>*/}
+  
           </div>
           <div id="jumbotron" className="container">
             <div className="row">
@@ -413,13 +328,12 @@ console.log(counter);
                       <h4 className="mainTitle" />
                       <br />
                       <br />
-                      {/* <h3 id="timer">Timer Will Go Here</h3> */}
+        
                       <div className="row">
                         <div className="col-md-12">
                           <div id="timer">
                             <Timer
-                              // initialTime={currentTime}
-                              initialTime={2159200000}
+                              initialTime={2000000000}
                               direction="backward"
                             >
                               {() => (
