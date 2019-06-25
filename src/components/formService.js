@@ -43,9 +43,8 @@ let payload = {
   nationality : items.nationality,
   state : items.state,
   zip : items.zip,
-
-
-
+  transportOneData: items.transportOneData,
+  transportTwoData: items.transportTwoData 
 }
 
 
@@ -54,11 +53,17 @@ console.log('body form data', payload);
 
 axios({
   method: 'post',
-  // url: 'https://omustourexperience.com:3000/checkout',
-  url: 'http://localhost:3000/checkout',
+  url: 'https://omustourexperience.com:3000/checkout',
+  // url: 'http://localhost:3000/checkout',
   data: payload,
   config: { headers: {'Content-Type': 'multipart/form-data' }}
-  })
+  }).then(response => {
+    console.log('-=--------', response);
+
+})
+.catch(err => {
+    console.log(err);
+});
 
 
   //   const formData = new FormData();
@@ -83,5 +88,4 @@ axios({
 
 
 export default FormService;
-
 
