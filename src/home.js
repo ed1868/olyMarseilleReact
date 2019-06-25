@@ -419,7 +419,7 @@ console.log(counter);
                           <div id="timer">
                             <Timer
                               // initialTime={currentTime}
-                              initialTime={2449200000}
+                              initialTime={2159200000}
                               direction="backward"
                             >
                               {() => (
@@ -616,12 +616,16 @@ console.log(counter);
               </Link>
             </div>
           </div>
+ 
         </section>
-        {/* <ScreenShot /> */}
+ 
+        <FAQ />       
+         {/* <ScreenShot /> */}
+  
         {/*Testimonial Component*/}
         {/* <Testimonial /> */}
         {/*Faq Component*/}
-        {/*<FAQ /> */}
+        {/*<FAQ />*/}
         {/*Blog Component*/}
         {/* <Blog /> */}
         {/*download section*/}
@@ -675,7 +679,7 @@ console.log(counter);
         {/* </section> */}
         {/*end download section*/}
         {/* Contact Component */}
-        <Contact />
+        {/* <Contact /> */}
         {/*Subscription Component*/}
         {/* <Subscribe /> */}
         {/*Footer Component*/}
