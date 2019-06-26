@@ -305,18 +305,9 @@ console.log(counter);
                   </div>
                 </div>
               </div>
-              {/* <div className="col-md-6">
-                <div className="home-right">
-                  <div className="mobile-slid"> */}
-              {/* <img
 
-                      src="assets/images/marseilleFirst.png"
-                      alt="top1"
-                      className="img-fluid"
-                    /> */}
-              {/* </div>
-                </div>
-              </div> */}
+   
+           
             </div>
           </div>
         </section>
