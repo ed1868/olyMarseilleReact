@@ -300,6 +300,7 @@ console.log(counter);
                     </div>
 
                     <a href="#theTour">
+                      {/* dsf */}
                       <FontAwesomeIcon id="goOn" icon={faArrowAltCircleDown} />
                     </a>
                   </div>
