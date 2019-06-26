@@ -45,7 +45,6 @@ class Home extends React.Component {
       packages: [],
       packageId: " "
 
-
     };
 
     this.FormService = new FormService();
@@ -106,7 +105,7 @@ class Home extends React.Component {
     let joined = this.state.cart.concat(hotelData);
     this.setState({ cart: joined });
 
-    // console.log("Final SECOND before nav", this.state.cart);
+
   };
 
   onClickThree = e => {
@@ -118,7 +117,7 @@ class Home extends React.Component {
     let joined = this.state.cart.concat(hotelData);
     this.setState({ cart: joined });
 
-    // console.log("Final THIRD before nav", this.state.cart);
+
   };
 
   cartUpdatorHotelOne = e => {
@@ -169,7 +168,7 @@ class Home extends React.Component {
     e.preventDefault();
 
     console.log("form trying to be submitted at home");
-  
+
   };
   handlePageChange() {
     window.location.replace("http://omustourexperience.com/checkout");
@@ -197,15 +196,10 @@ class Home extends React.Component {
 
   let getTime = () => {
 
-    // console.log('entro en get time');
     let num = Number(55000);
 
     return num ;
-    // console.log('THIS IS THE TIMER START : ', start);
-    // console.log('THIS IS THE TOURNAMENT DATE : ',finish);
 
-    // let difference = start -= finish;
-    // console.log('THE MATH BABY ----', difference );
    
   }
 
@@ -264,7 +258,7 @@ console.log(counter);
                         <div className="col-md-12">
                           <div id="timer">
                             <Timer
-                              initialTime={2000000000}
+                              initialTime={1911111111}
                               direction="backward"
                             >
                               {() => (
@@ -278,11 +272,8 @@ console.log(counter);
                                     id="timerHour"
                                     formatValue={value => {
 
-
-                                      
                                       return `${value < 10 ? `0${value}` : value}`
                                     }
-                                      
                                     }
                                   />
                                   <span id="timerHours">Hours</span>
@@ -370,46 +361,6 @@ console.log(counter);
               </a>
             </div>
           </div>
-          {/* <div id="tourPlacing">
-            <h1 id="tourHeader">
-              WELCOME TO THE OFFICIAL WEBSITE OF OM TOUR IN THE U.S !
-            </h1>
-            <p id="tourFirst" className="tourP">
-              In partnership with EA Sports, LFP will launch a preseason tour in
-              the United States in July called « EA Ligue 1 Games
-            </p>
-            <p id="tourFirst" className="tourP">
-              From July 18th to 21st, 2019, Olympique de Marseille, FC Girondins
-              de Bordeaux, Montpellier Hérault SC and AS Saint-Etienne
-            </p>
-            <p id="tourGoal" className="tourP">
-              will compete in a friendly tournament at Audi Field
-            </p>
-            <p id="tourFirst" className="tourP">
-              <br />
-              <br />
-              <span id="dearFans">Dear fans abroad</span>,
-              <br /> Don't miss this chance to see OM playing and experience the
-              tour like no one else! <br />
-              <a
-                id="experienceButton"
-                href="#disclaimer"
-                className="btn btn-primary"
-              >
-                DISCOVER THE EXPERIENCE
-              </a>
-            </p> */}
-
-          {/* <div id="secondPdiv">
-              <p id="tourSecond" className="tourP">
-                From July 18th to 21st, 2019, Olympique de Marseille, FC
-                Girondins de Bordeaux, Montpellier Hérault SC and AS
-                Saint-Etienne will compete in a friendly tournament at Audi
-                Field
-              </p>
-
-            </div> */}
-          {/* </div> */}
         </section>
         <About />
         {/*Price Component*/}
