@@ -153,8 +153,18 @@ class FAQ extends React.Component {
                 </div>
               </div>
             </div>
+
+
+
+
+
+{/* SECOND ROW OF QUESTIONS  */}
+
+
+
+
             <div className="col-lg-6">
-              <div className="accordion" id="accordionExample">
+              <div className="accordion" id="accordionFix">
                 <div className="card mb-3">
                   <div className="card-header" id="rewardPoints">
                     <h5 className="mb-0">
@@ -176,7 +186,7 @@ class FAQ extends React.Component {
                     id="collapseFour"
                     className="collapse"
                     aria-labelledby="rewardPoints"
-                    data-parent="#accordionExample"
+                    data-parent="#accordionFix"
                   >
                     <div className="card-body">
                       The hotel is booked as a group event. This was done so
@@ -208,7 +218,7 @@ class FAQ extends React.Component {
                     id="collapseFive"
                     className="collapse show"
                     aria-labelledby="transportOpt"
-                    data-parent="#accordionExample"
+                    data-parent="#accordionFix"
                   >
                     <div className="card-body">
                       Transportation is being offered exclusively for OM fans,
@@ -247,7 +257,7 @@ class FAQ extends React.Component {
                     id="collapseSix"
                     className="collapse"
                     aria-labelledby="cancellation"
-                    data-parent="#accordionExample"
+                    data-parent="#accordionFix"
                   >
                     <div className="card-body">
                       No. Purchases of game ticket and transportation to
