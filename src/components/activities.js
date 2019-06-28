@@ -165,58 +165,64 @@ class Activities extends React.Component {
 
     // Dynamic Price Data Easy to Update
     let data = [
+      // {
+      //   title: "Access to OM special area in the stadium",
+      //   id: 0,
+      //   duration: "2 hours",
+      //   lable: "07/24/2019",
+      //   price: "54.00",
+      //   time: "10:00am or 2:00pm",
+      //   description:
+      //     "Leave the oversized tour buses behind and take open-air electric Red Roadsters to see DC in a sustainable way! On this mall and monuments” tour, explore famous monuments, war memorials, as well as venture through Capitol Hill and the Smithsonian museum areas, as well as other hot spots. ",
+      //   features:
+      //     "<li>Section 100, Row 02</li><li>real time sync</li><li>unlimited attachment</li><li>customize theme</li><li>priority email support</li>",
+      //   link: "#"
+      // },
       {
-        title: "Access to OM special area in the stadium",
-        id: 0,
-        duration: "2 hours",
-        lable: "07/24/2019",
-        price: "54.00",
-        time: "10:00am or 2:00pm",
-        description:
-          "Leave the oversized tour buses behind and take open-air electric Red Roadsters to see DC in a sustainable way! On this mall and monuments” tour, explore famous monuments, war memorials, as well as venture through Capitol Hill and the Smithsonian museum areas, as well as other hot spots. ",
-        features:
-          "<li>Section 100, Row 02</li><li>real time sync</li><li>unlimited attachment</li><li>customize theme</li><li>priority email support</li>",
-        link: "#"
-      },
-      {
-        title: "Training Session + Transport . Time TBC",
+        title: "Training Sessions + Transport",
         id: 1,
-        duration: "2 hours",
+        duration: "3 hours",
         price: "60.00",
-        lable: "07/19/2019 or 07/23/2019",
-        time: "TBC",
+        imgSrc: "assets/images/pictureThree.png",
+        lable: "07/19/2019 and 07/23/2019",
+        time: "",
         description:
-          " Hop on board an open-air sustainable electric Red Roadster for a journey through the most iconic DC monuments and memorials by night. Enjoy the Washington Monument, Licoln, FDR and Jefferson Memorials plus many more ",
+          "Attend to OM training sessions under the orders of the new coach André Villas Boas ",
         features:
           "<li>Section 100, Row 02</li><li>real time sync</li><li>unlimited attachment</li><li>customize theme</li><li>priority email support</li>",
         link: "#"
       },
       {
-        title: "Exclusive Party , Evening-Time TBC",
+        title: "OM X D.C United Special Event",
         id: 2,
         duration: "2 hours",
         lable: "07/20/2019",
         price: "34.00",
-        time: "TBC",
+
+        imgSrc: "assets/images/pictureOne.png",
+        time: "7:00pm - Audi Field",
         description:
-          "Travel through time and experience US History with a musical twist! Learn the evolution of spiritual music to blues, jazz & rock n roll, as well as the controversies of the American national anthem.Live out your DJ dreams by learning a funky beat with your local guide as well! ",
+          "Join the club, the fans and D.C United in a unique place: The Heineken rooftop in the Audi Field",
         features:
           "<li>Section 100, Row 02</li><li>unlimited attachment</li><li>customize theme</li><li>priority email support</li><li>priority email support</li>",
         link: "#"
       },
       {
-        title: "Friendly Game , Afternoon-Time TBC",
+        title: "OM vs D.C United Fans Game",
         id: 3,
         lable: "07/24/2019",
-        duration: "2 hours",
+        duration: "4 hours",
         price: "34.00",
-        time: "TBC",
+
+        imgSrc: "/assets/images/pictureTwo.png",
+        time: "TIME TBC - Audi Field",
+        addOn: "OM Fan BBQ Afterwards",
         description:
           "Dive into American History through art as you tour one of the world’s largest collections of art while listening to your local guide tell amazing tales of the power players who shaped the country ",
         features:
           "<li>Section 100, Row 02</li><li>unlimited attachment</li><li>customize theme</li><li>priority email support</li><li>priority email support</li>",
         link: "#"
-      },
+      }
       // {
       //   title: "French Speaking Tour through Washington DC",
       //   lable: "07/29/2019",
@@ -246,47 +252,183 @@ class Activities extends React.Component {
 
     // Dynamic Price Data Loop
     let DataList = data.map((val, i) => {
-      return (
-        <div className="item" key={i}>
-          <div className="package-box">
-            <h3 className="subtitles">{val.title}</h3>
-            <div className="price-box">
-              {/* <span id="moneyTag">$</span>
-              <h2 className="prices">{val.price}</h2>
-              <h5 className="plan-clr">
-                <span className="d-block" />
-              </h5> */}
-            </div>
-            <div className="price-plan text-center">
-              <ul>
-                <li>{val.lable}</li>
-                <li>{val.time}</li>
-                <li>Duration: {val.duration}</li>
-                <li>Per Ticket</li>
-              </ul>
-              {/* <button
-                onClick={this.onClickActivity}
-                id={val.id}
-                className="btn btn-primary bookButton"
-              >
-                Add
-              </button> */}
+      if (val.id == 3) {
+        return (
+          <div className="item" key={i}>
+            <div className="package-box">
+              <h3 className="subtitles">{val.title}</h3>
+              <div className="price-box">
+                {/* <span id="moneyTag">$</span>
+                <h2 className="prices">{val.price}</h2>
+                <h5 className="plan-clr">
+                  <span className="d-block" />
+                </h5> */}
+              </div>
+              <div className="price-plan text-center">
+                <img className="activityPic" src={val.imgSrc} />
+                <ul>
+                <br></br>
+                  <li className="activityDetails">{val.lable}</li>
+                  {/* <li className="activityDetails">{val.time}</li> */}
+                  <hr />
+                  <li>11 vs 11 Game</li>
+				  <li>Presence of pro team members</li>
+                  <li>Fans Zone, Music, Food and surprises ! </li>
+					<li>&nbsp;</li>
+          <p className="choki"></p>
+                  {/* <li className="addOnFiller" /> */}
+                  <li className="activityDetails">{val.time}</li>
+                  <li className="duration">Duration: {val.duration}</li>
+                </ul>
+                {/* <button
+                  onClick={this.onClickActivity}
+                  id={val.id}
+                  className="btn btn-primary bookButton"
+                >
+                  Add
+                </button> */}
+              </div>
             </div>
           </div>
-        </div>
-      );
+        );
+      }
+      if (val.id == 2) {
+        return (
+          <div className="item" key={i}>
+            <div className="package-box">
+              <h3 className="subtitles">{val.title}</h3>
+              <div className="price-box">
+                {/* <span id="moneyTag">$</span>
+                <h2 className="prices">{val.price}</h2>
+                <h5 className="plan-clr">
+                  <span className="d-block" />
+                </h5> */}
+              </div>
+              <div id="wonderful" className="price-plan text-center">
+                <img className="activityPic" src={val.imgSrc} />
+                <ul>
+                  <br></br>
+                  <li className="activityDetails">{val.lable}</li>
+                  {/* <li className="activityDetails">{val.time}</li> */}
+        
+                  <hr />
+                  <li>Join the club and D.C United in a unique place : The Heineken rooftop in the Audi Field</li>
+				  <li>Meet OM fans in the US</li>
+				  <li>Presence of club legends</li>
+          <p  className="choki"></p>
+                  {/* <br></br> */}
+                  
+                  {/* <p className="actDescription"> {val.description}</p> */}
+
+                  {/* <li className="addOnFillerTwo" /> */}
+                  <li className="activityDetails">{val.time}</li>
+                  <li className="duration">Duration: {val.duration}</li>
+             
+                  
+                </ul>
+                {/* <button
+                  onClick={this.onClickActivity}
+                  id={val.id}
+                  className="btn btn-primary bookButton"
+                >
+                  Add
+                </button> */}
+              </div>
+            </div>
+          </div>
+        );
+      }
+      if (val.id == 1) {
+        return (
+          <div className="item" key={i}>
+            <div className="package-box">
+             
+              <h3 className="subtitles">{val.title}</h3>
+              <div className="price-box">
+                {/* <span id="moneyTag">$</span>
+                <h2 className="prices">{val.price}</h2>
+                <h5 className="plan-clr">
+                  <span className="d-block" />
+                </h5> */}
+              </div>
+              <div className="price-plan text-center">
+                <img className="activityPic" src={val.imgSrc} />
+                <ul>
+                  <br></br>
+                  <li className="activityDetails">{val.lable}</li>
+                  {/* <li className="activityDetails">{val.time}</li> */}
+                  <hr />
+                  {/* <p className="actDescription"> {val.description}</p> */}
+                  <li>Assist the team's trainings under de command of new coach <strong>André Villas-Boas</strong></li>
+				  <li>Meet the players</li>
+				  <li>Transportation from and to the hotel available upon request</li>
+                  {/* <li id="tonight"><strong>André Villas-Boas</strong></li> */}
+                  <li className="addOnFillers" />
+                  
+                  
+                  {/* <br></br> */}
+                  <li className="activityDetails">{val.time}</li>
+                  <li className="duration">Duration: {val.duration}</li>
+                </ul>
+                {/* <button
+                  onClick={this.onClickActivity}
+                  id={val.id}
+                  className="btn btn-primary bookButton"
+                >
+                  Add
+                </button> */}
+              </div>
+            </div>
+          </div>
+        );
+      }
+      if (val.addOn != undefined) {
+        return (
+          <div className="item" key={i}>
+            <div className="package-box">
+              <h3 className="subtitles">{val.title}</h3>
+              <div className="price-box">
+                {/* <span id="moneyTag">$</span>
+                <h2 className="prices">{val.price}</h2>
+                <h5 className="plan-clr">
+                  <span className="d-block" />
+                </h5> */}
+              </div>
+              <div className="price-plan text-center">
+                <img className="activityPic" src={val.imgSrc} />
+                <ul>
+                <br></br>
+      
+                  <li className="activityDetails">{val.lable}</li>
+                  {/* <li className="activityDetails">{val.time}</li> */}
+                  <li className="activityDetails">{val.addOn}</li>
+                  
+                  <li className="activityDetails">{val.time}</li>
+                  <li className="duration">Duration: {val.duration}</li>
+                </ul>
+                {/* <button
+                  onClick={this.onClickActivity}
+                  id={val.id}
+                  className="btn btn-primary bookButton"
+                >
+                  Add
+                </button> */}
+              </div>
+            </div>
+          </div>
+        );
+      }
     });
 
     return (
-      <section className="" id="activities">
+      <section className="backgroundColor" id="activities">
         {/* <section className="theme-bg" id="activities"> */}
         <div className="container">
-          <div className="row">
+          <div  className="row">
             <div className="col-md-12 text-center">
               <div className="section-title">
                 <h2 id="activityHeader">Activities</h2>
                 {/* className="headers" */}
-          
               </div>
             </div>
             <div className="col-md-12 text-center">
