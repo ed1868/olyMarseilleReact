@@ -258,7 +258,7 @@ console.log(counter);
                         <div className="col-md-12">
                           <div id="timer">
                             <Timer
-                              initialTime={1911111111}
+                              initialTime={1511111111}
                               direction="backward"
                             >
                               {() => (
@@ -300,15 +300,23 @@ console.log(counter);
                     </div>
 
                     <a href="#theTour">
-                      {/* dsf */}
                       <FontAwesomeIcon id="goOn" icon={faArrowAltCircleDown} />
                     </a>
                   </div>
                 </div>
               </div>
+              {/* <div className="col-md-6">
+                <div className="home-right">
+                  <div className="mobile-slid"> */}
+              {/* <img
 
-   
-           
+                      src="assets/images/marseilleFirst.png"
+                      alt="top1"
+                      className="img-fluid"
+                    /> */}
+              {/* </div>
+                </div>
+              </div> */}
             </div>
           </div>
         </section>
@@ -353,6 +361,46 @@ console.log(counter);
               </a>
             </div>
           </div>
+          {/* <div id="tourPlacing">
+            <h1 id="tourHeader">
+              WELCOME TO THE OFFICIAL WEBSITE OF OM TOUR IN THE U.S !
+            </h1>
+            <p id="tourFirst" className="tourP">
+              In partnership with EA Sports, LFP will launch a preseason tour in
+              the United States in July called « EA Ligue 1 Games
+            </p>
+            <p id="tourFirst" className="tourP">
+              From July 18th to 21st, 2019, Olympique de Marseille, FC Girondins
+              de Bordeaux, Montpellier Hérault SC and AS Saint-Etienne
+            </p>
+            <p id="tourGoal" className="tourP">
+              will compete in a friendly tournament at Audi Field
+            </p>
+            <p id="tourFirst" className="tourP">
+              <br />
+              <br />
+              <span id="dearFans">Dear fans abroad</span>,
+              <br /> Don't miss this chance to see OM playing and experience the
+              tour like no one else! <br />
+              <a
+                id="experienceButton"
+                href="#disclaimer"
+                className="btn btn-primary"
+              >
+                DISCOVER THE EXPERIENCE
+              </a>
+            </p> */}
+
+          {/* <div id="secondPdiv">
+              <p id="tourSecond" className="tourP">
+                From July 18th to 21st, 2019, Olympique de Marseille, FC
+                Girondins de Bordeaux, Montpellier Hérault SC and AS
+                Saint-Etienne will compete in a friendly tournament at Audi
+                Field
+              </p>
+
+            </div> */}
+          {/* </div> */}
         </section>
         <About />
         {/*Price Component*/}
