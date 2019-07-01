@@ -23,7 +23,8 @@ import { faPlusSquare } from "@fortawesome/fontawesome-free-regular";
 import Cart from "./components/cart";
 
 import FormService from "./components/formService";
-//Testing DATE PICKER FOR REACT
+
+
 import { Link } from "react-router-dom";
 import "react-dates/initialize";
 import "react-dates/lib/css/_datepicker.css";
@@ -44,7 +45,6 @@ class Home extends React.Component {
       stayData: [],
       packages: [],
       packageId: " "
-
     };
 
     this.FormService = new FormService();
@@ -104,8 +104,6 @@ class Home extends React.Component {
 
     let joined = this.state.cart.concat(hotelData);
     this.setState({ cart: joined });
-
-
   };
 
   onClickThree = e => {
@@ -116,8 +114,6 @@ class Home extends React.Component {
 
     let joined = this.state.cart.concat(hotelData);
     this.setState({ cart: joined });
-
-
   };
 
   cartUpdatorHotelOne = e => {
@@ -136,6 +132,7 @@ class Home extends React.Component {
     function minusPercent(n, p) {
       return n - n * (p / 100);
     }
+
     let calculation = 0;
 
     //loop and set the discounted total
@@ -168,7 +165,6 @@ class Home extends React.Component {
     e.preventDefault();
 
     console.log("form trying to be submitted at home");
-
   };
   handlePageChange() {
     window.location.replace("http://omustourexperience.com/checkout");
@@ -191,26 +187,19 @@ class Home extends React.Component {
     );
 
     let time = Date.now();
-    
 
+    let getTime = () => {
+      let num = Number(55000);
 
-  let getTime = () => {
+      return num;
+      let timeOfTournament = 2678400000;
 
-    let num = Number(55000);
+      let currentTime = getTime();
 
-    return num ;
+      let counter = getTime(time, timeOfTournament);
 
-   
-  }
-
-    let timeOfTournament = 2678400000;
-
-let currentTime = getTime();
-
-let counter =  getTime(time,timeOfTournament);
-
-console.log(counter);
-
+      console.log(counter);
+    };
 
     return (
       <div>
@@ -223,7 +212,6 @@ console.log(counter);
           packageId={this.state.packageId}
         />
         <section id="sectionOne" className="sectionOne">
-       
           <div className="video-bg">
             <video
               style={{
@@ -237,7 +225,6 @@ console.log(counter);
               muted={true}
               loop
             />
-  
           </div>
           <div id="jumbotron" className="container">
             <div className="row">
@@ -253,7 +240,7 @@ console.log(counter);
                       <h4 className="mainTitle" />
                       <br />
                       <br />
-        
+
                       <div className="row">
                         <div className="col-md-12">
                           <div id="timer">
@@ -263,18 +250,19 @@ console.log(counter);
                             >
                               {() => (
                                 <React.Fragment>
-                                  <Timer.Days formatValue={value => {
-                                 
-                                    return value;
-                                  }} />{" "}
+                                  <Timer.Days
+                                    formatValue={value => {
+                                      return value;
+                                    }}
+                                  />{" "}
                                   <span id="timerDays">Days</span>
                                   <Timer.Hours
                                     id="timerHour"
                                     formatValue={value => {
-
-                                      return `${value < 10 ? `0${value}` : value}`
-                                    }
-                                    }
+                                      return `${
+                                        value < 10 ? `0${value}` : value
+                                      }`;
+                                    }}
                                   />
                                   <span id="timerHours">Hours</span>
                                   <Timer.Minutes
@@ -305,18 +293,7 @@ console.log(counter);
                   </div>
                 </div>
               </div>
-              {/* <div className="col-md-6">
-                <div className="home-right">
-                  <div className="mobile-slid"> */}
-              {/* <img
-
-                      src="assets/images/marseilleFirst.png"
-                      alt="top1"
-                      className="img-fluid"
-                    /> */}
-              {/* </div>
-                </div>
-              </div> */}
+              =
             </div>
           </div>
         </section>
@@ -341,19 +318,14 @@ console.log(counter);
                 From July 17th to July 24th, the club will travel to Washington
                 DC to play two matches in the EA Ligue 1 tournament and a
                 friendly match against the local team D.C United.
-                {/* In partnership with EA Sports, LFP will launch a preseason tour
-                in the United States in July called « EA Ligue 1 Games */}
               </p>
               <p className="tourP">
                 This summer, you will be able to attend to the club's first tour
                 across the Atlantic.
-                {/* From July 18th to 24th, 2019, Olympique de Marseille, FC
-                Girondins de Bordeaux, Montpellier Hérault SC and AS
-                Saint-Etienne */}
               </p>
               <p className="tourP">
                 Dear fans abroad, Don't miss this chance to see OM playing and
-                experience the tour like no one else! 
+                experience the tour like no one else!
               </p>
               <br />
               <a id="jim" href="#about" className="btn btn-primary ">
@@ -361,46 +333,6 @@ console.log(counter);
               </a>
             </div>
           </div>
-          {/* <div id="tourPlacing">
-            <h1 id="tourHeader">
-              WELCOME TO THE OFFICIAL WEBSITE OF OM TOUR IN THE U.S !
-            </h1>
-            <p id="tourFirst" className="tourP">
-              In partnership with EA Sports, LFP will launch a preseason tour in
-              the United States in July called « EA Ligue 1 Games
-            </p>
-            <p id="tourFirst" className="tourP">
-              From July 18th to 21st, 2019, Olympique de Marseille, FC Girondins
-              de Bordeaux, Montpellier Hérault SC and AS Saint-Etienne
-            </p>
-            <p id="tourGoal" className="tourP">
-              will compete in a friendly tournament at Audi Field
-            </p>
-            <p id="tourFirst" className="tourP">
-              <br />
-              <br />
-              <span id="dearFans">Dear fans abroad</span>,
-              <br /> Don't miss this chance to see OM playing and experience the
-              tour like no one else! <br />
-              <a
-                id="experienceButton"
-                href="#disclaimer"
-                className="btn btn-primary"
-              >
-                DISCOVER THE EXPERIENCE
-              </a>
-            </p> */}
-
-          {/* <div id="secondPdiv">
-              <p id="tourSecond" className="tourP">
-                From July 18th to 21st, 2019, Olympique de Marseille, FC
-                Girondins de Bordeaux, Montpellier Hérault SC and AS
-                Saint-Etienne will compete in a friendly tournament at Audi
-                Field
-              </p>
-
-            </div> */}
-          {/* </div> */}
         </section>
         <About />
         {/*Price Component*/}
@@ -439,25 +371,27 @@ console.log(counter);
           </div> */}
 
           <div id="newButton">
-            <div id="bad" onClick={this.handlePageChange} className="btn btn-two">
+            <div
+              id="bad"
+              onClick={this.handlePageChange}
+              className="btn btn-two"
+            >
               <Link
                 id="joinUs"
                 className=""
                 to={{
-                  pathname: "/checkout",
-                 
+                  pathname: "/checkout"
                 }}
               >
                 BOOK NOW!
               </Link>
             </div>
           </div>
- 
         </section>
- 
-        <FAQ />       
-         {/* <ScreenShot /> */}
-  
+
+        <FAQ />
+        {/* <ScreenShot /> */}
+
         {/*Testimonial Component*/}
         {/* <Testimonial /> */}
         {/*Faq Component*/}
@@ -466,52 +400,8 @@ console.log(counter);
         {/* <Blog /> */}
         {/*download section*/}
         {/* <section className="download-bg">
-          <div className="container"> */}
-        {/* <div className="row">
-              <div className="col-xl-3 display-flex">
-                <div className="footer-logo">
-                  <img
-                    src="assets/images/footer-logo.png"
-                    alt="footer-logo"
-                    className="img-fluid"
-                  />
-                </div>
-              </div>
-              <div className="col-xl-5 display-flex">
-                <div className="download-text">
-                  <h3>Download the Chatloop app and enjoy it </h3>
-                </div>
-              </div>
-              <div className="col-xl-4 display-flex">
-                <div className="download-img">
-                  <ul>
-                    <li>
-                      <img
-                        src="assets/images/app1.png"
-                        alt="foot-app"
-                        className="img-fluid"
-                        data-tilt
-                        data-tilt-perspective="50"
-                        data-tilt-speed="350"
-                        data-tilt-max="1.8"
-                      />
-                    </li>
-                    <li>
-                      <img
-                        src="assets/images/app2.png"
-                        alt="foot-app1"
-                        className="img-fluid"
-                        data-tilt
-                        data-tilt-perspective="50"
-                        data-tilt-speed="350"
-                        data-tilt-max="1.8"
-                      />
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div> */}
-        {/* </div> */}
+
+
         {/* </section> */}
         {/*end download section*/}
         {/* Contact Component */}
@@ -532,3 +422,4 @@ console.log(counter);
 }
 
 export default Home;
+
