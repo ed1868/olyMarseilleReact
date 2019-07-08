@@ -663,7 +663,7 @@ let transportTwoData = this.state.transports[1];
           </label>
           <span id="finalSpace">
               <FontAwesomeIcon
-                onClick={() => this.minusRooms()}
+                // onClick={() => this.minusRooms()}
                 className="qty-item-control"
                 icon={faMinusSquare}
               />
@@ -672,7 +672,7 @@ let transportTwoData = this.state.transports[1];
             <span>
               <FontAwesomeIcon
                 className="qty-item-control"
-                onClick={() => this.plusRooms()}
+                // onClick={() => this.plusRooms()}
                 icon={faPlusSquare}
               />
             </span>
