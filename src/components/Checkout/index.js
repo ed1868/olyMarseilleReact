@@ -101,7 +101,7 @@ class Checkout extends React.Component {
         },
         {
           transportName : "Transportation July 23",
-          date:"07/23/2018",
+          date:"07/23/2019",
           price:30.00,
           qty:0
         }
@@ -743,6 +743,7 @@ let transportTwoData = this.state.transports[1];
             max="2019-07-25"
             onChange={e => this.handleChange(e)}
             type="date"
+            disabled
           />
      
         </div>
@@ -760,6 +761,7 @@ let transportTwoData = this.state.transports[1];
             max="2019-07-25"
             onChange={e => this.handleChange(e)}
             type="date"
+            disabled
           />
         </div>
 
