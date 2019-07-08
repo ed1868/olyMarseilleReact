@@ -628,7 +628,7 @@ let transportTwoData = this.state.transports[1];
       return (
         <div
           className="col-md-6 hotel-container"
-          onClick={() => this.selectHotel(index)}
+          // onClick={() => this.selectHotel(index)}
         >
           <div
             className={"hotel-selector" + (hotel.selected ? " selected" : "")}
@@ -638,14 +638,15 @@ let transportTwoData = this.state.transports[1];
             <p>2 nights minimum</p>
             <br/>
                 <p> Maximum of 2 adults per room </p>
-            <span>
+                <p className="soldOut">SOLD OUT!</p>
+            {/* <span>
               <FontAwesomeIcon
                 className={
                   "hotel-checkbox" + (hotel.selected ? " selected" : "")
                 }
                 icon={hotel.selected ? faCheckSquare : faSquare}
               />
-            </span>
+            </span> */}
           </div>
         </div>
       );
