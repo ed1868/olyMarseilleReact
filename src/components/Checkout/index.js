@@ -527,7 +527,7 @@ let transportTwoData = this.state.transports[1];
 
 
       <div className="col-md-12">
-              <div className="row">
+              {/* <div className="row">
         <div className="col-md-6 add-padding-left">
 
         <label id="" className="text-white hotel-label" htmlFor="checkIn">
@@ -541,6 +541,7 @@ let transportTwoData = this.state.transports[1];
   min="2019-07-01"
   onChange={e => this.handleChange(e)}
   type="date"
+  disabled
 />
 
           </div>
@@ -559,10 +560,11 @@ let transportTwoData = this.state.transports[1];
   min="2019-07-01"
   onChange={e => this.handleChange(e)}
   type="date"
+  disabled
 />
 
           </div>
-        </div>
+        </div> */}
         <h3 className="item-title">Games choice</h3>
       </div>
     );
