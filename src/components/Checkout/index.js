@@ -640,7 +640,7 @@ let transportTwoData = this.state.transports[1];
             <p>2 nights minimum</p>
             <br/>
                 <p> Maximum of 2 adults per room </p>
-                <p className="soldOut">SOLD OUT!</p>
+                <strong><p className="soldOut">SOLD OUT!</p></strong>
             {/* <span>
               <FontAwesomeIcon
                 className={
