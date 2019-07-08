@@ -22,12 +22,12 @@ class Work extends React.Component {
     this.state = {
       hotelOne: [
         {
-          price: 149.44,
+          price: 156.90,
           hotelName: "Courtyard Marriott Capitol Hill/Navy Yard",
           option: Number(0),
           hotelId: Number(0),
           typeOfRoom: " ",
-          totalPrice: 149.44
+          totalPrice: 156.90
         }
       ],
       // hotelOneOptTwo: [
@@ -40,12 +40,12 @@ class Work extends React.Component {
       // ],
       hotelTwo: [
         {
-          price: 191.97,
+          price: 201.56,
           hotelName: "Residence Inn by Marriott Capitol Hill/Navy Yard",
           option: Number(0),
           hotelId: Number(1),
           typeOfRoom: " ",
-          totalPrice: 191.97
+          totalPrice: 201.56
         }
       ],
       // hotelTwoOptTwo: [
@@ -296,14 +296,14 @@ class Work extends React.Component {
         pictureOne: "https://66.media.tumblr.com/4283456dd8ced5ba08578e429629a854/tumblr_psuti88Rxw1vp5j01o1_1280.jpg",
         pictureTwo:"https://66.media.tumblr.com/6a62bcec5dcab9d9fa4314ae331ea6cd/tumblr_psuti88Rxw1vp5j01o2_1280.jpg",
         pictureThree:"https://66.media.tumblr.com/92e6c7627c432f4ab385a29119a80cef/tumblr_psuti88Rxw1vp5j01o3_1280.jpg",
-        price: "149.44",
+        price: "SOLD OUT!",
         features:
           "<li>Section 100, Row 02</li><li>real time sync</li><li>unlimited attachment</li><li>customize theme</li><li>priority email support</li>",
         link: "#"
       },
       {
         hotelTitle: "Residence Inn Capitol Hill/Navy Yard",
-        hotelMainUrl:"https://d3hfxk7rwdcpol.cloudfront.net/CSN/ee3d0813-fc18-45c4-95e1-f159157807a3/images/33b1eb6e29c046498adef9a038fb2e44_LARGE.jpg",
+        hotelMainUrl:"https://cache.marriott.com/marriottassets/marriott/WASXR/wasxr-exterior-0001-hor-wide.jpg?downsize=2880px:*",
         id: 1,
         lable: "07/21/2019",
         hotelAddress:"1233 1St SE, Washington, DC 20003",
@@ -311,7 +311,7 @@ class Work extends React.Component {
         pictureOne: "https://cache.marriott.com/marriottassets/marriott/WASXR/wasxr-exterior-0001-hor-wide.jpg?downsize=2880px:*",
         pictureTwo:"https://cache.marriott.com/marriottassets/marriott/WASXR/wasxr-lobby-0038-hor-wide.jpg?downsize=2880px:*",
         pictureThree:"https://cache.marriott.com/marriottassets/marriott/WASXR/wasxr-suite-0006-hor-wide.jpg?downsize=2880px:*",
-        price:"191.97",
+        price:"SOLD OUT!",
         features:
           "<li>Section 100, Row 02</li><li>real time sync</li><li>unlimited attachment</li><li>customize theme</li><li>priority email support</li>",
         link: "#"
@@ -367,55 +367,7 @@ class Work extends React.Component {
                     Hotel Pictures
                   </button>
                   {/* <p className="roomStock"> 10 ROOMS LEFT!</p> */}
-                  <div id="myModal" class="modal fade" role="dialog">
-                    <div className="modal-dialog">
-                      <div id="modalBody" className="modal-content">
-                        <div className="modal-header">
-                          <button
-                            type="button"
-                            className="close "
-                            data-dismiss="modal"
-                          >
-                            &times;
-                          </button>
-                          <h4 className="hotelModelTitle">
-                          {val.hotelTitle}
-                          </h4>
-                        </div>
-                        <div className="modal-body">
-                          {/* <p>Some text in the modal.</p> */}
-  
-                          <img
-                            className="modalPics"
-                            src={val.pictureOne}
-                          />
-                          <br />
-                          <img
-                            className="modalPics"
-                            src={val.pictureTwo}
-                          />
-                          <br />
-                          <img
-                            className="modalPics"
-                            src={val.pictureThree}
-                          />
-                        </div>
-                        <div class="modal-footer">
-                          <button
-                            type="button"
-                            className="btn btn-default "
-                            data-dismiss="modal"
-                          >
-                            Close
-                          </button>
-                        </div>
-              
-    
-                      </div>
-                      
-                    </div>
-                    
-                  </div>
+
                   <p className="pickleRick" />
                    <hr />
                    <p>{val.hotelAddress} </p>
@@ -423,14 +375,16 @@ class Work extends React.Component {
                    <hr />
                    <label for="roomOption">Room :</label>
                    <p>1 king bed or 2 doubles</p>
+                   <br/>
+                <p> Maximum of 2 adults per room </p>
                    {/* <select className="form-control" onChange={this.roomOption}>
   //                   <option value="1">One King Bed</option>
   //                   <option value="2">Queen/Queen Beds</option>
   //                 </select> */}
                   <br />
                    <p>
-                     <span className="hotelPrice">
-                       ${val.price} per Night/taxes Included
+                     <span className="soldOut">
+                      <strong> {val.price} </strong>
                      </span>
                    </p>
   
@@ -470,11 +424,8 @@ class Work extends React.Component {
                    Fitness Gym
                  </p>
              <p>
-                <FontAwesomeIcon
-                   className="servicesIcon"
-                  icon={faDrumstickBite}
-                 />
-                 Pavilion pantry market
+             <FontAwesomeIcon className="servicesIcon" icon={faUtensils} />
+                  Breakfast Included
                  </p>
                <br />
                <br />
@@ -488,55 +439,7 @@ class Work extends React.Component {
                  Hotel Pictures
                </button>
                {/* <p className="roomStock"> 10 ROOMS LEFT!</p> */}
-               <div id="myModalTwo" class="modal fade" role="dialog">
-                 <div className="modal-dialog">
-                   <div id="modalBody" className="modal-content">
-                     <div className="modal-header">
-                       <button
-                         type="button"
-                         className="close "
-                         data-dismiss="modal"
-                       >
-                         &times;
-                       </button>
-                       <h4 className="hotelModelTitle">
-                          {val.hotelTitle}
-                       </h4>
-                     </div>
-                     <div className="modal-body">
-                       {/* <p>Some text in the modal.</p> */}
 
-                       <img
-                            className="modalPics"
-                            src={val.pictureOne}
-                          />
-                          <br />
-                          <img
-                            className="modalPics"
-                            src={val.pictureTwo}
-                          />
-                          <br />
-                          <img
-                            className="modalPics"
-                            src={val.pictureThree}
-                          />
-                     </div>
-                     <div class="modal-footer">
-                       <button
-                         type="button"
-                         className="btn btn-default "
-                         data-dismiss="modal"
-                       >
-                         Close
-                       </button>
-                     </div>
-           
- 
-                   </div>
-                   
-                 </div>
-                 
-               </div>
                <p className="pickleRick" />
                 <hr />
                 <p>{val.hotelAddress} </p>
@@ -544,15 +447,17 @@ class Work extends React.Component {
                 <hr />
                 <label for="roomOption">Room :</label>
                 <p>1 king bed or 2 doubles</p>
+                <br/>
+                <p> Maximum of 2 guest per room </p>
                 {/* <select className="form-control" onChange={this.roomOption}>
 //                   <option value="1">One King Bed</option>
 //                   <option value="2">Queen/Queen Beds</option>
 //                 </select> */}
                <br />
                 <p>
-                  <span className="hotelPrice">
-                    ${val.price} per Night/taxes Included
-                  </span>
+                <span className="soldOut">
+                      <strong> {val.price} </strong>
+                     </span>
                 </p>
 
         </div>
@@ -564,7 +469,7 @@ class Work extends React.Component {
     });
 
     return (
-      <section className="backgroundColor" id="tickets">
+      <section className="backgroundColor" id="hotels">
         <div className="container">
           <div className="row">
             <div className="col-md-12 text-center">
@@ -596,6 +501,109 @@ class Work extends React.Component {
               >
                 {DataList}
               </OwlCarousel>
+
+
+      
+              <div id="myModal" class="modal fade" role="dialog">
+                    <div className="modal-dialog">
+                      <div id="modalBody" className="modal-content">
+                        <div className="modal-header">
+                          <button
+                            type="button"
+                            className="close "
+                            data-dismiss="modal"
+                          >
+                            &times;
+                          </button>
+                          <h4 className="hotelModelTitle">
+                          Courtyard Marriott Capitol Hill/Navy Yard
+                          </h4>
+                        </div>
+                        <div className="modal-body">
+                          {/* <p>Some text in the modal.</p> */}
+  
+                          <img
+                            className="modalPics"
+                            src="https://66.media.tumblr.com/4283456dd8ced5ba08578e429629a854/tumblr_psuti88Rxw1vp5j01o1_1280.jpg"
+                          />
+                          <br />
+                          <img
+                            className="modalPics"
+                            src="https://66.media.tumblr.com/6a62bcec5dcab9d9fa4314ae331ea6cd/tumblr_psuti88Rxw1vp5j01o2_1280.jpg"
+                          />
+                          <br />
+                          <img
+                            className="modalPics"
+                            src="https://66.media.tumblr.com/92e6c7627c432f4ab385a29119a80cef/tumblr_psuti88Rxw1vp5j01o3_1280.jpg"
+                          />
+                        </div>
+                        <div class="modal-footer">
+                          <button
+                            type="button"
+                            className="btn btn-default "
+                            data-dismiss="modal"
+                          >
+                            Close
+                          </button>
+                        </div>
+              
+    
+                      </div>
+                      
+                    </div>
+                    
+                  </div>
+
+
+                  <div id="myModalTwo" class="modal fade" role="dialog">
+                 <div className="modal-dialog">
+                   <div id="modalBody" className="modal-content">
+                     <div className="modal-header">
+                       <button
+                         type="button"
+                         className="close "
+                         data-dismiss="modal"
+                       >
+                         &times;
+                       </button>
+                       <h4 className="hotelModelTitle">
+                       Residence Inn Capitol Hill/Navy Yard
+                       </h4>
+                     </div>
+                     <div className="modal-body">
+                       {/* <p>Some text in the modal.</p> */}
+
+                       <img
+                            className="modalPics"
+                            src="https://cache.marriott.com/marriottassets/marriott/WASXR/wasxr-exterior-0001-hor-wide.jpg?downsize=2880px:*"
+                          />
+                          <br />
+                          <img
+                            className="modalPics"
+                            src="https://cache.marriott.com/marriottassets/marriott/WASXR/wasxr-lobby-0038-hor-wide.jpg?downsize=2880px:*"
+                          />
+                          <br />
+                          <img
+                            className="modalPics"
+                            src="https://cache.marriott.com/marriottassets/marriott/WASXR/wasxr-suite-0006-hor-wide.jpg?downsize=2880px:*"
+                          />
+                     </div>
+                     <div class="modal-footer">
+                       <button
+                         type="button"
+                         className="btn btn-default "
+                         data-dismiss="modal"
+                       >
+                         Close
+                       </button>
+                     </div>
+           
+ 
+                   </div>
+                   
+                 </div>
+                 
+               </div>
             </div>
           </div>
         </div>
