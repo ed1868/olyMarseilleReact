@@ -568,51 +568,51 @@ let transportTwoData = this.state.transports[1];
     );
     return ticketsList;
   };
-  stepOneTransport = () => {
-    let transportList = this.state.transports.map((transport, i) => {
-      return (
-        <div id="transportRow"className="row ticket-row">
-          <div className="col-sm-12 col-md-4">
-            <span className="transportTitle">{transport.transportName}</span>
-          </div>
-          <div className="col-sm-12 col-md-3 ticket-column">
-            <span className="game_item">{transport.date}</span>
-            {/* <span className="game_item">{ticket.time}</span> */}
-          </div>
-          <div className="col-sm-12 col-md-3 ticket-column ">
-           <span> $ {transport.price} </span>
-            {/* <span className="game_item">{ticket.lable}</span> */}
-            {/* <span className="game_item">{ticket.time}</span> */}
-          </div>
-          <div className="col-sm-12 col-md-2 ticket-column">
-            <div>
-              <span>
-                <FontAwesomeIcon
-                  onClick={() => this.minusTransport(i)}
-                  className="qty-item-control"
-                  icon={faMinusSquare}
-                />
-              </span>
-              <span className="qty-item">{transport.qty}</span>
-              <span>
-                <FontAwesomeIcon
-                  className="qty-item-control"
-                  onClick={() => this.plusTransport(i)}
-                  icon={faPlusSquare}
-                />
-              </span>
-            </div>
-          </div>
-        </div>
-      );
-    });
-    transportList.unshift(
-      <div className="col-md-12">
-        <h3 className="item-title">Transportation to Training session</h3>
-      </div>
-    );
-    return transportList;
-  };
+  // stepOneTransport = () => {
+  //   let transportList = this.state.transports.map((transport, i) => {
+  //     return (
+  //       <div id="transportRow"className="row ticket-row">
+  //         <div className="col-sm-12 col-md-4">
+  //           <span className="transportTitle">{transport.transportName}</span>
+  //         </div>
+  //         <div className="col-sm-12 col-md-3 ticket-column">
+  //           <span className="game_item">{transport.date}</span>
+  //           {/* <span className="game_item">{ticket.time}</span> */}
+  //         </div>
+  //         <div className="col-sm-12 col-md-3 ticket-column ">
+  //          <span> $ {transport.price} </span>
+  //           {/* <span className="game_item">{ticket.lable}</span> */}
+  //           {/* <span className="game_item">{ticket.time}</span> */}
+  //         </div>
+  //         <div className="col-sm-12 col-md-2 ticket-column">
+  //           <div>
+  //             <span>
+  //               <FontAwesomeIcon
+  //                 onClick={() => this.minusTransport(i)}
+  //                 className="qty-item-control"
+  //                 icon={faMinusSquare}
+  //               />
+  //             </span>
+  //             <span className="qty-item">{transport.qty}</span>
+  //             <span>
+  //               <FontAwesomeIcon
+  //                 className="qty-item-control"
+  //                 onClick={() => this.plusTransport(i)}
+  //                 icon={faPlusSquare}
+  //               />
+  //             </span>
+  //           </div>
+  //         </div>
+  //       </div>
+  //     );
+  //   });
+  //   transportList.unshift(
+  //     <div className="col-md-12">
+  //       <h3 className="item-title">Transportation to Training session</h3>
+  //     </div>
+  //   );
+  //   return transportList;
+  // };
   minusRooms = () => {
     if (this.state.hotelRooms > 0) {
       this.setState({ hotelRooms: this.state.hotelRooms - 1 });
@@ -792,7 +792,7 @@ let transportTwoData = this.state.transports[1];
       <div className="container checkout" style={checkoutStyle}>
         <div className="row" />
         {this.stepOneTickets()}
-        {this.stepOneTransport()}
+        {/* {this.stepOneTransport()} */}
         {this.stepTwoHotels()}
         {this.stepThreeData()}
         <div className="col-md-12 checkout-controls">
