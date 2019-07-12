@@ -245,7 +245,7 @@ class Home extends React.Component {
                         <div className="col-md-12">
                           <div id="timer">
                             <Timer
-                              initialTime={700000000}
+                              initialTime={600000000}
                               direction="backward"
                             >
                               {() => (

@@ -22,7 +22,7 @@ import Download from './pages/download';
 import ComingSoon from './pages/coming-soon';
 import registerServiceWorker from './registerServiceWorker';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-
+import Checkout from './components/Checkout/index';
 
 class Root extends React.Component {
   render() {
@@ -31,6 +31,7 @@ class Root extends React.Component {
 		  	<Switch>
 			  {/* <Route exact path={`${process.env.PUBLIC_URL}/`} component={App}/> */}
 			  <Route path={`${process.env.PUBLIC_URL}/home`} component={Home}/>
+			  <Route path={`${process.env.PUBLIC_URL}/checkout`} component={Checkout}/>
 			  {/* <Route path={`${process.env.PUBLIC_URL}/blog-details`} component={BlogDetails}/>
 			  <Route path={`${process.env.PUBLIC_URL}/blog-list`} component={BlogList}/>
 			  <Route path={`${process.env.PUBLIC_URL}/blog-left-sidebar`} component={BlogLeftSidebar}/>
