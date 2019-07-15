@@ -370,7 +370,7 @@ class Home extends React.Component {
                 }}>Join US !</Link>
           </div> */}
 
-          <div id="newButton">
+          {/* <div id="newButton">
             <div
               id="bad"
               onClick={this.handlePageChange}
@@ -386,7 +386,7 @@ class Home extends React.Component {
                 BOOK NOW!
               </Link>
             </div>
-          </div>
+          </div> */}
         </section>
 
         <FAQ />
